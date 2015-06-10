@@ -1,0 +1,298 @@
+#EncBar {
+	position: absolute;
+	top: 67px;
+	left: 0px;
+	width: 600px;
+	height: 31px;
+	margin-left: 32px;
+	padding-right: 12px;
+	padding-left: 90px;
+	z-index: 1001;
+	font-family: Arial;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 30px;
+	word-spacing: 6px;
+	background-image: url(http://tonalsoft.com/style/images/NavBarBack.jpg);
+	background-repeat: repeat;
+}
+
+a.EncBar:active {
+	color: #F7F7AA;
+}
+
+a.EncBar:link {
+	color: #F7F7AA;
+}
+
+a.EncBar:visited {
+	color: #F7F7AA;
+}
+
+a.EncBar:hover {
+	color: #000000;
+}
+
+#Footer {
+	margin-top: 45px;
+	margin-bottom: 100px;
+	line-height: normal;
+	font-family: Arial;
+	font-size: 10px;
+	color: #8888CC;
+}
+
+a.Footer:active {
+	font-family: Arial;
+	color: #848484;
+}
+
+a.Footer:link {
+	font-family: Arial;
+	color: #848484;
+}
+
+a.Footer:visited {
+	font-family: Arial;
+	color: #848484;
+}
+
+a.Footer:hover {
+	font-family: Arial;
+	color: #CA0000;
+}
+
+img.Home {
+	margin-top: 0px;
+	padding-top: 0px;
+	border-style: none;
+}
+
+#HomeFooter {
+	position: absolute;
+	top: 650px;
+	left: 0px;
+	width: 672px;
+	margin-left: 32px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	z-index: 1000;
+	line-height: normal;
+	font-family: Arial;
+	font-size: 13px;
+}
+
+#HomeBeatImg {
+	position: absolute;
+	top: 96px;
+	left: 490px;
+	width: 180px;
+	margin-left: 32px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	z-index: 1000;
+	line-height: normal;
+	font-family: Arial;
+	font-size: 13px;
+}
+
+#HomeBeatLinks {
+	position: absolute;
+	top: 316px;
+	left: 490px;
+	width: 180px;
+	height: 300px;
+	margin-left: 32px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	z-index: 1000;
+	line-height: normal;
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 13px;
+	color: 000000;
+}
+
+.HomeBeatText {
+	position: absolute;
+	top: 250px;
+	left: 490px;
+	width: 160px;
+	margin-left: 32px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	z-index: 1000;
+	line-height: 22px;
+	font-size: 27px;
+	color: #990000;
+}
+
+#HomeMicroImg {
+	position: absolute;
+	top: 96px;
+	left: 300px;
+	width: 180px;
+	margin-left: 32px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	z-index: 1000;
+	line-height: normal;
+	font-family: Arial;
+	font-size: 13px;
+}
+
+#HomeMicroLinks {
+	position: absolute;
+	top: 316px;
+	left: 300px;
+	width: 180px;
+	height: 300px;
+	margin-left: 32px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	z-index: 1000;
+	line-height: normal;
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 13px;
+	color: 000000;
+}
+
+.HomeMicroText {
+	position: absolute;
+	top: 120px;
+	left: 300px;
+	width: 150px;
+	padding-right: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	z-index: 1000;
+	line-height: 20px;
+	text-align: right;
+	color: #FF00FF;
+}
+
+#HomeUpdateImg {
+	position: absolute;
+	top: 96px;
+	left: 0px;
+	width: 290px;
+	margin-left: 32px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	z-index: 1000;
+	line-height: normal;
+	font-family: Arial;
+	font-size: 13px;
+}
+
+#HomeUpdateLinks {
+	position: absolute;
+	top: 316px;
+	left: 0px;
+	width: 290px;
+	height: 300px;
+	margin-left: 32px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	z-index: 1000;
+	line-height: normal;
+	font-family: Arial;
+	font-weight: normal;
+	font-size: 13px;
+	color: #000000;
+}
+
+.HomeUpdateText {
+	position: absolute;
+	top: 160px;
+	left:150px;
+	width: 190px;
+	margin-left: 32px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	z-index: 1000;
+	font-size: 20px;
+	line-height: 20px;
+	color: #FF6644;
+}
+
+#MainContent {
+	position: absolute;
+	top: 96px;
+	left: 0px;
+	width: 672px;
+	margin-left: 32px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	z-index: 1000;
+	line-height: normal;
+	font-family: Arial;
+	font-size: 13px;
+}
+
+#NavBar {
+	position: absolute;
+	top: 67px;
+	left: 0px;
+	width: 600px;
+	height: 31px;
+	margin-left: 32px;
+	padding-right: 12px;
+	padding-left: 96px;
+	z-index: 1001;
+	font-family: Arial;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 30px;
+	word-spacing: 32px;
+	background-image: url(http://tonalsoft.com/style/images/NavBarBack.jpg);
+	background-repeat: repeat;
+}
+
+a.NavBar:active {
+	color: #FFFF86;
+}
+
+a.NavBar:link {
+	color: #FFFF86;
+}
+
+a.NavBar:visited {
+	color: #FFFF86;
+}
+
+a.NavBar:hover {
+	color: #000000;
+}
+
+#QuickNavBar {
+	position: absolute;
+	text-align: right;
+	top: 18px;
+	left: 320px;
+	width: 384px;
+	color: #848484;
+}
+
+a.QuickNav:active {
+	font-family: Arial;
+	color: #848484;
+}
+
+a.QuickNav:link {
+	font-family: Arial;
+	color: #848484;
+}
+
+a.QuickNav:visited {
+	font-family: Arial;
+	color: #848484;
+}
+
+a.QuickNav:hover {
+	font-family: Arial;
+	color: #CA0000;
+}

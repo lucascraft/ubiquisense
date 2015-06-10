@@ -1,0 +1,258 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>Harmonic Phasors and Fourier Series</title>
+</head><body bgcolor="#f0f0f0">
+
+
+<img src="index_fichiers/title.gif" height="40" width="405">
+<br>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><b><font size="+1">
+<a 
+href="http://www.jhu.edu:8080/ramgen/signals/phasorlecture/welcome.rm">Welcome</a><img
+ src="index_fichiers/rafile.gif" height="17" width="46"></font></b>
+</p><p>Various forms of the Fourier series description for periodic 
+signals are based on alternate ways of 
+writing a cosine signal. For a signal </p>
+<i></i><p align="CENTER"><i>x(t) = a </i>cos(<font face="Symbol">w</font>
+<i> t <font face="Symbol">+</font>
+<font face="Symbol">q</font>
+</i>)
+</p><p>
+with amplitude <i>a &gt; 0</i>, frequency <font face="Symbol">w</font>
+<i> &gt; 0</i>, and phase angle <font face="Symbol">q</font>
+<i> </i>, three additional expressions for <i>x(t)</i> are (with <img 
+src="index_fichiers/Image162.gif" height="25" width="57">)</p>
+
+<p>Trigonometric:		<img src="index_fichiers/Image163.gif" height="21" 
+width="274"></p>
+
+<p>Complex exponential:		<img src="index_fichiers/Image164.gif" 
+height="28" width="284"></p>
+
+<p>Phasor real part:		<img src="index_fichiers/Image165.gif" height="28"
+ width="149"></p>
+
+<p>Equivalence of these expressions can be verified by using
+the Euler formula and 
+standard trigonometric identities.</p>
+<p><b><font size="+1">
+<a 
+href="http://www.jhu.edu:8080/ramgen/signals/phasorlecture/phasors.rm">Phasors</a><img
+ src="index_fichiers/rafile.gif" height="17" width="46"></font></b>
+</p><p>We will explore properties of Fourier series using the <i>phasor</i>
+ <i>representation</i>. A phasor</p>
+<i>
+</i><p align="CENTER"><img src="index_fichiers/Image166.gif" height="28"
+ width="76"></p>
+
+<p>can be viewed as a vector at the origin of the complex plane having 
+length <i>a</i>  and, at any time  <i>t</i>, angle (<font face="Symbol">w</font>
+<i> t <font face="Symbol">+</font>
+ <font face="Symbol">q</font>
+</i> ). Thus the vector rotates counterclockwise with time, since <font 
+face="Symbol">w</font>
+<i> &gt; 0</i>, and the projection on the real axis is described by</p>
+
+<p align="CENTER"><img src="index_fichiers/Image167.gif" height="53" 
+width="354"></p>
+
+<p>For graphical representation, projection on the real (horizontal) 
+axis is inconvenient, and therefore we rotate phasors by  <font 
+face="Symbol">p</font>
+<i>/2</i>  radians and project on the vertical axis. This makes use of 
+the mathematical relationship</p>
+<p align="CENTER"></p>
+<p align="CENTER"><img src="index_fichiers/Image193.gif" height="28" 
+width="254"></p>
+
+<p>Click on the complex plane below to define a vector of length  <i>a</i>
+  and initial angle ( at <i>t = 0</i>) of  <i>(<font face="Symbol">q</font>
+</i> <i> + <font face="Symbol">p</font>
+/2) radians</i>. The corresponding phasor and cosine waveform will be 
+shown with a convenient frequency <font face="Symbol">w</font>
+.</p>
+
+<br><br>
+<center>
+<table bgcolor="#c0c0c0" border="2" cellpadding="0" cellspacing="1" 
+height="290" width="620">
+<tbody><tr><td align="center">
+<applet code="index_fichiers/CosineSumApplet.html" height="250" 
+width="620"><param name="clicks" value="1">You need a Java-compatible 
+browser to see the demo.</applet>
+
+</td></tr>
+</tbody></table>
+</center>
+<br><br>
+
+<p><b><font size="+1">
+<a 
+href="http://www.jhu.edu:8080/ramgen/signals/phasorlecture/phasorsums.rm">Phasor
+ Sums</a><img src="index_fichiers/rafile.gif" height="17" width="46"></font></b>
+</p><p>In a similar fashion, a sum of cosine waveforms can be 
+represented as the real part of a phasor sum:</p>
+
+<p align="CENTER"><img src="index_fichiers/Image169.gif" height="29" 
+width="436"></p>
+<p align="CENTER"></p>
+<p>The sum of two vectors in the complex plane can be found by placing 
+the vectors "head to tail." Click twice on the complex plane below to 
+define a vector sum, and the corresponding two-cosine waveform with 
+radian frequencies of <font face="Symbol">w</font>
+<i> </i> and  <i>2<font face="Symbol">w</font>
+  </i>will be displayed.</p>
+
+<br><br>
+<center>
+<table bgcolor="#c0c0c0" border="2" cellpadding="0" cellspacing="1" 
+height="290" width="620">
+<tbody><tr><td align="center">
+<applet code="index_fichiers/CosineSumApplet.html" height="250" 
+width="620">
+<param name="clicks" value="2">You need a Java-compatible browser to see
+ the demo.</applet>
+
+</td></tr>
+</tbody></table>
+</center>
+<br><br>
+
+<p><b><font size="+1">
+<a 
+href="http://www.jhu.edu:8080/ramgen/signals/phasorlecture/fourierseries.rm">Fourier
+ Series</a><img src="index_fichiers/rafile.gif" height="17" width="46"></font></b>
+</p><p>A Fourier series is a (possibly infinite) sum of cosine waveforms
+ with the property that every frequency is a positive integer multiple 
+of a <i>fundamental frequency, <img src="index_fichiers/Image194.gif" 
+height="21" width="24">.</i>  We write this as</p>
+<p align="CENTER"><img src="index_fichiers/Image170.gif" height="48" 
+width="190"></p>
+
+<p>where <img src="index_fichiers/Image171.gif" height="24" width="49">and
+ each <img src="index_fichiers/Image172.gif" height="24" width="46">. 
+Terminology for the various terms is listed below:</p>
+
+<ul>
+<i></i><li><i>dc</i>-term: <img src="index_fichiers/Image195.gif" 
+height="25" width="80"></li>
+<li>fundamental frequency term: <img src="index_fichiers/Image175.gif" 
+height="24" width="110"></li>
+<li><img src="index_fichiers/Image176.gif" height="25" width="38">harmonic
+ term:  <img src="index_fichiers/Image196.gif" height="24" width="124"></li></ul>
+
+<p>The terms in such an expression are said to be <i>harmonically 
+related.</i> This feature implies periodicity of <i>x(t)</i>, since each
+ term in the sum repeats, at least once, in any time interval of length 
+ <img src="index_fichiers/Image178.gif" height="21" width="81">. </p>
+
+<p>Simple examples of Fourier series are</p>
+
+<p align="CENTER"><i>w(t) = 1 + 4 </i>cos(<i>3t</i>)<i> +  2 </i>cos(<i>6t
+ + <font face="Symbol">p</font>
+/4</i>)</p>
+<p align="CENTER"></p>
+<p>which has fundamental frequency <i>3</i>, and</p>
+
+<i></i><p align="CENTER"><i>y(t) = 1 + 4 </i>cos(<i>3t</i>)<i> +  2 </i>cos(<i>4t
+ + <font face="Symbol">p</font>
+/4</i>)</p>
+<p align="CENTER"></p>
+<p>which has fundamental frequency <i>1</i>. However,</p>
+
+<i></i><p align="CENTER"><i>z(t) = 1 + 4 </i>cos(<i>t</i>)<i> +  2 </i>cos(<font
+ face="Symbol">p</font>
+<i> t</i>)</p>
+
+<p>is not a Fourier series since the frequencies <i>1</i> and <font 
+face="Symbol">p</font>
+ cannot be written as integer multiples of a single fundamental 
+frequency.</p>
+
+<p>The phasor representation for a Fourier series has the form</p>
+
+<p align="CENTER">&nbsp;</p>
+<p align="CENTER"><img src="index_fichiers/Image180.gif" height="48" 
+width="184"></p>
+<p align="CENTER"></p>
+<p>Of course in practice the infinite sum is truncated to a finite 
+number of terms. Explore below the truncated Fourier series for a 
+triangular wave, a square wave, and a periodic train of impulses</p>
+
+<br><br>
+<center>
+<table bgcolor="#c0c0c0" border="2" cellpadding="0" cellspacing="1" 
+height="290" width="620">
+<tbody><tr><td align="center">
+<applet code="index_fichiers/SquareTriApplet.html" height="250" 
+width="620">You need a Java-compatible browser to see the demo.</applet>
+
+</td></tr>
+</tbody></table>
+</center>
+<br><br>
+
+<p>These Fourier series are given by</p>
+
+<ul>
+<li>triangular wave:</li></ul>
+
+<p align="CENTER"><img src="index_fichiers/Image197.gif" height="41" 
+width="380"></p>
+
+<ul>
+<li>square wave:</li></ul>
+
+<p align="CENTER"><img src="index_fichiers/Image198.gif" height="41" 
+width="496"></p>
+
+<ul>
+<li>impulse train:</li></ul>
+
+<p align="CENTER"><img src="index_fichiers/Image199.gif" height="21" 
+width="352"></p>
+
+<p>For a periodic signal that is a continuous function of time, such as 
+the triangle wave, the Fourier series coefficients diminish at least as 
+fast as <img src="index_fichiers/Image200.gif" height="22" width="41">. 
+That is, for some positive constant <i>M</i>,</p>
+<p align="CENTER"><img src="index_fichiers/Image201.gif" height="44" 
+width="185"></p>
+<p>You can observe in the applet above that it takes very few terms to 
+achieve a good approximation to the triangle wave.</p>
+<p><b><font size="+1">
+<a href="http://www.jhu.edu:8080/ramgen/signals/phasorlecture/gibbs.rm">Gibbs
+ Effect</a><img src="index_fichiers/rafile.gif" height="17" width="46"></font></b>
+</p><p>For a discontinuous function, such as the square wave, the 
+coefficients diminish as <i>1/k</i>. This raises mathematical issues of 
+convergence, particularly at points of discontinuity, and gives rise to 
+the <i>Gibbs effect</i>. The Gibbs effect is the overshoot phenomenon 
+exhibited by the truncated Fourier series at points of discontinuity. 
+This behavior is apparent with the square wave in the applet. Notice 
+that as more terms are added to the Fourier series, the overshoot near 
+the discontinuity decreases only slightly in amplitude, though it 
+decreases significantly in duration.</p>
+
+<p>A more extreme case is the impulse train, where the Fourier series 
+coefficients remain constant and the mathematical nature of convergence 
+of the series is far from apparent. From the truncated series in the 
+applet, it is clear that the Gibbs effect is present, and also that 
+there is a type of convergence.</p>
+<p><b><font size="+1">
+<a href="http://www.jhu.edu:8080/ramgen/signals/phasorlecture/window.rm">Windowing</a><img
+ src="index_fichiers/rafile.gif" height="17" width="46"></font></b>
+</p><p>There are several methods for modifying the coefficients in a 
+truncated Fourier series to reduce or eliminate Gibbs effect. 
+Essentially these are different ways of weighting (decreasing) the 
+coefficient values, and are referred to as <i>windowing methods</i>. One
+ method is the <i>Fejer Window</i>, which is based on Fejer summation of
+ series. In this method, if <i>N</i> harmonics are included in the 
+truncated Fourier series, then the amplitude of the <i>k</i>th harmonic 
+is multiplied by <i>(N <font face="Symbol">-</font>
+ k)/N.</i> Thus including the first <i>5</i> harmonics (some have zero 
+amplitude) for the square wave an</p></body></html>

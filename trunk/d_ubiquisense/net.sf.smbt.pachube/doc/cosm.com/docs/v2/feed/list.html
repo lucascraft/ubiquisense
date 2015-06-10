@@ -1,0 +1,375 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Listing all feeds - Cosm API Documentation</title>
+	<!-- TODO: fill this -->
+	<meta name="description" content="API Documentation">
+	<meta name="author" content="Cosm">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<!-- css -->
+
+  <link rel="stylesheet" href="../../assets/style.css">
+
+	
+	<!-- modernizr -->  
+
+  <script src="../../assets/modernizr.js"></script>
+
+</head>
+
+<body>
+  <header class="main">
+  	<hgroup class="g1">
+  		<h1><a href="https://cosm.com/" title="Go to Cosm.com">Cosm</a></h1>
+  		<h2><a href="https://cosm.com/docs/" title="Go to Documentation Home">API Documentation</a></h2>
+  	</hgroup>
+  	<aside>
+      © 2011 Cosm, a LogMeIn company
+    </aside>
+    <nav class="reduced-screen">
+      <a class="icon list" href="list.html#" title="Toggle sidebar">Toggle sidebar</a>
+    </nav>
+  </header>
+  
+  <nav class="main">
+  	<ul><li><a href="https://cosm.com/docs/">Documentation Home</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/">Quickstarts</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/curl.html">Start using curl</a>
+</li><li><a href="https://cosm.com/docs/quickstart/twitter.html">Track your Twitter stats</a>
+</li></ul></li><li><a href="../index.html">API Documentation</a>
+<ul><li><a href="../authentication.html">Authentication</a>
+</li><li><a href="index.html">Feeds</a>
+<ul><li><a href="create.html">Creating a feed</a>
+</li><li><a href="update.html">Updating a feed</a>
+</li><li class="selected"><a href="list.html">Listing all feeds</a>
+</li><li><a href="show.html">Viewing a feed</a>
+</li><li><a href="delete.html">Deleting a feed</a>
+</li><li><a href="mobile.html">Mobile feeds</a>
+</li></ul></li><li><a href="../datastream/index.html">Datastreams</a>
+<ul><li><a href="../datastream/create.html">Creating a datastream</a>
+</li><li><a href="../datastream/update.html">Updating a datastream</a>
+</li><li><a href="../datastream/list.html">Listing all datastreams</a>
+</li><li><a href="../datastream/show.html">Viewing a datastream</a>
+</li><li><a href="../datastream/delete.html">Deleting a datastream</a>
+</li></ul></li><li><a href="../datapoint/index.html">Datapoints</a>
+<ul><li><a href="../datapoint/create.html">Creating a datapoint</a>
+</li><li><a href="../datapoint/update.html">Updating a datapoint</a>
+</li><li><a href="../datapoint/list.html">Listing all datapoints</a>
+</li><li><a href="../datapoint/show.html">Viewing a datapoint</a>
+</li><li><a href="../datapoint/delete.html">Deleting a datapoint</a>
+</li><li><a href="../datapoint/delete_bulk.html">Deleting multiple datapoints</a>
+</li></ul></li><li><a href="../api_key/index.html">Api Keys</a>
+<ul><li><a href="../api_key/create.html">Creating an API key</a>
+</li><li><a href="../api_key/update.html">Updating an API key</a>
+</li><li><a href="../api_key/list.html">Listing all API keys</a>
+</li><li><a href="../api_key/show.html">Viewing an API key</a>
+</li><li><a href="../api_key/delete.html">Deleting an API key</a>
+</li></ul></li><li><a href="../trigger/index.html">Triggers</a>
+<ul><li><a href="../trigger/create.html">Creating a trigger</a>
+</li><li><a href="../trigger/update.html">Updating a trigger</a>
+</li><li><a href="../trigger/list.html">Listing all triggers</a>
+</li><li><a href="../trigger/show.html">Viewing a trigger</a>
+</li><li><a href="../trigger/delete.html">Deleting a trigger</a>
+</li></ul></li><li><a href="../user/index.html">Users</a>
+<ul><li><a href="../user/create.html">Creating a user</a>
+</li><li><a href="../user/update.html">Updating a user</a>
+</li><li><a href="../user/list.html">Listing all users</a>
+</li><li><a href="../user/show.html">Viewing a user</a>
+</li><li><a href="../user/delete.html">Deleting a user</a>
+</li></ul></li><li><a href="../history.html">Historical queries</a>
+</li><li><a href="../time_zones/index.html">Time Zones</a>
+<ul><li><a href="../time_zones/place_names.html">Place Names</a>
+</li></ul></li><li><a href="../ip_addresses.html">IP Addresses</a>
+</li></ul></li><li><a href="https://cosm.com/docs/concepts/">Core Concepts</a>
+<ul><li><a href="https://cosm.com/docs/concepts/automatic_manual.html">Automatic vs. manual feeds</a>
+</li><li><a href="https://cosm.com/docs/concepts/live_frozen.html">Live vs. frozen feeds</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/">Beta features</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/">Device Management</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/">Provisioning</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/activation_code.html">Generating the activation code</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/">API</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/">Products</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/create.html">Creating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/update.html">Updating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/list.html">Listing all products</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/show.html">Viewing a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/delete.html">Deleting a product</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/device/">Devices</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/device/create.html">Creating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/update.html">Updating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/list.html">Listing all devices</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/show.html">Viewing a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/delete.html">Deleting a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/activate.html">Activating a device</a>
+</li></ul></li></ul></li></ul></li><li><a href="https://cosm.com/docs/beta/group/">Groups</a>
+<ul><li><a href="https://cosm.com/docs/beta/group/create.html">Creating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/update.html">Updating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/list.html">Listing all groups</a>
+</li><li><a href="https://cosm.com/docs/beta/group/show.html">Viewing a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/delete.html">Deleting a group</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/permission/">Permissions</a>
+<ul><li><a href="https://cosm.com/docs/beta/permission/show.html">Showing permissions</a>
+</li><li><a href="https://cosm.com/docs/beta/permission/query.html">Querying permissions</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/socket_server/">Socket Server</a>
+</li><li><a href="https://cosm.com/docs/beta/mqtt/">MQTT</a>
+</li><li><a href="https://cosm.com/docs/beta/oauth/">OAuth</a>
+</li></ul></li><li><a href="https://cosm.com/docs/v1/">Legacy API</a>
+</li></ul></li></ul>
+  </nav>
+
+	<div id="container" class="clearfix">	  	  
+	  <article id="main" role="main" class="main">
+	  	<header>
+	  		<h1 class="article-title">Listing all feeds</h1>
+	  	</header>
+	    <table border="1" class="summary docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><strong>Example</strong></td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds">http://api.cosm.com/v2/feeds</a></td>
+</tr>
+<tr><td><strong>Formats</strong></td>
+<td>xml, json, csv</td>
+</tr>
+<tr><td><strong>Methods</strong></td>
+<td>GET</td>
+</tr>
+<tr><td><strong>Returns</strong></td>
+<td>multiple environments</td>
+</tr>
+</tbody>
+</table>
+<p>Returns a paged list of Cosm's feeds that are viewable by the authenticated account with a default page size of 50 feeds.</p>
+<p>The following parameters can be applied to limit or refine the returned feeds:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="59%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>page</td>
+<td>Integer indicating which page of results you are requesting. Starts from 1.</td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds?page=2">http://api.cosm.com/v2/feeds?page=2</a></td>
+</tr>
+<tr><td>per_page</td>
+<td>Integer defining how many results to return per page (1 to 1000).</td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds?per_page=5">http://api.cosm.com/v2/feeds?per_page=5</a></td>
+</tr>
+<tr><td>content</td>
+<td>String parameter ('full' or 'summary') describing whether we want full or summary results.
+Full results means all datastream values are returned, summary just returns the environment
+meta data for each feed.</td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds?content=summary">http://api.cosm.com/v2/feeds?content=summary</a></td>
+</tr>
+<tr><td>q</td>
+<td>Full text search parameter. Should return any feeds matching this string.</td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds?q=arduino">http://api.cosm.com/v2/feeds?q=arduino</a></td>
+</tr>
+<tr><td>tag</td>
+<td>Returns feeds containing datastreams tagged with the search query.</td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds?tag=temperature">http://api.cosm.com/v2/feeds?tag=temperature</a></td>
+</tr>
+<tr><td>user</td>
+<td>Returns feeds created by the user specified.</td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds.xml?user=cosm">http://api.cosm.com/v2/feeds.xml?user=cosm</a></td>
+</tr>
+<tr><td>units</td>
+<td>Returns feeds containing datastreams with units specified by the search query.</td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds.xml?units=celsius">http://api.cosm.com/v2/feeds.xml?units=celsius</a></td>
+</tr>
+<tr><td>status</td>
+<td>Possible values ('live', 'frozen', or 'all'). Whether to search for only live feeds, only
+frozen feeds, or all feeds. Defaults to all.</td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds.xml?status=frozen">http://api.cosm.com/v2/feeds.xml?status=frozen</a></td>
+</tr>
+<tr><td>order</td>
+<td>Order of returned feeds. Possible values ('created_at', 'retrieved_at', or 'relevance').</td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds.xml?order=created_at">http://api.cosm.com/v2/feeds.xml?order=created_at</a></td>
+</tr>
+<tr><td>show_user</td>
+<td>Include user login and user level for each feed. Possible values: true, false (default)</td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds.xml?show_user=true">http://api.cosm.com/v2/feeds.xml?show_user=true</a></td>
+</tr>
+</tbody>
+</table>
+<p>The following additional parameters are available which allow location based searching of feeds:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="58%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>lat</td>
+<td>Used to find feeds located around this latitude. Used if ids/_datastreams_ are not specified.</td>
+<td>lat=51.5235375648154</td>
+</tr>
+<tr><td>lon</td>
+<td>Used to find feeds located around this longitude. Used if ids/_datastreams_ are not specified.</td>
+<td>lon=-0.0807666778564453</td>
+</tr>
+<tr><td>distance</td>
+<td>search radius</td>
+<td>distance=5.0</td>
+</tr>
+<tr><td>distance_units</td>
+<td>miles or kms (default)</td>
+<td>distance_units=miles</td>
+</tr>
+</tbody>
+</table>
+<p>These parameters can be combined using the normal HTTP GET parameters notation, e.g.:</p>
+<pre class="literal-block">
+GET http://api.cosm.com/v2/feeds?lat=51.52&amp;lon=0.13&amp;distance=100.0&amp;q=energy
+</pre>
+<p>An example using curl is:</p>
+<pre class="code-block bash literal-block">
+curl --request GET --header <span class="s2">&quot;X-ApiKey: YOUR_API_KEY_HERE&quot;</span> http://api.cosm.com/v2/feeds?lat<span class="o">=</span>51.52&amp;lon<span class="o">=</span>0.13&amp;distance<span class="o">=</span>100.0&amp;q<span class="o">=</span>energy
+
+</pre>
+<p>Here's an example request you can try using <a class="reference external" href="http://hurl.it?url=http://api.cosm.com/v2/feeds.json%3Flat=51.52%26lon=0.13%26distance=100%26q=energy&amp;header-keys[]=X-ApiKey&amp;header-vals[]=YOUR_API_KEY_HERE">hurl.it</a>. You'll need to supply your own API key for this to work.</p>
+<p>Note that these requests may be cached for up to a minute.</p>
+<p>The output formats are as follows:</p>
+<div class="section" id="examples">
+<h2>Examples</h2>
+<div class="section" id="json">
+<h3>JSON</h3>
+<pre class="code-block javascript literal-block">
+<span class="p">{</span>
+  <span class="s2">&quot;totalResults&quot;</span><span class="o">:</span><span class="mi">4299</span><span class="p">,</span>
+  <span class="s2">&quot;results&quot;</span><span class="o">:</span><span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;feed&quot;</span><span class="o">:</span><span class="s2">&quot;http://api.cosm.com/v2/feeds/5853.json&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;title&quot;</span><span class="o">:</span><span class="s2">&quot;bridge19&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span><span class="o">:</span><span class="s2">&quot;live&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;version&quot;</span><span class="o">:</span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;creator&quot;</span><span class="o">:</span><span class="s2">&quot;url&quot;</span><span class="o">:</span><span class="s2">&quot;https://cosm.com/users/hdr&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;updated&quot;</span><span class="o">:</span><span class="s2">&quot;2010-06-08T09:30:21.472927Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;created&quot;</span><span class="o">:</span><span class="s2">&quot;2010-05-03T23:43:01.238734Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;location&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;domain&quot;</span><span class="o">:</span><span class="s2">&quot;physical&quot;</span><span class="p">},</span>
+      <span class="s2">&quot;tags&quot;</span><span class="o">:</span><span class="p">[</span>
+          <span class="s2">&quot;Tag1&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Tag2&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;datastreams&quot;</span><span class="o">:</span><span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;max_value&quot;</span><span class="o">:</span><span class="s2">&quot;10000.0&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;tags&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;humidity&quot;</span><span class="p">],</span>
+          <span class="s2">&quot;current_value&quot;</span><span class="o">:</span><span class="s2">&quot;435&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;min_value&quot;</span><span class="o">:</span><span class="s2">&quot;-10.0&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;at&quot;</span><span class="o">:</span><span class="s2">&quot;2010-07-02T10:21:57.101496Z&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;0&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;max_value&quot;</span><span class="o">:</span><span class="s2">&quot;10000.0&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;tags&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;humidity&quot;</span><span class="p">],</span>
+          <span class="s2">&quot;current_value&quot;</span><span class="o">:</span><span class="s2">&quot;herz&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;min_value&quot;</span><span class="o">:</span><span class="s2">&quot;-10.0&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;at&quot;</span><span class="o">:</span><span class="s2">&quot;2010-07-02T10:21:57.176209Z&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="s2">&quot;1&quot;</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+    <span class="p">{</span><span class="s2">&quot;feed&quot;</span><span class="o">:</span> <span class="p">...</span>
+
+    <span class="p">...}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+
+</pre>
+</div>
+<div class="section" id="xml">
+<h3>XML</h3>
+<p>Documents returned in XML format have been extended to include Open Search response elements in the following form:</p>
+<pre class="code-block xml literal-block">
+<span class="nt">&lt;eeml</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.eeml.org/xsd/0.5.1&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xmlns:opensearch=</span><span class="s">&quot;http://a9.com/-/spec/opensearch/1.1/&quot;</span> <span class="na">version=</span><span class="s">&quot;0.5.1&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.eeml.org/xsd/0.5.1 http://www.eeml.org/xsd/0.5.1/0.5.1.xsd&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;opensearch:totalResults&gt;</span>4299<span class="nt">&lt;/opensearch:totalResults&gt;</span>
+  <span class="nt">&lt;opensearch:startIndex&gt;</span>0<span class="nt">&lt;/opensearch:startIndex&gt;</span>
+  <span class="nt">&lt;opensearch:itemsPerPage&gt;</span>50<span class="nt">&lt;/opensearch:itemsPerPage&gt;</span>
+  <span class="nt">&lt;environment</span> <span class="na">updated=</span><span class="s">&quot;2010-06-08T09:30:21.472927Z&quot;</span> <span class="na">created=</span><span class="s">&quot;2010-05-03T23:43:01.238734Z&quot;</span> <span class="na">id=</span><span class="s">&quot;5853&quot;</span> <span class="na">creator=</span><span class="s">&quot;https://cosm.com/users/hdr&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>bridge19<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;feed&gt;</span>http://api.cosm.com/v2/feeds/5853.xml<span class="nt">&lt;/feed&gt;</span>
+    <span class="nt">&lt;status&gt;</span>live<span class="nt">&lt;/status&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>Tag1<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>Tag2<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;location</span> <span class="na">domain=</span><span class="s">&quot;physical&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;lat/&gt;</span>
+      <span class="nt">&lt;lon/&gt;</span>
+    <span class="nt">&lt;/location&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;tag&gt;</span>watts<span class="nt">&lt;/tag&gt;</span>
+      <span class="nt">&lt;min_value&gt;</span>0.0<span class="nt">&lt;/min_value&gt;</span>
+      <span class="nt">&lt;max_value&gt;</span>4355.0<span class="nt">&lt;/max_value&gt;</span>
+      <span class="nt">&lt;current_value</span> <span class="na">at=</span><span class="s">&quot;2010-06-30T13:36:34.830647Z&quot;</span><span class="nt">&gt;</span>126<span class="nt">&lt;/current_value&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
+  <span class="nt">&lt;/environment&gt;</span>
+  ...
+<span class="nt">&lt;/eeml&gt;</span>
+
+</pre>
+</div>
+<div class="section" id="csv">
+<h3>CSV</h3>
+<pre class="code-block csv literal-block">
+7441,1,2010-06-01T12:01:32.1Z,123
+7441,2,2010-06-01T12:01:32.1Z,456
+&lt;feed_id&gt;,&lt;stream_id&gt;,&lt;retrieved_at&gt;,&lt;value&gt;
+
+</pre>
+</div>
+</div>
+    	<footer class="reduced-screen">
+        © 2011 Cosm, a LogMeIn company
+      </footer>
+	  </article>
+  </div> <!-- //#container -->
+	  
+  <aside class="main">
+  	<p>Test Widget</p>
+  </aside>
+  
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>  
+
+  <script>window.jQuery || document.write('<script src="../../assets/jquery-1.7.0.min.js"><\/script>')</script>
+  <script defer src="../../assets/script.js"></script>
+
+
+
+
+  <script>
+    window._gaq=[["_setAccount","UA-20796726-1"],["_trackPageview"],['_trackPageLoadTime'],['_setDomainName','.cosm.com'],['_setAllowHash', false]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+  
+  <!-- chrome frame -->
+	<!--[if lt IE 7 ]>
+		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+</body>
+</html>

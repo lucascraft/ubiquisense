@@ -1,0 +1,404 @@
+<html><!--This file created 5:37 AM  5/7/2004 by Claris Home Page version 3.0--><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+   <title>The Bezier Curve</title>
+   <meta name="GENERATOR" content="Claris Home Page 3.0">
+   </head><body bgcolor="#FFFFFF"><x-claris-window top="32" bottom="587" left="4" right="534">
+   <x-claris-tagview mode="minimal">
+
+
+<p>&nbsp;<font face="New Century Schlbk"><b><img src="BezierCurveMod_fichiers/brul.gif" align="left" height="34" width="68"><img src="BezierCurveMod_fichiers/brur.gif" align="right" height="34" width="68"></b></font></p>
+
+<center><font color="#0000FF" face="New Century Schlbk" size="+1"><b>Module</b></font>
+
+<p><font color="#0000FF" face="New Century Schlbk" size="+1"><b>for</b></font></p>
+
+<p><a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod/Links/BezierCurveMod_lnk_1.html"><font color="#0000FF" size="+1"><b>The
+Bézier Curve</b></font></a></p></center>
+
+<p>&nbsp; &nbsp;</p>
+
+<p><font color="#0000FF"><b>Background.</b></font></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The <a href="http://mathworld.wolfram.com/BezierCurve.html"><font color="#0000FF">Bézier
+Curve</font></a> is the original computer generated "French Curve"
+and it's discovery is attributed to the French engineer, <a href="http://rocbo.chez.tiscali.fr/Max/culture/bezier/bezier.htm"><font color="#0000FF">Pierre
+Bézier</font></a>.&nbsp;&nbsp;Let us first review ideas
+concerning the cubic polynomial of degree 3 passes through the
+4&nbsp;&nbsp;points <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_1.gif" alt="[Graphics:Images/BezierCurveMod_gr_1.gif]" align="absmiddle" border="0" height="17" width="57">
+for&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_2.gif" alt="[Graphics:Images/BezierCurveMod_gr_2.gif]" align="absmiddle" border="0" height="17" width="75">&nbsp;&nbsp;and
+is shown in Figure 1.&nbsp;&nbsp;<br>
+</p>
+
+<blockquote><img src="BezierCurveMod_fichiers/BezierCurveMod_gr_3.gif" alt="[Graphics:Images/BezierCurveMod_gr_3.gif]" align="absmiddle" border="0" height="173" hspace="4" width="288"></blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FF00FF"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure
+1.</b></font></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF0000"><b>Example 1.</b></font>&nbsp;&nbsp;Find the
+cubic polynomial or that <font color="#FF00FF">passes through the
+four points</font><br>
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_4.gif" alt="[Graphics:Images/BezierCurveMod_gr_4.gif]" align="absmiddle" border="0" height="30" width="238">&nbsp;&nbsp;and
+satisfies<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_5.gif" alt="[Graphics:Images/BezierCurveMod_gr_5.gif]" align="absmiddle" border="0" height="104" width="78">&nbsp;&nbsp;<br>
+<a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod/Links/BezierCurveMod_lnk_2.html"><font color="#FF00FF"><b>Solution
+1.</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#0000FF"><b>Background for Hermite Interpolating
+Polynomial.</b></font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The cubic Hermite
+polynomial&nbsp;&nbsp;p(x)&nbsp;&nbsp;has the interpolative
+properties&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_29.gif" alt="[Graphics:Images/BezierCurveMod_gr_29.gif]" align="absmiddle" border="0" height="17" width="70">&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_30.gif" alt="[Graphics:Images/BezierCurveMod_gr_30.gif]" align="absmiddle" border="0" height="17" width="70">&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_31.gif" alt="[Graphics:Images/BezierCurveMod_gr_31.gif]" align="absmiddle" border="0" height="17" width="79">&nbsp;&nbsp;and&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_32.gif" alt="[Graphics:Images/BezierCurveMod_gr_32.gif]" align="absmiddle" border="0" height="17" width="79">&nbsp;&nbsp;both
+the function values and their derivatives are known at the
+<font color="#FF00FF">endpoints</font> of the
+interval&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_33.gif" alt="[Graphics:Images/BezierCurveMod_gr_33.gif]" align="absmiddle" border="0" height="17" width="55">.&nbsp;&nbsp;The
+Hermite polynomial is referred to as a "clamped cubic," where
+"clamped" refers to the slope at the endpoints being
+fixed.&nbsp;&nbsp;This situation is illustrated in Figure
+2.&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<blockquote><img src="BezierCurveMod_fichiers/BezierCurveMod_gr_34.gif" alt="[Graphics:Images/BezierCurveMod_gr_34.gif]" align="absmiddle" border="0" height="173" hspace="4" width="288"></blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FF00FF"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure
+2.</b></font></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF0000"><b>Example 2.</b></font>&nbsp;&nbsp;Find the
+cubic Hermite polynomial or "clamped cubic" that
+satisfies&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_35.gif" alt="[Graphics:Images/BezierCurveMod_gr_35.gif]" align="absmiddle" border="0" height="74" width="65">&nbsp;&nbsp;<br>
+<a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod/Links/BezierCurveMod_lnk_3.html"><font color="#FF00FF"><b>Solution
+2.</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#0000FF"><b>The Bézier Curve</b></font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The Bézier curve was originally used
+by&nbsp;&nbsp;<a href="http://rocbo.chez.tiscali.fr/Max/culture/bezier/bezier.htm"><font color="#0000FF">Pierre
+Bézier</font></a>&nbsp;&nbsp;for CAD/CAM operations at Renault
+motor car company.&nbsp;&nbsp;Bézier curves are the basis of
+the entire Adobe PostScript drawing model which is used in the
+software products: Adobe Illustrator, Macromedia Freehand and
+Fontographer.&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#0000FF"><b>Construction of the Bézier
+Curve</b></font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A cubic Bézier curve is defined by
+four points. Two of the points are endpoints to the curve, <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_70.gif" alt="[Graphics:Images/BezierCurveMod_gr_70.gif]" align="absmiddle" border="0" height="17" width="55">
+is the starting point and&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_71.gif" alt="[Graphics:Images/BezierCurveMod_gr_71.gif]" align="absmiddle" border="0" height="17" width="55">is
+the destination point. The points <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_72.gif" alt="[Graphics:Images/BezierCurveMod_gr_72.gif]" align="absmiddle" border="0" height="17" width="128">
+are control points or "handles."&nbsp;&nbsp;A parametric formula for
+the curve is&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_73.gif" alt="[Graphics:Images/BezierCurveMod_gr_73.gif]" align="absmiddle" border="0" height="17" width="128">
+where <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_74.gif" alt="[Graphics:Images/BezierCurveMod_gr_74.gif]" align="absmiddle" border="0" height="17" width="86">
+are cubic equations defined in the interval <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_75.gif" alt="[Graphics:Images/BezierCurveMod_gr_75.gif]" align="absmiddle" border="0" height="17" width="53">&nbsp;&nbsp;as
+shown in Figure 3.</p>
+
+<p>&nbsp;</p>
+
+<blockquote><img src="BezierCurveMod_fichiers/BezierCurveMod_gr_76.gif" alt="[Graphics:Images/BezierCurveMod_gr_76.gif]" align="absmiddle" border="0" height="173" hspace="4" width="288"></blockquote>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FF00FF"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure
+3.</b></font></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#0000FF"><b>Theorem (Bézier
+Curve).</b></font>&nbsp;&nbsp;The <font color="#0000FF">parametric
+equations</font> for&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_77.gif" alt="[Graphics:Images/BezierCurveMod_gr_77.gif]" align="absmiddle" border="0" height="17" width="86">
+for the Bézier curve&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_78.gif" alt="[Graphics:Images/BezierCurveMod_gr_78.gif]" align="absmiddle" border="0" height="17" width="128">
+are given by&nbsp;&nbsp;&nbsp;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_79.gif" alt="[Graphics:Images/BezierCurveMod_gr_79.gif]" align="absmiddle" border="0" height="17" width="418">,&nbsp;&nbsp;<br>
+and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_80.gif" alt="[Graphics:Images/BezierCurveMod_gr_80.gif]" align="absmiddle" border="0" height="17" width="418">&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_81.gif" alt="[Graphics:Images/BezierCurveMod_gr_81.gif]" align="absmiddle" border="0" height="17" width="53">.&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF00FF" face="New Century Schlbk"><b>Proof&nbsp;&nbsp;</b></font><a href="http://www.ecs.fullerton.edu/%7Emathews/n2003/BezierCurveProof.html"><font color="#0000FF"><b>The
+Bézier Curve</b></font></a>&nbsp;&nbsp;<a href="http://math.fullerton.edu/mathews/n2003/BezierCurveProof.html"><font color="#0000FF"><b>The
+Bézier Curve</b></font></a>&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF0000"><b>Example 3.</b></font>&nbsp;&nbsp;Find the
+Bézier curve which has the starting at the point <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_82.gif" alt="[Graphics:Images/BezierCurveMod_gr_82.gif]" align="absmiddle" border="0" height="17" width="108">
+and destination point <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_83.gif" alt="[Graphics:Images/BezierCurveMod_gr_83.gif]" align="absmiddle" border="0" height="17" width="108">
+which has the control points <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_84.gif" alt="[Graphics:Images/BezierCurveMod_gr_84.gif]" align="absmiddle" border="0" height="17" width="122">
+and <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_85.gif" alt="[Graphics:Images/BezierCurveMod_gr_85.gif]" align="absmiddle" border="0" height="17" width="122">,
+respectively.&nbsp;&nbsp;Use the parametric equations to form
+the&nbsp;&nbsp;Bézier curve.<br>
+<a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod/Links/BezierCurveMod_lnk_4.html"><font color="#FF00FF"><b>Solution
+3.</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#0000FF"><b>More background</b></font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If a control point is chosen farther away
+from a endpoint, (but in the same direction), then the Bézier
+curve will more closely approximate the tangent line near that
+endpoint.&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF0000"><b>Example 4.</b></font>&nbsp;&nbsp;Find the
+Bézier curve which starts at <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_97.gif" alt="[Graphics:Images/BezierCurveMod_gr_97.gif]" align="absmiddle" border="0" height="17" width="108">
+and ends at <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_98.gif" alt="[Graphics:Images/BezierCurveMod_gr_98.gif]" align="absmiddle" border="0" height="17" width="108">
+which has the control points <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_99.gif" alt="[Graphics:Images/BezierCurveMod_gr_99.gif]" align="absmiddle" border="0" height="17" width="108">
+and <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_100.gif" alt="[Graphics:Images/BezierCurveMod_gr_100.gif]" align="absmiddle" border="0" height="17" width="116">,
+respectively.&nbsp;&nbsp;<br>
+<a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod/Links/BezierCurveMod_lnk_5.html"><font color="#FF00FF"><b>Solution
+4.</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF0000"><b>Example 5.</b></font>&nbsp;&nbsp;Compare
+the Bézier curve which starts at <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_110.gif" alt="[Graphics:Images/BezierCurveMod_gr_110.gif]" align="absmiddle" border="0" height="17" width="108">
+and ends at <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_111.gif" alt="[Graphics:Images/BezierCurveMod_gr_111.gif]" align="absmiddle" border="0" height="17" width="108">
+given in examples 3 and 4.&nbsp;&nbsp;<br>
+<a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod/Links/BezierCurveMod_lnk_6.html"><font color="#FF00FF"><b>Solution
+5.</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#0000FF"><b>Bernstein polynomials.</b></font><br>
+<br>
+<font color="#0000FF"><b>Definition (Bernstein
+Polynomials).</b></font>&nbsp;&nbsp;The <a href="http://mathworld.wolfram.com/BernsteinPolynomial.html"><font color="#0000FF">Bernstein
+polynomials</font></a> of degree <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_116.gif" alt="[Graphics:Images/BezierCurveMod_gr_116.gif]" align="absmiddle" border="0" height="17" width="11">
+are&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_117.gif" alt="[Graphics:Images/BezierCurveMod_gr_117.gif]" align="absmiddle" border="0" height="29" width="172">,
+for <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_118.gif" alt="[Graphics:Images/BezierCurveMod_gr_118.gif]" align="absmiddle" border="0" height="17" width="113">,&nbsp;&nbsp;where
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_119.gif" alt="[Graphics:Images/BezierCurveMod_gr_119.gif]" align="absmiddle" border="0" height="32" width="123">.&nbsp;&nbsp;<br>
+<a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod/Links/BezierCurveMod_lnk_7.html"><font color="#FF00FF"><b>Exploration.</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#0000FF"><b>Construction of the Bézier Curve
+using Bernstein polynomials.</b></font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The coordinate
+functions&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_164.gif" alt="[Graphics:Images/BezierCurveMod_gr_164.gif]" align="absmiddle" border="0" height="17" width="32">
+and&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_165.gif" alt="[Graphics:Images/BezierCurveMod_gr_165.gif]" align="absmiddle" border="0" height="17" width="32">
+for the&nbsp;&nbsp;Bézier curve we are using can written as a
+linear combinations of the Bernstein polynomials<br>
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_166.gif" alt="[Graphics:Images/BezierCurveMod_gr_166.gif]" align="absmiddle" border="0" height="17" width="226">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_167.gif" alt="[Graphics:Images/BezierCurveMod_gr_167.gif]" align="absmiddle" border="0" height="39" width="132">,&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_168.gif" alt="[Graphics:Images/BezierCurveMod_gr_168.gif]" align="absmiddle" border="0" height="39" width="132">.&nbsp;&nbsp;<br>
+<br>
+Verify that the two functions&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_169.gif" alt="[Graphics:Images/BezierCurveMod_gr_169.gif]" align="absmiddle" border="0" height="17" width="32">&nbsp;&nbsp;and
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_170.gif" alt="[Graphics:Images/BezierCurveMod_gr_170.gif]" align="absmiddle" border="0" height="17" width="32">
+are the same.&nbsp;&nbsp;</p>
+
+<pre><b><code><img src="BezierCurveMod_fichiers/BezierCurveMod_gr_171.gif" alt="[Graphics:Images/BezierCurveMod_gr_171.gif]" align="absmiddle" border="0" height="61" hspace="45" width="144">
+
+</code></b><samp><img src="BezierCurveMod_fichiers/BezierCurveMod_gr_172.gif" alt="[Graphics:Images/BezierCurveMod_gr_172.gif]" align="absmiddle" border="0" height="17" hspace="47" width="32">
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_173.gif" alt="[Graphics:Images/BezierCurveMod_gr_173.gif]" align="absmiddle" border="0" height="17" hspace="47" width="295">
+
+</samp><b><code><img src="BezierCurveMod_fichiers/BezierCurveMod_gr_174.gif" alt="[Graphics:Images/BezierCurveMod_gr_174.gif]" align="absmiddle" border="0" height="58" hspace="45" width="204">
+
+</code></b><samp><img src="BezierCurveMod_fichiers/BezierCurveMod_gr_175.gif" alt="[Graphics:Images/BezierCurveMod_gr_175.gif]" align="absmiddle" border="0" height="17" hspace="47" width="32">
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_176.gif" alt="[Graphics:Images/BezierCurveMod_gr_176.gif]" align="absmiddle" border="0" height="17" hspace="47" width="442">
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_177.gif" alt="[Graphics:Images/BezierCurveMod_gr_177.gif]" align="absmiddle" border="0" height="17" hspace="47" width="491">
+</samp></pre>
+
+<p>Similarly, the two functions&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_178.gif" alt="[Graphics:Images/BezierCurveMod_gr_178.gif]" align="absmiddle" border="0" height="17" width="32">&nbsp;&nbsp;and&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_179.gif" alt="[Graphics:Images/BezierCurveMod_gr_179.gif]" align="absmiddle" border="0" height="17" width="32">
+are the same.&nbsp;&nbsp;<br>
+To verify we have the correct end conditions, we can
+evaluate&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_180.gif" alt="[Graphics:Images/BezierCurveMod_gr_180.gif]" align="absmiddle" border="0" height="17" width="32">&nbsp;&nbsp;and
+its derivative at <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_181.gif" alt="[Graphics:Images/BezierCurveMod_gr_181.gif]" align="absmiddle" border="0" height="17" width="32">
+and <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_182.gif" alt="[Graphics:Images/BezierCurveMod_gr_182.gif]" align="absmiddle" border="0" height="17" width="32">,&nbsp;&nbsp;and
+see if it has the required properties.&nbsp;&nbsp;</p>
+
+<pre><b><code><img src="BezierCurveMod_fichiers/BezierCurveMod_gr_183.gif" alt="[Graphics:Images/BezierCurveMod_gr_183.gif]" align="absmiddle" border="0" height="181" hspace="45" width="246">
+
+</code></b><samp><img src="BezierCurveMod_fichiers/BezierCurveMod_gr_184.gif" alt="[Graphics:Images/BezierCurveMod_gr_184.gif]" align="absmiddle" border="0" height="17" hspace="45" width="351">
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_185.gif" alt="[Graphics:Images/BezierCurveMod_gr_185.gif]" align="absmiddle" border="0" height="17" hspace="45" width="73">
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_186.gif" alt="[Graphics:Images/BezierCurveMod_gr_186.gif]" align="absmiddle" border="0" height="17" hspace="45" width="73">
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_187.gif" alt="[Graphics:Images/BezierCurveMod_gr_187.gif]" align="absmiddle" border="0" height="17" hspace="45" width="4">
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_188.gif" alt="[Graphics:Images/BezierCurveMod_gr_188.gif]" align="absmiddle" border="0" height="17" hspace="45" width="503">
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_189.gif" alt="[Graphics:Images/BezierCurveMod_gr_189.gif]" align="absmiddle" border="0" height="17" hspace="45" width="130">
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_190.gif" alt="[Graphics:Images/BezierCurveMod_gr_190.gif]" align="absmiddle" border="0" height="17" hspace="45" width="130">
+</samp></pre>
+
+<p>Recall that this is what we wanted in the first
+construction.&nbsp;&nbsp;</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_191.gif" alt="[Graphics:Images/BezierCurveMod_gr_191.gif]" align="absmiddle" border="0" height="17" width="160">&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_192.gif" alt="[Graphics:Images/BezierCurveMod_gr_192.gif]" align="absmiddle" border="0" height="17" width="168">&nbsp;&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#0000FF"><b>Justification for the factor
+3.</b></font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Since we want the two constructions of the
+Bézier curve to be the same, it is common practice to use the
+term <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_193.gif" alt="[Graphics:Images/BezierCurveMod_gr_193.gif]" align="absmiddle" border="0" height="17" width="69">
+in the development of the parametric equations.&nbsp;&nbsp;Similarly
+the term&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_194.gif" alt="[Graphics:Images/BezierCurveMod_gr_194.gif]" align="absmiddle" border="0" height="17" width="74">
+is justified.&nbsp;&nbsp;</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;The construction of a Bézier curve
+using Bernstein polynomials is more appealing mathematically because
+the coefficients in the linear combination are just the coordinates
+of the given four points.&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF0000"><b>Example 6.</b></font>&nbsp;&nbsp;Find the
+Bézier curve which starts at <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_195.gif" alt="[Graphics:Images/BezierCurveMod_gr_195.gif]" align="absmiddle" border="0" height="17" width="108">
+and ends at <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_196.gif" alt="[Graphics:Images/BezierCurveMod_gr_196.gif]" align="absmiddle" border="0" height="17" width="108">
+which has the control points <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_197.gif" alt="[Graphics:Images/BezierCurveMod_gr_197.gif]" align="absmiddle" border="0" height="17" width="108">
+and <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_198.gif" alt="[Graphics:Images/BezierCurveMod_gr_198.gif]" align="absmiddle" border="0" height="17" width="116">,
+respectively.<br>
+Use Bernstein polynomials.&nbsp;&nbsp;<br>
+<a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod/Links/BezierCurveMod_lnk_8.html"><font color="#FF00FF"><b>Solution
+6.</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#8000FE"><b>Computer
+Programs</b></font>&nbsp;&nbsp;<a href="http://www.ecs.fullerton.edu/%7Emathews/n2003/BezierCurveProg.html"><font color="#0000FF"><b>The
+Bézier Curve</b></font></a>&nbsp;&nbsp;<a href="http://math.fullerton.edu/mathews/n2003/BezierCurveProg.html"><font color="#0000FF"><b>The
+Bézier Curve</b></font></a>&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#8000FE"><b>Mathematica Subroutine
+</b></font><font color="#8000FE" face="Times New Roman"><b>(</b></font><font color="#8000FE"><b>Bézier
+Curve).</b></font>&nbsp;&nbsp;Construct the Bézier given
+endpoints <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_211.gif" alt="[Graphics:Images/BezierCurveMod_gr_211.gif]" align="absmiddle" border="0" height="17" width="55">
+and&nbsp;&nbsp;<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_212.gif" alt="[Graphics:Images/BezierCurveMod_gr_212.gif]" align="absmiddle" border="0" height="17" width="55">and
+control points <img src="BezierCurveMod_fichiers/BezierCurveMod_gr_213.gif" alt="[Graphics:Images/BezierCurveMod_gr_213.gif]" align="absmiddle" border="0" height="17" width="128">.&nbsp;&nbsp;<br>
+For illustration purposes the variables <b>pts</b>, <b>ctr</b> and
+<b>lin</b> are used to help form dots and control lines for the graph
+we will draw.&nbsp;&nbsp;&nbsp;&nbsp;<br>
+This is for pedagogical purposes, and usually they would not be
+necessary.&nbsp;&nbsp;</p>
+
+<pre><b><code><img src="BezierCurveMod_fichiers/BezierCurveMod_gr_214.gif" alt="[Graphics:Images/BezierCurveMod_gr_214.gif]" align="absmiddle" border="0" height="185" hspace="45" width="556">
+
+</code></b></pre>
+
+<p><font color="#FF0000"><b>Example 7.</b></font>&nbsp;&nbsp;Find
+composite Bézier curve for the data given below.<br>
+<br>
+<img src="BezierCurveMod_fichiers/BezierCurveMod_gr_215.gif" alt="[Graphics:Images/BezierCurveMod_gr_215.gif]" align="absmiddle" border="0" height="74" width="254"></p>
+
+<p><a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod/Links/BezierCurveMod_lnk_9.html"><font color="#FF00FF"><b>Solution
+7.</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF0000"><b>Example 8.</b></font>&nbsp;&nbsp;Let use
+<i>Mathematica</i>'s Bézier curve fit procedure.<br>
+The following example is found in
+the&nbsp;&nbsp;"Help"&nbsp;&nbsp;menu
+under&nbsp;&nbsp;Add-ons;&nbsp;&nbsp;Standard
+Packages;&nbsp;&nbsp;NumericalMath;&nbsp;&nbsp;SplineFit.&nbsp;&nbsp;<br>
+Find the "spline fit" through&nbsp;&nbsp;(0,0), (1,2), (-1,3), (0,1),
+(3,0).&nbsp;&nbsp;</p>
+
+<p><a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod/Links/BezierCurveMod_lnk_10.html"><font color="#FF00FF"><b>Solution
+8.</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF0000"><b>Example 9.</b></font>&nbsp;&nbsp;What is
+the nature of the&nbsp;&nbsp;"spline fit"&nbsp;&nbsp;constructed by
+<i>Mathematica</i> ?</p>
+
+<p><a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod/Links/BezierCurveMod_lnk_11.html"><font color="#FF00FF"><b>Solution
+9.</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#8000FE" size="+1"><b>Research Experience for
+Undergraduates</b></font></p>
+
+<p><a href="http://www.ecs.fullerton.edu/%7Emathews/n2003/BezierCurveBib.html"><font color="#0000FF"><b>The
+Bézier Curve</b></font></a>&nbsp;&nbsp;<a href="http://math.fullerton.edu/mathews/n2003/BezierCurveBib.html"><font color="#0000FF"><b>The
+Bézier Curve</b></font></a>&nbsp;&nbsp;Internet hyperlinks to
+web sites and a bibliography of articles.&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FF00FF" face="TimesNewRoman"><b>Download this
+Mathematica Notebook</b></font><font face="TimesNewRoman">
+</font><a href="http://math.fullerton.edu/mathews/n2003/bezier/BezierCurveMod.nb"><font color="#0000FF" face="TimesNewRoman"><b>The
+Bézier Curve</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p><a href="http://math.fullerton.edu/mathews/numerical.html"><font color="#FF0000" face="TimesNewRoman"><b>Return
+to Numerical Methods - Numerical Analysis</b></font></a></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font color="#99FF99" face="New Century Schlbk" size="-1">(c) John
+H. Mathews 2004</font></p>
+
+<p></p>
+
+
+</x-claris-tagview></x-claris-window></body></html>

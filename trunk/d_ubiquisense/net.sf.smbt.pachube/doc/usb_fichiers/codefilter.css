@@ -1,0 +1,11 @@
+div.codeblock {
+  margin: 1.0em 0em 1.0em 0em ;
+  padding: 5px;
+  border: 1px solid #CCC;
+  background-color: #EEE;
+font-size:0.8em;
+}
+
+td.type {
+font-size:0.8em;
+}

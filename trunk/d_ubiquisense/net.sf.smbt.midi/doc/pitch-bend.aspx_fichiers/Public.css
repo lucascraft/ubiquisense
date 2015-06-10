@@ -1,0 +1,205 @@
+.Caption {
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-bottom: 15px;
+	font-size: 11px;
+	font-weight: bold;
+	font-family: Verdana;
+	color: #555555;
+}
+
+.Centered {
+	margin-top: 60px;
+	text-align: center;
+}
+
+img.Compact {
+	margin-top: 0px;
+}
+
+.Dynamic {
+	display: none;
+}
+
+.EncBanner {
+	position: absolute;
+	top: 25px;
+	left:340px;
+}
+
+.EncBannerArchive {
+	position: absolute;
+	top: 25px;
+	left:520px;
+}
+
+.EncCredit {
+	margin-top: 35px;
+	font-style: italic;
+}
+
+.EncIndexEntry {
+	margin-left: 30px;
+}
+
+.EncRule {
+	margin-top: 12px;
+	margin-bottom: 60px;
+	font-size: 24px;
+	font-weight: bolder;
+	font-family: "Courier New";
+	color: #0000BB;
+	text-align: center;
+}
+
+.FormSection {
+	margin-top: 25px;
+}
+
+.FormDiv {
+	margin-top: 10px;
+}
+
+.Informal {
+}
+
+.ImageCaption {
+	color: #555555;
+	font-size: 11px;
+	font-family: "Arial Black";
+}
+
+img.Informal {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	margin-right: 20px;
+	margin-left: 20px;
+	border-style: none;
+}
+
+.IntervalBanner {
+	position: absolute;
+	top: 25px;
+	left:570px;
+}
+
+.IntervalBannerArticle {
+	position: absolute;
+	top: 25px;
+	left:500px;
+}
+
+.LogoNote {
+	position: absolute;
+	left: 36px;
+	top: 19px;
+	z-index: 1002;
+	margin-top: 0px;
+	border-style: none;
+}
+
+.LogoText {
+	position: absolute;
+	left: 118px;
+	top: 24px;
+	z-index: 1000;
+	margin-top: 0px;
+	border-style: none;
+}
+
+.MenuGroup {
+	position: absolute;
+	padding-left: 13px;
+	padding-right: 13px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	border-style: dotted;
+	border-width: 1px;
+	border-color: #FF0000;
+	z-index: 100000;
+	color: #993300;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 14px;
+	background-color: #989DF4;
+	background-image: url(http://tonalsoft.com/style/images/MenuBack.jpg);
+	background-repeat: repeat;
+	visibility: hidden;
+}
+
+.Menu {
+	font-family: Arial;
+	font-weight: normal;
+	line-height: 17px;
+}
+
+a.Menu:active {
+	color: #FFFF86;
+}
+
+a.Menu:link {
+	color: #FFFF86;
+}
+
+a.Menu:visited {
+	color: #FFFF86;
+}
+
+a.Menu:hover {
+	color: #000000;
+}
+
+.MicroBanner {
+	position: absolute;
+	top: 25px;
+	left: 580px;
+}
+
+.MicroBannerArchive {
+	position: absolute;
+	top: 25px;
+	left: 510px;
+}
+
+.Padded {
+	margin-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.PitchBanner {
+	position: absolute;
+	top: 25px;
+	left: 580px;
+}
+
+.PitchBannerArchive {
+	position: absolute;
+	top: 25px;
+	left: 510px;
+}
+
+.TuneBanner {
+	position: absolute;
+	top: 25px;
+	left: 370px;
+}
+
+.TuneBannerArchive {
+	position: absolute;
+	top: 25px;
+	left: 350px;
+}
+
+.UpdateBanner {
+	position: absolute;
+	top: 25px;
+	left: 560px;
+}
+
+.UpdateBannerArchive {
+	position: absolute;
+	top: 25px;
+	left: 490px;
+}

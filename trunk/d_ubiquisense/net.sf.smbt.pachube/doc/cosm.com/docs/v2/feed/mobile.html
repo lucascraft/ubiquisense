@@ -1,0 +1,398 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Mobile feeds - Cosm API Documentation</title>
+	<!-- TODO: fill this -->
+	<meta name="description" content="API Documentation">
+	<meta name="author" content="Cosm">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<!-- css -->
+
+  <link rel="stylesheet" href="../../assets/style.css">
+
+	
+	<!-- modernizr -->  
+
+  <script src="../../assets/modernizr.js"></script>
+
+</head>
+
+<body>
+  <header class="main">
+  	<hgroup class="g1">
+  		<h1><a href="https://cosm.com/" title="Go to Cosm.com">Cosm</a></h1>
+  		<h2><a href="https://cosm.com/docs/" title="Go to Documentation Home">API Documentation</a></h2>
+  	</hgroup>
+  	<aside>
+      © 2011 Cosm, a LogMeIn company
+    </aside>
+    <nav class="reduced-screen">
+      <a class="icon list" href="mobile.html#" title="Toggle sidebar">Toggle sidebar</a>
+    </nav>
+  </header>
+  
+  <nav class="main">
+  	<ul><li><a href="https://cosm.com/docs/">Documentation Home</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/">Quickstarts</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/curl.html">Start using curl</a>
+</li><li><a href="https://cosm.com/docs/quickstart/twitter.html">Track your Twitter stats</a>
+</li></ul></li><li><a href="../index.html">API Documentation</a>
+<ul><li><a href="../authentication.html">Authentication</a>
+</li><li><a href="index.html">Feeds</a>
+<ul><li><a href="create.html">Creating a feed</a>
+</li><li><a href="update.html">Updating a feed</a>
+</li><li><a href="list.html">Listing all feeds</a>
+</li><li><a href="show.html">Viewing a feed</a>
+</li><li><a href="delete.html">Deleting a feed</a>
+</li><li class="selected"><a href="mobile.html">Mobile feeds</a>
+</li></ul></li><li><a href="../datastream/index.html">Datastreams</a>
+<ul><li><a href="../datastream/create.html">Creating a datastream</a>
+</li><li><a href="../datastream/update.html">Updating a datastream</a>
+</li><li><a href="../datastream/list.html">Listing all datastreams</a>
+</li><li><a href="../datastream/show.html">Viewing a datastream</a>
+</li><li><a href="../datastream/delete.html">Deleting a datastream</a>
+</li></ul></li><li><a href="../datapoint/index.html">Datapoints</a>
+<ul><li><a href="../datapoint/create.html">Creating a datapoint</a>
+</li><li><a href="../datapoint/update.html">Updating a datapoint</a>
+</li><li><a href="../datapoint/list.html">Listing all datapoints</a>
+</li><li><a href="../datapoint/show.html">Viewing a datapoint</a>
+</li><li><a href="../datapoint/delete.html">Deleting a datapoint</a>
+</li><li><a href="../datapoint/delete_bulk.html">Deleting multiple datapoints</a>
+</li></ul></li><li><a href="../api_key/index.html">Api Keys</a>
+<ul><li><a href="../api_key/create.html">Creating an API key</a>
+</li><li><a href="../api_key/update.html">Updating an API key</a>
+</li><li><a href="../api_key/list.html">Listing all API keys</a>
+</li><li><a href="../api_key/show.html">Viewing an API key</a>
+</li><li><a href="../api_key/delete.html">Deleting an API key</a>
+</li></ul></li><li><a href="../trigger/index.html">Triggers</a>
+<ul><li><a href="../trigger/create.html">Creating a trigger</a>
+</li><li><a href="../trigger/update.html">Updating a trigger</a>
+</li><li><a href="../trigger/list.html">Listing all triggers</a>
+</li><li><a href="../trigger/show.html">Viewing a trigger</a>
+</li><li><a href="../trigger/delete.html">Deleting a trigger</a>
+</li></ul></li><li><a href="../user/index.html">Users</a>
+<ul><li><a href="../user/create.html">Creating a user</a>
+</li><li><a href="../user/update.html">Updating a user</a>
+</li><li><a href="../user/list.html">Listing all users</a>
+</li><li><a href="../user/show.html">Viewing a user</a>
+</li><li><a href="../user/delete.html">Deleting a user</a>
+</li></ul></li><li><a href="../history.html">Historical queries</a>
+</li><li><a href="../time_zones/index.html">Time Zones</a>
+<ul><li><a href="../time_zones/place_names.html">Place Names</a>
+</li></ul></li><li><a href="../ip_addresses.html">IP Addresses</a>
+</li></ul></li><li><a href="https://cosm.com/docs/concepts/">Core Concepts</a>
+<ul><li><a href="https://cosm.com/docs/concepts/automatic_manual.html">Automatic vs. manual feeds</a>
+</li><li><a href="https://cosm.com/docs/concepts/live_frozen.html">Live vs. frozen feeds</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/">Beta features</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/">Device Management</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/">Provisioning</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/activation_code.html">Generating the activation code</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/">API</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/">Products</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/create.html">Creating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/update.html">Updating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/list.html">Listing all products</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/show.html">Viewing a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/delete.html">Deleting a product</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/device/">Devices</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/device/create.html">Creating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/update.html">Updating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/list.html">Listing all devices</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/show.html">Viewing a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/delete.html">Deleting a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/activate.html">Activating a device</a>
+</li></ul></li></ul></li></ul></li><li><a href="https://cosm.com/docs/beta/group/">Groups</a>
+<ul><li><a href="https://cosm.com/docs/beta/group/create.html">Creating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/update.html">Updating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/list.html">Listing all groups</a>
+</li><li><a href="https://cosm.com/docs/beta/group/show.html">Viewing a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/delete.html">Deleting a group</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/permission/">Permissions</a>
+<ul><li><a href="https://cosm.com/docs/beta/permission/show.html">Showing permissions</a>
+</li><li><a href="https://cosm.com/docs/beta/permission/query.html">Querying permissions</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/socket_server/">Socket Server</a>
+</li><li><a href="https://cosm.com/docs/beta/mqtt/">MQTT</a>
+</li><li><a href="https://cosm.com/docs/beta/oauth/">OAuth</a>
+</li></ul></li><li><a href="https://cosm.com/docs/v1/">Legacy API</a>
+</li></ul></li></ul>
+  </nav>
+
+	<div id="container" class="clearfix">	  	  
+	  <article id="main" role="main" class="main">
+	  	<header>
+	  		<h1 class="article-title">Mobile feeds</h1>
+	  	</header>
+	    <table border="1" class="summary docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><strong>Example</strong></td>
+<td><a class="reference external" href="http://api.cosm.com/v2/feeds/3819.json?duration=1day">http://api.cosm.com/v2/feeds/3819.json?duration=1day</a></td>
+</tr>
+<tr><td><strong>Formats</strong></td>
+<td>xml, json</td>
+</tr>
+<tr><td><strong>Methods</strong></td>
+<td>GET</td>
+</tr>
+<tr><td><strong>Returns</strong></td>
+<td>feed with waypoint data</td>
+</tr>
+</tbody>
+</table>
+<p>The Cosm API supports mobile feeds and will store the history of changes to the locatin of a feed automatically. To make this happen, the disposition of the feed needs setting to 'mobile' and then when you change the location it will be saved into the history. To retrieve the location history, simply make a normal <a class="reference external" href="../history.html">history query</a> and you will see a 'waypoints' element in the location for the feed with a list of points in it. Any time one of the coordinates changes, all of the points are stored so that they stay in sync.</p>
+<div class="section" id="examples">
+<h2>Examples</h2>
+<div class="section" id="json">
+<h3>JSON</h3>
+<pre class="code-block javascript literal-block">
+<span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;Ship - HANJIN BELAWAN&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="s2">&quot;live&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;creator&quot;</span><span class="o">:</span> <span class="s2">&quot;https://cosm.com/users/dhunter&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;location&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;waypoints&quot;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;at&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T12:25:05.999502Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">24.9966</span><span class="p">,</span>
+                <span class="s2">&quot;lon&quot;</span><span class="o">:</span> <span class="mf">55.06608</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;at&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T12:40:04.876604Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">24.99647</span><span class="p">,</span>
+                <span class="s2">&quot;lon&quot;</span><span class="o">:</span> <span class="mf">55.06635</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;at&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T12:55:05.907201Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">24.99652</span><span class="p">,</span>
+                <span class="s2">&quot;lon&quot;</span><span class="o">:</span> <span class="mf">55.0663</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;at&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T13:10:05.121031Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">24.99655</span><span class="p">,</span>
+                <span class="s2">&quot;lon&quot;</span><span class="o">:</span> <span class="mf">55.06627</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;at&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T13:25:04.082083Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">24.99648</span><span class="p">,</span>
+                <span class="s2">&quot;lon&quot;</span><span class="o">:</span> <span class="mf">55.06633</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;at&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T13:40:04.589002Z&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">24.99648</span><span class="p">,</span>
+                <span class="s2">&quot;lon&quot;</span><span class="o">:</span> <span class="mf">55.06635</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;exposure&quot;</span><span class="o">:</span> <span class="s2">&quot;outdoor&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;domain&quot;</span><span class="o">:</span> <span class="s2">&quot;physical&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;disposition&quot;</span><span class="o">:</span> <span class="s2">&quot;mobile&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lat&quot;</span><span class="o">:</span> <span class="mf">24.9965</span><span class="p">,</span>
+        <span class="s2">&quot;lon&quot;</span><span class="o">:</span> <span class="mf">55.06633</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;datastreams&quot;</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;at&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T13:55:05.013149Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;datapoints&quot;</span><span class="o">:</span> <span class="p">[</span><span class="p">...],</span>
+            <span class="s2">&quot;tags&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="s2">&quot;latitude&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;max_value&quot;</span><span class="o">:</span> <span class="s2">&quot;29.44627&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;current_value&quot;</span><span class="o">:</span> <span class="s2">&quot;24.9965&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;min_value&quot;</span><span class="o">:</span> <span class="s2">&quot;-34.06339&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;at&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T13:55:05.013149Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;datapoints&quot;</span><span class="o">:</span> <span class="p">[</span><span class="p">...],</span>
+            <span class="s2">&quot;tags&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="s2">&quot;longitude&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;max_value&quot;</span><span class="o">:</span> <span class="s2">&quot;153.9353&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;current_value&quot;</span><span class="o">:</span> <span class="s2">&quot;55.06633&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;min_value&quot;</span><span class="o">:</span> <span class="s2">&quot;0.0&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;at&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T13:55:05.013149Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;datapoints&quot;</span><span class="o">:</span> <span class="p">[</span><span class="p">...],</span>
+            <span class="s2">&quot;tags&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="s2">&quot;average speed&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;unit&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;knots&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;max_value&quot;</span><span class="o">:</span> <span class="s2">&quot;20.8&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;current_value&quot;</span><span class="o">:</span> <span class="s2">&quot;14.3&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;min_value&quot;</span><span class="o">:</span> <span class="s2">&quot;5.2&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;at&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T13:55:05.013149Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;datapoints&quot;</span><span class="o">:</span> <span class="p">[</span><span class="p">...],</span>
+            <span class="s2">&quot;tags&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="s2">&quot;last port&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;current_value&quot;</span><span class="o">:</span> <span class="s2">&quot;JEBEL ALI&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;3&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;at&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T13:55:05.013149Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;datapoints&quot;</span><span class="o">:</span> <span class="p">[</span><span class="p">...],</span>
+            <span class="s2">&quot;tags&quot;</span><span class="o">:</span> <span class="p">[</span>
+                <span class="s2">&quot;destination&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;current_value&quot;</span><span class="o">:</span> <span class="s2">&quot;JEBEL ALI&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;4&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;created&quot;</span><span class="o">:</span> <span class="s2">&quot;2009-12-08T19:00:05.304995Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;feed&quot;</span><span class="o">:</span> <span class="s2">&quot;https://api.cosm.com/v2/feeds/3819.json&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;private&quot;</span><span class="o">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">3819</span><span class="p">,</span>
+    <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;updated&quot;</span><span class="o">:</span> <span class="s2">&quot;2012-06-01T13:55:05.170364Z&quot;</span>
+<span class="p">}</span>
+
+</pre>
+</div>
+<div class="section" id="xml">
+<h3>XML</h3>
+<pre class="code-block xml literal-block">
+<span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;eeml</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.eeml.org/xsd/0.5.1&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">version=</span><span class="s">&quot;0.5.1&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.eeml.org/xsd/0.5.1 http://www.eeml.org/xsd/0.5.1/0.5.1.xsd&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;environment</span> <span class="na">updated=</span><span class="s">&quot;2012-06-01T14:10:04.561333Z&quot;</span> <span class="na">created=</span><span class="s">&quot;2009-12-08T19:00:05.304995Z&quot;</span> <span class="na">id=</span><span class="s">&quot;3819&quot;</span> <span class="na">creator=</span><span class="s">&quot;https://cosm.com/users/dhunter&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Ship - HANJIN BELAWAN<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;feed&gt;</span>https://api.cosm.com/v2/feeds/3819.xml<span class="nt">&lt;/feed&gt;</span>
+    <span class="nt">&lt;status&gt;</span>live<span class="nt">&lt;/status&gt;</span>
+    <span class="nt">&lt;private&gt;</span>false<span class="nt">&lt;/private&gt;</span>
+    <span class="nt">&lt;location</span> <span class="na">domain=</span><span class="s">&quot;physical&quot;</span> <span class="na">exposure=</span><span class="s">&quot;outdoor&quot;</span> <span class="na">disposition=</span><span class="s">&quot;mobile&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;lat&gt;</span>24.99648<span class="nt">&lt;/lat&gt;</span>
+      <span class="nt">&lt;lon&gt;</span>55.0664<span class="nt">&lt;/lon&gt;</span>
+      <span class="nt">&lt;waypoints&gt;</span>
+        <span class="nt">&lt;waypoint</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T12:25:05.999502Z&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;lat&gt;</span>24.9966<span class="nt">&lt;/lat&gt;</span>
+          <span class="nt">&lt;lon&gt;&lt;/lon&gt;</span>
+          <span class="nt">&lt;ele/&gt;</span>
+        <span class="nt">&lt;/waypoint&gt;</span>
+        <span class="nt">&lt;waypoint</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T12:40:04.876604Z&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;lat&gt;</span>24.99647<span class="nt">&lt;/lat&gt;</span>
+          <span class="nt">&lt;lon&gt;&lt;/lon&gt;</span>
+          <span class="nt">&lt;ele/&gt;</span>
+        <span class="nt">&lt;/waypoint&gt;</span>
+        <span class="nt">&lt;waypoint</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T12:55:05.907201Z&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;lat&gt;</span>24.99652<span class="nt">&lt;/lat&gt;</span>
+          <span class="nt">&lt;lon&gt;&lt;/lon&gt;</span>
+          <span class="nt">&lt;ele/&gt;</span>
+        <span class="nt">&lt;/waypoint&gt;</span>
+        <span class="nt">&lt;waypoint</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T13:10:05.121031Z&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;lat&gt;</span>24.99655<span class="nt">&lt;/lat&gt;</span>
+          <span class="nt">&lt;lon&gt;&lt;/lon&gt;</span>
+          <span class="nt">&lt;ele/&gt;</span>
+        <span class="nt">&lt;/waypoint&gt;</span>
+        <span class="nt">&lt;waypoint</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T13:25:04.082083Z&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;lat&gt;</span>24.99648<span class="nt">&lt;/lat&gt;</span>
+          <span class="nt">&lt;lon&gt;&lt;/lon&gt;</span>
+          <span class="nt">&lt;ele/&gt;</span>
+        <span class="nt">&lt;/waypoint&gt;</span>
+        <span class="nt">&lt;waypoint</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T13:40:04.589002Z&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;lat&gt;</span>24.99648<span class="nt">&lt;/lat&gt;</span>
+          <span class="nt">&lt;lon&gt;&lt;/lon&gt;</span>
+          <span class="nt">&lt;ele/&gt;</span>
+        <span class="nt">&lt;/waypoint&gt;</span>
+        <span class="nt">&lt;waypoint</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T13:55:05.013149Z&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;lat&gt;</span>24.9965<span class="nt">&lt;/lat&gt;</span>
+          <span class="nt">&lt;lon&gt;&lt;/lon&gt;</span>
+          <span class="nt">&lt;ele/&gt;</span>
+        <span class="nt">&lt;/waypoint&gt;</span>
+      <span class="nt">&lt;/waypoints&gt;</span>
+    <span class="nt">&lt;/location&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;tag&gt;</span>latitude<span class="nt">&lt;/tag&gt;</span>
+      <span class="nt">&lt;current_value</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T14:10:04.531502Z&quot;</span><span class="nt">&gt;</span>24.99648<span class="nt">&lt;/current_value&gt;</span>
+      <span class="nt">&lt;max_value&gt;</span>29.44627<span class="nt">&lt;/max_value&gt;</span>
+      <span class="nt">&lt;min_value&gt;</span>-34.06339<span class="nt">&lt;/min_value&gt;</span>
+      <span class="nt">&lt;datapoints&gt;</span>
+        ...
+      <span class="nt">&lt;/datapoints&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;tag&gt;</span>longitude<span class="nt">&lt;/tag&gt;</span>
+      <span class="nt">&lt;current_value</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T14:10:04.531502Z&quot;</span><span class="nt">&gt;</span>55.0664<span class="nt">&lt;/current_value&gt;</span>
+      <span class="nt">&lt;max_value&gt;</span>153.9353<span class="nt">&lt;/max_value&gt;</span>
+      <span class="nt">&lt;min_value&gt;</span>0.0<span class="nt">&lt;/min_value&gt;</span>
+      <span class="nt">&lt;datapoints&gt;</span>
+        ...
+      <span class="nt">&lt;/datapoints&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">id=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;tag&gt;</span>average speed<span class="nt">&lt;/tag&gt;</span>
+      <span class="nt">&lt;current_value</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T14:10:04.531502Z&quot;</span><span class="nt">&gt;</span>14.3<span class="nt">&lt;/current_value&gt;</span>
+      <span class="nt">&lt;max_value&gt;</span>20.8<span class="nt">&lt;/max_value&gt;</span>
+      <span class="nt">&lt;min_value&gt;</span>5.2<span class="nt">&lt;/min_value&gt;</span>
+      <span class="nt">&lt;unit</span> <span class="na">type=</span><span class="s">&quot;&quot;</span> <span class="na">symbol=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>knots<span class="nt">&lt;/unit&gt;</span>
+      <span class="nt">&lt;datapoints&gt;</span>
+        ...
+      <span class="nt">&lt;/datapoints&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">id=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;tag&gt;</span>last port<span class="nt">&lt;/tag&gt;</span>
+      <span class="nt">&lt;current_value</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T14:10:04.531502Z&quot;</span><span class="nt">&gt;</span>JEBEL ALI<span class="nt">&lt;/current_value&gt;</span>
+      <span class="nt">&lt;datapoints&gt;</span>
+        ...
+      <span class="nt">&lt;/datapoints&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">id=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;tag&gt;</span>destination<span class="nt">&lt;/tag&gt;</span>
+      <span class="nt">&lt;current_value</span> <span class="na">at=</span><span class="s">&quot;2012-06-01T14:10:04.531502Z&quot;</span><span class="nt">&gt;</span>JEBEL ALI<span class="nt">&lt;/current_value&gt;</span>
+      <span class="nt">&lt;datapoints&gt;</span>
+        ...
+      <span class="nt">&lt;/datapoints&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
+  <span class="nt">&lt;/environment&gt;</span>
+<span class="nt">&lt;/eeml&gt;</span>
+
+</pre>
+<p>Note that the datapoints have been removed in this example for brevity</p>
+</div>
+</div>
+    	<footer class="reduced-screen">
+        © 2011 Cosm, a LogMeIn company
+      </footer>
+	  </article>
+  </div> <!-- //#container -->
+	  
+  <aside class="main">
+  	<p>Test Widget</p>
+  </aside>
+  
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>  
+
+  <script>window.jQuery || document.write('<script src="../../assets/jquery-1.7.0.min.js"><\/script>')</script>
+  <script defer src="../../assets/script.js"></script>
+
+
+
+
+  <script>
+    window._gaq=[["_setAccount","UA-20796726-1"],["_trackPageview"],['_trackPageLoadTime'],['_setDomainName','.cosm.com'],['_setAllowHash', false]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+  
+  <!-- chrome frame -->
+	<!--[if lt IE 7 ]>
+		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+</body>
+</html>

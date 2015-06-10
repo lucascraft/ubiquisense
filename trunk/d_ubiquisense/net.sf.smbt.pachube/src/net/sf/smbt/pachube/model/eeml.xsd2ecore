@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="eeml.xsd#/"
+    outputs="eeml051.ecore#/" topToBottom="true">
+  <nested inputs="bundleentry://417.fwk363211825/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  <nested inputs="bundleentry://417.fwk363211825/cache/www.w3.org/2001/XMLSchema.xsd#//anyURI;XSDSimpleTypeDefinition=25"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/status;XSDElementDeclaration/XSDSimpleTypeDefinition"
+      outputs="eeml051.ecore#//StatusType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/status;XSDElementDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="eeml051.ecore#//StatusType/frozen"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/status;XSDElementDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="eeml051.ecore#//StatusType/live"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3/private;XSDElementDeclaration/XSDSimpleTypeDefinition"
+      outputs="eeml051.ecore#//PrivateType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3/private;XSDElementDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="eeml051.ecore#//PrivateType/true"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3/private;XSDElementDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="eeml051.ecore#//PrivateType/false"/>
+  </nested>
+  <nested inputs="bundleentry://417.fwk363211825/cache/www.w3.org/2001/XMLSchema.xsd#//double;XSDSimpleTypeDefinition=12"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/lat;XSDElementDeclaration/XSDSimpleTypeDefinition"
+      outputs="eeml051.ecore#//LatType"/>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/lon;XSDElementDeclaration/XSDSimpleTypeDefinition"
+      outputs="eeml051.ecore#//LonType"/>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2/disposition;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="eeml051.ecore#//DispositionType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2/disposition;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="eeml051.ecore#//DispositionType/fixed"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2/disposition;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="eeml051.ecore#//DispositionType/mobile"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1/domain;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="eeml051.ecore#//DomainType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1/domain;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="eeml051.ecore#//DomainType/physical"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1/domain;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="eeml051.ecore#//DomainType/virtual"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse/exposure;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="eeml051.ecore#//ExposureType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse/exposure;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="eeml051.ecore#//ExposureType/indoor"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse/exposure;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="eeml051.ecore#//ExposureType/outdoor"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="eeml051.ecore#//LocationType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="eeml051.ecore#//LocationType/name"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="eeml051.ecore#//LocationType/lat"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="eeml051.ecore#//LocationType/lon"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="eeml051.ecore#//LocationType/ele"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="eeml051.ecore#//LocationType/disposition"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="eeml051.ecore#//LocationType/domain"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9/location;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="eeml051.ecore#//LocationType/exposure"/>
+  </nested>
+  <nested inputs="bundleentry://417.fwk363211825/cache/www.w3.org/2001/XMLSchema.xsd#//dateTime;XSDSimpleTypeDefinition=15"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//DateTime"/>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/current_value;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="eeml051.ecore#//CurrentValueType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/current_value;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="eeml051.ecore#//CurrentValueType/at"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4/datapoints;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/value;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="eeml051.ecore#//ValueType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4/datapoints;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/value;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="eeml051.ecore#//ValueType/at"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4/datapoints;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="eeml051.ecore#//DatapointsType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4/datapoints;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="eeml051.ecore#//DatapointsType/value"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/unit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1/type;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="eeml051.ecore#//TypeType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/unit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1/type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="eeml051.ecore#//TypeType/basicSI"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/unit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1/type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="eeml051.ecore#//TypeType/derivedSI"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/unit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1/type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="eeml051.ecore#//TypeType/conversionBasedUnits"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/unit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1/type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=3"
+        outputs="eeml051.ecore#//TypeType/derivedUnits"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/unit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1/type;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=4"
+        outputs="eeml051.ecore#//TypeType/contextDependentUnits"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/unit;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="eeml051.ecore#//UnitType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/unit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="eeml051.ecore#//UnitType/symbol"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/unit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="eeml051.ecore#//UnitType/type"/>
+  </nested>
+  <nested inputs="bundleentry://417.fwk363211825/cache/www.w3.org/2001/XMLSchema.xsd#//nonNegativeInteger;XSDSimpleTypeDefinition=47"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//NonNegativeInteger"/>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="eeml051.ecore#//DataType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="eeml051.ecore#//DataType/tag"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="eeml051.ecore#//DataType/currentValue"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="eeml051.ecore#//DataType/maxValue"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="eeml051.ecore#//DataType/minValue"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="eeml051.ecore#//DataType/datapoints"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="eeml051.ecore#//DataType/unit"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10/data;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="eeml051.ecore#//DataType/id"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1/creator;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="eeml051.ecore#//CreatorType"/>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse/updated;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="eeml051.ecore#//UpdatedType"/>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="eeml051.ecore#//EnvironmentType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="eeml051.ecore#//EnvironmentType/title"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="eeml051.ecore#//EnvironmentType/feed"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="eeml051.ecore#//EnvironmentType/status"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="eeml051.ecore#//EnvironmentType/private"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="eeml051.ecore#//EnvironmentType/description"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="eeml051.ecore#//EnvironmentType/icon"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="eeml051.ecore#//EnvironmentType/website"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=7"
+        outputs="eeml051.ecore#//EnvironmentType/email"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=8"
+        outputs="eeml051.ecore#//EnvironmentType/tag"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9"
+        outputs="eeml051.ecore#//EnvironmentType/location"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=10"
+        outputs="eeml051.ecore#//EnvironmentType/data"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="eeml051.ecore#//EnvironmentType/creator"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="eeml051.ecore#//EnvironmentType/id"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/environment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="eeml051.ecore#//EnvironmentType/updated"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse/version;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="eeml051.ecore#//VersionType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse/version;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="eeml051.ecore#//VersionType/_051"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="eeml051.ecore#//EemlType">
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="eeml051.ecore#//EemlType/environment"/>
+    <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="eeml051.ecore#//EemlType/version"/>
+  </nested>
+  <nested inputs="eeml.xsd#//eeml;XSDElementDeclaration" outputs="eeml051.ecore#//DocumentRoot/eeml"/>
+</xsd2ecore:XSD2EcoreMappingRoot>

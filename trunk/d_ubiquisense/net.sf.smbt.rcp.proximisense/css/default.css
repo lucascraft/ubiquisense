@@ -1,0 +1,33 @@
+Label {
+	font: Tahoma 8px;
+	color: grey;
+}
+
+Composite Label {
+	color: grey;
+}
+
+
+Text {
+	font: Verdana 8px;
+}
+
+Composite Text {
+	background-color: #646464;
+	color: grey;
+}
+
+SashForm {
+	background-color: #646464;
+}
+
+
+.MTrimBar {
+	background-color: #646464 ;
+	color: grey;
+	font: Tahoma 10px;
+}
+
+Shell {
+    background-color: #535353 #646464 60%;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_5-_M0KAEEd-ZfbY-lK_jmQ" type="EcoreTools" name="ezquant" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_jljkwa4-Ed-bD8G5muIKJA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_jlmBAK4-Ed-bD8G5muIKJA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_jlodQK4-Ed-bD8G5muIKJA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_49KmEK4_Ed-bD8G5muIKJA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="ezquant.ecore#//QHub/ID"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_49KmEa4_Ed-bD8G5muIKJA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_goLGQK5BEd-bD8G5muIKJA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="ezquant.ecore#//QHub/agent"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_goLtUK5BEd-bD8G5muIKJA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_lY4cMK5BEd-bD8G5muIKJA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="ezquant.ecore#//QHub/supervisor"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_lY4cMa5BEd-bD8G5muIKJA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_jlodQa4-Ed-bD8G5muIKJA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_jlodQq4-Ed-bD8G5muIKJA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_jlodQ64-Ed-bD8G5muIKJA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_jlpEUK4-Ed-bD8G5muIKJA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_jlpEUa4-Ed-bD8G5muIKJA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_jlpEUq4-Ed-bD8G5muIKJA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_jlpEU64-Ed-bD8G5muIKJA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_jljkwq4-Ed-bD8G5muIKJA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ezquant.ecore#//QHub"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jljkw64-Ed-bD8G5muIKJA" x="196" y="48"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_pnBigK4_Ed-bD8G5muIKJA" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_pnQMAK4_Ed-bD8G5muIKJA" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_pnQMAa4_Ed-bD8G5muIKJA" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_pnFz8K4_Ed-bD8G5muIKJA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_pnFz8a4_Ed-bD8G5muIKJA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_pnFz8q4_Ed-bD8G5muIKJA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_pnFz864_Ed-bD8G5muIKJA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_pnFz9K4_Ed-bD8G5muIKJA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_pnFz9a4_Ed-bD8G5muIKJA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_pnFz9q4_Ed-bD8G5muIKJA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_pnFz964_Ed-bD8G5muIKJA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_pnFz-K4_Ed-bD8G5muIKJA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_pnBiga4_Ed-bD8G5muIKJA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/net.sf.smbt.comm.topology/model/ezxtopology.ecore#//TopologyCache"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pnBigq4_Ed-bD8G5muIKJA" x="336" y="188"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_5-_M0aAEEd-ZfbY-lK_jmQ"/>
+  <element xmi:type="ecore:EPackage" href="ezquant.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_qdIrIK4_Ed-bD8G5muIKJA" type="3002" source="_jljkwa4-Ed-bD8G5muIKJA" target="_pnBigK4_Ed-bD8G5muIKJA">
+    <children xmi:type="notation:Node" xmi:id="_qdIrJK4_Ed-bD8G5muIKJA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qdIrJa4_Ed-bD8G5muIKJA" x="-52" y="32"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qdJSMK4_Ed-bD8G5muIKJA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qdJSMa4_Ed-bD8G5muIKJA" x="-13" y="13"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_qdIrIa4_Ed-bD8G5muIKJA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_qdIrIq4_Ed-bD8G5muIKJA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="ezquant.ecore#//QHub/topology"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qdIrI64_Ed-bD8G5muIKJA" points="[30, 20, -190, -114]$[170, 135, -50, 1]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0jFAYK4_Ed-bD8G5muIKJA" id="(0.5294117647058824,0.037037037037037035)"/>
+  </edges>
+</notation:Diagram>

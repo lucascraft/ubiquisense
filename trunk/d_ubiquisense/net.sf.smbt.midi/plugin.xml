@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ezmidi/1.0"
+            class="net.sf.smbt.midi.ezmidi.EzmidiPackage"
+            genModel="model/ezmidi.genmodel"/>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.frameInterpreter">
+      <frameInterpreter
+            ID="net.sf.smbt.midi.frameInterpreter"
+            interpreter="net.sf.smbt.midi.handlers.MidiQxFrameHandler">
+      </frameInterpreter>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdInterpreter">
+      <cmdInterpreter
+            ID="net.sf.smbt.midi.cmdInterpreter"
+            interpreter="net.sf.smbt.midi.handlers.MidiQxCmdInterpreter">
+      </cmdInterpreter>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdHandler">
+      <cmdHandler
+            ID="net.sf.smbt.midi.cmdEventHandler"
+            handler="net.sf.smbt.midi.handlers.MidiQxCmdHandler">
+      </cmdHandler>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdSetProvider">
+      <CmdSet
+            ID="net.sf.smbt.midi.cmdSet"
+            provider="net.sf.smbt.midi.providers.MidiCmdSetProvider">
+      </CmdSet>
+   </extension>
+   <extension
+         point="net.sf.smbt.comm.topology.protocol">
+      <engine
+      		alias="midi"
+            ID="net.sf.smbt.midi"
+            cmdInterpreterID="net.sf.smbt.midi.cmdInterpreter"
+            eventHandler="net.sf.smbt.midi.cmdEventHandler"
+            frameInterpreter="net.sf.smbt.midi.frameInterpreter"
+            instance="0"
+            transports="UDP, TCP, USB, MIDI"
+            desc="Protocol Midi"      
+      >
+      </engine>
+   </extension>
+
+</plugin>

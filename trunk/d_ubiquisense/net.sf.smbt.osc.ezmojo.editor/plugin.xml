@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+<!--
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="net.sf.smbt.ezmojo.presentation.EzmojoModelWizardID"
+            name="%_UI_EzmojoModelWizard_label"
+            class="net.sf.smbt.ezmojo.presentation.EzmojoModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/EzmojoModelFile.gif">
+         <description>%_UI_EzmojoModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.sf.smbt.ezmojo.presentation.EzmojoEditorID"
+            name="%_UI_EzmojoEditor_label"
+            icon="icons/full/obj16/EzmojoModelFile.gif"
+            extensions="ezmojo"
+            class="net.sf.smbt.ezmojo.presentation.EzmojoEditor"
+            contributorClass="net.sf.smbt.ezmojo.presentation.EzmojoActionBarContributor">
+      </editor>
+   </extension>
+-->
+</plugin>

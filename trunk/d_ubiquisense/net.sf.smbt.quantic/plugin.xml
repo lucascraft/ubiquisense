@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+   <extension-point id="bonjour" name="Bonjour Service" schema="schema/bonjour.exsd"/>
+   <extension-point id="targetConfig" name="targetConfig" schema="schema/targetConfig.exsd"/>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ezquant/1.0"
+            class="net.sf.smbt.ezquant.EzquantPackage"
+            genModel="model/ezquant.genmodel"/>
+   </extension>
+   <extension
+         point="net.sf.smbt.comm.topology.protocol">
+      <engine
+      		alias="osc"
+            ID="net.sf.smbt.osc"
+            cmdInterpreterID="net.sf.smbt.osc.cmdInterpreter"
+            eventHandler="net.sf.smbt.osc.cmdHandler"
+            frameInterpreter="net.sf.smbt.osc.frameInterpreter"
+            instance="0"
+            transports="UDP, TCP"
+            desc="Protocol OSC (Basic accordingly to 1.0 Spec)"      
+      >
+      </engine>
+   </extension>
+
+</plugin>

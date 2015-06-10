@@ -1,0 +1,515 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html class="js" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+lang="en"><head>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Arduino + Computer | pachube.community</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" 
+href="http://community.pachube.com/files/favicon.png" 
+type="image/x-icon">
+  <link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/codefilter.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/aggregator.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/node.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/defaults.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/system.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/system-menus.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/user.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/quote.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/forum.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/comment.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/openid.css">
+<link type="text/css" rel="stylesheet" media="all" 
+href="usb_fichiers/style.css">
+  <script type="text/javascript" src="usb_fichiers/js_d3a89f0b5bca37b01fe90f299dbf5547.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/" });
+//--><!]]>
+</script>
+  <script type="text/javascript"> </script>
+  </head><body id="second">
+
+	<div id="header_bar">   
+
+<div id="header-left">
+
+	
+	<div id="link-pachube"> <a href="http://pachube.com/">pachube.com</a></div>
+		  
+	<div id="link-apps"><a href="http://apps.pachube.com/">pachube.apps</a></div>
+
+	<div id="link-blog"> <a href="http://blog.pachube.com/">pachube.blog</a>
+ </div>
+
+
+	
+</div>
+	
+</div> <!-- // header_bar -->
+  <div id="page" class="one-sidebar">
+  
+    <div id="header">
+    
+      <div id="logo-title">
+    <!--  
+                 <a href="/" title="Home">
+         		<img src="/files/logo.png" alt="Home" id="logo" />
+          </a>
+                !-->
+    <a href="http://community.pachube.com/"><img 
+src="usb_fichiers/logo.png" id="logo"></a>
+            
+         
+          <div id="site-slogan">
+            <!--   connecting environments, patching the planet - www.pachube.com !-->
+          </div>
+              </div>
+      
+
+      <div class="menu withprimarywithsecondary">
+                      <div id="primary" class="clear-block">
+              <ul class="links primary-links"><li class="menu-95 first"><a
+ href="http://community.pachube.com/about">About</a></li>
+<li class="menu-96"><a href="http://community.pachube.com/quickstart">Quickstart</a></li>
+<li class="menu-97"><a href="http://community.pachube.com/tutorials">Tutorials</a></li>
+<li class="menu-98 last"><a href="http://community.pachube.com/forum">Forums</a></li>
+</ul>            </div>
+                    
+                      <div id="secondary" class="clear-block">
+                      </div>
+                </div>
+      
+            
+    </div>
+	
+	
+    <div id="container" class=" withright clear-block">
+      
+      <div id="main-wrapper">
+      <div id="main" class="clear-block">
+        <div class="breadcrumb"><a href="http://community.pachube.com/">Home</a>
+ » <a href="http://community.pachube.com/tutorials">Tutorials</a> » <a 
+href="http://community.pachube.com/arduino">Arduino</a></div>           
+             <h1 class="title">Arduino + Computer</h1>                  
+              <div class="node" id="node-212">
+  
+    
+  
+    <div class="meta with-taxonomy">
+  
+          <div class="submitted">Posted May 13th, 2009 by uh@pachube</div>
+ 
+        
+     
+      <div class="taxonomy"><ul class="links inline"><li 
+class="taxonomy_term_16 first"><a 
+href="http://community.pachube.com/taxonomy/term/16" rel="tag" title="">arduino</a></li>
+<li class="taxonomy_term_114"><a 
+href="http://community.pachube.com/taxonomy/term/114" rel="tag" title="">firmata</a></li>
+<li class="taxonomy_term_6"><a 
+href="http://community.pachube.com/taxonomy/term/6" rel="tag" title="">pachube</a></li>
+<li class="taxonomy_term_25"><a 
+href="http://community.pachube.com/taxonomy/term/25" rel="tag" title="">processing</a></li>
+<li class="taxonomy_term_113 last"><a 
+href="http://community.pachube.com/taxonomy/term/113" rel="tag" title="">tethered
+ computer</a></li>
+</ul></div>
+        
+  </div>
+    
+  <div class="content">
+    <span class="print-link"></span><p>The simplest way to use an <a 
+href="http://www.arduino.cc/" target="_new">Arduino</a> with <a 
+href="http://www.pachube.com/" target="_new">Pachube</a> (i.e. to share 
+your Arduino's real time sensor data with others and use other people's 
+remote sensor data as inputs to your Arduino) is to control the Arduino 
+with <a href="http://www.processing.org/" target="_new">Processing</a>, 
+and let Processing do all the data formatting and serving to Pachube. 
+The following documents assume you already know a little about how to 
+work with Arduino and Processing.</p>
+<p><img src="usb_fichiers/pachuinodiagram.png" alt="pachube" border="0" 
+height="239" width="600"></p>
+<p>Essentially, your Processing program will reside on a computer that 
+is connected to the internet; it will control the Arduino and take 
+sensor readings and serve this data to the Pachube website.</p>
+<p>The quickest way to do this is to upload <a 
+href="http://www.arduino.cc/playground/Interfacing/Firmata" 
+target="_new">Firmata</a> to the Arduino and use the <a 
+href="http://www.arduino.cc/playground/Interfacing/Processing" 
+target="_new"> Processing Arduino library</a> to control it. When you do
+ this, all your digital and analog reading and writing is managed by 
+Processing, the serial data is automatically sent to the Arduino and the
+ Arduino simply interprets the commands, whether it's setting pins' 
+output values or taking sensor readings. Basically, with Firmata on the 
+Arduino, you can write (in Processing) things like 
+"arduino.digitalWrite(2, Arduino.HIGH);" and "myValue = 
+arduino.analogRead(4);" which will, as you expect, set pin 2 high on the
+ tethered Arduino and set 'myValue' to equal the analog reading from pin
+ 4. </p>
+<p>There are two tutorials available:</p>
+<ul>
+<li>
+<a href="http://community.pachube.com/arduino/usb/processing">Build your
+ own Pachube/Arduino/Processing application</a> step-by-step, connecting
+ Arduino to Processing to Pachube. Use this if you want to do 
+non-standard things with your Arduino or if you want to understand 
+exactly how to build a connection to Pachube.
+</li>
+<li>
+<a href="http://community.pachube.com/arduino/usb/pachuino">Pachuino is a
+ Processing template</a> that does all the work for you. Effectively it 
+enables you to have an Arduino with both <i>local</i> and <i>remote</i> 
+sensors and to serve data to Pachube (and by extension others) without 
+getting deep into the details.
+</li>
+</ul>
+<p>If you would like to use Python rather than Processing, see this 
+tutorial instead: <a href="http://community.pachube.com/node/114">http://community.pachube.com/node/114</a></p>
+  </div>
+  
+      <div class="links">
+      <ul class="links inline"><li class="comment_forbidden first last"><span><a
+ 
+href="http://community.pachube.com/user/login?destination=node%2F212%23comment-form">Login</a>
+ or <a 
+href="http://community.pachube.com/user/register?destination=node%2F212%23comment-form">register</a>
+ to post comments</span></li>
+</ul>    </div>
+    
+</div>
+              </div>
+      </div>
+      
+      
+              <div id="sidebar-right" class="sidebar">
+          <div class="block block-search" id="block-search-0">
+  <div class="blockinner">
+
+    <h2 class="title"> Search </h2>
+    <div class="content">
+      <form action="/arduino/usb" accept-charset="UTF-8" method="post" 
+id="search-block-form">
+<div><div class="container-inline">
+  <div class="form-item" id="edit-search-block-form-1-wrapper">
+ <label for="edit-search-block-form-1">Search this site: </label>
+ <input maxlength="128" name="search_block_form" 
+id="edit-search-block-form-1" size="15" title="Enter the terms you wish 
+to search for." class="form-text" type="text">
+</div>
+<input name="op" id="edit-submit" value="Search" class="form-submit" 
+type="submit">
+<input name="form_build_id" id="form-8a742745168d210e25fada1cba997486" 
+value="form-8a742745168d210e25fada1cba997486" type="hidden">
+<input name="form_id" id="edit-search-block-form" 
+value="search_block_form" type="hidden">
+</div>
+
+</div></form>
+    </div>
+    
+  </div>
+</div>
+<div class="block block-user" id="block-user-1">
+  <div class="blockinner">
+
+    <h2 class="title"> Navigation </h2>
+    <div class="content">
+      <ul class="menu"><li class="leaf first"><a 
+href="http://community.pachube.com/about" title="About Pachube">About</a></li>
+<li class="leaf"><a 
+href="http://community.pachube.com/what_can_i_use_pachube_for" 
+title="Find out what's useful about Pachube for all sorts of activity">Ways
+ to use Pachube</a></li>
+<li class="leaf"><a href="http://community.pachube.com/api" title="API 
+Documentation for developers">API Documentation</a></li>
+<li class="leaf"><a href="http://community.pachube.com/quickstart" 
+title="Quickstart for Pachube beta-testers">Quickstart</a></li>
+<li class="leaf"><a 
+href="http://community.pachube.com/software_hardware" title="Software 
+&amp; hardware platforms">Software &amp; hardware</a></li>
+<li class="expanded active-trail"><a 
+href="http://community.pachube.com/tutorials">Tutorials</a><ul 
+class="menu"><li class="leaf first"><a 
+href="http://community.pachube.com/using_the_website" title="Using the 
+various features of the Pachube website">Using the website</a></li>
+<li class="collapsed"><a href="http://community.pachube.com/triggers" 
+title="Triggers (aka webhooks, notifications, etc.)">Triggers</a></li>
+<li class="leaf"><a href="http://community.pachube.com/tutorials/c" 
+title="Pachulib: Pachube C Library Documentation">C</a></li>
+<li class="expanded active-trail"><a 
+href="http://community.pachube.com/arduino">Arduino</a><ul class="menu"><li
+ class="leaf first"><a href="http://community.pachube.com/arduino/faq" 
+title="Arduino: Frequently Asked Questions">Arduino FAQ</a></li>
+<li class="expanded active-trail"><a 
+href="http://community.pachube.com/arduino/usb" title="Arduino + 
+Computer" class="active">Arduino + computer</a><ul class="menu"><li 
+class="leaf first"><a 
+href="http://community.pachube.com/arduino/usb/pachuino">Pachuino</a></li>
+<li class="leaf"><a 
+href="http://community.pachube.com/arduino/usb/processing">Step-by-step</a></li>
+<li class="leaf last"><a href="http://community.pachube.com/node/114" 
+title="Arduino + Python + Pachube">Python</a></li>
+</ul></li>
+<li class="collapsed"><a 
+href="http://community.pachube.com/arduino/ethernet" title="Arduino 
+ethernet shield">Ethernet shield</a></li>
+<li class="leaf"><a href="http://community.pachube.com/node/65" 
+title="How to connect your 'spinning disk' electricity meter to Pachube">Electricity
+ meter to Pachube</a></li>
+<li class="leaf"><a 
+href="http://community.pachube.com/arduino/anemometer" title="Pachube 
+Anemometer (Arduino + Inspeed Vortex Wind sensor)">Anemometer</a></li>
+<li class="leaf last"><a 
+href="http://community.pachube.com/arduino/wifishield" title="Arduino 
+environment monitoring and WiFi Shields">Arduino + Wifi Shield</a></li>
+</ul></li>
+<li class="leaf"><a href="http://community.pachube.com/currentcost" 
+title="CurrentCost + Pachube">Current Cost meter</a></li>
+<li class="leaf"><a href="http://community.pachube.com/tutorials/php" 
+title="Pachube PHP Library documentation">PHP</a></li>
+<li class="leaf"><a href="http://community.pachube.com/node/255" 
+title="SketchUp Version 0.1 Tutorial">sketchup_01</a></li>
+<li class="leaf"><a href="http://community.pachube.com/python" 
+title="Pachube + Python">Python</a></li>
+<li class="leaf"><a href="http://community.pachube.com/ruby" 
+title="Tutorials using Pachube and Ruby">Ruby</a></li>
+<li class="leaf"><a href="http://community.pachube.com/?q=node/82" 
+title="Pachube &amp; Second Life">Second Life</a></li>
+<li class="leaf last"><a 
+href="http://community.pachube.com/tutorials/net_framework" 
+title="Update Pachube feeds using .NET Framework">.NET Framework</a></li>
+</ul></li>
+<li class="leaf"><a href="http://community.pachube.com/forum">Forums</a></li>
+<li class="leaf"><a href="http://community.pachube.com/known_issues" 
+title="Known issues with Pachube">Known issues</a></li>
+<li class="collapsed last"><a href="http://community.pachube.com/jobs" 
+title="Job openings">Job openings</a></li>
+</ul>    </div>
+    
+  </div>
+</div>
+<div class="block block-user" id="block-user-0">
+  <div class="blockinner">
+
+    <h2 class="title"> User login </h2>
+    <div class="content">
+      <form action="/arduino/usb?destination=node%2F212" 
+accept-charset="UTF-8" method="post" id="user-login-form">
+<div><div class="form-item" id="edit-openid-identifier-wrapper">
+ <label for="edit-openid-identifier">Log in using OpenID: </label>
+ <input maxlength="255" name="openid_identifier" 
+id="edit-openid-identifier" size="13" class="form-text" type="text">
+ <div class="description"><a href="http://openid.net/">What is OpenID?</a></div>
+</div>
+<div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">Username: <span class="form-required" 
+title="This field is required.">*</span></label>
+ <input maxlength="60" name="name" id="edit-name" size="15" 
+class="form-text required" type="text">
+</div>
+<div class="form-item" id="edit-pass-wrapper">
+ <label for="edit-pass">Password: <span class="form-required" 
+title="This field is required.">*</span></label>
+ <input name="pass" id="edit-pass" maxlength="60" size="15" 
+class="form-text required" type="password">
+</div>
+<input name="op" id="edit-submit-1" value="Log in" class="form-submit" 
+type="submit">
+<input name="form_build_id" id="form-600597cab67dd800ad14fc6d1ccd00e0" 
+value="form-600597cab67dd800ad14fc6d1ccd00e0" type="hidden">
+<input name="form_id" id="edit-user-login-block" 
+value="user_login_block" type="hidden">
+<input name="openid.return_to" id="edit-openid.return-to" 
+value="http://community.pachube.com/openid/authenticate?destination=node%2F212"
+ type="hidden">
+<div class="item-list"><ul><li class="openid-link first 
+openid-processed"><a href="http://community.pachube.com/%2523">Log in 
+using OpenID</a></li>
+<li class="user-link last openid-processed"><a 
+href="http://community.pachube.com/%2523">Cancel OpenID login</a></li>
+</ul></div><div class="item-list"><ul><li class="first"><a 
+href="http://community.pachube.com/user/register" title="Create a new 
+user account.">Create new account</a></li>
+<li class="last"><a href="http://community.pachube.com/user/password" 
+title="Request new password via e-mail.">Request new password</a></li>
+</ul></div>
+</div></form>
+    </div>
+    
+  </div>
+</div>
+<div class="block block-comment" id="block-comment-0">
+  <div class="blockinner">
+
+    <h2 class="title"> Recent comments </h2>
+    <div class="content">
+      <div class="item-list"><ul><li class="first"><a 
+href="http://community.pachube.com/node/497#comment-1268">Re: Update 
+exceeds allowed datastreams.</a><br>18 hours 33 min ago</li>
+<li><a href="http://community.pachube.com/node/497#comment-1267">Re: 
+Update exceeds allowed datastreams.</a><br>21 hours 47 min ago</li>
+<li><a href="http://community.pachube.com/node/497#comment-1266">Re: 
+Update exceeds allowed datastreams.</a><br>1 day 28 min ago</li>
+<li><a href="http://community.pachube.com/node/497#comment-1265">Re: 
+Update exceeds allowed datastreams.</a><br>4 days 18 hours ago</li>
+<li><a href="http://community.pachube.com/node/177#comment-1264">Re: 
+CurrentCost to Pachube app</a><br>5 days 13 hours ago</li>
+<li><a href="http://community.pachube.com/node/485#comment-1263">Re: 
+Google Visualization - time zone?</a><br>5 days 15 hours ago</li>
+<li><a href="http://community.pachube.com/node/177#comment-1262">Re: 
+CurrentCost to Pachube app</a><br>5 days 16 hours ago</li>
+<li><a href="http://community.pachube.com/node/485#comment-1261">Re: 
+Google Visualization - time zone?</a><br>5 days 16 hours ago</li>
+<li><a href="http://community.pachube.com/node/485#comment-1260">Re: 
+Google Visualization - time zone?</a><br>5 days 17 hours ago</li>
+<li class="last"><a 
+href="http://community.pachube.com/node/485#comment-1259">Re: Google 
+Visualization - time zone?</a><br>5 days 21 hours ago</li>
+</ul></div>    </div>
+    
+  </div>
+</div>
+<div class="block block-forum" id="block-forum-1">
+  <div class="blockinner">
+
+    <h2 class="title"> New forum topics </h2>
+    <div class="content">
+      <div class="item-list"><ul><li class="first"><a 
+href="http://community.pachube.com/node/499">Feed page anomalies</a></li>
+<li><a href="http://community.pachube.com/node/498">BYMM (Beat You Mouse
+ Movement) Project At The ZERO1 01SJ Biennial Conference Update</a></li>
+<li><a href="http://community.pachube.com/node/497" title="4 comments">Update
+ exceeds allowed datastreams.</a></li>
+<li><a href="http://community.pachube.com/node/495">Pachube Related 
+Links For 09/09/2010</a></li>
+<li class="last"><a href="http://community.pachube.com/node/494">how to 
+acces data feed using flash AS 2.0</a></li>
+</ul></div><div class="more-link"><a 
+href="http://community.pachube.com/forum" title="Read the latest forum 
+topics.">more</a></div>    </div>
+    
+  </div>
+</div>
+<div class="block block-statistics" id="block-statistics-0">
+  <div class="blockinner">
+
+    <h2 class="title"> Popular content </h2>
+    <div class="content">
+      <div class="item-list"><h3>Today's:</h3><ul><li class="first"><a 
+href="http://community.pachube.com/api">API Documentation</a></li>
+<li><a href="http://community.pachube.com/tutorials">Pachube tutorials</a></li>
+<li class="last"><a href="http://community.pachube.com/about">Welcome to
+ Pachube</a></li>
+</ul></div>    </div>
+    
+  </div>
+</div>
+<div class="block block-node" id="block-node-0">
+  <div class="blockinner">
+
+    <h2 class="title"> Syndicate </h2>
+    <div class="content">
+      <a href="http://community.pachube.com/rss.xml" class="feed-icon"><img
+ src="usb_fichiers/feed.png" alt="Syndicate content" title="Syndicate" 
+height="16" width="16"></a>    </div>
+    
+  </div>
+</div>
+<div class="block block-block" id="block-block-2">
+  <div class="blockinner">
+
+    
+    <div class="content">
+      <script src="usb_fichiers/ifr.js"></script><style>table.gadget{background-position:0%;background:transparent none;border-collapse:collapse;border:0;clear:none;float:none;font-family:arial,sans-serif;font-style:normal;font-variant:normal;height:auto;letter-spacing:normal;line-height:normal;margin:0;padding:0;text-indent:0;text-transform:none;top:auto;vertical-align:middle;white-space:normal;width:auto;word-spacing:normal;}table.gadget span.title a:hover,table.gadget span.title a:visited,table.gadget span.title a:active,table.gadget span.title{font-size:12px;color:#0000cc}table.gadget span.powered a:hover,table.gadget span.powered a:visited,table.gadget span.powered a:active,table.gadget span.powered{font-size:10px;color:#0000cc}</style><table
+ class="gadget" cellpadding="0" cellspacing="0" width="170"><tbody><tr></tr><tr><td
+ colspan="2"></td></tr><tr><td colspan="2"><div style="background: none 
+repeat scroll 0% 0% white; padding: 3px; border: 1px solid rgb(153, 153,
+ 153);"><iframe src="usb_fichiers/ifr.html" style="display: block;" 
+frameborder="0" height="300" scrolling="auto" width="170"></iframe></div></td></tr><tr><td
+ style="text-align: left; vertical-align: middle; height: 28px;"><a 
+href="http://fusion.google.com/ig/add?synd=open&amp;source=ggyp&amp;moduleurl=http://apps.pachube.com/google_gadget/p.xml"
+ target="_top"><img style="border: 0pt none;" 
+src="usb_fichiers/plus_google.gif"></a></td><td style="text-align: 
+right; vertical-align: middle; height: 28px;"><span class="powered"><a 
+href="http://www.google.com/webmasters/gadgets.html" target="_top">Gadgets</a>
+ powered by Google</span></td></tr></tbody></table><p><span 
+style="font-size: 0.9em; font-style: italic;">Get a gadget like this for
+ your website by going to <a href="http://apps.pachube.com/">Pachube.apps</a>!</span></p>
+    </div>
+    
+  </div>
+</div>
+        </div>
+       
+
+    </div>
+
+    <div id="footer">
+          </div>
+
+    
+      <div id="p-footer">
+	<div class="p-container" id="p-footer_container">
+	    <div class="view-left-footer">
+	      <a href="http://www.connectedenvironments.com/" class="external">
+ <img src="usb_fichiers/logo_ce.png" alt="Connected Environments"></a> <br>
+	      <div id="copyright"><strong>Copyright © 2009-2010 Connected 
+Environments Ltd.</strong><br clear="all">All Rights Reserved.</div>
+	    </div>
+
+	    <div class="view-col-footer">
+
+	      <a href="http://www.pachube.com/terms_of_service" 
+class="external">Terms of Service</a><br>
+		  <a href="http://www.pachube.com/privacy" class="external">Privacy 
+Policy</a><br>
+	      <a href="http://community.pachube.com/about" class="external">About
+ us</a><br>
+	      <a href="http://community.pachube.com/team" class="external">The 
+team</a><br>
+	    </div>
+
+	    <div class="view-col-footer"> 
+	      <a href="http://community.pachube.com/tutorials" class="external">Tutorials</a><br>
+	      <a href="http://community.pachube.com/api" class="external">API 
+documentation</a><br>
+	      <a href="http://community.pachube.com/software_hardware" 
+class="external">Libraries &amp; examples</a><br>
+	      <a href="http://community.pachube.com/" class="external">Community
+ site</a><br>
+	    </div>
+
+	    <div class="view-col-footer">
+	       <a href="http://www.pachube.com/contact" class="external">Contact
+ Us</a><br>
+	      <a href="http://www.twitter.com/pachube" class="external">Follow 
+@pachube<img src="usb_fichiers/ico_tweeter.png" alt="Twitter"></a><br>
+	      <a href="http://www.twitter.com/pachube_dev" class="external">Follow
+ @pachube_dev<img src="usb_fichiers/ico_tweeter.png" alt="Twitter"></a><br>
+	      <a href="http://www.youtube.com/Pachubevideos" class="external">Follow
+ on Youtube<img src="usb_fichiers/ico_youtube.png" alt="Youtube"></a><br>
+	    </div>
+
+	
+	</div>
+
+</div> <!-- // #footer -->
+
+  
+  </div>
+
+</body></html>

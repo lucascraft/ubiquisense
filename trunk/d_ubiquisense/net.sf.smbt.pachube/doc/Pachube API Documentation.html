@@ -1,0 +1,532 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="Docutils 0.8: 
+http://docutils.sourceforge.net/">
+<title>Pachube API Documentation</title>
+<link rel="stylesheet" 
+href="Pachube%20API%20Documentation_fichiers/main.css" type="text/css">
+</head><body>
+<div class="document" id="pachube-api-documentation">
+
+
+<!-- // top -->
+
+<div id="header_bar">   
+  <div id="header-left">
+    <div id="link-pachube"> <a href="http://pachube.com/">pachube.com</a></div>
+    <div id="link-apps"><a href="http://apps.pachube.com/">pachube.apps</a></div>
+    <div id="link-blog"> <a href="http://blog.pachube.com/">pachube.blog</a>
+ </div>
+    <div id="link-community"> <a href="http://community.pachube.com/">pachube.community</a>
+ </div>
+  </div>
+</div> <!-- // header_bar -->
+
+
+<div id="page" class="one-sidebar two-sidebars">
+  <div id="header">    
+    <div id="logo-title"><a href="http://api.pachube.com/" title="Home"><img
+ src="Pachube%20API%20Documentation_fichiers/logo.png" alt="Pachube API 
+documentation" id="logo"></a></div>
+    <div id="primary" class="clear-block">
+      <ul class="links-menu">
+        <li><a href="http://community.pachube.com/about">About us</a></li>
+        <li><a href="http://community.pachube.com/quickstart">Quickstart</a></li>
+        <li><a href="http://community.pachube.com/tutorials">Tutorials</a></li>
+        <li><a href="http://community.pachube.com/forum">Forums</a></li>
+      </ul>
+    </div>
+    <div id="container">      
+      <div id="main-wrapper">
+        <div id="main">
+          <div id="document_body">
+          <!-- // end top -->
+
+          <h1 class="title">Pachube API Documentation</h1>
+          
+          <p><a class="reference external" 
+href="http://www.pachube.com/">Pachube</a>, a realtime data brokerage 
+platform for the <a class="reference external" 
+href="http://www.readwriteweb.com/archives/top_5_web_trends_of_2009_internet_of_things.php">Internet
+ of Things</a>, provides most of its functionality via its Application 
+Programming Interface (API), rather than via the website itself. The API
+ makes it quick and easy to create products that connect to the Internet
+ of Things by offering sophisticated realtime data, history and user 
+management tools for sensors, devices and environments around the world.</p>
+<p>This site provides official documentation of the Pachube API. Below 
+you will find essential information common to all API versions, while 
+detailed documentation for the <a class="reference external" 
+href="http://api.pachube.com/v2/">latest API version can be found here</a>.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" 
+href="#basic-information-about-the-api" id="id4">Basic information about
+ the API</a><ul>
+<li><a class="reference internal" href="#versions" id="id5">Versions</a></li>
+<li><a class="reference internal" href="#http-based-restful" id="id6">HTTP-based
+ &amp; RESTful</a></li>
+<li><a class="reference internal" href="#http-status-codes" id="id7">HTTP
+ Status Codes</a></li>
+<li><a class="reference internal" 
+href="#alternative-put-and-delete-requests" id="id8">Alternative PUT and
+ DELETE requests</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-concepts-structure" 
+id="id9">Data concepts &amp; structure</a><ul>
+<li><a class="reference internal" 
+href="#data-hierarchy-environment-datastream-datapoint" id="id10">Data 
+hierarchy: Environment &gt;&gt; Datastream &gt;&gt; Datapoint</a></li>
+<li><a class="reference internal" 
+href="#feeds-manual-vs-automatic-frozen-vs-live" id="id11">Feeds: manual
+ vs. automatic &amp; frozen vs. live</a></li>
+<li><a class="reference internal" href="#data-formats" id="id12">Data 
+Formats</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#security-authentication" 
+id="id13">Security &amp; Authentication</a><ul>
+<li><a class="reference internal" href="#security-ssl-https" id="id14">Security
+ - SSL/HTTPS</a></li>
+<li><a class="reference internal" href="#authentication" id="id15">Authentication</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#access-restrictions" id="id16">Access
+ restrictions</a><ul>
+<li><a class="reference internal" href="#accounts-feature-availability" 
+id="id17">Accounts &amp; feature availability</a></li>
+<li><a class="reference internal" href="#rate-limit" id="id18">Rate 
+limit</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#non-authenticated-access" 
+id="id19">Non-authenticated access</a><ul>
+<li><a class="reference internal" href="#history-csv-png-graph" 
+id="id20">History CSV &amp; PNG graph</a></li>
+<li><a class="reference internal" href="#archive" id="id21">Archive</a></li>
+<li><a class="reference internal" href="#rss-atom" id="id22">RSS/Atom</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#resources" id="id23">Resources</a><ul>
+<li><a class="reference internal" href="#libraries" id="id24">Libraries</a></li>
+<li><a class="reference internal" href="#examples" id="id25">Examples</a></li>
+<li><a class="reference internal" href="#quickstart" id="id26">Quickstart</a></li>
+<li><a class="reference internal" href="#getting-help" id="id27">Getting
+ Help</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="basic-information-about-the-api">
+<h1>Basic information about the API</h1>
+<div class="section" id="versions">
+<h2>Versions</h2>
+<p>There are currently two versions of the API active. Where possible 
+you should use the most recent version available. We will endeavour to 
+support all versions of the API as far as possible, but the most 
+advanced functionality is unlikely to be backported to previous 
+versions.</p>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="http://api.pachube.com/v2/">Documentation
+ for version 2</a>, base URL: <a class="reference external" 
+href="http://api.pachube.com/v2/">http://api.pachube.com/v2/*</a> 
+(released Aug 2010 - <strong>recommended</strong>).</li>
+<li><a class="reference external" href="http://api.pachube.com/v1/">Documentation
+ for version 1</a>, base URL: <a class="reference external" 
+href="http://api.pachube.com/v1/">http://api.pachube.com/v1/*</a> 
+(released Feb 2008 - <em>deprecated</em>).</li>
+</ul>
+</blockquote>
+<p>Note: For legacy compatibility, the v1 API will remain available at <a
+ class="reference external" href="http://www.pachube.com/api/">http://www.pachube.com/api/*</a>
+ but usage should be switched over to use the base URL noted above as 
+soon as possible.</p>
+<dl class="docutils">
+<dt>Versioning the API enables you to lock your application to a 
+specific API version. This means that the only changes we will make are:</dt>
+<dd><ul class="first last simple">
+<li>Adding new features whilst leaving the existing ones untouched</li>
+<li>Fixes which do not affect backwards compatibility</li>
+<li>Incrementing the format version numbers as required to accommodate 
+any minor changes</li>
+</ul>
+</dd>
+</dl>
+<p>JSON and XML formats both have version numbers included as part of 
+their structure. This enables you either to specify a particular format 
+for consistency or to verify what format the document is represented in.</p>
+</div>
+<div class="section" id="http-based-restful">
+<h2>HTTP-based &amp; RESTful</h2>
+<p>The Pachube API is currently entirely based on HTTP requests, and 
+conforms to the design principles of <a class="reference external" 
+href="http://en.wikipedia.org/wiki/Representational_State_Transfer">Representational
+ State Transfer (REST)</a>. See <a class="reference external" 
+href="http://www.eetimes.com/design/embedded-internet-design/4201086/Web-Services-for-Smart-Objects--Part-3-A-real-world-web-service-system-for-smart-objects">this
+ article for an extensive discussion about Pachube</a> as a 'real-world 
+instantiation of a RESTful interface for smart objects'.</p>
+<p>The three main data types are represented hierarchically in the URL 
+in the same way they are related, i.e. Environment &gt;&gt; Datastream 
+&gt;&gt; Datapoint. RESTful access uses the HTTP verbs to determine 
+which action to make on a particular data object:</p>
+<blockquote>
+<ul class="simple">
+<li>GET : Retrieves the current state of the object</li>
+<li>PUT : Sets the current state of the object</li>
+<li>POST : Creates a new object</li>
+<li>DELETE : Deletes the object</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="http-status-codes">
+<h2>HTTP Status Codes</h2>
+<p>The Pachube API attempts to return appropriate HTTP status codes (see
+ <a class="reference external" 
+href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">http://en.wikipedia.org/wiki/List_of_HTTP_status_codes</a>)
+ for every request.</p>
+<p>Common status codes include:</p>
+<blockquote>
+<ul class="simple">
+<li>200 OK: request processed successfully.</li>
+<li>401 Not Authorized: either you need to provide authentication 
+credentials, or the credentials provided aren't valid.</li>
+<li>403 Forbidden: Pachube understands your request, but refuses to 
+fulfill it. An accompanying error message should explain why.</li>
+<li>404 Not Found: either you're requesting an invalid URI or the 
+resource in question doesn't exist (eg. no such feed).</li>
+<li>422 Unprocessable Entity: Pachube was unable to create a feed 
+because the EEML/JSON was not complete/valid (e.g. it didn't include a 
+"title" element).</li>
+<li>500 Internal Server Error: Something went wrong... Please post to 
+the forum about it and we will investigate.</li>
+<li>503 No server error: usually occurs when there are too many requests
+ coming into Pachube - if you get this from an API request then the 
+error message will be returned in XML in the response.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="alternative-put-and-delete-requests">
+<h2>Alternative PUT and DELETE requests</h2>
+<p>Not all HTTP clients are able to make PUT or DELETE requests (e.g. 
+web browsers). In order to work around this limitation, it is possible 
+to send a POST request with a "_method" parameter, e.g.</p>
+<blockquote>
+<ul class="simple">
+<li>POST to <a class="reference external" 
+href="http://api.pachube.com/v2/feeds/504/datastreams/0.xml?_method=put">http://api.pachube.com/v2/feeds/504/datastreams/0.xml?_method=put</a>
+ will simulate a PUT</li>
+<li>POST to <a class="reference external" 
+href="http://api.pachube.com/v2/feeds/504/datastreams/0.xml?_method=delete">http://api.pachube.com/v2/feeds/504/datastreams/0.xml?_method=delete</a>
+ will simulate a DELETE</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div class="section" id="data-concepts-structure">
+<h1>Data concepts &amp; structure</h1>
+<div class="section" 
+id="data-hierarchy-environment-datastream-datapoint">
+<h2>Data hierarchy: Environment &gt;&gt; Datastream &gt;&gt; Datapoint</h2>
+<p>A hierarchy of data types is used to represent data in the Pachube 
+system: Environment &gt;&gt; Datastream &gt;&gt; Datapoint.</p>
+<dl class="docutils">
+<dt><strong>Environment</strong> (aka 'feed')</dt>
+<dd>An 'environment' is a context-specific collection of measured data, 
+often at a particular geolocation, defined by the creator of the 
+environment and measured by sensors and devices. The term encompasses 
+both physical entities such as a room, a mobile device, a building or a 
+forest; and virtual entities such as a Second Life model, server 
+bandwidth monitoring, etc. A Pachube 'feed' is the data representation 
+of an environment and its datastreams. Its metadata can optionally 
+specify whether it is physical or virtual, fixed or mobile, indoor or 
+outdoor, etc.</dd>
+<dt><strong>Datastream</strong></dt>
+<dd>A datastream represents an individual sensor or measuring 
+device/script within an environment. Every datastream must have a unique
+ (within the environment) alphanumeric ID. It can also specify 'units' 
+(e.g. 'watts') as well as user-defined 'tags' (e.g. 'fridge_energy').</dd>
+<dt><strong>Datapoint</strong></dt>
+<dd>A datapoint represents a single value of a datastream at a specific 
+point in time. It is simply a key value pair of a timestamp and the 
+value at that time.</dd>
+</dl>
+<p>Example: You wire up a hallway ('environment') with temperature, 
+humidity and CO2 sensors ('datastreams'). You create a Pachube feed 
+titled 'My Hallway', with three datastreams where the IDs could be: 
+'temperature', 'humidity' and 'CO2'; which might be tagged 
+'thermal,non-contact', 'capacitive, SHT21' and 'MG811' respectively; and
+ have units 'Celsius', '%RH' and 'ppm'. Individual datapoints at a point
+ in time might be '23.2', '34' and '3820' respectively.</p>
+</div>
+<div class="section" id="feeds-manual-vs-automatic-frozen-vs-live">
+<h2>Feeds: manual vs. automatic &amp; frozen vs. live</h2>
+<p>Environment feeds fall into one of two types: <em>manual</em> and <em>automatic</em>.</p>
+<p><strong>Manual</strong> feeds are those where the environment or 
+device 'pushes' updates, usually via a PUT request. This is often done 
+on a timed interval, on value-change or at some other significant moment
+ (e.g. upon button press) and tend to be environments that sit behind a 
+firewall or that are too low-powered to sustain a fully functioning 
+server.</p>
+<p><strong>Automatic</strong> feeds, on the other hand, are those where 
+the environment or device is able to serve data on request: <a 
+class="reference external" href="http://www.pachube.com/">Pachube</a> 
+automatically 'pulls' data from them either every 15 minutes or whenever
+ another client requests it (whichever is the more frequent).</p>
+<p>The status of a feed can be either <em>live</em> or <em>frozen</em> 
+which mean slightly different things depending on the feed type:</p>
+<ul>
+<li><dl class="first docutils">
+<dt><em>manual</em></dt>
+<dd><ul class="first last simple">
+<li><strong>live</strong> means that the remote environment or device 
+manually updated Pachube (i.e. 'pushed') with its data in the last 15 
+minutes.</li>
+<li><strong>frozen</strong> means that it was last updated more than 15 
+minutes ago.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><em>automatic</em></dt>
+<dd><ul class="first last simple">
+<li><strong>live</strong> means that Pachube has successfully retrieved 
+data (i.e. 'pulled') from the remote environment or device in the last 
+15 minutes.</li>
+<li><strong>frozen</strong> means that either it has not retrieved data 
+in the last 15 minutes or that the last time it attempted to retrieve 
+data (within the last 15 minutes) it was unsuccessful.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="data-formats">
+<h2>Data Formats</h2>
+<p>The API supports a range of different formats, including CSV, XML and
+ JSON, though some methods only accept a subset of these formats. See 
+documentation for each API version for specific info and examples of 
+formats.</p>
+</div>
+</div>
+<div class="section" id="security-authentication">
+<h1>Security &amp; Authentication</h1>
+<div class="section" id="security-ssl-https">
+<h2>Security - SSL/HTTPS</h2>
+<p>For some users, depending on feature availability associated with 
+their particular account type, industry-standard HTTPS/SSL secure access
+ is available for all authenticated methods, by replacing '<a 
+class="reference external" href="http:///">http://</a>' with '<a 
+class="reference external" href="https:///">https://</a>' in requests. 
+Check your subscriptions panel to see if this enabled on your account.</p>
+</div>
+<div class="section" id="authentication">
+<h2>Authentication</h2>
+<p>API keys are used to control access to the resources via the API. 
+They can be sent using one of two methods: as a request header or as a 
+parameter in the request URL (with the former preferred for security 
+reasons).</p>
+<blockquote>
+<ul>
+<li><p class="first">Using an <strong>HTTP header</strong>: This is the 
+recommended method of sending your API key because, whilst still not 
+secure if sent over an unencrypted connection, it is less likely to be 
+logged as part of the URL:</p>
+<pre class="literal-block">X-PachubeApiKey: YOUR_API_KEY_HERE
+</pre>
+</li>
+<li><p class="first">As a <strong>request parameter</strong>:</p>
+<pre class="literal-block">http://api.pachube.com/v2/feeds?key=YOUR_KEY_HERE
+</pre>
+</li>
+</ul>
+</blockquote>
+<p>Thus, sample GET requests may look like either:</p>
+<pre class="literal-block">GET /v2/feeds/504.xml HTTP/1.1
+Host: api.pachube.com
+X-PachubeApiKey: ENTER_YOUR_PACHUBE_KEY_HERE
+</pre>
+<p>or:</p>
+<pre class="literal-block">GET /v2/feeds/504.xml?key=ENTER_YOUR_PACHUBE_KEY_HERE HTTP/1.1
+Host: api.pachube.com
+</pre>
+<p>If you would like to use real time data to interact with a web page 
+(for example in Javascript) and you (obviously) don't want to include 
+your API key anywhere publicly visible, the person accessing the web 
+page will need to authenticate with Pachube (a login box should 
+automatically appear as a result of <a class="reference external" 
+href="http://en.wikipedia.org/wiki/Basic_access_authentication">basic 
+auth</a>). You might also try using Flash and embedding your API key but
+ you must make sure that script code is protected from import in case 
+someone tries to capture your API key that way. When building Flash 
+interfaces the API key <strong>must</strong> be sent as a header, not as
+ a request parameter, since the request URLs are very easy to capture in
+ a browser.</p>
+</div>
+</div>
+<div class="section" id="access-restrictions">
+<h1>Access restrictions</h1>
+<div class="section" id="accounts-feature-availability">
+<h2>Accounts &amp; feature availability</h2>
+<p>To use Pachube's API you need a Pachube account. Sign up here: <a 
+class="reference external" href="http://www.pachube.com/signup">http://www.pachube.com/signup</a>.</p>
+<p>Feature availability and limits depend on account type, so not all 
+methods will be available to all users. Refer to the subscriptions panel
+ of your control panel (available at <a class="reference external" 
+href="http://www.pachube.com/users/%5Byour_username%5D/subscriptions">http://www.pachube.com/users/[your_username]/subscriptions</a>
+ for your current feature availability.</p>
+</div>
+<div class="section" id="rate-limit">
+<h2>Rate limit</h2>
+<p>API usage is rate limited and this rate is determined by the account 
+type of the user making requests. While the API rate limit is expressed 
+in 'requests per minute' the calculation is averaged over 3 minutes.</p>
+<p>If your application exceeds this rate, it will be unable to make any 
+successful requests, whether to access feed data or to post new data, 
+and will receive a 503 error for every request until the rate has 
+diminished. Once the rate has diminished service will return to normal, 
+so you don't have to do anything other than reducing the rate of 
+requests.</p>
+<p>Note that this means that you can either make requests regularly, or 
+you can make a burst of requests -- but then you will need to prevent 
+any further requests for another two minutes. Therefore, if you are 
+consistently making requests more frequently than your limit, then none 
+of your requests will ever be successful.</p>
+</div>
+</div>
+<div class="section" id="non-authenticated-access">
+<h1>Non-authenticated access</h1>
+<p>Non-authenticated access is available to make PNG images, summary 
+history and RSS/Atom feeds available to the general public. This enables
+ you, for example, to embed graphs in websites that will be accessed by 
+non-Pachube users. In the future, we will provide finer-grained access 
+control tools for these items, but for the moment they are accessed as 
+detailed in the v1 API.</p>
+<div class="section" id="history-csv-png-graph">
+<h2>History CSV &amp; PNG graph</h2>
+<p>To retrieve the last 24-hour of history of any public datastream, as a
+ summary in 15-minute increments, or to embed PNG graphs from a variety 
+of time periods, see <a class="reference external" 
+href="http://api.pachube.com/v1/#history">history</a>.</p>
+</div>
+<div class="section" id="archive">
+<h2>Archive</h2>
+<p>To retrieve much longer history of any public datastream see <a 
+class="reference external" href="http://api.pachube.com/v1/#archive">archive</a>.</p>
+</div>
+<div class="section" id="rss-atom">
+<h2>RSS/Atom</h2>
+<p>To retrieve RSS/Atom format feeds lists by user, by tag or just 
+generally added to Pachube see <a class="reference external" 
+href="http://api.pachube.com/v1/#multiple-feeds-data-available-without-authentication">RSS/Atom</a>.</p>
+</div>
+</div>
+<div class="section" id="resources">
+<h1>Resources</h1>
+<div class="section" id="libraries">
+<h2>Libraries</h2>
+<p>There are libraries and examples available for pretty much every 
+major programming language. See what the extensive worldwide Pachube 
+community has created here: <a class="reference external" 
+href="http://community.pachube.com/software_hardware">http://community.pachube.com/software_hardware</a></p>
+</div>
+<div class="section" id="examples">
+<h2>Examples</h2>
+<p>Examples are provided where possible using the command line tool <a 
+class="reference external" href="http://en.wikipedia.org/wiki/CURL">curl</a>.
+ This is available by default on Mac OS X and can be installed easily on
+ Windows and Linux systems.</p>
+</div>
+<div class="section" id="quickstart">
+<h2>Quickstart</h2>
+<p>The <a class="reference external" 
+href="http://community.pachube.com/quickstart">quickstart</a> shows some
+ examples of basic Pachube usage using curl and your terminal to start 
+poking around with the system. In addition, as of version 2, we include 
+curl examples in the documentation of many of the methods.</p>
+</div>
+<div class="section" id="getting-help">
+<h2>Getting Help</h2>
+<p>The best way to get help is to <a class="reference external" 
+href="http://community.pachube.com/forum">post a question or comment in 
+the community forum</a> so that other people can pitch in with 
+suggestions or benefit later from things discussed. We also try to be 
+responsive via the "Contact Us" link off of <a class="reference 
+external" href="http://www.pachube.com/">http://www.pachube.com</a>, 
+though failing that, catching us on Twitter at <a class="reference 
+external" href="http://twitter.com/pachube">http://twitter.com/pachube</a>
+ is a great way to get our attention.</p>
+<hr class="docutils">
+<p>The basic structure of the documentation, and some of the phrases 
+herein, come from <a class="reference external" 
+href="http://apiwiki.twitter.com/">Twitter's API documentation</a> which
+ is so clear that it seemed like a good model to build on.</p>
+<p>Last updated: 2010-09-09</p>
+</div>
+</div>
+
+          <!-- // bottom -->
+          </div> <!-- // #document_body -->
+        </div>  <!-- // #main -->
+      </div>  <!-- //main wrapper  -->      
+    </div><!-- // container--> 
+  </div>	<!-- // #header --> 
+  <div id="p-footer">
+    <div class="p-container" id="p-footer_container">
+      <div class="view-left-footer">
+        <a href="http://www.connectedenvironments.com/" class="external">
+ <img src="Pachube%20API%20Documentation_fichiers/logo_ce.png" 
+alt="Connected Environments"></a> <br>
+        <div id="copyright"><strong>Copyright © 2009-2010 Connected 
+Environments Ltd.</strong><br clear="all">All Rights Reserved.</div>
+      </div>
+      <div class="view-col-footer">
+        <a href="http://www.pachube.com/terms_of_service" 
+class="external">Terms of Service</a><br>
+        <a href="http://www.pachube.com/privacy" class="external">Privacy
+ Policy</a><br>
+        <a href="http://community.pachube.com/about" class="external">About
+ us</a><br>
+        <a href="http://community.pachube.com/team" class="external">The
+ team</a><br>
+      </div>
+      <div class="view-col-footer"> 
+        <a href="http://community.pachube.com/tutorials" 
+class="external">Tutorials</a><br>
+        <a href="http://community.pachube.com/api" class="external">API 
+documentation</a><br>
+        <a href="http://community.pachube.com/software_hardware" 
+class="external">Libraries &amp; examples</a><br>
+        <a href="http://community.pachube.com/" class="external">Community
+ site</a><br>
+      </div>
+      <div class="view-col-footer">
+         <a href="http://www.pachube.com/contact" class="external">Contact
+ Us</a><br>
+        <a href="http://www.twitter.com/pachube" class="external">Follow
+ @pachube<img 
+src="Pachube%20API%20Documentation_fichiers/ico_tweeter.png" 
+alt="Twitter"></a><br>
+        <a href="http://www.twitter.com/pachube_dev" class="external">Follow
+ @pachube_dev<img 
+src="Pachube%20API%20Documentation_fichiers/ico_tweeter.png" 
+alt="Twitter"></a><br>
+        <a href="http://www.youtube.com/Pachubevideos" class="external">Follow
+ on Youtube<img 
+src="Pachube%20API%20Documentation_fichiers/ico_youtube.png" 
+alt="Youtube"></a><br>
+      </div>
+    </div>
+  </div> <!-- // #footer -->
+</div><!-- // #page --> 
+<!-- // end bottom -->
+
+</div>
+</body></html>

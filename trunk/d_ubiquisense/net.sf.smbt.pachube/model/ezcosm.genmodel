@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.pachube/src-model" modelPluginID="net.sf.smbt.pachube"
+    modelName="Ezcosm" testsDirectory="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../src/net/sf/smbt/pachube/model/eeml.genmodel#//_5">
+  <foreignModel>ezcosm.ecore</foreignModel>
+  <genPackages prefix="Ezcosm" basePackage="net.sf.smbt" resource="XML" disposableProviderFactory="true"
+      ecorePackage="ezcosm.ecore#/">
+    <genClasses ecoreClass="ezcosm.ecore#//CosmProject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezcosm.ecore#//CosmProject/eeml"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

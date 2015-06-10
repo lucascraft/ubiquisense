@@ -1,0 +1,5 @@
+license.rtf shows no licensing issue.
+
+src attarched, linke jar and no mods : EPL compatible
+
+ 
