@@ -16,7 +16,7 @@
    </copyright>
 
    <license url="http://ubiquisense.com/p/ubiquisense/license">
-Ubiquisense - A smart ambient utilities framework 
+      Ubiquisense - A smart ambient utilities framework 
  
  Copyright (c) 2008 - 2015, Lucas Bigeardel
  
@@ -48,7 +48,7 @@ Ubiquisense - A smart ambient utilities framework
  
  Contributors:
      Lucas Bigeardel (lucas.bigeardel@gmail.com) - Initial API and implementation
-	</license>
+   </license>
 
    <url>
       <update label="Ubiquisense Updates" url="http://ubiquisense.com/p/ubiquisense/updates/0.5.1/site.xml"/>
@@ -59,7 +59,6 @@ Ubiquisense - A smart ambient utilities framework
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.draw2d" version="3.6.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.smbt.ui.widgets" version="0.5.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -67,14 +66,6 @@ Ubiquisense - A smart ambient utilities framework
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.sf.smbt.ui.widgets.videos"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"
          unpack="false"/>
 
 </feature>

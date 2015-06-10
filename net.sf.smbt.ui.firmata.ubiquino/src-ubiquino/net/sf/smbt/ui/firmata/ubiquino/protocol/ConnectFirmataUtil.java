@@ -160,15 +160,15 @@ public class ConnectFirmataUtil {
 	
 		PortConfigKind cfgKind = PortConfigKind.UNKNOWN;
 		if (response.getModel()==2) {
-		cfgKind = PortConfigKind.ANALOGIC;
+			cfgKind = PortConfigKind.ANALOGIC;
 		} else if (response.getModel()==1) {
-		cfgKind = PortConfigKind.DIGITAL;
+			cfgKind = PortConfigKind.DIGITAL;
 		}
 		PortConfig p = UbiquinoUtils.INSTANCE.createPortCfg(cfgKind, response.getPin(), response.getChannel());
 		if (cfgKind==PortConfigKind.ANALOGIC) {
-		board.getAnalogPorts().add((AnalogPort)p.getTarget());
+			board.getAnalogPorts().add((AnalogPort)p.getTarget());
 		} else if (cfgKind==PortConfigKind.DIGITAL) {
-		board.getDigitalPorts().add((DigitalPort)p.getTarget());
+			board.getDigitalPorts().add((DigitalPort)p.getTarget());
 		}
 		ubiquinoEditor.getUbiquino().getConfig().getPorts().add(p);
 		
@@ -180,7 +180,7 @@ public class ConnectFirmataUtil {
 			if ("0x6a".equals(kind)) {
 				System.out.println("Analog mapping response");
 				int pin = 0;
-				for (int i=2;i<sysex.getMessage().length-3;i++) {
+				for (int i=2;i<sysex.getMessage().length-1;i++) {
 					byte mapping = sysex.getMessage()[i];
 					if (mapping != 0x7f) {
 						

@@ -57,6 +57,8 @@ import net.sf.smbt.midi.ezmidi.DSLMidiMessage;
 import net.sf.smbt.ui.hmi.GUIToolkit;
 import net.sf.smbt.ui.hmi.UbiJob;
 import net.sf.smbt.ui.widgets.vu.UbiVuMeter;
+import net.sf.xqz.engine.cmd.utils.CmdUtil;
+import net.sf.xqz.model.cmd.CompoundCmd;
 import net.sf.xqz.model.engine.CmdPipe;
 import net.sf.xqz.model.engine.EVENT_KIND;
 
@@ -268,7 +270,6 @@ public class ArduinoBoardControllerWidget extends Composite {
 		analogContainer.setLayoutData(GridDataFactory.fillDefaults().create());
 		analogContainer.setBackground(GUIToolkit.BG);
 
-		int idxA = 0;
 		for (PortConfig cfg : ubiquino.getConfig().getPorts()) {
 			if (PortConfigKind.ANALOGIC.equals(cfg.getKind())) {
 				createAnalogSlider(cfg, analogContainer);
@@ -323,7 +324,9 @@ public class ArduinoBoardControllerWidget extends Composite {
 		});
 		callBackCheckbox.addSelectionListener(selectionListenerMap.get(callBackCheckbox));
 		callBackCheckbox.setSelection(isPortActive(p));
-
+		cfg.setEnabled(true);
+		cfg.getTarget().setReport(ARDUINO_REPORT_MODE.ACTIVATE);
+		
 		ComboViewer modesCombo = new ComboViewer(new Combo(parent, SWT.READ_ONLY));
 		modesCombo.getControl().setLayoutData(GridDataFactory.fillDefaults().hint(100, SWT.DEFAULT).indent(10, 0).align(SWT.RIGHT, SWT.CENTER).grab(false, false).create());
 		modesCombo.setLabelProvider(new LabelProvider() {
@@ -421,7 +424,7 @@ public class ArduinoBoardControllerWidget extends Composite {
 	
 		digitalBagsMap.put(p, bag);
 
-		modesCombo.setSelection(new StructuredSelection(cfg.getMode()));
+		modesCombo.setSelection(new StructuredSelection(PIN_MODE.INPUT/*cfg.getMode()*/));
 			
 		Label label = new Label(bag, SWT.NONE);
 		label.setText("---");
@@ -531,7 +534,7 @@ public class ArduinoBoardControllerWidget extends Composite {
 			
 		digitalServoSlidersMap.put(p, sliderServo);
 			
-		stackLayout.topControl = hiloButton;
+		stackLayout.topControl = label;
 			
 		final Label placeholder = new Label(parent, SWT.NONE);
 		placeholder.setText("");
@@ -611,6 +614,8 @@ public class ArduinoBoardControllerWidget extends Composite {
 		});
 		callBackCheckbox.addSelectionListener(selectionListenerMap.get(callBackCheckbox));
 		callBackCheckbox.setSelection(isPortActive(p));
+		cfg.setEnabled(true);
+		cfg.getTarget().setReport(ARDUINO_REPORT_MODE.ACTIVATE);
 		callBackCheckbox.setBackground(GUIToolkit.BG);
 		
 		ComboViewer modesCombo = new ComboViewer(new Combo(parent, SWT.READ_ONLY));
@@ -781,19 +786,68 @@ public class ArduinoBoardControllerWidget extends Composite {
 					System.out.println("Sync " + pin + " @ " + mode + " (" + report + ")");
 				}
 				if (pipe != null) {
-					DSLMidiMessage msg = null;
+					CompoundCmd msg = CmdUtil.INSTANCE.createCompoundCmd();
 					if (p.eClass().equals(ArduinoPackage.Literals.ANALOG_PORT)) {
-						msg = FirmataCmdUtils.INSTANCE.createReportAnalogPin(
+						msg.add(FirmataCmdUtils.INSTANCE.createReportAnalogPin(
 							p.getChannel(), 
 							cfg.isEnabled() ? 1 : 0
-						);
+						));
 					} else if (p.eClass().equals(ArduinoPackage.Literals.DIGITAL_PORT)) {
-						msg = FirmataCmdUtils.INSTANCE.createReportDigitalPin(
+						msg.add(FirmataCmdUtils.INSTANCE.createReportDigitalPin(
 							p.getMap().getValue(), 
 							cfg.isEnabled() ? 1 : 0
-						);
+						));
+						if (digitalModeCombosMap.get(p)!=null && digitalModeCombosMap.get(p).getSelection()!=null) {
+							StructuredSelection sel = (StructuredSelection) digitalModeCombosMap.get(p).getSelection();
+							Object obj = sel.getFirstElement();
+							if (obj instanceof PIN_MODE) {
+								PIN_MODE currentMode = (PIN_MODE) obj;							
+								switch (currentMode) {
+									case INPUT:
+									case OUTPUT:
+									case PWM:
+										msg.add(
+											FirmataCmdUtils.INSTANCE.createSetPinMode(
+												p.getMap().getValue(), 
+												currentMode.getValue()
+											)
+										);
+										if (p.getMap().getValue() < 15) {
+											msg.add(
+												FirmataCmdUtils.INSTANCE.createDigitalIO(
+													p.getMap().getValue(), 
+													digitalPWMSlidersMap.get(p).getSelection()
+												)
+											);
+										} else {
+											msg.add(
+												FirmataCmdUtils.INSTANCE.createExtendedAnalog(
+													p.getMap().getValue(), 
+													digitalPWMSlidersMap.get(p).getSelection()
+												)
+											);
+										}
+										break;
+									case SERVO:
+										msg.add(
+											FirmataCmdUtils.INSTANCE.createSetServo(
+												p.getMap().getValue(), 
+												0,
+												20,
+												0
+											)
+										);
+										break;
+									case UNKNOWN:
+									case SHIFT:
+									case I2C:
+									default:
+										break;
+								}
+							}
+						}
 					}
-					pipe.send(msg, 25);
+					pipe.send(msg);
 				}
 			}
 		}

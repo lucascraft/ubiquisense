@@ -329,9 +329,7 @@ public class FirmataCmdUtils {
 		SysexMessage message =  EzmidiFactory.eINSTANCE.createSysexMessage();
 		message.setAddr((byte)0xf0);
 		message.setCmd(Integer.decode("0x6a"));
-	
 		message.setMessage(mapping);
-		
 		return message;
 	};
 

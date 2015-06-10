@@ -139,9 +139,9 @@ public class FirmataFrameHandler extends AbstractFrameInterpreterImpl {
 		if (stream != null && stream.length > 1) {
 			String tag = getTag(stream[1]);
 			if (FIRMWARE_RESPONSE.equals(tag) && stream.length > 2) {
-				DSLMidiMessage message = FirmataCmdUtils.INSTANCE.createProtocolVersionResponse(stream[1], stream[2]);
-				int major = Byte.valueOf(stream[1]).intValue();
-				int minor = Byte.valueOf(stream[2]).intValue();
+				DSLMidiMessage message = FirmataCmdUtils.INSTANCE.createProtocolVersionResponse(stream[2], stream[3]);
+				int major = Byte.valueOf(stream[2]).intValue();
+				int minor = Byte.valueOf(stream[3]).intValue();
 				message.setMessage(stream);
 				if (Platform.inDebugMode()) {
 					System.out.println("Firmata v"+major+"."+minor + " started");

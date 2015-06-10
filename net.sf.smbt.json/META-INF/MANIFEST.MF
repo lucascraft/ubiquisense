@@ -7,13 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: com.google.gson,
- com.google.gson.annotations,
- com.google.gson.internal,
- com.google.gson.internal.bind,
- com.google.gson.reflect,
- com.google.gson.stream,
- net.sf.smbt.json,
+Export-Package: net.sf.smbt.json,
  net.sf.smbt.json.cmd,
  net.sf.smbt.json.ecore.ezjson,
  net.sf.smbt.json.ecore.ezjson.impl,
