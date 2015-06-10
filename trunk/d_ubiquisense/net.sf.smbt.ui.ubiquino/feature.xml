@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.sf.smbt.ui.ubiquino"
+      label="Ubiquino (incubation)"
+      version="0.5.0.qualifier"
+      provider-name="ubiquisense.com"
+      plugin="net.sf.smbt.ui">
+
+   <description url="http://ubiquisense.com/p/ubiquisense/description/description.html">
+      Ubiquino : Firmata hardware protocol for Aduino board (Analog/Digital IOs comm protocol)
+   </description>
+
+   <copyright url="http://ubiquisense.com/p/ubiquisense/copyright/copyright.html">
+      Ubiquisense - A smart ambient utilities framework
+      Copyright (c) 2008 - 2012, Lucas Bigeardel
+   </copyright>
+
+   <license url="http://ubiquisense.com/p/ubiquisense/license">
+      Ubiquisense - A smart ambient utilities framework 
+ 
+ Copyright (c) 2008 - 2015, Lucas Bigeardel
+ 
+ The library is released under:
+ 
+ A) LGPL
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 3 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General
+ Public License along with this library; if not, write to the
+ Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ Boston, MA 02110-1301 USA
+ 
+ B) EPL
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+     Lucas Bigeardel (lucas.bigeardel@gmail.com) - Initial API and implementation
+   </license>
+
+   <url>
+      <update label="Ubiquisense Updates" url="http://ubiquisense.com/p/ubiquisense/updates/0.5.1/site.xml"/>
+      <discovery label="Ubiquisense" url="http://ubiquisense.com"/>
+   </url>
+
+   <includes
+         id="net.sf.smbt.ui.generic"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.arduino" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.midi" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.xqz.engine" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.comm" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.comm.topology" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.firmata" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.midi.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.arduino.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.editors" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.7.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.xcp" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.ui.navigator.resources"/>
+      <import plugin="net.sf.smbt.dmx" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.i2c.thingm" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.osc" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.console"/>
+      <import plugin="org.eclipse.jface.text" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.mapping" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.mapping.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.edit.ui" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.osc.ezmojo" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.osc.ezmojo.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.motion" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.motion.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.motion.ui" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.ui.motion" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.quantic" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.rxtx" version="2.1.72" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.ui.logging" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.xqz.engine.cep" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.comm.topology.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.osc.exchange" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.ui.widgets" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.draw2d" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.osc.tuio" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.query" version="1.2.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.xqz.script" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.edit"/>
+      <import plugin="net.sf.smbt.osc.tuio.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.console" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.logging" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.xqz.engine.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.xqz.script.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.xcp.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.comm.xbee" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.osc.ableton" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.osc.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.dmx.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.swt" version="3.7.1" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.ui" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.intro.universal"/>
+      <import plugin="net.sf.smbt.arduino.editor" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.firmata.ubiquino" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.firmata.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.forms" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.comm.bluetooth" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.ui.arduino" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.help" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.help.ui" version="3.5.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.200" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.firmata.ubiquino.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="compatible"/>
+      <import plugin="org.eclipse.help" version="3.5.0" match="compatible"/>
+      <import plugin="org.eclipse.ui" version="3.6.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.forms" version="3.5.0" match="compatible"/>
+      <import plugin="org.eclipse.core.expressions" version="3.4.200" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.arduido.eef" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.eef.runtime" version="1.3.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="net.sf.smbt.arduino"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.arduino.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.firmata"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.firmata.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.firmata.ubiquino"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.ui.widgets"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.xqz.engine.cep"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.osc.ezmojo"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.osc.ezmojo.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.ui.logging"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.mapping.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.comm.topology.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.midi.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.motion.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.osc.ableton.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.osc.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.osc.exchange.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.osc.tuio.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.xcp.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.xqz.engine.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.xqz.script.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.ui.motion"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.motion.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.dmx.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.firmata.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.arduino.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.osc.ableton"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.osc.tuio"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.ui.arduino"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.ui.firmata.ubiquino"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.firmata.ubiquino.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.firmata.ubiquino.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.intro"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.arduino.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.smbt.arduido.eef"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

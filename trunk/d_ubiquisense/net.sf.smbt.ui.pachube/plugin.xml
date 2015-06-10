@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<!--
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="net.sf.smbt.ui.pachube"
+            name="Pachube Category">
+      </category>
+      
+      <view
+            category="net.sf.smbt.ui.pachube"
+            class="net.sf.smbt.ui.pachube.views.PachubeView"
+            icon="icons/cosm.png"
+            id="net.sf.smbt.ui.pachube.views.PachubeView"
+            name="Cosm">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.sf.smbt.rcp.proximisense.perspective">
+         <view
+               id="net.sf.smbt.ui.pachube.views.PachubeView"
+               minimized="false"
+               relationship="stack"
+               relative="org.eclipse.ui.console.ConsoleView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   -->
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="net.sf.smbt.ui.pachube.preferences.CosmPreferencePage"
+            id="net.sf.smbt.ui.pachube.preferences.CosmPreferencePage"
+            name="Cosm">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="net.sf.smbt.ui.pachube.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+
+
+
+
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.sf.smbt.ui.pachube.editors.CosmEditor"
+            name="Cosm Configuration"
+            icon="icons/cosm.png"
+            extensions="cosm"
+            class="net.sf.smbt.ui.pachube.editors.CosmEditor"
+            contributorClass="net.sf.smbt.ui.pachube.editors.CosmActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="intro/sample.xml">
+      </configExtension>
+   </extension>
+   
+   
+   
+   
+   
+   
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-cosm-contrib">
+      <propertyContributor
+            contributorId="net.sf.smbt.ui.pachube"
+            labelProvider="net.sf.smbt.ui.pachube.properties.EnvTypeSheetLabelProvider">
+         <propertyCategory category="envType"/>
+      </propertyContributor>
+   </extension>
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs-cosm">
+      <propertyTabs contributorId="net.sf.smbt.ui.pachube">
+		  <propertyTab
+          category="envType"
+          id="property.tab.envType"
+          image="icons/cosm.png"
+          label="Environment"/>
+     </propertyTabs>
+  </extension>
+  
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs-streams">
+      <propertyTabs contributorId="net.sf.smbt.ui.pachube">
+		  <propertyTab
+          category="envType"
+          id="property.tab.streams"
+          image="icons/DataType.gif"
+          label="Stream"/>
+     </propertyTabs>
+  </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections-cosm">
+      <propertySections contributorId="net.sf.smbt.ui.pachube">
+
+       <!-- EnvronmentType PROPERTIES -->
+
+       <propertySection
+            id="property.section.ubiquisense.cosm.properties.envType" 
+            tab="property.tab.envType"
+            class="net.sf.smbt.ui.pachube.properties.CosmEnvTypePropertySection"
+        >
+            <input type="org.eeml.xsd._0._5.EnvironmentType"/>
+       </propertySection>
+       
+     <!-- DataType PROPERTIES -->
+
+       <propertySection
+            id="property.section.ubiquisense.cosm.properties.dataType" 
+            tab="property.tab.streams"
+            class="net.sf.smbt.ui.pachube.properties.CosmDataTypePropertySection"
+        >
+            <input type="org.eeml.xsd._0._5.DataType"/>
+       </propertySection>
+
+      </propertySections>
+   </extension>
+   <!--
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="net.sf.smbt.ui.pachube.views.CosmPerspective"
+            fixed="false"
+            icon="icons/cosm.png"
+            id="net.sf.smbt.ui.pachube.cosm"
+            name="Cosm">
+      </perspective>
+   </extension>
+   -->
+   <extension
+         point="net.sf.smbt.ui.actions">
+      <action
+            ID="net.sf.smbt.ui.pachube.creatFeedFromOSCAction"
+            action="net.sf.smbt.ui.pachube.actions.CreateCosmFeedFromOSCAction">
+      </action>
+   </extension>
+   
+
+
+</plugin>

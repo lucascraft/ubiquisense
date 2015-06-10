@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="net.sf.smbt.ui.motion"
+            name="Motion Category">
+      </category>
+      <view
+            category="net.sf.smbt.ui.motion"
+            class="net.sf.smbt.ui.motion.views.MotionView"
+            icon="icons/sample.gif"
+            id="net.sf.smbt.ui.motion.views.MotionView"
+            name="Motion View">
+      </view>
+   </extension>
+   <!--
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.sf.smbt.rcp.proximisense.perspective">
+         <view
+               id="net.sf.smbt.ui.motion.views.MotionView"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.TaskList">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+-->
+</plugin>

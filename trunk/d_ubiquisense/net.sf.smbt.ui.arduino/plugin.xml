@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="net.sf.smbt.quantic.targetConfig">
+      <target
+            addr="/dev/tty.usbserial-A7006022"
+            desc="Mac OSX Arduino USB connection sample"
+            protocol="arduino"
+            speed="57600"
+            transport="usb">
+      </target>
+      <target
+            addr="/dev/tty.usbserial-A6007to3"
+            desc="Mac OSX Arduino USB connection sample"
+            protocol="arduino"
+            speed="57600"
+            transport="usb">
+      </target>
+   </extension>
+   <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="intro/sample.xml">
+      </configExtension>
+   </extension>
+
+</plugin>

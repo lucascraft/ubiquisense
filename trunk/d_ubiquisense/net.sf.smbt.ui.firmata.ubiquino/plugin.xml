@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="net.sf.smbt.quantic.targetConfig">
+      <target
+            addr="/dev/tty.usbserial-A7006022"
+            desc="Mac OSX Arduino USB connection sample"
+            protocol="firmata"
+            speed="57600"
+            transport="usb">
+      </target>
+      <target
+            addr="/dev/tty.usbserial-A6007to3"
+            desc="Mac OSX Arduino USB connection sample"
+            protocol="firmata"
+            speed="57600"
+            transport="usb">
+      </target>
+      <target
+            addr="/dev/tty.usbserial-A7006022"
+            desc="Mac OSX Arduino USB connection sample"
+            protocol="firmata"
+            speed="19200"
+            transport="usb">
+      </target>
+      <target
+            addr="/dev/tty.usbserial-A6007to3"
+            desc="Mac OSX Arduino USB connection sample"
+            protocol="firmata"
+            speed="19200"
+            transport="usb">
+      </target>
+   </extension>
+   <!--
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="net.sf.smbt.ui.firmata.ubiquino.views.ArduinoPerspective"
+            icon="icons/arduino.png"
+            id="net.sf.smbt.ui.arduino.perspective"
+            name="Arduino">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.sf.smbt.ui.arduino.perspective">
+         <view
+               closeable="false"
+               id="net.sf.smbt.ui.view.ez"
+               minimized="true"
+               moveable="true"
+               ratio="0.3"
+               relationship="fast"
+               showTitle="true"
+               visible="true">
+         </view>
+         <view
+               closeable="false"
+               id="net.sf.smbt.ui.views.EZQTopologyView"
+               minimized="true"
+               moveable="true"
+               relationship="fast"
+               showTitle="true"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   -->
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="ctx-concepts.xml"
+            plugin="net.sf.smbt.ui.firmata.ubiquino">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc.xml"
+            primary="true">
+      </toc>
+      <toc
+            file="firmata.xml"
+            primary="false">
+      </toc>
+      <toc
+            file="ubiquino.xml"
+            primary="false">
+      </toc>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="net.sf.smbt.ui.firmata.ubiquino.editor.UbiquinoEditor"
+            contributorClass="net.sf.smbt.ui.firmata.ubiquino.editor.UbiquinoActionBarContributor"
+            default="false"
+            extensions="firmata"
+            icon="icons/arduino.png"
+            id="net.sf.smbt.ui.firmata.ubiquino.editor"
+            name="Firmata">
+      </editor>
+   </extension>
+   
+   
+ 
+   
+   
+   
+   <extension
+    	id="prop-ubiquino-contrib"
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="net.sf.smbt.ui.ubiquino"
+            labelProvider="net.sf.smbt.ui.firmata.ubiquino.editor.UbiquinoSheetLabelProvider">
+         <propertyCategory
+               category="ubiquinoType"/>
+      </propertyContributor>
+   </extension>
+   <extension
+         id="proptabs-ubiquino"
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="net.sf.smbt.ui.ubiquino">
+         <propertyTab
+               category="ubiquinoType"
+               id="property.tab.ubiquinoType"
+               image="icons/arduino.png"
+               label="Ubiquino">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections"
+         id="propsections-ubiquino">
+      <propertySections
+            contributorId="net.sf.smbt.ui.ubiquino">
+         <propertySection
+               class="net.sf.smbt.ui.firmata.ubiquino.editor.UbiquinoPropertySection"
+               id="net.sf.smbt.ui.firmata.ubiquino.properties.ubiquinoType"
+               tab="property.tab.ubiquinoType">
+            <input
+                  type="net.sf.smbt.firmata.ubiquino.Ubiquino">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+      <extension
+         point="org.eclipse.ui.intro.configExtension">
+      <configExtension
+            configId="org.eclipse.ui.intro.universalConfig"
+            content="intro/sample.xml">
+      </configExtension>
+   </extension>
+   
+   
+
+</plugin>

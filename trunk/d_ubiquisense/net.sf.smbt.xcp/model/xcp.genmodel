@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.xcp/src-model" editorDirectory="/net.sf.smbt.xcp.editor/src"
+    modelPluginID="net.sf.smbt.xcp" modelName="Xcp" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="" booleanFlagsField="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>xcp.ecore</foreignModel>
+  <genPackages prefix="Xcp" basePackage="net.sf.smbt" disposableProviderFactory="true"
+      ecorePackage="xcp.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xcp.ecore#//XCPServiceStatus">
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPServiceStatus/PROBING"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPServiceStatus/DISCOVERED"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPServiceStatus/RESOLVED"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPServiceStatus/READY"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPServiceStatus/UNAVAILABLE"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPServiceStatus/STARTING"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPServiceStatus/STOP"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPServiceStatus/CONNECTED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="xcp.ecore#//XCPAddrType">
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPAddrType/XCP_ADDR_BLUETOOTH"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPAddrType/XCP_ADDR_UDP"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPAddrType/XCP_ADDR_TCP"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPAddrType/XCP_ADDR_USB"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPAddrType/XCP_ADDR_HTTP"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPAddrType/XCP_ADDR_MIDI"/>
+      <genEnumLiterals ecoreEnumLiteral="xcp.ecore#//XCPAddrType/XCP_ADDR_XBEE"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="xcp.ecore#//OSCPacket"/>
+    <genDataTypes ecoreDataType="xcp.ecore#//ServiceInfo"/>
+    <genClasses ecoreClass="xcp.ecore#//XCPDevice">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xcp.ecore#//XCPDevice/addr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xcp.ecore#//XCPDevice/services"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPDevice/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPDevice/device"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPDevice/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPDevice/dnsSd"/>
+    </genClasses>
+    <genClasses ecoreClass="xcp.ecore#//XCPAddress">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPAddress/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPAddress/addr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPAddress/ports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPAddress/alias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPAddress/transportID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPAddress/protocolID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPAddress/speed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPAddress/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//XCPAddress/name"/>
+    </genClasses>
+    <genClasses ecoreClass="xcp.ecore#//XCPDevicesRegistery">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xcp.ecore#//XCPDevicesRegistery/devices"/>
+      <genOperations ecoreOperation="xcp.ecore#//XCPDevicesRegistery/getDevicesFromType">
+        <genParameters ecoreParameter="xcp.ecore#//XCPDevicesRegistery/getDevicesFromType/type"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="xcp.ecore#//Services">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xcp.ecore#//Services/osc"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

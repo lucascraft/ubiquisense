@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="org.eclipse.ui.editorActions">
+      <editorContribution
+            id="net.sf.smbt.ui.ubiquino.cosm.editorContribution"
+            targetID="net.sf.smbt.ui.firmata.ubiquino.editor">
+         <action
+               class="net.sf.smbt.ui.ubiquino.cosm.ext.CreateCosmFeedEditorActionDelegate"
+               icon="icons/cosm-feed.png"
+               id="net.sf.smbt.ui.ubiquino.cosm.createCosmFeedAction"
+               label="Create Cosm Feed"
+               style="push"
+               tooltip="Create Cosm Feed">
+         </action>
+      </editorContribution>
+   </extension>
+
+</fragment>

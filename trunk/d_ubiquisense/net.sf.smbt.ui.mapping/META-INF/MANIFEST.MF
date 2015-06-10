@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquisense - Protocol Mapping UI
+Bundle-Vendor: ubiquisense.com
+Bundle-SymbolicName: net.sf.smbt.ui.mapping; singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: net.sf.smbt.ui.mapping.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ net.sf.smbt.ui.logging;bundle-version="0.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.sf.smbt.ui.mapping,
+ net.sf.smbt.ui.mapping.gui

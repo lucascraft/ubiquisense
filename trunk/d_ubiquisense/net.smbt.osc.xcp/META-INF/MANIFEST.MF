@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquisense - OSC XCP
+Bundle-SymbolicName: net.sf.smbt.osc.xcp
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: net.smbt.osc.xcp.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ net.sf.smbt.osc;bundle-version="0.5.0";visibility:=reexport,
+ net.sf.smbt.xcp;bundle-version="0.5.0";visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.sf.smbt.osc.xcp.zosc,
+ net.sf.smbt.xcp.util,
+ net.smbt.osc.xcp
+Bundle-Vendor: ubiquisense.com

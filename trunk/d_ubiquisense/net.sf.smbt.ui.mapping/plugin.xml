@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<!--
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="net.sf.smbt.ui.mapping.gui.OSCMappingView"
+            icon="icons/new/network_cloud.png"
+            id="net.sf.smbt.ui.snifferView"
+            name="SniffAndMap"
+            restorable="true">
+      </view>
+   </extension>
+-->
+</plugin>

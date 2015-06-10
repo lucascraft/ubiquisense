@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquisense - Logging UI
+Bundle-SymbolicName: net.sf.smbt.ui.logging;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: net.sf.smbt.ui.logging.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.console;bundle-version="3.5.0",
+ org.eclipse.ui.views;bundle-version="3.5.0",
+ org.eclipse.jface.text;bundle-version="3.6.0",
+ net.sf.smbt.logging;bundle-version="0.5.0",
+ net.sf.smbt.ui.widgets;bundle-version="0.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.sf.smbt.ui.logging,
+ net.sf.smbt.ui.logging.page
+Bundle-Vendor: ubiquisense.com

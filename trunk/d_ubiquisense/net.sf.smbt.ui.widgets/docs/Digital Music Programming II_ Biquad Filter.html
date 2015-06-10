@@ -1,0 +1,222 @@
+<!---------------------------------------------------------------------------->
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title> Digital Music Programming II: Biquad Filter </title>
+<!--meta http-equiv=refresh content="0; URL=http://craig.sapp.org"-->
+<meta name="Document-Owner" content="Craig Sapp (craig@ccrma.stanford.edu)">
+<meta name="Author" content="Craig Stuart Sapp (craig@ccrma.stanford.edu)">
+<meta name="Creation-Date" content=" Thu Nov 21 19:36:28 PST 2002 ">
+<meta name="Revision-Date" content=" Thu Nov 21 19:36:33 PST 2002 ">
+</head>
+<!---------------------------------------------------------------------------->
+<!--body bgcolor=aa8c79 text=#190808 link=#291818 vlink=#291818 -->
+<!--body bgcolor=7a9ca9 text=#190808 link=#291818 vlink=#291818 -->
+<!--body bgcolor=6a8ca9 text=#190848 link=#291868 vlink=#291868 -->
+<body bgcolor="fefefe" link="#291868" text="#190848" vlink="#291868">
+
+<center>
+<table width="600"><tbody><tr><td>
+
+<hr noshade="noshade" size="5">
+
+<h1> Digital Music Programming II: Biquad filter </h1>
+
+<hr noshade="noshade" size="5">
+<br><br>
+
+<p> A <i>biquad</i> filter is a linear filter, defined by the
+following flowgraph or difference equation:
+</p><center>
+<img src="Digital%20Music%20Programming%20II_%20Biquad%20Filter_fichiers/biquad.gif" border="0">
+</center>
+
+<p> The name <i>biquad</i> is an abbreviation of the word
+<i>bi-quadratic</i> because the <i>transfer-function</i> (which 
+can be derived from the <i>difference equation</i> or
+<i>flowgraph</i>) contains two quadratic functions:
+</p><center>
+<img src="Digital%20Music%20Programming%20II_%20Biquad%20Filter_fichiers/transfer.gif" border="0">
+</center>
+
+<p>
+Here is an example set of values for the filter coefficients:
+</p><ul>
+   <pre>   a0 =  1
+   a1 =  0
+   a2 = -1
+   b1 =  0.1
+   b2 =  0.9
+   </pre>
+</ul>
+
+<p> These values will generate the following z-plane magnitude 
+plot:
+</p><center>
+<img src="Digital%20Music%20Programming%20II_%20Biquad%20Filter_fichiers/index_gr_5.gif">
+</center>
+<p> Examing the unit circle in the above z-plane figure, you can
+determine the spectrum of the filter:
+</p><center>
+<img src="Digital%20Music%20Programming%20II_%20Biquad%20Filter_fichiers/index_gr_7.gif">
+</center>
+
+
+
+
+
+<p>
+<b> Further Reading: </b>
+</p><ul>
+<li>
+    <a href="http://ccrma-www.stanford.edu/%7Ejos/filters/BiQuad_Section.html">The
+BiQuad Section</a> from <a href="http://ccrma-www.stanford.edu/%7Ejos/filters/">Introduction to
+Digital Filter</a> by <a href="http://ccrma-www.stanford.edu/%7Ejos">Julius Smith</a>.
+</li><li> <a href="http://www.harmony-central.com/Computer/Programming/Audio-EQ-Cookbook.txt">Cookbook
+formulae for audio EQ biquad filter coefficients</a> by Robert
+Bristow-Johnson.
+</li></ul>
+
+
+<hr noshade="noshade">
+<b> Biquad filtering program </b>
+
+<p> Here is a command-line program called <a href="http://peabody.sapp.org/class/350.838/lab/biquad/biquad.cpp">biquad.cpp</a> 
+which implements a biquad filter.  Save it to your computer and
+compile it.  You can download it directly onto mambo by typing the 
+following command on mambo in the terminal:
+</p><pre>   wget http://peabody.sapp.org/class/dmp2/lab/biquad/biquad.cpp
+</pre>
+If you need to review how to compile programs, refer to 
+<a href="http://peabody.sapp.org/class/st1/lab/prog1">Lab 1</a>.
+
+
+<p>
+<table bgcolor="#ffeeee" cellpadding="10"><tbody><tr valign="top"><td valign="top">
+<pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16 
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre>
+</td>
+<td>
+<pre>#include "soundfile.h"
+
+int main(int argc, char** argv) {
+   Options options;
+   options.define("a0=d:1", "first  feedforward term");
+   options.define("a1=d:0", "second feedforward term");
+   options.define("a2=d:-1", "third  feedforward term");
+   options.define("b1=d:0.1", "first  feedback term");
+   options.define("b2=d:0.9", "second feedback term");
+   options.process(argc, argv);
+
+   double a0 = options.getDouble("a0");
+   double a1 = options.getDouble("a1");
+   double a2 = options.getDouble("a2");
+   double b1 = options.getDouble("b1");
+   double b2 = options.getDouble("b2");
+
+   SoundFileRead  insound(options.getArg(1));
+   int sampleCount = insound.getSamples();
+   SoundHeader    header = insound;
+   header.setChannels(1);  // write only mono files
+   SoundFileWrite outsound(options.getArg(2), header);
+
+   double currin   = 0.0;   // x[n]
+   double lastin   = 0.0;   // x[n-1]
+   double lastin2  = 0.0;   // x[n-2]
+   double currout  = 0.0;   // y[n]
+   double lastout  = 0.0;   // y[n-1]
+   double lastout2 = 0.0;   // y[n-2]
+
+   // the for-loop implements the difference equation for a biquad filter: 
+   //    y[n] = a0*x[n] + a1*x[n-1] + a2*x[n-2] - b1*y[n-1] - b2*y[n-2]
+   for (int i=0; i&lt;sampleCount; i++) {
+      insound.incrementSample();
+      lastin2  = lastin;
+      lastin   = currin;
+      currin   = insound.getCurrentSampleDouble(0);
+      lastout2 = lastout;
+      lastout  = currout;
+      currout  = a0*currin + a1*lastin + a2*lastin2 - b1*lastout - b2*lastout2;
+      outsound.writeSampleDouble(currout);
+   }
+
+   return 0;
+}
+</pre>
+</td></tr></tbody></table>
+
+
+</p><hr noshade="noshade">
+<h1> Exercises </h1>
+<ul>
+<li> Try different values for the filter coeffients.  Use whitenoise
+as an input to the filter program.  You can make whitenoise soundfiles
+on mambo by typing:
+<pre>   whitenoise -d 5.0 noise.wav
+</pre>
+This example would create a five second whitenoise soundfile.
+<p>
+You can set the filter coefficients like this:
+</p><pre>   biquad input.wav output.wav --a0 1 --a1 0 --a2 -1 --b1 0.1 --b2 0.9
+or
+   biquad --a0 1 --a1 0 --a2 -1 --b1 0.1 --b2 0.9 input.wav output.wav
+</pre>
+
+
+</li></ul>
+
+
+<pre>
+
+
+</pre>
+
+
+</td></tr></tbody></table>
+</center>
+
+
+
+</body></html>

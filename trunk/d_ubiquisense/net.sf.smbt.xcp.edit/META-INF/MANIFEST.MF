@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: net.sf.smbt.xcp.edit;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: net.sf.smbt.xcp.provider.XcpEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.sf.smbt.xcp.provider
+Require-Bundle: org.eclipse.core.runtime,
+ net.sf.smbt.xcp;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ net.sf.smbt.osc;bundle-version="0.5.0",
+ net.sf.xqz.script.edit;bundle-version="0.5.0"
+Bundle-ActivationPolicy: lazy
