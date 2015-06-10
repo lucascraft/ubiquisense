@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquisense - Logging
+Bundle-SymbolicName: net.sf.smbt.logging
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: net.sf.smbt.logging.LoggerBundle
+Require-Bundle: org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: ubiquisense.com

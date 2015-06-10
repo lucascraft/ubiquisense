@@ -1,0 +1,510 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+lang="en"><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="generator" content="MediaWiki 1.13.3">
+		<meta name="keywords" 
+content="V2.1ProtocolDetails,Proposals,ProtocolChangeLog,V2.0ProtocolDetails">
+		<link rel="shortcut icon" href="http://www.firmata.org/favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" 
+href="http://www.firmata.org/w/opensearch_desc.php" title="Firmata (en)">
+		<link title="Creative Commons" type="application/rdf+xml" 
+href="http://www.firmata.org/w/index.php?title=V2.1ProtocolDetails&amp;action=creativecommons"
+ rel="meta">
+		<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html">
+		<link rel="alternate" type="application/rss+xml" title="Firmata RSS 
+Feed" 
+href="http://www.firmata.org/w/index.php?title=Special:RecentChanges&amp;feed=rss">
+		<link rel="alternate" type="application/atom+xml" title="Firmata Atom 
+Feed" 
+href="http://www.firmata.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+		<title>V2.1ProtocolDetails - Firmata</title>
+		<style type="text/css" media="screen, projection">/*<![CDATA[*/
+			@import "/w/skins/common/shared.css?164";
+			@import "/w/skins/monobook/main.css?164";
+		/*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" 
+href="Protocol_fichiers/commonPrint.css">
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/w/skins/monobook/IE50Fixes.css?164";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/w/skins/monobook/IE55Fixes.css?164";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/w/skins/monobook/IE60Fixes.css?164";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/w/skins/monobook/IE70Fixes.css?164";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/w/skins/common/IEFixes.js?164"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type="text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/w/skins";
+var wgArticlePath = "/wiki/$1";
+var wgScriptPath = "/w";
+var wgScript = "/w/index.php";
+var wgVariantArticlePath = false;
+var wgActionPaths = [];
+var wgServer = "http://www.firmata.org";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "V2.1ProtocolDetails";
+var wgTitle = "V2.1ProtocolDetails";
+var wgAction = "view";
+var wgArticleId = "41";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserGroups = null;
+var wgUserLanguage = "en";
+var wgContentLanguage = "en";
+var wgBreakFrames = false;
+var wgCurRevisionId = "1955";
+var wgVersion = "1.13.3";
+var wgEnableAPI = true;
+var wgEnableWriteAPI = false;
+var wgRestrictionEdit = ["autoconfirmed"];
+var wgRestrictionMove = ["autoconfirmed"];
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="Protocol_fichiers/wikibits.js"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="Protocol_fichiers/ajax.js"></script>
+		<script type="text/javascript" src="Protocol_fichiers/index.js"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/w/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/w/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/w/index.php?title=-&action=raw&gen=css&maxage=18000&useskin=monobook";
+/*]]>*/</style>
+	</head><body class="mediawiki ns-0 ltr page-V2_1ProtocolDetails">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">V2.1ProtocolDetails</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Firmata</h3>
+			<div id="contentSub">(Redirected from <a 
+href="http://www.firmata.org/w/index.php?title=Protocol&amp;redirect=no"
+ title="Protocol">Protocol</a>)</div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>,
+ <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p>This page describes version 2.1 of the Firmata protocol.  This 
+version is an update to <a 
+href="http://www.firmata.org/wiki/V2.0ProtocolDetails" 
+title="V2.0ProtocolDetails">version 2.0</a>, the main difference is that
+ Servos, Shift Register, and I2C support was added to the protocol.  You
+ can see a history of the changes on the <a 
+href="http://www.firmata.org/wiki/ProtocolChangeLog" 
+title="ProtocolChangeLog">ProtocolChangeLog</a> page.
+</p><p>The Firmata protocol is designed to be extended, the <a 
+href="http://www.firmata.org/wiki/Proposals" title="Proposals">Proposals</a>
+ page is the place to propose new extensions. 
+</p>
+<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div 
+id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a 
+href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1"><a href="#I.2FOs_Supported"><span 
+class="tocnumber">1</span> <span class="toctext">I/Os Supported</span></a></li>
+<li class="toclevel-1"><a href="#Message_Types"><span class="tocnumber">2</span>
+ <span class="toctext">Message Types</span></a></li>
+<li class="toclevel-1"><a href="#Data_Message_Expansion"><span 
+class="tocnumber">3</span> <span class="toctext">Data Message Expansion</span></a></li>
+<li class="toclevel-1"><a href="#Control_Messages_Expansion"><span 
+class="tocnumber">4</span> <span class="toctext">Control Messages 
+Expansion</span></a></li>
+<li class="toclevel-1"><a href="#Sysex_Message_Format"><span 
+class="tocnumber">5</span> <span class="toctext">Sysex Message Format</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Query_Firmware_Name_and_Version"><span 
+class="tocnumber">5.1</span> <span class="toctext">Query Firmware Name 
+and Version</span></a></li>
+<li class="toclevel-2"><a href="#I2C"><span class="tocnumber">5.2</span>
+ <span class="toctext">I2C</span></a></li>
+<li class="toclevel-2"><a href="#Sampling_Interval"><span 
+class="tocnumber">5.3</span> <span class="toctext">Sampling Interval</span></a></li>
+<li class="toclevel-2"><a href="#Servos"><span class="tocnumber">5.4</span>
+ <span class="toctext">Servos</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="I.2FOs_Supported"></a><h2> <span class="mw-headline"> I/Os 
+Supported</span></h2>
+<ul><li> up to 16 analog pins
+</li><li> up to 128 digital pins (16 * 8-bit ports)
+</li></ul>
+<p><br>
+</p>
+<a name="Message_Types"></a><h2> <span class="mw-headline">Message Types</span></h2>
+<pre>/* This protocol uses the MIDI message format, but does not use the whole
+ * protocol.  Most of the command mappings here will not be directly usable in
+ * terms of MIDI controllers and synths.  It should co-exist with MIDI without
+ * trouble and can be parsed by standard MIDI interpreters.  Just some of the
+ * message data is used differently.
+ *
+ * MIDI format: http://www.harmony-central.com/MIDI/Doc/table1.html
+ * 
+ *                              MIDI       
+ * type                command  channel    first byte            second byte 
+ *----------------------------------------------------------------------------
+ * analog I/O message    0xE0   pin #      LSB(bits 0-6)         MSB(bits 7-13)
+ * digital I/O message   0x90   port       LSB(bits 0-6)         MSB(bits 7-13)
+ * report analog pin     0xC0   pin #      disable/enable(0/1)   - n/a -
+ * report digital port   0xD0   port       disable/enable(0/1)   - n/a -
+ *
+ * sysex start           0xF0   
+ * set pin mode(I/O)     0xF4              pin # (0-127)         pin state(0=in)
+ * sysex end             0xF7   
+ * protocol version      0xF9              major version         minor version
+ * system reset          0xFF
+ *
+ */
+</pre>
+<pre>/* SysEx-based commands (0x00-0x7F) are used for an extended command set.
+ *
+ * type                command  first byte       second byte      ...
+ *-----------------------------------------------------------------------------
+ * string                0x71   char *string ...
+ * firmware name/version 0x79   major version   minor version     char *name...
+ */
+</pre>
+<a name="Data_Message_Expansion"></a><h2> <span class="mw-headline">Data
+ Message Expansion</span></h2>
+<pre>/* two byte digital data format
+ * 0  digital data, 0x90-0x9F, (MIDI NoteOn, but different data format)
+ * 1  digital pins 0-6 bitmask
+ * 2  digital pins 7-13 bitmask 
+ */
+</pre>
+<pre>/* analog 14-bit data format
+ * 0  analog pin, 0xE0-0xEF, (MIDI Pitch Wheel)
+ * 1  analog least significant 7 bits
+ * 2  analog most significant 7 bits
+ */
+</pre>
+<pre>/* version report format
+ * -------------------------------------------------
+ * 0  version report header (0xF9) (MIDI Undefined)
+ * 1  major version (0-127)
+ * 2  minor version (0-127)
+ */
+</pre>
+<a name="Control_Messages_Expansion"></a><h2> <span class="mw-headline">Control
+ Messages Expansion</span></h2>
+<pre>/* set pin mode
+ * 1  set digital pin mode (0xF4) (MIDI Undefined)
+ * 2  pin number (0-127)
+ * 3  state (INPUT/OUTPUT/ANALOG/PWM/SERVO, 0/1/2/3/4)
+ */
+</pre>
+<pre>/* toggle analogIn reporting by pin
+ * 0  toggle digitalIn reporting (0xC0-0xCF) (MIDI Program Change)
+ * 1  disable(0)/enable(non-zero) 
+ */
+</pre>
+<pre>/* toggle digital port reporting by port
+ * 0  toggle digital port reporting (0xD0-0xDF) (MIDI Aftertouch)
+ * 1  disable(0)/enable(non-zero) 
+ */
+</pre>
+<pre>/* request version report
+ * 0  request version report (0xF9) (MIDI Undefined)
+ */
+</pre>
+<a name="Sysex_Message_Format"></a><h2> <span class="mw-headline"> Sysex
+ Message Format</span></h2>
+<p>The idea for SysEx is to have a second command space using the first 
+byte after the SysEx Start byte. The key difference is that the data can
+ be of any size, rather than just one or two bytes for standard MIDI 
+messages.
+</p>
+<pre>/* Generic Sysex Message
+ * 0     START_SYSEX (0xF0)
+ * 1     sysex command (0x00-0x7F)
+ * x     between 0 and MAX_DATA_BYTES 7-bit bytes of arbitrary data
+ * last  END_SYSEX (0xF7)
+ */
+</pre>
+<p><br>
+</p>
+<a name="Query_Firmware_Name_and_Version"></a><h3> <span 
+class="mw-headline">Query Firmware Name and Version</span></h3>
+<p>The firmware name to be reported should be <i>exactly</i> the same as
+ the name of the Arduino file, minus the <b>.pde</b>.  So for <b>Standard_Firmata.pde</b>,
+ the firmware name is: <b>Standard_Firmata</b>.
+</p>
+<pre>/* Query Firmware Name and Version
+ * 0  START_SYSEX (0xF0)
+ * 1  queryFirmware (0x79)
+ * 2  END_SYSEX (0xF7)
+ */
+</pre>
+<p><br>
+</p>
+<pre>/* Receive Firmware Name and Version (after query)
+ * 0  START_SYSEX (0xF0)
+ * 1  queryFirmware (0x79)
+ * 2  major version (0-127)
+ * 3  minor version (0-127)
+ * 4  first 7-bits of firmware name
+ * 5  second 7-bits of firmware name
+ * x  ...for as many bytes as it needs)
+ * 6  END_SYSEX (0xF7)
+ */
+</pre>
+<a name="I2C"></a><h3> <span class="mw-headline">I2C</span></h3>
+<pre>/* I2C read/write request
+ * -------------------------------
+ * 0  START_SYSEX (0xF0) (MIDI System Exclusive)
+ * 1  I2C_REQUEST (0x76)
+ * 2  slave address (LSB)
+ * 3  slave address (MSB) + read/write and address mode bits
+      {7: always 0} + {6: reserved} + {5: address mode, 1 means 10-bit mode} +
+      {4-3: read/write, 00 =&gt; write, 01 =&gt; read once, 10 =&gt; read continuously, 11 =&gt; stop reading} +
+      {2-0: slave address MSB in 10-bit mode, not used in 7-bit mode}
+ * 4  data 0 (LSB)
+ * 5  data 0 (MSB)
+ * 6  data 1 (LSB)
+ * 7  data 1 (MSB)
+ * ...
+ * n  END_SYSEX (0xF7)
+ */
+</pre>
+<pre>/* I2C reply
+ * -------------------------------
+ * 0  START_SYSEX (0xF0) (MIDI System Exclusive)
+ * 1  I2C_REPLY (0x77)
+ * 2  slave address (LSB)
+ * 3  slave address (MSB)
+ * 4  register (LSB)
+ * 5  register (MSB)
+ * 6  data 0 LSB
+ * 7  data 0 MSB
+ * ...
+ * n  END_SYSEX (0xF7)
+ */
+</pre>
+<pre>/* I2C config
+ * -------------------------------
+ * 0  START_SYSEX (0xF0) (MIDI System Exclusive)
+ * 1  I2C_CONFIG (0x78)
+ * 2  Power pin settings (0:off or 1:on)
+ * 3  Delay in microseconds (LSB)
+ * 4  Delay in microseconds (MSB)
+ * ... user defined for special cases, etc
+ * n  END_SYSEX (0xF7)
+ */
+</pre>
+<a name="Sampling_Interval"></a><h3> <span class="mw-headline">Sampling 
+Interval</span></h3>
+<pre>/* Set sampling interval
+ * -------------------------------
+ * 0  START_SYSEX (0xF0) (MIDI System Exclusive)
+ * 1  SAMPLING_INTERVAL (0x7A)
+ * 2  sampling interval on the millisecond time scale (LSB)
+ * 3  sampling interval on the millisecond time scale (MSB)
+ * 4  END_SYSEX (0xF7)
+ */
+</pre>
+<a name="Servos"></a><h3> <span class="mw-headline"> Servos</span></h3>
+<p>This is the current proposal for adding Servo support based on 
+feedback from Bjoern Hartmann, Shigeru Kobayashi, and Erik Sjodin.  The 
+core idea is to just add a "config" message, then use the <code>SET_PIN_MODE</code>
+ message to attach/detach Servo support to a pin.  This is how hardware 
+PWM is currently handled.  This would save space in the protocol by 
+reusing the <code>SET_PIN_MODE</code> message, but the host software 
+implementation could have a different interface, e.g. Arduino's <code>attach()</code>
+ and <code>detach()</code>.
+</p><p>minPulse, maxPulse, and angle are all 14-bit unsigned integers.  
+Angle is in degrees.  The <code>SERVO_CONFIG</code> can be sent at any 
+time to change the settings.
+</p>
+<pre>/* servo config
+ * --------------------
+ * 0  START_SYSEX (0xF0)
+ * 1  SERVO_CONFIG (0x70)
+ * 2  pin number (0-127)
+ * 3  minPulse LSB (0-6)
+ * 4  minPulse MSB (7-13)
+ * 5  maxPulse LSB (0-6)
+ * 6  maxPulse MSB (7-13)
+ * 7  angle LSB (0-6)
+ * 8  angle MSB (7-13)
+ * 9  END_SYSEX (0xF7)
+ */
+</pre>
+<p>This is just the standard <code>SET_PIN_MODE</code> message:
+</p>
+<pre>/* set digital pin mode
+ * --------------------
+ * 1  set digital pin mode (0xF4) (MIDI Undefined)
+ * 2  pin number (0-127)
+ * 3  state (INPUT/OUTPUT/ANALOG/PWM/SERVO, 0/1/2/3/4)
+ */
+</pre>
+<p>Then the normal <code>ANALOG_MESSAGE</code> data format is used to 
+send data.
+</p>
+<pre>/* write to servo, servo write is performed if the pins mode is SERVO
+ * ------------------------------
+ * 0  ANALOG_MESSAGE (0xE0-0xEF)
+ * 1  value lsb
+ * 2  value msb
+ */
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 74/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key f237009_mediawiki:pcache:idhash:41-0!1!0!!en!2!edit=0 and timestamp 20100913182529 -->
+<div class="printfooter">
+Retrieved from "<a 
+href="http://www.firmata.org/wiki/V2.1ProtocolDetails">http://www.firmata.org/wiki/V2.1ProtocolDetails</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-main" class="1"><a 
+href="http://www.firmata.org/wiki/Main_Page">Firmata</a></li>
+				 <li id="ca-nstab-main" class="selected"><a 
+href="http://www.firmata.org/wiki/V2.1ProtocolDetails" title="View the 
+content page [ctrl-c]" accesskey="c">Page</a></li>
+				 <li id="ca-viewsource"><a 
+href="http://www.firmata.org/w/index.php?title=V2.1ProtocolDetails&amp;action=edit"
+ title="This page is protected.
+You can view its source. [ctrl-e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a 
+href="http://www.firmata.org/w/index.php?title=V2.1ProtocolDetails&amp;action=history"
+ title="Past versions of this page. [ctrl-h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a 
+href="http://www.firmata.org/w/index.php?title=Special:UserLogin&amp;returnto=V2.1ProtocolDetails"
+ title="You are encouraged to log in, it is not mandatory however. 
+[ctrl-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(&quot;/firmata.gif&quot;);" 
+href="http://www.firmata.org/wiki/Main_Page" title="Visit the Main Page 
+[ctrl-z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" title="Search Firmata 
+[ctrl-f]" accesskey="f" type="text">
+				<input name="go" class="searchButton" id="searchGoButton" value="Go"
+ title="Go to a page with this exact name if exists" type="submit">&nbsp;
+
+				<input name="fulltext" class="searchButton" id="mw-searchButton" 
+value="Search" title="Search the pages for this text" type="submit">
+			</div></form>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage-description"><a 
+href="http://www.firmata.org/wiki/Main_Page">Main Page</a></li>
+				<li id="n-Protocol"><a href="http://www.firmata.org/wiki/Protocol">Protocol</a></li>
+				<li id="n-Proposals"><a href="http://www.firmata.org/wiki/Proposals">Proposals</a></li>
+				<li id="n-Design-Issues"><a 
+href="http://www.firmata.org/wiki/Design_Issues">Design Issues</a></li>
+				<li id="n-Examples"><a href="http://www.firmata.org/wiki/Examples">Examples</a></li>
+				<li id="n-Mailing-List"><a 
+href="https://lists.sourceforge.net/lists/listinfo/firmata-devel">Mailing
+ List</a></li>
+				<li id="n-Download"><a href="http://www.firmata.org/wiki/Download">download</a></li>
+				<li id="n-SourceForge-Project"><a 
+href="http://sourceforge.net/projects/firmata">SourceForge Project</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="generated-sidebar portlet" id="p-mediawiki">
+		<h5>mediawiki</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-recentchanges"><a 
+href="http://www.firmata.org/wiki/Special:RecentChanges" title="The list
+ of recent changes in the wiki. [ctrl-r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a 
+href="http://www.firmata.org/wiki/Special:Random" title="Load a random 
+page [ctrl-x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://www.firmata.org/wiki/Help:Contents" 
+title="The place to find out.">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a 
+href="http://www.firmata.org/wiki/Special:WhatLinksHere/V2.1ProtocolDetails"
+ title="List of all wiki pages that link here [ctrl-j]" accesskey="j">What
+ links here</a></li>
+				<li id="t-recentchangeslinked"><a 
+href="http://www.firmata.org/wiki/Special:RecentChangesLinked/V2.1ProtocolDetails"
+ title="Recent changes in pages linked from this page [ctrl-k]" 
+accesskey="k">Related changes</a></li>
+<li id="t-upload"><a href="http://www.firmata.org/wiki/Special:Upload" 
+title="Upload files [ctrl-u]" accesskey="u">Upload file</a></li>
+<li id="t-specialpages"><a 
+href="http://www.firmata.org/wiki/Special:SpecialPages" title="List of 
+all special pages [ctrl-q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a 
+href="http://www.firmata.org/w/index.php?title=V2.1ProtocolDetails&amp;printable=yes"
+ title="Printable version of this page [ctrl-p]" accesskey="p">Printable
+ version</a></li>				<li id="t-permalink"><a 
+href="http://www.firmata.org/w/index.php?title=V2.1ProtocolDetails&amp;oldid=1955"
+ title="Permanent link to this version of the page">Permanent link</a></li>
+			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img 
+src="Protocol_fichiers/poweredby_mediawiki_88x31.png" alt="Powered by 
+MediaWiki"></a><a href="http://sourceforge.net/">
+					<img src="Protocol_fichiers/sflogo.png" alt="SourceForge.net Logo" 
+border="0" height="31" width="88"></a></div>
+				<div id="f-copyrightico"><a 
+href="http://www.gnu.org/copyleft/fdl.html"><img 
+src="Protocol_fichiers/gnu-fdl.png" alt="GNU Free Documentation License 
+1.2"></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified on 5 March 2010, at 
+12:54.</li>
+				<li id="viewcount">This page has been accessed 55,226 times.</li>
+				<li id="copyright">Content is available under <a 
+href="http://www.gnu.org/copyleft/fdl.html" class="external " 
+title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free 
+Documentation License 1.2</a>.</li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.241 secs. --></body></html>

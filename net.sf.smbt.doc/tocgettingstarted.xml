@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Getting Started" link_to="toc.xml#gettingstarted"> 
+	<topic label="Ubiquisense"  href="html/gettingstarted/intro.html"> 
+		<topic label="Routing" href="html/gettingstarted/routing.html" /> 
+	</topic>
+	<topic label="Layout Editing">
+		<topic label="Layout Editing" href="html/gettingstarted/editing.html" />
+	</topic> 
+</toc>

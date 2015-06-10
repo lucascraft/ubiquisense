@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="gpx.xsd#/"
+    outputs="_1.ecore#/" topToBottom="true">
+  <nested inputs="bundleentry://1738.fwk2099532520/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  <nested inputs="gpx.xsd#//emailType;XSDComplexTypeDefinition=9" outputs="_1.ecore#//EmailType">
+    <nested inputs="gpx.xsd#//emailType;XSDComplexTypeDefinition=9/XSDAttributeUse=1"
+        outputs="_1.ecore#//EmailType/domain"/>
+    <nested inputs="gpx.xsd#//emailType;XSDComplexTypeDefinition=9/XSDAttributeUse"
+        outputs="_1.ecore#//EmailType/id"/>
+  </nested>
+  <nested inputs="bundleentry://1738.fwk2099532520/cache/www.w3.org/2001/XMLSchema.xsd#//anyURI;XSDSimpleTypeDefinition=25"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+  <nested inputs="gpx.xsd#//linkType;XSDComplexTypeDefinition=8" outputs="_1.ecore#//LinkType">
+    <nested inputs="gpx.xsd#//linkType;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//LinkType/text"/>
+    <nested inputs="gpx.xsd#//linkType;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="_1.ecore#//LinkType/type"/>
+    <nested inputs="gpx.xsd#//linkType;XSDComplexTypeDefinition=8/XSDAttributeUse"
+        outputs="_1.ecore#//LinkType/href"/>
+  </nested>
+  <nested inputs="gpx.xsd#//personType;XSDComplexTypeDefinition=10" outputs="_1.ecore#//PersonType">
+    <nested inputs="gpx.xsd#//personType;XSDComplexTypeDefinition=10/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//PersonType/name"/>
+    <nested inputs="gpx.xsd#//personType;XSDComplexTypeDefinition=10/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="_1.ecore#//PersonType/email"/>
+    <nested inputs="gpx.xsd#//personType;XSDComplexTypeDefinition=10/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="_1.ecore#//PersonType/link"/>
+  </nested>
+  <nested inputs="bundleentry://1738.fwk2099532520/cache/www.w3.org/2001/XMLSchema.xsd#//gYear;XSDSimpleTypeDefinition=19"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//GYear"/>
+  <nested inputs="gpx.xsd#//copyrightType;XSDComplexTypeDefinition=7" outputs="_1.ecore#//CopyrightType">
+    <nested inputs="gpx.xsd#//copyrightType;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//CopyrightType/year"/>
+    <nested inputs="gpx.xsd#//copyrightType;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="_1.ecore#//CopyrightType/license"/>
+    <nested inputs="gpx.xsd#//copyrightType;XSDComplexTypeDefinition=7/XSDAttributeUse"
+        outputs="_1.ecore#//CopyrightType/author"/>
+  </nested>
+  <nested inputs="bundleentry://1738.fwk2099532520/cache/www.w3.org/2001/XMLSchema.xsd#//dateTime;XSDSimpleTypeDefinition=15"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//DateTime"/>
+  <nested inputs="bundleentry://1738.fwk2099532520/cache/www.w3.org/2001/XMLSchema.xsd#//decimal;XSDSimpleTypeDefinition=13"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Decimal"/>
+  <nested inputs="gpx.xsd#//latitudeType;XSDSimpleTypeDefinition" outputs="_1.ecore#//LatitudeType"/>
+  <nested inputs="gpx.xsd#//longitudeType;XSDSimpleTypeDefinition=1" outputs="_1.ecore#//LongitudeType"/>
+  <nested inputs="gpx.xsd#//boundsType;XSDComplexTypeDefinition=13" outputs="_1.ecore#//BoundsType">
+    <nested inputs="gpx.xsd#//boundsType;XSDComplexTypeDefinition=13/XSDAttributeUse=2"
+        outputs="_1.ecore#//BoundsType/maxlat"/>
+    <nested inputs="gpx.xsd#//boundsType;XSDComplexTypeDefinition=13/XSDAttributeUse=3"
+        outputs="_1.ecore#//BoundsType/maxlon"/>
+    <nested inputs="gpx.xsd#//boundsType;XSDComplexTypeDefinition=13/XSDAttributeUse"
+        outputs="_1.ecore#//BoundsType/minlat"/>
+    <nested inputs="gpx.xsd#//boundsType;XSDComplexTypeDefinition=13/XSDAttributeUse=1"
+        outputs="_1.ecore#//BoundsType/minlon"/>
+  </nested>
+  <nested inputs="gpx.xsd#//extensionsType;XSDComplexTypeDefinition=5" outputs="_1.ecore#//ExtensionsType">
+    <nested inputs="gpx.xsd#//extensionsType;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//ExtensionsType/any"/>
+  </nested>
+  <nested inputs="gpx.xsd#//metadataType;XSDComplexTypeDefinition=1" outputs="_1.ecore#//MetadataType">
+    <nested inputs="gpx.xsd#//metadataType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//MetadataType/name"/>
+    <nested inputs="gpx.xsd#//metadataType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="_1.ecore#//MetadataType/desc"/>
+    <nested inputs="gpx.xsd#//metadataType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="_1.ecore#//MetadataType/author"/>
+    <nested inputs="gpx.xsd#//metadataType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="_1.ecore#//MetadataType/copyright"/>
+    <nested inputs="gpx.xsd#//metadataType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="_1.ecore#//MetadataType/link"/>
+    <nested inputs="gpx.xsd#//metadataType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="_1.ecore#//MetadataType/time"/>
+    <nested inputs="gpx.xsd#//metadataType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="_1.ecore#//MetadataType/keywords"/>
+    <nested inputs="gpx.xsd#//metadataType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=7"
+        outputs="_1.ecore#//MetadataType/bounds"/>
+    <nested inputs="gpx.xsd#//metadataType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=8"
+        outputs="_1.ecore#//MetadataType/extensions"/>
+  </nested>
+  <nested inputs="gpx.xsd#//degreesType;XSDSimpleTypeDefinition=2" outputs="_1.ecore#//DegreesType"/>
+  <nested inputs="gpx.xsd#//fixType;XSDSimpleTypeDefinition=3" outputs="_1.ecore#//FixType">
+    <nested inputs="gpx.xsd#//fixType;XSDSimpleTypeDefinition=3/XSDEnumerationFacet"
+        outputs="_1.ecore#//FixType/none"/>
+    <nested inputs="gpx.xsd#//fixType;XSDSimpleTypeDefinition=3/XSDEnumerationFacet=1"
+        outputs="_1.ecore#//FixType/_2d"/>
+    <nested inputs="gpx.xsd#//fixType;XSDSimpleTypeDefinition=3/XSDEnumerationFacet=2"
+        outputs="_1.ecore#//FixType/_3d"/>
+    <nested inputs="gpx.xsd#//fixType;XSDSimpleTypeDefinition=3/XSDEnumerationFacet=3"
+        outputs="_1.ecore#//FixType/dgps"/>
+    <nested inputs="gpx.xsd#//fixType;XSDSimpleTypeDefinition=3/XSDEnumerationFacet=4"
+        outputs="_1.ecore#//FixType/pps"/>
+  </nested>
+  <nested inputs="bundleentry://1738.fwk2099532520/cache/www.w3.org/2001/XMLSchema.xsd#//nonNegativeInteger;XSDSimpleTypeDefinition=47"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//NonNegativeInteger"/>
+  <nested inputs="bundleentry://1738.fwk2099532520/cache/www.w3.org/2001/XMLSchema.xsd#//integer;XSDSimpleTypeDefinition=40"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Integer"/>
+  <nested inputs="gpx.xsd#//dgpsStationType;XSDSimpleTypeDefinition=4" outputs="_1.ecore#//DgpsStationType"/>
+  <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2" outputs="_1.ecore#//WptType">
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//WptType/ele"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="_1.ecore#//WptType/time"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="_1.ecore#//WptType/magvar"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="_1.ecore#//WptType/geoidheight"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="_1.ecore#//WptType/name"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="_1.ecore#//WptType/cmt"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="_1.ecore#//WptType/desc"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=7"
+        outputs="_1.ecore#//WptType/src"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=8"
+        outputs="_1.ecore#//WptType/link"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=9"
+        outputs="_1.ecore#//WptType/sym"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=10"
+        outputs="_1.ecore#//WptType/type"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=11"
+        outputs="_1.ecore#//WptType/fix"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=12"
+        outputs="_1.ecore#//WptType/sat"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=13"
+        outputs="_1.ecore#//WptType/hdop"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=14"
+        outputs="_1.ecore#//WptType/vdop"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=15"
+        outputs="_1.ecore#//WptType/pdop"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=16"
+        outputs="_1.ecore#//WptType/ageofdgpsdata"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=17"
+        outputs="_1.ecore#//WptType/dgpsid"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=18"
+        outputs="_1.ecore#//WptType/extensions"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDAttributeUse"
+        outputs="_1.ecore#//WptType/lat"/>
+    <nested inputs="gpx.xsd#//wptType;XSDComplexTypeDefinition=2/XSDAttributeUse=1"
+        outputs="_1.ecore#//WptType/lon"/>
+  </nested>
+  <nested inputs="gpx.xsd#//rteType;XSDComplexTypeDefinition=3" outputs="_1.ecore#//RteType">
+    <nested inputs="gpx.xsd#//rteType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//RteType/name"/>
+    <nested inputs="gpx.xsd#//rteType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="_1.ecore#//RteType/cmt"/>
+    <nested inputs="gpx.xsd#//rteType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="_1.ecore#//RteType/desc"/>
+    <nested inputs="gpx.xsd#//rteType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="_1.ecore#//RteType/src"/>
+    <nested inputs="gpx.xsd#//rteType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="_1.ecore#//RteType/link"/>
+    <nested inputs="gpx.xsd#//rteType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="_1.ecore#//RteType/number"/>
+    <nested inputs="gpx.xsd#//rteType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="_1.ecore#//RteType/type"/>
+    <nested inputs="gpx.xsd#//rteType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=7"
+        outputs="_1.ecore#//RteType/extensions"/>
+    <nested inputs="gpx.xsd#//rteType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=8"
+        outputs="_1.ecore#//RteType/rtept"/>
+  </nested>
+  <nested inputs="gpx.xsd#//trksegType;XSDComplexTypeDefinition=6" outputs="_1.ecore#//TrksegType">
+    <nested inputs="gpx.xsd#//trksegType;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//TrksegType/trkpt"/>
+    <nested inputs="gpx.xsd#//trksegType;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="_1.ecore#//TrksegType/extensions"/>
+  </nested>
+  <nested inputs="gpx.xsd#//trkType;XSDComplexTypeDefinition=4" outputs="_1.ecore#//TrkType">
+    <nested inputs="gpx.xsd#//trkType;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//TrkType/name"/>
+    <nested inputs="gpx.xsd#//trkType;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="_1.ecore#//TrkType/cmt"/>
+    <nested inputs="gpx.xsd#//trkType;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="_1.ecore#//TrkType/desc"/>
+    <nested inputs="gpx.xsd#//trkType;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="_1.ecore#//TrkType/src"/>
+    <nested inputs="gpx.xsd#//trkType;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="_1.ecore#//TrkType/link"/>
+    <nested inputs="gpx.xsd#//trkType;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="_1.ecore#//TrkType/number"/>
+    <nested inputs="gpx.xsd#//trkType;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="_1.ecore#//TrkType/type"/>
+    <nested inputs="gpx.xsd#//trkType;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=7"
+        outputs="_1.ecore#//TrkType/extensions"/>
+    <nested inputs="gpx.xsd#//trkType;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle=8"
+        outputs="_1.ecore#//TrkType/trkseg"/>
+  </nested>
+  <nested inputs="gpx.xsd#//gpxType;XSDComplexTypeDefinition" outputs="_1.ecore#//GpxType">
+    <nested inputs="gpx.xsd#//gpxType;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//GpxType/metadata"/>
+    <nested inputs="gpx.xsd#//gpxType;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="_1.ecore#//GpxType/wpt"/>
+    <nested inputs="gpx.xsd#//gpxType;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="_1.ecore#//GpxType/rte"/>
+    <nested inputs="gpx.xsd#//gpxType;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="_1.ecore#//GpxType/trk"/>
+    <nested inputs="gpx.xsd#//gpxType;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="_1.ecore#//GpxType/extensions"/>
+    <nested inputs="gpx.xsd#//gpxType;XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="_1.ecore#//GpxType/creator"/>
+    <nested inputs="gpx.xsd#//gpxType;XSDComplexTypeDefinition/XSDAttributeUse" outputs="_1.ecore#//GpxType/version"/>
+  </nested>
+  <nested inputs="gpx.xsd#//gpx;XSDElementDeclaration" outputs="_1.ecore#//DocumentRoot/gpx"/>
+  <nested inputs="gpx.xsd#//ptType;XSDComplexTypeDefinition=11" outputs="_1.ecore#//PtType">
+    <nested inputs="gpx.xsd#//ptType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//PtType/ele"/>
+    <nested inputs="gpx.xsd#//ptType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="_1.ecore#//PtType/time"/>
+    <nested inputs="gpx.xsd#//ptType;XSDComplexTypeDefinition=11/XSDAttributeUse"
+        outputs="_1.ecore#//PtType/lat"/>
+    <nested inputs="gpx.xsd#//ptType;XSDComplexTypeDefinition=11/XSDAttributeUse=1"
+        outputs="_1.ecore#//PtType/lon"/>
+  </nested>
+  <nested inputs="gpx.xsd#//ptsegType;XSDComplexTypeDefinition=12" outputs="_1.ecore#//PtsegType">
+    <nested inputs="gpx.xsd#//ptsegType;XSDComplexTypeDefinition=12/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="_1.ecore#//PtsegType/pt"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

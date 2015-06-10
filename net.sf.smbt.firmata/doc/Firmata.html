@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><link
+ media="all" href="Firmata_fichiers/widget43.css" type="text/css" 
+rel="stylesheet">
+
+
+  <title>Arduino - Firmata </title>
+  <link rel="shortcut icon" type="image/x-icon" 
+href="http://www.arduino.cc/favicon.png">
+  <link rel="stylesheet" href="Firmata_fichiers/arduino.css" 
+type="text/css">
+  <meta name="verify-v1" 
+content="TtxFIEJAB6zdJ509wLxjnapQzKAMNm9u0Wj4ho6wxIY=">
+</head><body><div id="_atssh" style="visibility: hidden; height: 1px; 
+width: 1px; position: absolute; z-index: 100000;"><iframe 
+src="Firmata_fichiers/sh23.html" style="height: 1px; width: 1px; 
+position: absolute; z-index: 100000; border: 0pt none; left: 0pt; top: 
+0pt;" id="_atssh708"></iframe></div>
+<div id="page">
+<!--PageHeaderFmt-->
+<div id="pageheader">
+  <div class="title"><a href="http://arduino.cc/en">Arduino</a></div>
+  <div class="search">
+    <!-- SiteSearch Google -->
+    <form method="GET" action="http://www.google.com/search">
+    <input name="ie" value="UTF-8" type="hidden">
+    <input name="oe" value="UTF-8" type="hidden">
+    <input name="q" size="25" maxlength="255" type="text">
+    <input name="btnG" value="search" type="submit">
+    <input name="domains" value="http://www.arduino.cc/" type="hidden">
+    <input name="sitesearch" value="http://www.arduino.cc/" 
+type="hidden">
+    </form>
+    <!-- SiteSearch Google -->
+  </div>
+</div>
+<!--/PageHeaderFmt-->
+<!--PageLeftFmt-->
+<div id="pagenav" style="text-align: right;">
+  <div style="float: left;">
+  <p><a class="wikilink" href="http://arduino.cc/en/Main/Buy">Buy</a>
+|
+<a class="wikilink" href="http://arduino.cc/en/Main/Software">Download</a>
+|
+<a class="wikilink" href="http://arduino.cc/en/Guide/HomePage">Getting 
+Started</a>
+|
+<a class="wikilink" href="http://arduino.cc/en/Tutorial/HomePage">Learning</a>
+|
+<a class="wikilink" href="http://arduino.cc/en/Reference/HomePage">Reference</a>
+|
+<a class="wikilink" href="http://arduino.cc/en/Main/Hardware">Hardware</a>
+|
+<a class="wikilink" href="http://arduino.cc/en/Main/FAQ">FAQ</a>
+</p>
+<p class="vspace"></p>
+
+  </div>
+  <a class="urllink" href="http://www.arduino.cc/blog/" rel="nofollow">Blog
+ »</a> |
+  <a class="urllink" href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl" 
+rel="nofollow">Forum »</a> |
+  <a class="urllink" href="http://www.arduino.cc/playground/" 
+rel="nofollow">Playground »</a>
+</div>
+<!--/PageLeftFmt-->
+<div id="pagetext">
+<!--PageText-->
+<div id="wikitext">
+<p><strong>Reference</strong> &nbsp;  <a class="wikilink" 
+href="http://arduino.cc/en/Reference/HomePage">Language</a> | <a 
+class="wikilink" href="http://arduino.cc/en/Reference/Libraries">Libraries</a>
+ | <a class="wikilink" href="http://arduino.cc/en/Reference/Comparison">Comparison</a>
+ | <a class="wikilink" href="http://arduino.cc/en/Reference/Changes">Changes</a>
+</p>
+<p class="vspace"></p><hr>
+<p><a class="urllink" 
+href="http://www.arduino.cc/playground/Interfacing/Firmata" 
+rel="nofollow">Firmata</a> - Library - <a class="urllink" 
+href="http://www.arduino.cc/playground/Interfacing/FirmataBaudRateDetails"
+ rel="nofollow">Baud Rate Details</a> - <a class="urllink" 
+href="http://www.arduino.cc/playground/Interfacing/FirmataProtocolDetails"
+ rel="nofollow">Protocol Details</a> - <a class="urllink" 
+href="http://www.arduino.cc/playground/Interfacing/FirmataProtocolProposals"
+ rel="nofollow">Protocol Proposals</a>
+</p><hr>
+<h1>Firmata Library</h1>
+<p>The <strong>Firmata</strong> library implements the Firmata protocol 
+for communicating with software on the host computer.  This allows you 
+to write custom firmware without having to create your own protocol and 
+objects for the programming environment that you are using.
+</p>
+<p class="vspace"></p><h2>Methods</h2>
+<dl><dt><code>begin()</code></dt><dd>start the library
+</dd><dt><code>begin(long)</code></dt><dd>start the library and override
+ the default baud rate
+</dd><dt><code>printVersion()</code></dt><dd>send the protocol version 
+to the host computer
+</dd><dt><code>blinkVersion()</code></dt><dd>blink the protocol version 
+on pin 13
+</dd><dt><code>printFirmwareVersion()</code></dt><dd>send the firmware 
+name and version to the host computer
+</dd><dt><code>setFirmwareVersion(byte major, byte minor)</code></dt><dd>set
+ the firmware name and version, using the sketch's filename, minus the <em>.pde</em>
+</dd></dl><p class="vspace"></p><h4>Sending Messages</h4>
+<dl><dt><code>sendAnalog(byte pin, int value)</code></dt><dd>send an 
+analog message
+</dd><dt><code>sendDigitalPorts(byte pin, byte firstPort, byte 
+secondPort)</code></dt><dd>send digital ports as individual bytes
+</dd><dt><code>sendDigitalPortPair(byte pin, int value)</code></dt><dd>send
+ digital ports as one int
+</dd><dt><code>sendSysex(byte command, byte bytec, byte* bytev)</code></dt><dd>send
+ a command with an arbitrary array of bytes
+</dd><dt><code>sendString(const char* string)</code></dt><dd>send a 
+string to the host computer
+</dd><dt><code>sendString(byte command, const char* string)</code></dt><dd>send
+ a string to the host computer using a custom command type
+</dd></dl><p class="vspace"></p><h4>Receiving Messages</h4>
+<dl><dt><code>available()</code></dt><dd>check to see if there are any 
+incoming messages in the buffer
+</dd><dt><code>processInput()</code></dt><dd>process incoming messages 
+from the buffer, sending the data to any registered callback functions
+</dd><dt><code>attach(byte command, callbackFunction myFunction)</code></dt><dd>attach
+ a function to an incoming message type
+</dd><dt><code>detach(byte command)</code></dt><dd>detach a function 
+from an incoming message type
+</dd></dl><p class="vspace"></p><h2>Callback Functions</h2>
+<p>In order to attach your function to a message type, your function 
+must match the standard callback function.  There are currently three 
+types of callback functions in Firmata: <em>generic</em>, <em>string</em>,
+ and <em>sysex</em>.
+</p>
+<p class="vspace"></p><dl><dt>generic</dt><dd><code>void 
+callbackFunction(byte pin, int value);</code>
+</dd><dt>system_reset</dt><dd><code>void 
+systemResetCallbackFunction(void);</code>
+</dd><dt>string</dt><dd><code>void stringCallbackFunction(char 
+*myString);</code>
+</dd><dt>sysex</dt><dd><code>void sysexCallbackFunction(byte pin, byte 
+byteCount, byte *arrayPointer);</code>
+</dd></dl><p class="vspace"></p><h4>Message Types</h4>
+<p>These are the various message types that you can attach functions to.
+</p>
+<p class="vspace"></p><dl><dt><code>ANALOG_MESSAGE</code></dt><dd>the 
+analog value for a single pin
+</dd><dt><code>DIGITAL_MESSAGE</code></dt><dd>8-bits of digital pin data
+ (one port)
+</dd><dt><code>REPORT_ANALOG</code></dt><dd>enable/disable the reporting
+ of analog pin
+</dd><dt><code>REPORT_DIGITAL</code></dt><dd>enable/disable the 
+reporting of a digital port
+</dd><dt><code>SET_PIN_MODE</code></dt><dd>change the pin mode between <code>INPUT</code>/<code>OUTPUT</code>/<code>PWM</code>/etc.
+</dd><dt><code>FIRMATA_STRING</code></dt><dd>C-style strings, uses <code>stringCallbackFunction</code>
+ for the function type
+</dd><dt><code>SYSEX_START</code></dt><dd>generic, arbitrary length 
+messages (via MIDI <span class="wikiword">SysEx</span> protocol), uses <code>sysexCallbackFunction</code>
+ for the function type
+</dd><dt><code>SYSTEM_RESET</code></dt><dd>message to reset firmware to 
+its default state, uses <code>systemResetCallbackFunction</code> for the
+ function type
+</dd></dl><p class="vspace"></p><h2>Example</h2>
+<p>This example shows how to send and receive analog messages using 
+Firmata.
+</p>
+<p class="vspace"></p><pre>#include &lt;Firmata.h&gt;
+
+byte analogPin;
+
+void analogWriteCallback(byte pin, int value)
+{
+    pinMode(pin,OUTPUT);
+    analogWrite(pin, value);
+}
+
+void setup()
+{
+    Firmata.setFirmwareVersion(0, 1);
+    Firmata.attach(ANALOG_MESSAGE, analogWriteCallback);
+    Firmata.begin();
+}
+
+void loop()
+{
+    while(Firmata.available()) {
+        Firmata.processInput();
+    }
+    for(analogPin = 0; analogPin &lt; TOTAL_ANALOG_PINS; analogPin++) {
+        Firmata.sendAnalog(analogPin, analogRead(analogPin)); 
+    }
+}
+
+</pre>
+<p class="vspace"></p><p><a class="wikilink" 
+href="http://arduino.cc/en/Reference/HomePage">Reference Home</a>
+</p>
+<p class="vspace"></p><p><em>Corrections, suggestions, and new 
+documentation should be posted to the <a class="urllink" 
+href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?board=swbugs" 
+rel="nofollow">Forum</a>.</em>
+</p>
+<p class="vspace"></p><p>The text of the Arduino reference is licensed 
+under a
+<a class="urllink" href="http://creativecommons.org/licenses/by-sa/3.0/"
+ rel="nofollow">Creative Commons Attribution-ShareAlike 3.0 License</a>.
+  Code samples in the reference are released into the public domain.
+</p>
+</div>
+
+
+<!-- AddThis Button BEGIN -->
+<script type="text/javascript">var addthis_language = "en";
+</script>
+<div class="addthis_container addthis_toolbox addthis_default_style" 
+addthis:url="http://arduino.cc/en/Reference/Firmata" 
+addthis:title="Arduino Wiki English">
+<a 
+href="http://www.addthis.com/bookmark.php?v=250&amp;username=arduinoteam"
+ class="addthis_button_compact at300m"><span class="at300bs 
+at15t_compact"></span>Share</a><span class="addthis_separator">|</span><a
+ title="Email" class="addthis_button_email at300b"><span class="at300bs 
+at15t_email"></span></a><a title="Save to Favorites" 
+class="addthis_button_favorites at300b"><span class="at300bs 
+at15t_favorites"></span></a><a title="Print" class="addthis_button_print
+ at300b"><span class="at300bs at15t_print"></span></a><a title="Send to 
+Facebook" target="_blank" 
+href="http://www.addthis.com/bookmark.php?v=250&amp;winname=addthis&amp;pub=arduinoteam&amp;source=tbx-250&amp;lng=en&amp;s=facebook&amp;url=http%3A%2F%2Farduino.cc%2Fen%2FReference%2FFirmata&amp;title=Arduino%20Wiki%20English&amp;ate=AT-arduinoteam/-/pz-2/4c9f2c8c81b99b8c/1&amp;CXNID=2000001.5215456080540439074NXC&amp;pre=http%3A%2F%2Fwww.google.com%2Furl%3Fsa%3Dt%26source%3Dweb%26cd%3D1%26ved%3D0CBQQFjAA%26url%3Dhttp%253A%252F%252Fwww.arduino.cc%252Fen%252FReference%252FFirmata%26rct%3Dj%26q%3Darduino%2520firmata%2520examples%26ei%3DtCufTPaFLZOS4QavjsWlDQ%26usg%3DAFQjCNGuBetZ3ZtROnC6snyXrFddrC2fCg%26sig2%3DYZIhwGoSn7Qq4c7zp9JJWw%26cad%3Drja&amp;tt=0"
+ class="addthis_button_facebook at300b"><span class="at300bs 
+at15t_facebook"></span></a><a title="Tweet This" target="_blank" 
+class="addthis_button_twitter at300b"><span class="at300bs 
+at15t_twitter"></span></a><script type="text/javascript" src="Firmata_fichiers/addthis_widget.js"></script><div
+ class="atclear"></div></div>
+<!-- AddThis Button END -->
+
+</div>
+<!--PageFooterFmt-->
+<div id="pagefooter">
+  <a href="http://arduino.cc/en/Reference/Firmata?action=edit">Edit Page</a>
+ | <a href="http://arduino.cc/en/Reference/Firmata?action=diff">Page 
+History</a> | <a 
+href="http://arduino.cc/en/Reference/Firmata?action=print" 
+target="_blank">Printable View</a> | <a 
+href="http://arduino.cc/en/Site/AllRecentChanges">All Recent Site 
+Changes</a>
+</div>
+<!--/PageFooterFmt-->
+</div>
+</body></html>

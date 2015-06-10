@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://earth.google.com/kml/2.1"
+            class="com.google.earth.kml._2.v21Package"
+            genModel="src/net/sf/smbt/kml/xsd/kml21.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            type="kml"
+            class="com.google.earth.kml._2.util.v21ResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

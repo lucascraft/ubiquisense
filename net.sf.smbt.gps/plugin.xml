@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="net.sf.xqz.engine.cmdHandler">
+      <cmdHandler
+            ID="net.sf.smbt.gps.nmea.cmdHandler"
+            handler="net.sf.smbt.gps.nmea.NmeaCmdHandler">
+      </cmdHandler>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdInterpreter">
+      <cmdInterpreter
+            ID="net.sf.smbt.gps.nmea.cmdInterpreter"
+            interpreter="net.sf.smbt.gps.nmea.NmeaCmdInterpreter">
+      </cmdInterpreter>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.frameInterpreter">
+      <frameInterpreter
+            ID="net.sf.smbt.gps.nmea.frameInterpreter"
+            interpreter="net.sf.smbt.gps.nmea.NmeaFrameHandler">
+      </frameInterpreter>
+   </extension>
+   <extension
+         point="net.sf.smbt.comm.topology.protocol">
+      <engine
+            ID="net.sf.smbt.gps.nmea"
+            alias="nmea"
+            cmdInterpreterID="net.sf.smbt.gps.nmea.cmdInterpreter"
+            eventHandler="net.sf.smbt.gps.nmea.cmdHandler"
+            frameInterpreter="net.sf.smbt.gps.nmea.frameInterpreter"
+            instance="0"
+            transports="USB, UDP, TCP, HTTP, XBEE">
+      </engine>
+   </extension>
+
+</plugin>

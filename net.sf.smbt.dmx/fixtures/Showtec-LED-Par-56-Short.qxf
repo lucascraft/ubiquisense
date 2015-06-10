@@ -1,0 +1,58 @@
+<!DOCTYPE FixtureDefinition>
+<FixtureDefinition>
+ <Creator>
+  <Name>Q Light Controller</Name>
+  <Version>3.2.1</Version>
+  <Author>Lucas Bigeardel</Author>
+ </Creator>
+ <Manufacturer>Showtec</Manufacturer>
+ <Model>LED Par 56 Short</Model>
+ <Type>Color Changer</Type>
+ <Channel Name="R">
+  <Group Byte="0">Colour</Group>
+  <Capability Min="0" Max="255">R</Capability>
+ </Channel>
+ <Channel Name="G">
+  <Group Byte="0">Colour</Group>
+  <Capability Min="0" Max="255">G</Capability>
+ </Channel>
+ <Channel Name="Full Color">
+  <Group Byte="0">Effect</Group>
+  <Capability Min="0" Max="255">Full Color</Capability>
+ </Channel>
+ <Channel Name="Strobe / Dimmer">
+  <Group Byte="0">Intensity</Group>
+  <Capability Min="0" Max="255">Strobe And Speed</Capability>
+ </Channel>
+ <Channel Name="Modi">
+  <Group Byte="0">Maintenance</Group>
+  <Capability Min="0" Max="63">RGB Control</Capability>
+  <Capability Min="64" Max="127">Color Fade</Capability>
+  <Capability Min="128" Max="191">Color Change</Capability>
+  <Capability Min="192" Max="255">Music Controlled</Capability>
+ </Channel>
+ <Channel Name="Ext">
+  <Group Byte="0">Ext</Group>
+  <Capability Min="0" Max="255">Ext</Capability>
+ </Channel>
+ <Channel Name="B">
+  <Group Byte="0">Colour</Group>
+  <Capability Min="0" Max="255">B</Capability>
+ </Channel>
+ <Mode Name="Showtec Par 56 Short">
+  <Physical>
+   <Bulb Lumens="0" Type="LED" ColourTemperature="2800"/>
+   <Dimensions Width="220" Height="350" Weight="1.56" Depth="220"/>
+   <Lens DegreesMax="17" Name="Other" DegreesMin="17"/>
+   <Focus PanMax="0" Type="Fixed" TiltMax="0"/>
+   <Technical PowerConsumption="15" DmxConnector="3-pin"/>
+  </Physical>
+  <Channel Number="0">Full Color</Channel>
+  <Channel Number="1">Strobe / Dimmer</Channel>
+  <Channel Number="2">Modi</Channel>
+  <Channel Number="3">Ext</Channel>
+  <Channel Number="4">R</Channel>
+  <Channel Number="5">G</Channel>
+  <Channel Number="6">B</Channel>
+ </Mode>
+</FixtureDefinition>

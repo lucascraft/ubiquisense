@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="qxf.xsd#/"
+    outputs="qxf.ecore#/" topToBottom="true">
+  <nested inputs="bundleentry://768.fwk777194738/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  <nested inputs="qxf.xsd#//Bulb;XSDComplexTypeDefinition=10" outputs="qxf.ecore#//Bulb">
+    <nested inputs="qxf.xsd#//Bulb;XSDComplexTypeDefinition=10/XSDAttributeUse" outputs="qxf.ecore#//Bulb/colourTemperature"/>
+    <nested inputs="qxf.xsd#//Bulb;XSDComplexTypeDefinition=10/XSDAttributeUse=1"
+        outputs="qxf.ecore#//Bulb/lumens"/>
+    <nested inputs="qxf.xsd#//Bulb;XSDComplexTypeDefinition=10/XSDAttributeUse=2"
+        outputs="qxf.ecore#//Bulb/type"/>
+  </nested>
+  <nested inputs="qxf.xsd#//Capability;XSDComplexTypeDefinition=7" outputs="qxf.ecore#//Capability">
+    <nested inputs="qxf.xsd#//Capability;XSDComplexTypeDefinition=7/XSDAttributeUse=1"
+        outputs="qxf.ecore#//Capability/max"/>
+    <nested inputs="qxf.xsd#//Capability;XSDComplexTypeDefinition=7/XSDAttributeUse"
+        outputs="qxf.ecore#//Capability/min"/>
+  </nested>
+  <nested inputs="qxf.xsd#//Group;XSDComplexTypeDefinition=6" outputs="qxf.ecore#//Group">
+    <nested inputs="qxf.xsd#//Group;XSDComplexTypeDefinition=6/XSDAttributeUse" outputs="qxf.ecore#//Group/byte"/>
+  </nested>
+  <nested inputs="qxf.xsd#//Channel;XSDComplexTypeDefinition=5" outputs="qxf.ecore#//Channel">
+    <nested inputs="qxf.xsd#//Channel;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="qxf.ecore#//Channel/group"/>
+    <nested inputs="qxf.xsd#//Channel;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="qxf.ecore#//Channel/capability"/>
+    <nested inputs="qxf.xsd#//Channel;XSDComplexTypeDefinition=5/XSDAttributeUse"
+        outputs="qxf.ecore#//Channel/name"/>
+  </nested>
+  <nested inputs="qxf.xsd#//Creator;XSDComplexTypeDefinition=1" outputs="qxf.ecore#//Creator">
+    <nested inputs="qxf.xsd#//Creator;XSDComplexTypeDefinition=1/XSDAttributeUse=2"
+        outputs="qxf.ecore#//Creator/author"/>
+    <nested inputs="qxf.xsd#//Creator;XSDComplexTypeDefinition=1/XSDAttributeUse"
+        outputs="qxf.ecore#//Creator/name"/>
+    <nested inputs="qxf.xsd#//Creator;XSDComplexTypeDefinition=1/XSDAttributeUse=1"
+        outputs="qxf.ecore#//Creator/version"/>
+  </nested>
+  <nested inputs="qxf.xsd#//Dimensions;XSDComplexTypeDefinition=11" outputs="qxf.ecore#//Dimensions">
+    <nested inputs="qxf.xsd#//Dimensions;XSDComplexTypeDefinition=11/XSDAttributeUse=3"
+        outputs="qxf.ecore#//Dimensions/depth"/>
+    <nested inputs="qxf.xsd#//Dimensions;XSDComplexTypeDefinition=11/XSDAttributeUse=1"
+        outputs="qxf.ecore#//Dimensions/height"/>
+    <nested inputs="qxf.xsd#//Dimensions;XSDComplexTypeDefinition=11/XSDAttributeUse=2"
+        outputs="qxf.ecore#//Dimensions/weight"/>
+    <nested inputs="qxf.xsd#//Dimensions;XSDComplexTypeDefinition=11/XSDAttributeUse"
+        outputs="qxf.ecore#//Dimensions/width"/>
+  </nested>
+  <nested inputs="qxf.xsd#//Manufacturer;XSDComplexTypeDefinition=2" outputs="qxf.ecore#//Manufacturer"/>
+  <nested inputs="qxf.xsd#//Model;XSDComplexTypeDefinition=3" outputs="qxf.ecore#//Model"/>
+  <nested inputs="qxf.xsd#//Type;XSDComplexTypeDefinition=4" outputs="qxf.ecore#//Type"/>
+  <nested inputs="qxf.xsd#//Lens;XSDComplexTypeDefinition=12" outputs="qxf.ecore#//Lens">
+    <nested inputs="qxf.xsd#//Lens;XSDComplexTypeDefinition=12/XSDAttributeUse=1"
+        outputs="qxf.ecore#//Lens/degreesMax"/>
+    <nested inputs="qxf.xsd#//Lens;XSDComplexTypeDefinition=12/XSDAttributeUse" outputs="qxf.ecore#//Lens/degreesMin"/>
+    <nested inputs="qxf.xsd#//Lens;XSDComplexTypeDefinition=12/XSDAttributeUse=2"
+        outputs="qxf.ecore#//Lens/name"/>
+  </nested>
+  <nested inputs="qxf.xsd#//Focus;XSDComplexTypeDefinition=13" outputs="qxf.ecore#//Focus">
+    <nested inputs="qxf.xsd#//Focus;XSDComplexTypeDefinition=13/XSDAttributeUse=1"
+        outputs="qxf.ecore#//Focus/panMax"/>
+    <nested inputs="qxf.xsd#//Focus;XSDComplexTypeDefinition=13/XSDAttributeUse" outputs="qxf.ecore#//Focus/tiltMax"/>
+    <nested inputs="qxf.xsd#//Focus;XSDComplexTypeDefinition=13/XSDAttributeUse=2"
+        outputs="qxf.ecore#//Focus/type"/>
+  </nested>
+  <nested inputs="qxf.xsd#//Technical;XSDComplexTypeDefinition=14" outputs="qxf.ecore#//Technical">
+    <nested inputs="qxf.xsd#//Technical;XSDComplexTypeDefinition=14/XSDAttributeUse=1"
+        outputs="qxf.ecore#//Technical/dmxConnector"/>
+    <nested inputs="qxf.xsd#//Technical;XSDComplexTypeDefinition=14/XSDAttributeUse"
+        outputs="qxf.ecore#//Technical/powerConsumption"/>
+  </nested>
+  <nested inputs="qxf.xsd#//Physical;XSDComplexTypeDefinition=9" outputs="qxf.ecore#//Physical">
+    <nested inputs="qxf.xsd#//Physical;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="qxf.ecore#//Physical/bulb"/>
+    <nested inputs="qxf.xsd#//Physical;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="qxf.ecore#//Physical/dimensions"/>
+    <nested inputs="qxf.xsd#//Physical;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="qxf.ecore#//Physical/lens"/>
+    <nested inputs="qxf.xsd#//Physical;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="qxf.ecore#//Physical/focus"/>
+    <nested inputs="qxf.xsd#//Physical;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="qxf.ecore#//Physical/technical"/>
+  </nested>
+  <nested inputs="bundleentry://768.fwk777194738/cache/www.w3.org/2001/XMLSchema.xsd#//IDREF;XSDSimpleTypeDefinition=38"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//IDREF"/>
+  <nested inputs="qxf.xsd#//Mode;XSDComplexTypeDefinition=8" outputs="qxf.ecore#//Mode">
+    <nested inputs="qxf.xsd#//Mode;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="qxf.ecore#//Mode/physical"/>
+    <nested inputs="qxf.xsd#//Mode;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="qxf.ecore#//Mode/channel"/>
+    <nested inputs="qxf.xsd#//Mode;XSDComplexTypeDefinition=8/XSDAttributeUse" outputs="qxf.ecore#//Mode/name"/>
+  </nested>
+  <nested inputs="qxf.xsd#//FixtureDefinition;XSDComplexTypeDefinition" outputs="qxf.ecore#//FixtureDefinition">
+    <nested inputs="qxf.xsd#//FixtureDefinition;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="qxf.ecore#//FixtureDefinition/creator"/>
+    <nested inputs="qxf.xsd#//FixtureDefinition;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="qxf.ecore#//FixtureDefinition/manufacturer"/>
+    <nested inputs="qxf.xsd#//FixtureDefinition;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="qxf.ecore#//FixtureDefinition/model"/>
+    <nested inputs="qxf.xsd#//FixtureDefinition;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="qxf.ecore#//FixtureDefinition/type"/>
+    <nested inputs="qxf.xsd#//FixtureDefinition;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="qxf.ecore#//FixtureDefinition/channel"/>
+    <nested inputs="qxf.xsd#//FixtureDefinition;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="qxf.ecore#//FixtureDefinition/mode"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

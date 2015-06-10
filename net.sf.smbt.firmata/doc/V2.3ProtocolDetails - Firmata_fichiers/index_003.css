@@ -1,0 +1,13 @@
+/* CSS placed here will be applied to all skins */
+.nonumtoc #toc ul,
+.nonumtoc .toc ul {
+    line-height: 1.5em;
+    list-style: none;
+    margin: .3em 0 0;
+    padding: 0;
+    float: right;
+}
+.nonumtoc #toc ul ul, 
+.nonumtoc .toc ul ul { 
+    margin: 0 0 0 2em; 
+}

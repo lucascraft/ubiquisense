@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ezfirmata/1.0"
+            class="net.sf.smbt.protocol.ezfirmata.EzfirmataPackage"
+            genModel="model/ezfirmata.genmodel"/>
+   </extension>
+    <extension
+         point="net.sf.xqz.engine.cmdInterpreter">
+      <cmdInterpreter
+            ID="net.sf.smbt.firmata.cmdInterpreter"
+            interpreter="net.sf.smbt.firmata.handlers.FirmataCmdInterpreter">
+      </cmdInterpreter>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.frameInterpreter">
+      <frameInterpreter
+            ID="net.sf.smbt.firmata.frameInterpreter"
+            interpreter="net.sf.smbt.firmata.handlers.FirmataFrameHandler">
+      </frameInterpreter>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdHandler">
+      <cmdHandler
+            ID="net.sf.smbt.firmata.cmdHandler"
+            handler="net.sf.smbt.firmata.handlers.FirmataQxEventHandler">
+      </cmdHandler>
+   </extension>
+   <extension
+         point="net.sf.smbt.comm.topology.protocol">
+      <engine
+			alias="firmata"
+            ID="net.sf.smbt.firmata23"
+            cmdInterpreterID="net.sf.smbt.firmata.cmdInterpreter"
+            eventHandler="net.sf.smbt.firmata.cmdHandler"
+            frameInterpreter="net.sf.smbt.firmata.frameInterpreter"
+            instance="0"
+            transports="USB, UDP, TCP"
+            desc="FIRMATA (Eg. Arduino Firmware protocol over Midi)"      
+      >
+      </engine>
+   </extension>
+
+</plugin>

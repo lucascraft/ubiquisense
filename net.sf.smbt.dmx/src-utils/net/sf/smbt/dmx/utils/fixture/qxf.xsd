@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http:///net.sf.smbt.dmx/model/qxf.xsd" targetNamespace="http:///net.sf.smbt.dmx/model/qxf.xsd">
+
+ <complexType name="FixtureDefinition">
+    <sequence>
+      <element maxOccurs="1" name="Creator" type="tns:Creator" />
+      <element maxOccurs="1" name="Manufacturer" type="string" />
+      <element maxOccurs="1" name="Model" type="string" />
+      <element maxOccurs="1" name="Type" type="string" />
+      <element maxOccurs="unbounded" name="Channel" type="tns:Channel" />
+      <element maxOccurs="unbounded" name="Mode" type="tns:Mode" />
+    </sequence>
+  </complexType>
+
+ <complexType name="Creator">
+    <sequence>
+      <element maxOccurs="1" name="Name" type="string"/>
+      <element maxOccurs="1" name="Version" type="string"/>
+      <element maxOccurs="1" name="Author" type="string"/>
+    </sequence>
+  </complexType>
+  
+  <complexType name="Channel">
+    <sequence>
+	    <element maxOccurs="1" name="Group" type="tns:Group" />
+	    <element maxOccurs="1" name="Colour" type="tns:Colour" />
+	    <element maxOccurs="unbounded" name="Capability" type="tns:Capability" />
+    </sequence>
+	<attribute name="Name" type="string"/>
+	<attribute name="Number" type="integer"/>
+  </complexType>
+  
+  	<complexType name="Colour" >
+     <simpleContent>
+       <extension base="string">
+ 	     <attribute name="Name" type="string"/>
+ 	   </extension>
+ 	 </simpleContent>
+  	</complexType>
+    
+  	<complexType name="ModeChannel" >
+     <simpleContent>
+       <extension base="string">
+ 	     <attribute name="Number" type="string"/>
+ 	   </extension>
+ 	 </simpleContent>
+  	</complexType>
+    
+  	<complexType name="Group" >
+     <simpleContent>
+       <extension base="string">
+ 	     <attribute name="Byte" type="integer" use="required"/>
+ 	   </extension>
+ 	 </simpleContent>
+  	</complexType>
+    
+  <complexType name="Capability" >
+     <simpleContent>
+       <extension base="string">
+	    <attribute name="Min" type="string"/>
+    	<attribute name="Max" type="string"/>
+       </extension>
+     </simpleContent>
+  </complexType>
+  
+  <complexType name="Mode">
+    <sequence>
+	  <element maxOccurs="1" name="Physical" type="tns:Physical" />
+	  <element maxOccurs="unbounded" name="Channel" type="tns:ModeChannel" />
+	</sequence>
+    <attribute name="Name" type="string"/>
+  </complexType>
+
+  <complexType name="Physical">
+   <sequence>
+	  <element maxOccurs="1" name="Bulb" type="tns:Bulb" />
+	  <element maxOccurs="1" name="Dimensions" type="tns:Dimensions" />
+	  <element maxOccurs="1" name="Lens" type="tns:Lens" />
+	  <element maxOccurs="1" name="Focus" type="tns:Focus" />
+	  <element maxOccurs="1" name="Technical" type="tns:Technical" />
+	</sequence>
+  </complexType>
+
+ <complexType name="Bulb">
+    <attribute name="ColourTemperature" type="string"/>
+    <attribute name="Lumens" type="string"/>
+    <attribute name="Type" type="string"/>
+  </complexType>
+  
+ <complexType name="Dimensions">
+    <attribute name="Width" type="string"/>
+    <attribute name="Height" type="string"/>
+    <attribute name="Weight" type="string"/>
+    <attribute name="Depth" type="string"/>
+  </complexType>
+  
+ <complexType name="Lens">
+    <attribute name="DegreesMin" type="string"/>
+    <attribute name="DegreesMax" type="string"/>
+    <attribute name="Name" type="string"/>
+  </complexType>
+  
+  <complexType name="Focus">
+    <attribute name="TiltMax" type="string"/>
+    <attribute name="PanMax" type="string"/>
+    <attribute name="Type" type="string"/>
+  </complexType>
+  
+  <complexType name="Technical">
+    <attribute name="PowerConsumption" type="string"/>
+    <attribute name="DmxConnector" type="string"/>
+  </complexType>
+
+
+</schema>

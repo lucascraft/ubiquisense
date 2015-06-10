@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ezdmx/1.0"
+            class="net.sf.smbt.dmx.model.ezdmx.EzdmxPackage"
+            genModel="model/ezdmx.genmodel"/>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdSetProvider">
+      <CmdSet
+            ID="net.sf.smbt.dmx.CmdSet"
+            provider="net.sf.smbt.dmx.provider.OpenDmxCmdSetProvider">
+      </CmdSet>
+   </extension>
+   <extension
+         point="net.sf.smbt.comm.topology.protocol">
+      <engine
+      		alias="dmx"
+            ID="net.sf.smbt.opendmx"
+            cmdInterpreterID="net.sf.smbt.dmx.cmdInterpreter"
+            eventHandler="net.sf.smbt.dmx.cmdEventHandler"
+            frameInterpreter="net.sf.smbt.dmx.frameInterpreter"
+            instance="0"
+            transports="USB, UDP"
+            desc="Protocol handling Enttec OpenDMX packets as sent/received to/from ENTTEC™ Pro device w/ serial connection"      
+      >
+      </engine>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdHandler">
+      <cmdHandler
+            ID="net.sf.smbt.dmx.cmdEventHandler"
+            handler="net.sf.smbt.dmx.handlers.DmxEventHandler">
+      </cmdHandler>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdInterpreter">
+      <cmdInterpreter
+            ID="net.sf.smbt.dmx.cmdInterpreter"
+            interpreter="net.sf.smbt.dmx.handlers.DmxCmdHandler">
+      </cmdInterpreter>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.frameInterpreter">
+      <frameInterpreter
+            ID="net.sf.smbt.dmx.frameInterpreter"
+            interpreter="net.sf.smbt.dmx.handlers.DmxFrameHandler">
+      </frameInterpreter>
+   </extension>
+
+</plugin>

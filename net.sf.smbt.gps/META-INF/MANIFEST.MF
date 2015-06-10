@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Gps
+Bundle-SymbolicName: net.sf.smbt.gps;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: net.sf.smbt.gps.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ net.sf.smbt.gpx;bundle-version="0.5.0",
+ net.sf.smbt.kml;bundle-version="0.5.0",
+ net.sf.smbt.nmea1083;bundle-version="0.5.0",
+ net.sf.smbt.comm.topology;bundle-version="0.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.sf.smbt.gps,
+ net.sf.smbt.gps.nmea,
+ net.sf.smbt.gps.services,
+ net.sf.smbt.gps.utils

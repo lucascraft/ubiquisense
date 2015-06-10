@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Fixtures
+Bundle-SymbolicName: net.sf.smbt.dmx.fixtures
+Bundle-Version: 0.5.0.qualifier
+Bundle-Vendor: ubiquisense.com
+Fragment-Host: net.sf.smbt.dmx
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

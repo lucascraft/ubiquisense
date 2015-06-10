@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.dmx/src-model"
+    editorDirectory="/net.sf.smbt.dmx.editor/src" modelPluginID="net.sf.smbt.dmx"
+    modelName="Ezdmxctrl" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../net.sf.smbt.osc/model/osccmd.genmodel#//osccmd ../../net.sf.smbt.xcp/model/xcp.genmodel#//xcp ../src-utils/net/sf/smbt/dmx/utils/fixture/qxf.genmodel#//qxf ../../net.sf.xqz.engine/model/temporal.genmodel#//engine ../../net.sf.xqz.engine/model/temporal.genmodel#//cmd">
+  <foreignModel>ezdmxctrl.ecore</foreignModel>
+  <genPackages prefix="Ezdmxctrl" basePackage="net.sf.smbt.dmx" disposableProviderFactory="true"
+      ecorePackage="ezdmxctrl.ecore#/">
+    <genClasses ecoreClass="ezdmxctrl.ecore#//DMXUniverseCtrl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmxctrl.ecore#//DMXUniverseCtrl/ver"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXUniverseCtrl/channels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXUniverseCtrl/fixtures"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmxctrl.ecore#//DMXUniverseCtrl/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmxctrl.ecore#//DMXUniverseCtrl/addrRangeMin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmxctrl.ecore#//DMXUniverseCtrl/addrRangeMax"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXUniverseCtrl/manager"/>
+    </genClasses>
+    <genClasses ecoreClass="ezdmxctrl.ecore#//DMXChannel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmxctrl.ecore#//DMXChannel/values"/>
+    </genClasses>
+    <genClasses ecoreClass="ezdmxctrl.ecore#//DMXFixture">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXFixture/universe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmxctrl.ecore#//DMXFixture/vendor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXFixture/params"/>
+    </genClasses>
+    <genClasses ecoreClass="ezdmxctrl.ecore#//DMXManager">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXManager/fixtureDefinitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXManager/universes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXManager/scenes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXManager/fx"/>
+    </genClasses>
+    <genClasses ecoreClass="ezdmxctrl.ecore#//DMXScene">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXScene/manager"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXScene/fixtures"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXScene/fx"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXScene/bus"/>
+    </genClasses>
+    <genClasses ecoreClass="ezdmxctrl.ecore#//DMXFx">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ezdmxctrl.ecore#//DMXFx/manager"/>
+    </genClasses>
+    <genClasses ecoreClass="ezdmxctrl.ecore#//DMXBus"/>
+  </genPackages>
+</genmodel:GenModel>
