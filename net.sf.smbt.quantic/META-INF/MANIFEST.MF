@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: net.sf.smbt.quantic;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: 
+ net.sf.smbt.ezquant,
+ net.sf.smbt.ezquant.impl,
+ net.sf.smbt.ezquant.util,
+ net.sf.smbt.quantic,
+ net.sf.smbt.quantic.agent,
+ net.sf.smbt.quantic.hub,
+ net.sf.smbt.quantic.services,
+ net.sf.smbt.quantic.supervision,
+ net.sf.smbt.quantic.warp
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.rxtx;bundle-version="2.1.72",
+ net.sf.smbt.comm.topology;bundle-version="0.5.0";visibility:=reexport,
+ net.sf.xqz.engine.cep;bundle-version="0.5.0",
+ net.sf.smbt.osc;bundle-version="0.5.0",
+ net.sf.xqz.script;bundle-version="0.5.0"
+Bundle-ActivationPolicy: lazy

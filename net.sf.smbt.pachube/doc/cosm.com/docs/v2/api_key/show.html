@@ -1,0 +1,229 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Viewing an API key - Cosm API Documentation</title>
+	<!-- TODO: fill this -->
+	<meta name="description" content="API Documentation">
+	<meta name="author" content="Cosm">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<!-- css -->
+
+  <link rel="stylesheet" href="../../assets/style.css">
+
+	
+	<!-- modernizr -->  
+
+  <script src="../../assets/modernizr.js"></script>
+
+</head>
+
+<body>
+  <header class="main">
+  	<hgroup class="g1">
+  		<h1><a href="https://cosm.com/" title="Go to Cosm.com">Cosm</a></h1>
+  		<h2><a href="https://cosm.com/docs/" title="Go to Documentation Home">API Documentation</a></h2>
+  	</hgroup>
+  	<aside>
+      © 2011 Cosm, a LogMeIn company
+    </aside>
+    <nav class="reduced-screen">
+      <a class="icon list" href="show.html#" title="Toggle sidebar">Toggle sidebar</a>
+    </nav>
+  </header>
+  
+  <nav class="main">
+  	<ul><li><a href="https://cosm.com/docs/">Documentation Home</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/">Quickstarts</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/curl.html">Start using curl</a>
+</li><li><a href="https://cosm.com/docs/quickstart/twitter.html">Track your Twitter stats</a>
+</li></ul></li><li><a href="../index.html">API Documentation</a>
+<ul><li><a href="../authentication.html">Authentication</a>
+</li><li><a href="../feed/index.html">Feeds</a>
+<ul><li><a href="../feed/create.html">Creating a feed</a>
+</li><li><a href="../feed/update.html">Updating a feed</a>
+</li><li><a href="../feed/list.html">Listing all feeds</a>
+</li><li><a href="../feed/show.html">Viewing a feed</a>
+</li><li><a href="../feed/delete.html">Deleting a feed</a>
+</li><li><a href="../feed/mobile.html">Mobile feeds</a>
+</li></ul></li><li><a href="../datastream/index.html">Datastreams</a>
+<ul><li><a href="../datastream/create.html">Creating a datastream</a>
+</li><li><a href="../datastream/update.html">Updating a datastream</a>
+</li><li><a href="../datastream/list.html">Listing all datastreams</a>
+</li><li><a href="../datastream/show.html">Viewing a datastream</a>
+</li><li><a href="../datastream/delete.html">Deleting a datastream</a>
+</li></ul></li><li><a href="../datapoint/index.html">Datapoints</a>
+<ul><li><a href="../datapoint/create.html">Creating a datapoint</a>
+</li><li><a href="../datapoint/update.html">Updating a datapoint</a>
+</li><li><a href="../datapoint/list.html">Listing all datapoints</a>
+</li><li><a href="../datapoint/show.html">Viewing a datapoint</a>
+</li><li><a href="../datapoint/delete.html">Deleting a datapoint</a>
+</li><li><a href="../datapoint/delete_bulk.html">Deleting multiple datapoints</a>
+</li></ul></li><li><a href="index.html">Api Keys</a>
+<ul><li><a href="create.html">Creating an API key</a>
+</li><li><a href="update.html">Updating an API key</a>
+</li><li><a href="list.html">Listing all API keys</a>
+</li><li class="selected"><a href="show.html">Viewing an API key</a>
+</li><li><a href="delete.html">Deleting an API key</a>
+</li></ul></li><li><a href="../trigger/index.html">Triggers</a>
+<ul><li><a href="../trigger/create.html">Creating a trigger</a>
+</li><li><a href="../trigger/update.html">Updating a trigger</a>
+</li><li><a href="../trigger/list.html">Listing all triggers</a>
+</li><li><a href="../trigger/show.html">Viewing a trigger</a>
+</li><li><a href="../trigger/delete.html">Deleting a trigger</a>
+</li></ul></li><li><a href="../user/index.html">Users</a>
+<ul><li><a href="../user/create.html">Creating a user</a>
+</li><li><a href="../user/update.html">Updating a user</a>
+</li><li><a href="../user/list.html">Listing all users</a>
+</li><li><a href="../user/show.html">Viewing a user</a>
+</li><li><a href="../user/delete.html">Deleting a user</a>
+</li></ul></li><li><a href="../history.html">Historical queries</a>
+</li><li><a href="../time_zones/index.html">Time Zones</a>
+<ul><li><a href="../time_zones/place_names.html">Place Names</a>
+</li></ul></li><li><a href="../ip_addresses.html">IP Addresses</a>
+</li></ul></li><li><a href="https://cosm.com/docs/concepts/">Core Concepts</a>
+<ul><li><a href="https://cosm.com/docs/concepts/automatic_manual.html">Automatic vs. manual feeds</a>
+</li><li><a href="https://cosm.com/docs/concepts/live_frozen.html">Live vs. frozen feeds</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/">Beta features</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/">Device Management</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/">Provisioning</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/activation_code.html">Generating the activation code</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/">API</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/">Products</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/create.html">Creating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/update.html">Updating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/list.html">Listing all products</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/show.html">Viewing a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/delete.html">Deleting a product</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/device/">Devices</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/device/create.html">Creating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/update.html">Updating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/list.html">Listing all devices</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/show.html">Viewing a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/delete.html">Deleting a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/activate.html">Activating a device</a>
+</li></ul></li></ul></li></ul></li><li><a href="https://cosm.com/docs/beta/group/">Groups</a>
+<ul><li><a href="https://cosm.com/docs/beta/group/create.html">Creating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/update.html">Updating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/list.html">Listing all groups</a>
+</li><li><a href="https://cosm.com/docs/beta/group/show.html">Viewing a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/delete.html">Deleting a group</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/permission/">Permissions</a>
+<ul><li><a href="https://cosm.com/docs/beta/permission/show.html">Showing permissions</a>
+</li><li><a href="https://cosm.com/docs/beta/permission/query.html">Querying permissions</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/socket_server/">Socket Server</a>
+</li><li><a href="https://cosm.com/docs/beta/mqtt/">MQTT</a>
+</li><li><a href="https://cosm.com/docs/beta/oauth/">OAuth</a>
+</li></ul></li><li><a href="https://cosm.com/docs/v1/">Legacy API</a>
+</li></ul></li></ul>
+  </nav>
+
+	<div id="container" class="clearfix">	  	  
+	  <article id="main" role="main" class="main">
+	  	<header>
+	  		<h1 class="article-title">Viewing an API key</h1>
+	  	</header>
+	    <table border="1" class="summary docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><strong>Example</strong></td>
+<td><a class="reference external" href="http://api.cosm.com/v2/keys">http://api.cosm.com/v2/keys</a>/&lt;key_id&gt;</td>
+</tr>
+<tr><td><strong>Formats</strong></td>
+<td>json, xml</td>
+</tr>
+<tr><td><strong>Methods</strong></td>
+<td>GET</td>
+</tr>
+<tr><td><strong>Returns</strong></td>
+<td>json, xml</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="examples">
+<h2>Examples</h2>
+<div class="section" id="json">
+<h3>JSON</h3>
+<pre class="code-block javascript literal-block">
+<span class="p">{</span>
+  <span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="p">{</span>
+    <span class="s2">&quot;api_key&quot;</span><span class="o">:</span><span class="s2">&quot;CeWzga_cNja15kjwSVN5x5Mut46qj5akqKPvFxKIec0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;sharing key&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;permissions&quot;</span><span class="o">:</span><span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;access_methods&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="s2">&quot;put&quot;</span><span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</pre>
+</div>
+<div class="section" id="xml">
+<h3>XML</h3>
+<pre class="code-block xml literal-block">
+<span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;key&gt;</span>
+  <span class="nt">&lt;api-key&gt;</span>1nAYR5W8jUqiZJXIMwu3923Qfuq_lnFCDOKtf3kyw4g<span class="nt">&lt;/api-key&gt;</span>
+  <span class="nt">&lt;label&gt;</span>sharing key<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;permissions&gt;</span>
+    <span class="nt">&lt;permission&gt;</span>
+      <span class="nt">&lt;access-methods&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>get<span class="nt">&lt;/access-method&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>put<span class="nt">&lt;/access-method&gt;</span>
+      <span class="nt">&lt;/access-methods&gt;</span>
+    <span class="nt">&lt;/permission&gt;</span>
+  <span class="nt">&lt;/permissions&gt;</span>
+<span class="nt">&lt;/key&gt;</span>
+
+</pre>
+</div>
+<div class="section" id="csv">
+<h3>CSV</h3>
+<pre class="code-block csv literal-block">
+This method doesn't support this data format.
+
+</pre>
+</div>
+</div>
+    	<footer class="reduced-screen">
+        © 2011 Cosm, a LogMeIn company
+      </footer>
+	  </article>
+  </div> <!-- //#container -->
+	  
+  <aside class="main">
+  	<p>Test Widget</p>
+  </aside>
+  
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>  
+
+  <script>window.jQuery || document.write('<script src="../../assets/jquery-1.7.0.min.js"><\/script>')</script>
+  <script defer src="../../assets/script.js"></script>
+
+
+
+
+  <script>
+    window._gaq=[["_setAccount","UA-20796726-1"],["_trackPageview"],['_trackPageLoadTime'],['_setDomainName','.cosm.com'],['_setAllowHash', false]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+  
+  <!-- chrome frame -->
+	<!--[if lt IE 7 ]>
+		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+</body>
+</html>

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Ubiquisense" uid="net.sf.Smbt.rcp.ProximiSense" id="net.sf.smbt.rcp.proximisense.product" application="net.sf.smbt.rcp.proximisense.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="false">
+
+   <aboutInfo>
+      <image path="/net.sf.smbt.rcp.proximisense/about.png"/>
+      <text>
+         Ubiquisense.
+
+Lucas Bigeardel 2010 -2012 ©
+
+Released under dual head licensing A) EPL 1.0 B) LGPL 3.0
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-nolog</programArgs>
+      <vmArgs>-Dfile.encoding=UTF-8 -XX:MaxPermSize=512m -Xms256m -Xmx1024m  -Dosgi.framework.extensions=at.bestsolution.efxclipse.runtime.osgi</vmArgs>
+      <vmArgsLin>-Dfile.encoding=UTF-8</vmArgsLin>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -Dfile.encoding=UTF-8</vmArgsMac>
+      <vmArgsWin>-Dfile.encoding=UTF-8</vmArgsWin>
+   </launcherArgs>
+
+   <windowImages i16="/net.sf.smbt.rcp.proximisense/icons/ubiquisense-16.png" i32="/net.sf.smbt.rcp.proximisense/icons/ubiquisense-32.png" i48="/net.sf.smbt.rcp.proximisense/icons/ubiquisense-48.png" i64="/net.sf.smbt.rcp.proximisense/icons/ubiquisense-64.png" i128="/net.sf.smbt.rcp.proximisense/icons/ubiquisense-128.png"/>
+
+   <splash
+      location="net.sf.smbt.rcp.proximisense"
+      startupProgressRect="5,280,445,15"
+      startupMessageRect="7,230,445,20"
+      startupForegroundColor="C5F7FD" />
+   <launcher name="Ubiquisense">
+      <macosx icon="/net.sf.smbt.rcp.proximisense/icons/ubiquisense.icns"/>
+      <solaris/>
+      <win useIco="false">
+         <bmp
+            winSmallHigh="/net.sf.smbt.rcp.proximisense/icons/ubiquisense-16.bmp"
+            winSmallLow="/net.sf.smbt.rcp.proximisense/icons/ubiquisense-16.bmp"
+            winMediumHigh="/net.sf.smbt.rcp.proximisense/icons/ubiquisense-32.bmp"
+            winMediumLow="/net.sf.smbt.rcp.proximisense/icons/ubiquisense-32.bmp"
+            winLargeHigh="/net.sf.smbt.rcp.proximisense/icons/ubiquisense-48.bmp"
+            winLargeLow="/net.sf.smbt.rcp.proximisense/icons/ubiquisense-48.bmp"/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <license>
+        <url>http://ubiquisense.com</url>
+        <text>
+   Ubiquisense © - A smart ambient utilities framework
+  
+  Copyright (c) 2008 - 2012, Lucas Bigeardel
+  
+  The library is released under:
+  
+  A) LGPL
+  
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 3 of the License, or (at your option) any later version.
+ 
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  Lesser General Public License for more details.
+ 
+  You should have received a copy of the GNU Lesser General
+  Public License along with this library; if not, write to the
+  Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  Boston, MA 02110-1301 USA
+  
+  B) EPL
+ 
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+ 
+  Contributors:
+      Lucas Bigeardel &lt;lucas.bigeardel@gmail.com&gt; - Initial API and implementation
+         </text>
+   </license>
+
+   <plugins>
+      <plugin id="at.bestsolution.efxclipse.runtime.osgi" fragment="true"/>
+      <plugin id="ch.qos.logback.classic"/>
+      <plugin id="ch.qos.logback.core"/>
+      <plugin id="ch.qos.logback.slf4j" fragment="true"/>
+      <plugin id="com.google.collect"/>
+      <plugin id="com.google.inject"/>
+      <plugin id="com.ibm.icu"/>
+      <plugin id="de.itemis.xtext.antlr"/>
+      <plugin id="javax.mail.glassfish"/>
+      <plugin id="javax.servlet"/>
+      <plugin id="javax.servlet.jsp"/>
+      <plugin id="javax.transaction" fragment="true"/>
+      <plugin id="net.sf.jbox2d"/>
+      <plugin id="net.sf.smbt.arduino"/>
+      <plugin id="net.sf.smbt.arduino.edit"/>
+      <plugin id="net.sf.smbt.at"/>
+      <plugin id="net.sf.smbt.colors"/>
+      <plugin id="net.sf.smbt.comm"/>
+      <plugin id="net.sf.smbt.comm.bluetooth"/>
+      <plugin id="net.sf.smbt.comm.bluetooth.linux.x86" fragment="true"/>
+      <plugin id="net.sf.smbt.comm.bluetooth.linux.x86_64" fragment="true"/>
+      <plugin id="net.sf.smbt.comm.bluetooth.macosx.x86_64" fragment="true"/>
+      <plugin id="net.sf.smbt.comm.bluetooth.win32.x86" fragment="true"/>
+      <plugin id="net.sf.smbt.comm.http"/>
+      <plugin id="net.sf.smbt.comm.script.config"/>
+      <plugin id="net.sf.smbt.comm.script.config.edit"/>
+      <plugin id="net.sf.smbt.comm.script.config.ui"/>
+      <plugin id="net.sf.smbt.comm.topology"/>
+      <plugin id="net.sf.smbt.comm.xbee"/>
+      <plugin id="net.sf.smbt.comm.zeroconf"/>
+      <plugin id="net.sf.smbt.dmx"/>
+      <plugin id="net.sf.smbt.dmx.edit"/>
+      <plugin id="net.sf.smbt.dxxp"/>
+      <plugin id="net.sf.smbt.firmata"/>
+      <plugin id="net.sf.smbt.firmata.edit"/>
+      <plugin id="net.sf.smbt.firmata.ubiquino"/>
+      <plugin id="net.sf.smbt.i2c.thingm"/>
+      <plugin id="net.sf.smbt.i2c.wii.nunchuck"/>
+      <plugin id="net.sf.smbt.itunes"/>
+      <plugin id="net.sf.smbt.jazzmutant"/>
+      <plugin id="net.sf.smbt.jazzmutant.edit"/>
+      <plugin id="net.sf.smbt.jazzmutant.editor"/>
+      <plugin id="net.sf.smbt.mapping"/>
+      <plugin id="net.sf.smbt.mapping.edit"/>
+      <plugin id="net.sf.smbt.midi"/>
+      <plugin id="net.sf.smbt.midi.edit"/>
+      <plugin id="net.sf.smbt.motion"/>
+      <plugin id="net.sf.smbt.motion.edit"/>
+      <plugin id="net.sf.smbt.motion.ui"/>
+      <plugin id="net.sf.smbt.osc"/>
+      <plugin id="net.sf.smbt.osc.ableton"/>
+      <plugin id="net.sf.smbt.osc.ableton.edit"/>
+      <plugin id="net.sf.smbt.osc.edit"/>
+      <plugin id="net.sf.smbt.osc.ezmojo"/>
+      <plugin id="net.sf.smbt.osc.ezmojo.edit"/>
+      <plugin id="net.sf.smbt.osc.md8"/>
+      <plugin id="net.sf.smbt.osc.wiimote"/>
+      <plugin id="net.sf.smbt.osc.xcp"/>
+      <plugin id="net.sf.smbt.quantic"/>
+      <plugin id="net.sf.smbt.rcp.proximisense"/>
+      <plugin id="net.sf.smbt.ui"/>
+      <plugin id="net.sf.smbt.ui.ableton"/>
+      <plugin id="net.sf.smbt.ui.firmata.ubiquino"/>
+      <plugin id="net.sf.smbt.ui.lemur"/>
+      <plugin id="net.sf.smbt.ui.motion"/>
+      <plugin id="net.sf.smbt.xcp"/>
+      <plugin id="net.sf.xqz.engine"/>
+      <plugin id="net.sf.xqz.engine.edit"/>
+      <plugin id="net.sf.xqz.engine.ui"/>
+      <plugin id="net.sf.xqz.script"/>
+      <plugin id="net.sf.xqz.script.edit"/>
+      <plugin id="net.sf.xqz.script.ui"/>
+      <plugin id="net.sf.xqz.tests.engine"/>
+      <plugin id="org.antlr.gen"/>
+      <plugin id="org.antlr.runtime"/>
+      <plugin id="org.aopalliance"/>
+      <plugin id="org.apache.ant"/>
+      <plugin id="org.apache.commons.cli"/>
+      <plugin id="org.apache.commons.el"/>
+      <plugin id="org.apache.commons.lang"/>
+      <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.apache.jasper"/>
+      <plugin id="org.apache.log4j"/>
+      <plugin id="org.apache.lucene"/>
+      <plugin id="org.apache.lucene.analysis"/>
+      <plugin id="org.eclipse.ant.core"/>
+      <plugin id="org.eclipse.compare"/>
+      <plugin id="org.eclipse.compare.core"/>
+      <plugin id="org.eclipse.core.commands"/>
+      <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.databinding"/>
+      <plugin id="org.eclipse.core.databinding.observable"/>
+      <plugin id="org.eclipse.core.databinding.property"/>
+      <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.filebuffers"/>
+      <plugin id="org.eclipse.core.filesystem"/>
+      <plugin id="org.eclipse.core.filesystem.macosx" fragment="true"/>
+      <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.net"/>
+      <plugin id="org.eclipse.core.resources"/>
+      <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.core.runtime.compatibility"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.auth"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
+      <plugin id="org.eclipse.core.variables"/>
+      <plugin id="org.eclipse.debug.core"/>
+      <plugin id="org.eclipse.debug.ui"/>
+      <plugin id="org.eclipse.draw2d"/>
+      <plugin id="org.eclipse.draw3d"/>
+      <plugin id="org.eclipse.draw3d.geometry"/>
+      <plugin id="org.eclipse.draw3d.graphics3d"/>
+      <plugin id="org.eclipse.draw3d.ui"/>
+      <plugin id="org.eclipse.ecf"/>
+      <plugin id="org.eclipse.ecf.filetransfer"/>
+      <plugin id="org.eclipse.ecf.identity"/>
+      <plugin id="org.eclipse.ecf.provider.filetransfer"/>
+      <plugin id="org.eclipse.ecf.provider.filetransfer.ssl" fragment="true"/>
+      <plugin id="org.eclipse.ecf.ssl" fragment="true"/>
+      <plugin id="org.eclipse.emf.ant"/>
+      <plugin id="org.eclipse.emf.cdo"/>
+      <plugin id="org.eclipse.emf.cdo.common"/>
+      <plugin id="org.eclipse.emf.cdo.server"/>
+      <plugin id="org.eclipse.emf.cdo.server.db"/>
+      <plugin id="org.eclipse.emf.codegen"/>
+      <plugin id="org.eclipse.emf.codegen.ecore"/>
+      <plugin id="org.eclipse.emf.codegen.ecore.ui"/>
+      <plugin id="org.eclipse.emf.common"/>
+      <plugin id="org.eclipse.emf.common.ui"/>
+      <plugin id="org.eclipse.emf.converter"/>
+      <plugin id="org.eclipse.emf.ecore"/>
+      <plugin id="org.eclipse.emf.ecore.change"/>
+      <plugin id="org.eclipse.emf.ecore.edit"/>
+      <plugin id="org.eclipse.emf.ecore.xmi"/>
+      <plugin id="org.eclipse.emf.edit"/>
+      <plugin id="org.eclipse.emf.edit.ui"/>
+      <plugin id="org.eclipse.emf.importer"/>
+      <plugin id="org.eclipse.emf.mapping.ecore2xml"/>
+      <plugin id="org.eclipse.emf.mwe.core"/>
+      <plugin id="org.eclipse.emf.mwe.ui"/>
+      <plugin id="org.eclipse.emf.mwe.utils"/>
+      <plugin id="org.eclipse.emf.mwe2.language"/>
+      <plugin id="org.eclipse.emf.mwe2.launch"/>
+      <plugin id="org.eclipse.emf.mwe2.runtime"/>
+      <plugin id="org.eclipse.emf.query"/>
+      <plugin id="org.eclipse.emf.transaction"/>
+      <plugin id="org.eclipse.emf.validation"/>
+      <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.cm"/>
+      <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.concurrent"/>
+      <plugin id="org.eclipse.equinox.http.jetty"/>
+      <plugin id="org.eclipse.equinox.http.servlet"/>
+      <plugin id="org.eclipse.equinox.log"/>
+      <plugin id="org.eclipse.equinox.p2.core"/>
+      <plugin id="org.eclipse.equinox.p2.engine"/>
+      <plugin id="org.eclipse.equinox.p2.metadata"/>
+      <plugin id="org.eclipse.equinox.p2.metadata.repository"/>
+      <plugin id="org.eclipse.equinox.p2.repository"/>
+      <plugin id="org.eclipse.equinox.preferences"/>
+      <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.equinox.security"/>
+      <plugin id="org.eclipse.equinox.security.macosx" fragment="true"/>
+      <plugin id="org.eclipse.equinox.servletbridge.extensionbundle" fragment="true"/>
+      <plugin id="org.eclipse.equinox.transforms.hook" fragment="true"/>
+      <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
+      <plugin id="org.eclipse.gef"/>
+      <plugin id="org.eclipse.gef3d"/>
+      <plugin id="org.eclipse.help"/>
+      <plugin id="org.eclipse.help.base"/>
+      <plugin id="org.eclipse.help.ui"/>
+      <plugin id="org.eclipse.jdt"/>
+      <plugin id="org.eclipse.jdt.apt.core"/>
+      <plugin id="org.eclipse.jdt.compiler.apt" fragment="true"/>
+      <plugin id="org.eclipse.jdt.compiler.tool" fragment="true"/>
+      <plugin id="org.eclipse.jdt.core"/>
+      <plugin id="org.eclipse.jdt.core.manipulation"/>
+      <plugin id="org.eclipse.jdt.debug"/>
+      <plugin id="org.eclipse.jdt.debug.ui"/>
+      <plugin id="org.eclipse.jdt.launching"/>
+      <plugin id="org.eclipse.jdt.ui"/>
+      <plugin id="org.eclipse.jface"/>
+      <plugin id="org.eclipse.jface.databinding"/>
+      <plugin id="org.eclipse.jface.text"/>
+      <plugin id="org.eclipse.ltk.core.refactoring"/>
+      <plugin id="org.eclipse.ltk.ui.refactoring"/>
+      <plugin id="org.eclipse.net4j"/>
+      <plugin id="org.eclipse.net4j.db"/>
+      <plugin id="org.eclipse.net4j.jms.api"/>
+      <plugin id="org.eclipse.net4j.tcp"/>
+      <plugin id="org.eclipse.net4j.util"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.osgi.services"/>
+      <plugin id="org.eclipse.rcp"/>
+      <plugin id="org.eclipse.search"/>
+      <plugin id="org.eclipse.swt"/>
+      <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.team.core"/>
+      <plugin id="org.eclipse.team.ui"/>
+      <plugin id="org.eclipse.text"/>
+      <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.cheatsheets"/>
+      <plugin id="org.eclipse.ui.cocoa" fragment="true"/>
+      <plugin id="org.eclipse.ui.console"/>
+      <plugin id="org.eclipse.ui.editors"/>
+      <plugin id="org.eclipse.ui.forms"/>
+      <plugin id="org.eclipse.ui.ide"/>
+      <plugin id="org.eclipse.ui.intro"/>
+      <plugin id="org.eclipse.ui.navigator"/>
+      <plugin id="org.eclipse.ui.navigator.resources"/>
+      <plugin id="org.eclipse.ui.views"/>
+      <plugin id="org.eclipse.ui.views.log"/>
+      <plugin id="org.eclipse.ui.views.properties.tabbed"/>
+      <plugin id="org.eclipse.ui.workbench"/>
+      <plugin id="org.eclipse.ui.workbench.texteditor"/>
+      <plugin id="org.eclipse.uml2"/>
+      <plugin id="org.eclipse.uml2.codegen.ecore"/>
+      <plugin id="org.eclipse.uml2.common"/>
+      <plugin id="org.eclipse.uml2.uml"/>
+      <plugin id="org.eclipse.uml2.uml.ecore.importer"/>
+      <plugin id="org.eclipse.uml2.uml.resources"/>
+      <plugin id="org.eclipse.update.configurator"/>
+      <plugin id="org.eclipse.xpand"/>
+      <plugin id="org.eclipse.xpand.ui"/>
+      <plugin id="org.eclipse.xsd"/>
+      <plugin id="org.eclipse.xtend"/>
+      <plugin id="org.eclipse.xtend.backend"/>
+      <plugin id="org.eclipse.xtend.backend.uml2types"/>
+      <plugin id="org.eclipse.xtend.backend.xsdtypes"/>
+      <plugin id="org.eclipse.xtend.middleend.xpand"/>
+      <plugin id="org.eclipse.xtend.middleend.xtend"/>
+      <plugin id="org.eclipse.xtend.profiler"/>
+      <plugin id="org.eclipse.xtend.shared.ui"/>
+      <plugin id="org.eclipse.xtend.typesystem.emf"/>
+      <plugin id="org.eclipse.xtend.typesystem.uml2"/>
+      <plugin id="org.eclipse.xtend.typesystem.xsd"/>
+      <plugin id="org.eclipse.xtend.ui"/>
+      <plugin id="org.eclipse.xtend.util.stdlib"/>
+      <plugin id="org.eclipse.xtext"/>
+      <plugin id="org.eclipse.xtext.builder"/>
+      <plugin id="org.eclipse.xtext.common.types"/>
+      <plugin id="org.eclipse.xtext.generator"/>
+      <plugin id="org.eclipse.xtext.junit"/>
+      <plugin id="org.eclipse.xtext.logging" fragment="true"/>
+      <plugin id="org.eclipse.xtext.ui"/>
+      <plugin id="org.eclipse.xtext.ui.shared"/>
+      <plugin id="org.eclipse.xtext.util"/>
+      <plugin id="org.eclipse.xtext.xtend"/>
+      <plugin id="org.eclipse.zest.core"/>
+      <plugin id="org.eclipse.zest.layouts"/>
+      <plugin id="org.hamcrest.core"/>
+      <plugin id="org.junit"/>
+      <plugin id="org.mortbay.jetty.server"/>
+      <plugin id="org.mortbay.jetty.util"/>
+      <plugin id="org.rxtx"/>
+      <plugin id="org.rxtx.linux.ia64" fragment="true"/>
+      <plugin id="org.rxtx.linux.x86" fragment="true"/>
+      <plugin id="org.rxtx.linux.x86_64" fragment="true"/>
+      <plugin id="org.rxtx.macosx.x86" fragment="true"/>
+      <plugin id="org.rxtx.macosx.x86_64" fragment="true"/>
+      <plugin id="org.rxtx.solaris28.sparc" fragment="true"/>
+      <plugin id="org.rxtx.win32.x86" fragment="true"/>
+      <plugin id="org.slf4j.api"/>
+   </plugins>
+
+   <features>
+      <feature id="net.sf.smbt.btc.pools" version="0.5.0.qualifier"/>
+      <feature id="net.sf.smbt.core" version="0.5.0.qualifier"/>
+      <feature id="net.sf.smbt.proximisense" version="0.5.0.qualifier"/>
+      <feature id="net.sf.smbt.ui" version="0.5.0.qualifier"/>
+      <feature id="net.sf.smbt.ui.bfl.mining" version="0.5.0.qualifier"/>
+      <feature id="net.sf.smbt.ui.generic" version="0.5.0.qualifier"/>
+      <feature id="net.sf.smbt.ui.ubiquino" version="0.5.0.qualifier"/>
+      <feature id="net.sf.smbt.ui.widgets" version="0.5.0.qualifier"/>
+      <feature id="org.eclipse.gmf.runtime.thirdparty"/>
+      <feature id="de.itemis.xtext.antlr.feature"/>
+      <feature id="org.eclipse.xtext.ui.source"/>
+      <feature id="org.eclipse.emf.workspace"/>
+      <feature id="org.eclipse.xtext.xtext.ui.source"/>
+      <feature id="org.eclipse.ocl"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.rxtx"/>
+      <feature id="org.eclipse.emf.compare"/>
+      <feature id="net.sf.xqz.fwk"/>
+      <feature id="org.eclipse.xtend.sdk"/>
+      <feature id="org.eclipse.emf.transaction"/>
+      <feature id="org.eclipse.xtext.sdk"/>
+      <feature id="org.eclipse.gmf.runtime.notation"/>
+      <feature id="net.sf.xqz.ui"/>
+      <feature id="org.eclipse.emf"/>
+      <feature id="org.eclipse.emf.edit"/>
+      <feature id="org.eclipse.zest"/>
+      <feature id="org.eclipse.xtext.ui"/>
+      <feature id="org.eclipse.xtext.docs"/>
+      <feature id="org.eclipse.draw2d"/>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.xtext.examples.source"/>
+      <feature id="org.eclipse.xtext.xbase"/>
+      <feature id="org.eclipse.gmf.runtime.notation.sdk"/>
+      <feature id="org.eclipse.xtext.xbase.source"/>
+      <feature id="org.eclipse.xtext.runtime.source"/>
+      <feature id="org.eclipse.emf.validation"/>
+      <feature id="org.eclipse.xtext.xtext.ui"/>
+      <feature id="org.eclipse.gmf"/>
+      <feature id="org.eclipse.gmf.runtime.sdk"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="net.sf.smbt.ubicomp"/>
+      <feature id="org.eclipse.xtext.examples"/>
+      <feature id="org.eclipse.xtext.runtime"/>
+      <feature id="org.eclipse.emf.query"/>
+      <feature id="org.eclipse.emf.mapping.ecore"/>
+      <feature id="org.eclipse.emf.codegen"/>
+      <feature id="org.eclipse.emf.codegen.ui"/>
+      <feature id="org.eclipse.emf.databinding.edit"/>
+      <feature id="org.eclipse.emf.codegen.ecore"/>
+      <feature id="org.eclipse.emf.converter"/>
+      <feature id="org.eclipse.emf.edit.ui"/>
+      <feature id="org.eclipse.emf.common.ui"/>
+      <feature id="org.eclipse.emf.mapping.ui"/>
+      <feature id="org.eclipse.emf.mapping"/>
+      <feature id="org.eclipse.emf.codegen.ecore.ui"/>
+      <feature id="org.eclipse.emf.ecore.editor"/>
+      <feature id="org.eclipse.emf.mapping.ecore.editor"/>
+      <feature id="org.eclipse.emf.databinding"/>
+      <feature id="org.eclipse.emf.ecore.edit"/>
+   </features>
+
+
+</product>

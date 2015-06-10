@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="net.sf.smbt.ui"
+            name="Ubiquisense"/>
+      <wizard
+            id="net.sf.smbt.ezcosm.presentation.EzcosmModelWizardID"
+            name="%_UI_EzcosmModelWizard_label"
+            class="net.sf.smbt.ezcosm.presentation.EzcosmModelWizard"
+            category="net.sf.smbt.ui"
+            icon="icons/cosm.png">
+         <description>%_UI_EzcosmModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+<!--
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.sf.smbt.ezcosm.presentation.EzcosmEditorID"
+            name="Cosm Editor"
+            icon="icons/cosm.png"
+            extensions="cosm"
+            class="net.sf.smbt.ezcosm.presentation.EzcosmEditor"
+            contributorClass="net.sf.smbt.ezcosm.presentation.EzcosmActionBarContributor">
+      </editor>
+   </extension>
+-->   
+
+</plugin>

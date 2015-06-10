@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.osc.exchange/src-model"
+    editDirectory="" editorDirectory="" modelPluginID="net.sf.smbt.osc.exchange" modelName="Ezoscthingm"
+    modelPluginClass="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../net.sf.smbt.osc/model/osccmd.genmodel#//osccmd ../../net.sf.xqz.engine/model/temporal.genmodel#//cmd">
+  <foreignModel>ezoscthingm.ecore</foreignModel>
+  <genPackages prefix="Ezoscthingm" basePackage="net.sf.smbt" disposableProviderFactory="true"
+      ecorePackage="ezoscthingm.ecore#/">
+    <genClasses ecoreClass="ezoscthingm.ecore#//ThingMOscCmd"/>
+  </genPackages>
+</genmodel:GenModel>

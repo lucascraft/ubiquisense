@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.pachube/src-model"
+    editorDirectory="" modelPluginID="net.sf.smbt.pachube" modelName="Ezpachube" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" testsDirectory="" importerID="org.eclipse.emf.importer.cdo"
+    featureDelegation="Reflective" complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../net.sf.xqz.engine/model/temporal.genmodel#//cmd ../src/net/sf/smbt/pachube/model/eeml.genmodel#//_5 ../../net.sf.smbt.comm.http/model/httpcmd.genmodel#//httpcmd">
+  <foreignModel>ezpachube.ecore</foreignModel>
+  <genPackages prefix="Ezpachube" basePackage="net.sf.smbt" disposableProviderFactory="true"
+      ecorePackage="ezpachube.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezpachube.ecore#//PACHUBE_HTTP_METHOD">
+      <genEnumLiterals ecoreEnumLiteral="ezpachube.ecore#//PACHUBE_HTTP_METHOD/POST"/>
+      <genEnumLiterals ecoreEnumLiteral="ezpachube.ecore#//PACHUBE_HTTP_METHOD/GET"/>
+      <genEnumLiterals ecoreEnumLiteral="ezpachube.ecore#//PACHUBE_HTTP_METHOD/PUT"/>
+      <genEnumLiterals ecoreEnumLiteral="ezpachube.ecore#//PACHUBE_HTTP_METHOD/DELETE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezpachube.ecore#//PACHUBE_ACCESS">
+      <genEnumLiterals ecoreEnumLiteral="ezpachube.ecore#//PACHUBE_ACCESS/PACHUBE_HTTP"/>
+      <genEnumLiterals ecoreEnumLiteral="ezpachube.ecore#//PACHUBE_ACCESS/PACHUBE_RESTFULL"/>
+      <genEnumLiterals ecoreEnumLiteral="ezpachube.ecore#//PACHUBE_ACCESS/PACHUBE_RSS_FEED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezpachube.ecore#//PACHUBE_HTTP_STATUS">
+      <genEnumLiterals ecoreEnumLiteral="ezpachube.ecore#//PACHUBE_HTTP_STATUS/STATUS_200"/>
+      <genEnumLiterals ecoreEnumLiteral="ezpachube.ecore#//PACHUBE_HTTP_STATUS/STATUS_401"/>
+      <genEnumLiterals ecoreEnumLiteral="ezpachube.ecore#//PACHUBE_HTTP_STATUS/STATUS_403"/>
+      <genEnumLiterals ecoreEnumLiteral="ezpachube.ecore#//PACHUBE_HTTP_STATUS/STATUS_404"/>
+    </genEnums>
+    <genClasses ecoreClass="ezpachube.ecore#//AbstractPachubeCmd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezpachube.ecore#//AbstractPachubeCmd/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezpachube.ecore#//AbstractPachubeCmd/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezpachube.ecore#//AbstractPachubeCmd/access"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezpachube.ecore#//AbstractPachubeCmd/eeml"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezpachube.ecore#//AbstractPachubeCmd/command"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezpachube.ecore#//AbstractPachubeCmd/apiKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezpachube.ecore#//AbstractPachubeCmd/xmlFeed"/>
+    </genClasses>
+    <genClasses ecoreClass="ezpachube.ecore#//PatchubePOSTCmd"/>
+    <genClasses ecoreClass="ezpachube.ecore#//PachubeDELETECmd"/>
+    <genClasses ecoreClass="ezpachube.ecore#//PachubePUTCmd"/>
+    <genClasses ecoreClass="ezpachube.ecore#//PachubeGETCmd"/>
+  </genPackages>
+</genmodel:GenModel>

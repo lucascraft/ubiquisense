@@ -1,0 +1,71 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>
+3. Parametric Spline Curves
+</title>
+<meta http-equiv="Content-Script-Type" content="type/javascript">
+</head>
+<body bgcolor="#FFFFFF">
+<h2>3. Parametric spline curves</h2>
+<p>
+  Parametric equations can be used to generate curves that are more general
+  than explicit equations of the form y=f(x).  A quadratic parametric spline
+  may be written as
+</p>
+<p>
+  <img src="Parametrics_fichiers/Parametric.png">
+</p>
+<p>
+  where <b>P</b> is the point we are trying to find, <img src="Parametrics_fichiers/a0a1a2.png" align="top"> are three vectors defining the curve and t is the
+  parameter.  In order to solve this equation we can specify three points on
+  the curve, labelled <img src="Parametrics_fichiers/P0P1P2.png" align="top">; these are at
+  positions along the curve given by the relevant parameter t. The curve will
+  by convention be from t=0 to t=1, and two of the points we specify are the
+  end points of the curve. By substituting suitable values into the equation
+  we can specify three simultaneous equations thus
+</p>
+<p>
+  <img src="Parametrics_fichiers/ParametricSimul.png">
+</p>
+<p>
+  and by solving these we can find <img src="Parametrics_fichiers/a0a1a2.png" align="top">
+  in terms of <img src="Parametrics_fichiers/P0P1P2.png" align="top">:
+</p>
+<p>
+  <img src="Parametrics_fichiers/ParametricSol.png">
+</p>
+<p>
+  We can now apply this to any set of three points, as shown in the diagram
+  below.  It is easy to see the much higher degree of flexibility achieved
+  through the use of parametric equations, and we will see this exploited with
+  more advanced methods later on.
+</p>
+<p>
+  <applet code="Parametrics_fichiers/Parametric.html" height="80%" width="90%">");
+    You need Java enabled to view this applet.
+  </applet><br>Figure 3.1 - Parametric Curve (interactive)
+</p>
+<p>
+  Although this method of creating curves is easy to use, it is not
+  immediately clear how these shapes come about.  The curve is actually a
+  combination of two quadratic curves, one is y=f(t) and one is x=f(t).  By
+  varying t between 0 and 1, x and y will both vary and create the curve.
+  This is shown below; create a curve and animate it to see how the three
+  curves relate.
+</p>
+<p>
+  <applet code="Parametrics_fichiers/ParametricDetail.html" height="80%" width="90%">
+    You need Java enabled to view this applet.
+  </applet><br>Figure 3.2 - Detail of Parametric Curve (interactive)
+</p>
+<h3>Further Information</h3>
+<ul>
+<li><a href="http://www.cs.helsinki.fi/group/goa/mallinnus/curves/curves.html">
+  A detailed description of parametric curves.</a>
+</li></ul>
+<hr>
+<a href="http://www.doc.ic.ac.uk/%7Edfg/AndysSplineTutorial/Quadratic.html">Previous: Explicit curves</a><br>
+<a href="http://www.doc.ic.ac.uk/%7Edfg/AndysSplineTutorial/Beziers.html">Next: Bezier Curves</a><br>
+<a href="http://www.doc.ic.ac.uk/%7Edfg/AndysSplineTutorial/index.html">Return to index</a>
+
+
+</body></html>

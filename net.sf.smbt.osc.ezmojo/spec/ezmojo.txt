@@ -1,0 +1,171 @@
+-------------------------------------------------------------------------------
+----------------------                              ---------------------------
+----------------------  EzMojo Specifications v0.1  ---------------------------
+----------------------                              ---------------------------
+-------------------------------------------------------------------------------
+
+EzMojo intends to define a minimal OSGI based distributed OSC UDP packet aware
+nodal architecture (mainly, not restrictive).
+
+The idea is to have a service discovery powered topology of OSC 
+aware nodes. It consists in having OSC agents accessible thanks to UDP service 
+, exposed with given support of EzMojo protocol described below.
+
+The power of this solution is that it enables both relatively easy synchro
+facilities along with high compatibility with existing OSC solution, 
+especially in the domain of music/VJing/DJing.
+
+The solution will handle an image of OSC data struture as a tree, possibly 
+handling several domains, sub**domains. As a result it will ease the recursive
+use of it, with a possibly very efficient distributed query infrastructure and
+a decent multi point distributed event/message emitting/updating/binding.
+
+For instance, lets deal with idiotic examples : "/foo/bar/buz", "/foo/bar/bee",
+"/mini/me", "zip/it"
+
+Tree representation is direct :
+
+                        --------- 
+                       /    |    \
+                      foo  mini  zip
+                     /      |      \
+                   bar      me      it
+                  /   \
+                buz   bee
+                
+
+Following features will have to be supported : 
+
+":" GET        :/foo/bar/bee 
+"+" SET        +/foo/bar/bee, f:1.0, b:true, i:45, s:grr, s:'ui', s:"kk" 
+"/" LEGACY_SET /foo/bar/bee, f:1.0, b:true, i:45, s:grr, s:'ui', s:"kk" 
+"-" UNSET      -/foo/bar/bee
+"!" LISTEN     !/mini/me
+"#" UNLISTEN   #/mini/me
+"?" QUERY      ?/foo/*
+"=" BIND       =/zip/it, 192.168.1.100:1970
+"$" SERVICE    $/mini, 192.168.1.100:1970
+">" FORWARD    >/zip/it, 192.168.1.100:1970
+"<" UNFORWARD  </zip/it
+"&" SELECT     &/zip/it, 192.168.1.100:4321, 192.168.1.101:4322
+
+Given the fact this architecture rely on DNS-SD service discovery it is clear
+that it must leverage local network stuff but can be accessible thanks to 
+simple UDP connection to resolvable ports. 
+
+DNS-SD will then expose services expressed as OSC bundles. This way it will
+be easy to reuse information even with non EzMojo aware application only by
+using plain OSC.
+
+A typical exchange between nodes and/or 3rd party applications could be 
+expressed as:
+
+                A                                                   B
+                $/mini/me              ---------->                 ...
+                                       <----------               $/mini/me, [f:, i:, s:]
+                                       
+                                       TBD
+                                       
+1)  GET
+
+    Simple getter functionality sending typical OSC messages back
+
+2)  SET & LEGACY_SET
+
+	Simple OSC messages like /foo/bar 1 "sss" 3.0
+	
+	Here we face a dilemna : plain OSC support or EzMojo + OSC as payload.
+	So we have to decide if we want to go for a pure network facility 
+	forgeting about human writability of OSC expressions or just starting
+	with a logical network optimized mechanism.
+	
+	options :
+	- //foo/bar
+	- +/foo/bar
+	- Args as textual expression
+	- Args as binary OSC dump for networking purposes
+	
+3)  UNSET
+
+	UNSET manage the fact to remove subtrees from a given domain or address 
+	regex expression. It obviously remove in the same time all listeners.
+	We will have to consider the BIND problematic later on.
+	
+	
+4)  LISTEN
+
+	LISTEN basicallly register listeners to a given EzMojo Node from its IP
+	an port definition. It may also be introduced a notion of alias in 
+	order to compress the expressivity of addressing.
+	
+	LISTEN just behave like a basic feedback. It appears to be a bit related
+	to FORWARD concept in terms of APIs. However, it represents a LISTEN
+	concept where the equivalent would be an unlogical reverse FORWARD ...
+	
+5)  UNLISTEN
+
+	UNLISTEN holds the removal responsability of any corresponding registred
+	LISTEN according to a particular related domain or a regex based address
+	filter.
+	 
+6)  QUERY
+
+	QUERY would have to be a kind of XPath and/or regex compatible giving 
+	possibility to retrieve an unordered OSC bundle with matching dommains
+	and addresses.
+	
+	A particular query would be the usage of '*' to get any completions of
+	matching addresses. It can be extended to an XPath like query syntax
+	(TBD).
+	
+7)  BIND
+
+	BIND is the expression of synchronization on related messages between 
+	several nodes. In particular, several different nodes would like to share
+	domains or addresses states accros the network for synchronization purpose.
+	
+	However this synchronization do not seem correlated to the notion of
+	LISTENER and FORWARD in the sense it could probably not trigger LISTEN/
+	FORWARD event while not explicitally required by the internal BIND system. 
+	
+8)  SERVICE
+
+	SERVICE is a simple query starting w/ '$' applied to a given domain and/or
+	regex address filtering. The result of such querying returns a bundle of
+	all services for the given node.
+	
+	While service holds a notion of composition, services could be extended to
+	any domain, address and EzMojo subtree.
+	
+	Typical bundle result could describe a typical tree introspection and/or
+	be enriched/filtered by a mechanism no specified yet.
+	
+	
+9)  FORWARD
+
+	FORWARD holds responsability to strictly resend OSC information with a 
+	possible arguments modification (To be specified later on).
+	
+	FORWARD do not acts as LISTEN while LISTEN just behave the opposite way.
+	
+10) UNFORWARD                
+
+	Holds the removal responsability of any corresponding registred
+	FORWARD according to a particular related domain or a regex based address
+	filter.
+
+11) SELECT
+
+	SELECT means all non explicitly targeted commands will be sent to selected 
+	(IP:port)+ addresse(s) to the given (sub)tree. 
+	
+	For instance, &/sub/tree, 192.168.1.100:1234, 192.168.1.101:3421 will just 
+	explicitly target the /sub/tree subtree of compatible 192.168.1.100:1234, 
+	192.168.1.101:3421 nodes if any.
+
+Appendice A)
+
+IP address scheme :
+
+    192.168.1.*:1234
+    192.168.1.100:4322, 192.168.1.101:4321

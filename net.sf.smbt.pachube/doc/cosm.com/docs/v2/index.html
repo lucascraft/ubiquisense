@@ -1,0 +1,412 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>API Documentation - Cosm API Documentation</title>
+	<!-- TODO: fill this -->
+	<meta name="description" content="API Documentation">
+	<meta name="author" content="Cosm">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<!-- css -->
+
+  <link rel="stylesheet" href="../assets/style.css">
+
+	
+	<!-- modernizr -->  
+
+  <script src="../assets/modernizr.js"></script>
+
+</head>
+
+<body>
+  <header class="main">
+  	<hgroup class="g1">
+  		<h1><a href="https://cosm.com/" title="Go to Cosm.com">Cosm</a></h1>
+  		<h2><a href="https://cosm.com/docs/" title="Go to Documentation Home">API Documentation</a></h2>
+  	</hgroup>
+  	<aside>
+      © 2011 Cosm, a LogMeIn company
+    </aside>
+    <nav class="reduced-screen">
+      <a class="icon list" href="index.html#" title="Toggle sidebar">Toggle sidebar</a>
+    </nav>
+  </header>
+  
+  <nav class="main">
+  	<ul><li><a href="https://cosm.com/docs/">Documentation Home</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/">Quickstarts</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/curl.html">Start using curl</a>
+</li><li><a href="https://cosm.com/docs/quickstart/twitter.html">Track your Twitter stats</a>
+</li></ul></li><li class="selected"><a href="index.html">API Documentation</a>
+<ul><li><a href="authentication.html">Authentication</a>
+</li><li><a href="feed/index.html">Feeds</a>
+<ul><li><a href="feed/create.html">Creating a feed</a>
+</li><li><a href="feed/update.html">Updating a feed</a>
+</li><li><a href="feed/list.html">Listing all feeds</a>
+</li><li><a href="feed/show.html">Viewing a feed</a>
+</li><li><a href="feed/delete.html">Deleting a feed</a>
+</li><li><a href="feed/mobile.html">Mobile feeds</a>
+</li></ul></li><li><a href="datastream/index.html">Datastreams</a>
+<ul><li><a href="datastream/create.html">Creating a datastream</a>
+</li><li><a href="datastream/update.html">Updating a datastream</a>
+</li><li><a href="datastream/list.html">Listing all datastreams</a>
+</li><li><a href="datastream/show.html">Viewing a datastream</a>
+</li><li><a href="datastream/delete.html">Deleting a datastream</a>
+</li></ul></li><li><a href="datapoint/index.html">Datapoints</a>
+<ul><li><a href="datapoint/create.html">Creating a datapoint</a>
+</li><li><a href="datapoint/update.html">Updating a datapoint</a>
+</li><li><a href="datapoint/list.html">Listing all datapoints</a>
+</li><li><a href="datapoint/show.html">Viewing a datapoint</a>
+</li><li><a href="datapoint/delete.html">Deleting a datapoint</a>
+</li><li><a href="datapoint/delete_bulk.html">Deleting multiple datapoints</a>
+</li></ul></li><li><a href="api_key/index.html">Api Keys</a>
+<ul><li><a href="api_key/create.html">Creating an API key</a>
+</li><li><a href="api_key/update.html">Updating an API key</a>
+</li><li><a href="api_key/list.html">Listing all API keys</a>
+</li><li><a href="api_key/show.html">Viewing an API key</a>
+</li><li><a href="api_key/delete.html">Deleting an API key</a>
+</li></ul></li><li><a href="trigger/index.html">Triggers</a>
+<ul><li><a href="trigger/create.html">Creating a trigger</a>
+</li><li><a href="trigger/update.html">Updating a trigger</a>
+</li><li><a href="trigger/list.html">Listing all triggers</a>
+</li><li><a href="trigger/show.html">Viewing a trigger</a>
+</li><li><a href="trigger/delete.html">Deleting a trigger</a>
+</li></ul></li><li><a href="user/index.html">Users</a>
+<ul><li><a href="user/create.html">Creating a user</a>
+</li><li><a href="user/update.html">Updating a user</a>
+</li><li><a href="user/list.html">Listing all users</a>
+</li><li><a href="user/show.html">Viewing a user</a>
+</li><li><a href="user/delete.html">Deleting a user</a>
+</li></ul></li><li><a href="history.html">Historical queries</a>
+</li><li><a href="time_zones/index.html">Time Zones</a>
+<ul><li><a href="time_zones/place_names.html">Place Names</a>
+</li></ul></li><li><a href="ip_addresses.html">IP Addresses</a>
+</li></ul></li><li><a href="https://cosm.com/docs/concepts/">Core Concepts</a>
+<ul><li><a href="https://cosm.com/docs/concepts/automatic_manual.html">Automatic vs. manual feeds</a>
+</li><li><a href="https://cosm.com/docs/concepts/live_frozen.html">Live vs. frozen feeds</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/">Beta features</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/">Device Management</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/">Provisioning</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/activation_code.html">Generating the activation code</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/">API</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/">Products</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/create.html">Creating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/update.html">Updating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/list.html">Listing all products</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/show.html">Viewing a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/delete.html">Deleting a product</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/device/">Devices</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/device/create.html">Creating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/update.html">Updating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/list.html">Listing all devices</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/show.html">Viewing a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/delete.html">Deleting a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/activate.html">Activating a device</a>
+</li></ul></li></ul></li></ul></li><li><a href="https://cosm.com/docs/beta/group/">Groups</a>
+<ul><li><a href="https://cosm.com/docs/beta/group/create.html">Creating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/update.html">Updating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/list.html">Listing all groups</a>
+</li><li><a href="https://cosm.com/docs/beta/group/show.html">Viewing a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/delete.html">Deleting a group</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/permission/">Permissions</a>
+<ul><li><a href="https://cosm.com/docs/beta/permission/show.html">Showing permissions</a>
+</li><li><a href="https://cosm.com/docs/beta/permission/query.html">Querying permissions</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/socket_server/">Socket Server</a>
+</li><li><a href="https://cosm.com/docs/beta/mqtt/">MQTT</a>
+</li><li><a href="https://cosm.com/docs/beta/oauth/">OAuth</a>
+</li></ul></li><li><a href="https://cosm.com/docs/v1/">Legacy API</a>
+</li></ul></li></ul>
+  </nav>
+
+	<div id="container" class="clearfix">	  	  
+	  <article id="main" role="main" class="main">
+	  	<header>
+	  		<h1 class="article-title">API Documentation</h1>
+	  	</header>
+	    <dl class="docutils">
+<dt>The v2 API introduces a number of new features that were not available in the v1 API, including:</dt>
+<dd><ul class="first last simple">
+<li>Full read/write access to the history</li>
+<li>Private feeds</li>
+<li>A user management API</li>
+</ul>
+</dd>
+</dl>
+<p>It also modifies the XML and JSON data formats in order to make them more consistent and to allow for more advanced functionality such as history.</p>
+<div class="section" id="general-information-about-the-api">
+<h2>General information about the API</h2>
+<p>A hierarchy of data types is used to represent data in the Cosm system: <a class="reference external" href="feed/index.html">Feed</a> &gt;&gt; <a class="reference external" href="datastream/index.html">Datastream</a> &gt;&gt; <a class="reference external" href="datapoint/index.html">Datapoint</a>.</p>
+<div class="section" id="environment-aka-feed">
+<h3>Environment (aka 'feed')</h3>
+<p>An 'environment' is a context-specific collection of measured data, often at a particular geolocation, defined by the creator of the environment and measured by sensors and devices. The term encompasses both physical entities such as a room, a mobile device, a building or a forest; and virtual entities such as a Second Life model, server bandwidth monitoring, etc. A Cosm 'feed' is the data representation of an environment and its datastreams. Its metadata can optionally specify whether it is physical or virtual, fixed or mobile, indoor or outdoor, etc.</p>
+</div>
+<div class="section" id="id1">
+<h3>Datastream</h3>
+<p>A datastream represents an individual sensor or measuring device/script within an environment. Every datastream must have a unique (within the environment) alphanumeric ID. It can also specify 'units' (e.g. 'watts') as well as user-defined 'tags' (e.g. 'fridge_energy').</p>
+</div>
+<div class="section" id="id2">
+<h3>Datapoint</h3>
+<p>A datapoint represents a single value of a datastream at a specific point in time. It is simply a key value pair of a timestamp and the value at that time.</p>
+<p>Example: You wire up a hallway ('environment') with temperature, humidity and CO2 sensors ('datastreams'). You create a Cosm feed titled 'My Hallway', with three datastreams where the IDs could be: 'temperature', 'humidity' and 'CO2'; which might be tagged 'thermal,non-contact', 'capacitive, SHT21' and 'MG811' respectively; and have units 'Celsius', '%RH' and 'ppm'. Individual datapoints at a point in time might be '23.2', '34' and '3820' respectively.</p>
+</div>
+<div class="section" id="versions">
+<h3>Versions</h3>
+<p>There are currently two versions of the API active. Where possible you should use the most recent version available. We will endeavour to support all versions of the API as far as possible, but the most advanced functionality is unlikely to be backported to previous versions.</p>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="index.html">Documentation for version 2</a>, base URL: <a class="reference external" href="http://api.cosm.com/v2/">http://api.cosm.com/v2/*</a> (released Aug 2010 - <strong>recommended</strong>).</li>
+<li><a class="reference external" href="https://cosm.com/docs/v1/">Documentation for version 1</a>, base URL: <a class="reference external" href="http://api.cosm.com/v1/">http://api.cosm.com/v1/*</a> (released Feb 2008 - <em>deprecated</em>).</li>
+</ul>
+</blockquote>
+<p>Note: For legacy compatibility, the v1 API will remain available at <a class="reference external" href="http://www.cosm.com/api/">http://www.cosm.com/api/*</a> but usage should be switched over to use the base URL noted above as soon as possible.</p>
+<p>Versioning the API enables you to lock your application to a specific API version. This means that the only changes we will make are:</p>
+<blockquote>
+<ul class="simple">
+<li>Adding new features whilst leaving the existing ones untouched</li>
+<li>Fixes which do not affect backwards compatibility</li>
+<li>Incrementing the format version numbers as required to accommodate any minor changes</li>
+</ul>
+</blockquote>
+<p>JSON and XML formats both have version numbers included as part of their structure. This enables you either to specify a particular format for consistency or to verify what format the document is represented in.</p>
+</div>
+<div class="section" id="http-based-restful">
+<h3>HTTP-based &amp; RESTful</h3>
+<p>The Cosm API is currently entirely based on HTTP requests, and conforms to the design principles of <a class="reference external" href="http://en.wikipedia.org/wiki/Representational_State_Transfer">Representational State Transfer (REST)</a>. See <a class="reference external" href="http://www.eetimes.com/design/embedded-internet-design/4201086/Web-Services-for-Smart-Objects--Part-3-A-real-world-web-service-system-for-smart-objects">this article for an extensive discussion about Cosm</a> as a 'real-world instantiation of a RESTful interface for smart objects'.</p>
+<p>The three main data types are represented hierarchically in the URL in the same way they are related, i.e. Environment &gt;&gt; Datastream &gt;&gt; Datapoint. RESTful access uses the HTTP verbs to determine which action to make on a particular data object:</p>
+<blockquote>
+<ul class="simple">
+<li>GET : Retrieves the current state of the object</li>
+<li>PUT : Sets the current state of the object</li>
+<li>POST : Creates a new object</li>
+<li>DELETE : Deletes the object</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="http-status-codes">
+<h3>HTTP Status Codes</h3>
+<p>The Cosm API attempts to return appropriate HTTP status codes (see <a class="reference external" href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">http://en.wikipedia.org/wiki/List_of_HTTP_status_codes</a>) for every request.</p>
+<p>Common status codes include:</p>
+<blockquote>
+<ul class="simple">
+<li>200 OK: request processed successfully.</li>
+<li>401 Not Authorized: either you need to provide authentication credentials, or the credentials provided aren't valid.</li>
+<li>403 Forbidden: Cosm understands your request, but refuses to fulfill it. An accompanying error message should explain why.</li>
+<li>404 Not Found: either you're requesting an invalid URI or the resource in question doesn't exist (eg. no such feed).</li>
+<li>422 Unprocessable Entity: Cosm was unable to create a feed because the EEML/JSON was not complete/valid (e.g. it didn't include a &quot;title&quot; element).</li>
+<li>500 Internal Server Error: Something went wrong... Please post to the forum about it and we will investigate.</li>
+<li>503 No server error: usually occurs when there are too many requests coming into Cosm - if you get this from an API request then the error message will be returned in XML in the response.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="alternative-put-and-delete-requests">
+<h3>Alternative PUT and DELETE requests</h3>
+<p>Not all HTTP clients are able to make PUT or DELETE requests (e.g. web browsers). In order to work around this limitation, it is possible to send a POST request with a &quot;_method&quot; parameter, e.g.</p>
+<blockquote>
+<ul class="simple">
+<li>POST to <a class="reference external" href="http://api.cosm.com/v2/feeds/504/datastreams/0.xml?_method=put">http://api.cosm.com/v2/feeds/504/datastreams/0.xml?_method=put</a> will simulate a PUT</li>
+<li>POST to <a class="reference external" href="http://api.cosm.com/v2/feeds/504/datastreams/0.xml?_method=delete">http://api.cosm.com/v2/feeds/504/datastreams/0.xml?_method=delete</a> will simulate a DELETE</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="security-ssl-https">
+<h3>Security - SSL/HTTPS</h3>
+<p>Industry-standard HTTPS/SSL secure access is available for all authenticated methods, simply by replacing http with https in requests.</p>
+</div>
+<div class="section" id="accounts-feature-availability">
+<h3>Accounts &amp; feature availability</h3>
+<p>To use Cosm's API you need a Cosm account. Sign up by clicking the &quot;Get Started&quot; button on our home page: <a class="reference external" href="https://cosm.com">https://cosm.com</a>. It's free to sign up and all accounts come with a generous API rate limit and full access to all of our features (including public or private feeds, historical data, etc.).</p>
+</div>
+<div class="section" id="rate-limit">
+<h3>Rate limit</h3>
+<p>API usage is rate limited and is currently set at a maximum of 100 requests per minute. While the API rate limit is expressed in 'requests per minute' the calculation is actually averaged over 3 minutes.</p>
+<p>If your application exceeds this rate, it will be unable to make any successful requests, whether to access feed data or to post new data, and will receive an error* for every request until the rate has diminished. Once the rate has diminished, service will return to normal so you don't have to do anything other than reduce the rate of requests your devices or scripts are making.</p>
+<p>Note that this means that you can either make requests regularly, or you can make a burst of requests -- but then you will need to prevent any further requests for another two minutes. Therefore, if you are consistently making requests more frequently than your limit, then none of your requests will ever be successful.</p>
+<p>* PLEASE NOTE that in the v1 API this is a 503 error but in the v2 API this was changed to a 403 error, as this is more semantically correct.</p>
+</div>
+</div>
+<div class="section" id="compression">
+<h2>Compression</h2>
+<p>Cosm supports compression on both incoming and outgoing requests. This is particularly useful if, for example, you have a GPRS based device that periodically uploads a batch of data because compression will typically compress the data being transmitted by 75% or more. We use the standard HTTP method of specifying the encoding to do this.</p>
+<div class="section" id="incoming-compression">
+<h3>Incoming compression</h3>
+<p>In order to send compressed data to Cosm it is necessary to send it as 'gzip' encoding. First compress your data using gzip and then add the &quot;Content-Encoding: gzip&quot; header to your request. You should still specify the &quot;Content-Type&quot; header to match the uncompressed content as this will be passed on beyond the decompression stage.</p>
+</div>
+<div class="section" id="outgoing-compression">
+<h3>Outgoing compression</h3>
+<p>To receive data from Cosm in gzip compressed format simply add the &quot;Accept-Encoding: gzip&quot; header to your request</p>
+</div>
+</div>
+<div class="section" id="data-formats">
+<h2>Data Formats</h2>
+<p>The Cosm API supports 3 data formats; <a class="reference external" href="http://www.json.org/">JSON</a>, <a class="reference external" href="http://www.eeml.org/">XML</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV</a>. Each of these formats is best suited to a particular purpose. In the v2 API the JSON and XML representations of an environment are interchangeable: i.e. they both represent the same data and metadata.</p>
+<p>There are two ways to specify which format you are using:</p>
+<blockquote>
+<ul class="simple">
+<li>Append the format identifier to the URL, e.g. <tt class="docutils literal">/v2/feeds.json</tt></li>
+<li>Pass the &quot;Accepts&quot; header in the HTTP request, e.g. <tt class="docutils literal">Accept: application/json</tt></li>
+</ul>
+</blockquote>
+<p><strong>For all of the API, If no format is specified, the JSON format is used</strong>.
+This means that if you don't specify a format we will try and parse all
+incoming data as JSON, and we will send all outgoing data as JSON. If this is
+not what you intend, then you must make sure to specify the format explicitly.</p>
+<p>If both methods are used to specify the format, the format identifier in the URL takes precedence.</p>
+<div class="section" id="id3">
+<h3>JSON</h3>
+<p>The <a class="reference external" href="http://www.json.org/">JSON data format</a> is particularly suited to web based applications as it can be easily parsed using Javascript in the browser. However it also makes an excellent generic data serialisation format since it has much lower processing overheads than XML and uses less bandwidth to transmit. A full JSON representation looks like the following:</p>
+<pre class="code-block javascript literal-block">
+<span class="p">{</span>
+  <span class="s2">&quot;title&quot;</span> <span class="o">:</span> <span class="s2">&quot;Cosm Office environment&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span> <span class="o">:</span> <span class="s2">&quot;test of manual feed snapshotting&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;feed&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://api.cosm.com/v2/feeds/504.json&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;id&quot;</span> <span class="o">:</span> <span class="mi">504</span><span class="p">,</span>
+  <span class="s2">&quot;status&quot;</span> <span class="o">:</span> <span class="s2">&quot;frozen&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;website&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://www.haque.co.uk/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;updated&quot;</span> <span class="o">:</span> <span class="s2">&quot;2010-06-25T11:54:17.463771Z&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;created&quot;</span> <span class="o">:</span> <span class="s2">&quot;2010-03-03T23:43:01.238734Z&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;version&quot;</span> <span class="o">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;private&quot;</span> <span class="o">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;creator&quot;</span> <span class="o">:</span> <span class="s2">&quot;https://cosm.com/users/hdr&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;location&quot;</span><span class="o">:</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;disposition&quot;</span><span class="o">:</span><span class="s2">&quot;fixed&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;ele&quot;</span><span class="o">:</span><span class="s2">&quot;23.0&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;office&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;lat&quot;</span><span class="o">:</span><span class="mf">51.5235375648154</span><span class="p">,</span>
+      <span class="s2">&quot;exposure&quot;</span><span class="o">:</span><span class="s2">&quot;indoor&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;lon&quot;</span><span class="o">:</span><span class="o">-</span><span class="mf">0.0807666778564453</span><span class="p">,</span>
+      <span class="s2">&quot;domain&quot;</span><span class="o">:</span><span class="s2">&quot;physical&quot;</span>
+    <span class="p">},</span>
+  <span class="s2">&quot;tags&quot;</span> <span class="o">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Tag1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Tag2&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;datastreams&quot;</span> <span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;at&quot;</span> <span class="o">:</span> <span class="s2">&quot;2010-06-25T11:54:17.454020Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;current_value&quot;</span> <span class="o">:</span> <span class="s2">&quot;999&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;datapoints&quot;</span> <span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;at&quot;</span> <span class="o">:</span> <span class="s2">&quot;2005-06-25T11:54:17.000000Z&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="s2">&quot;999&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;at&quot;</span> <span class="o">:</span> <span class="s2">&quot;2006-06-25T11:54:17.000000Z&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="s2">&quot;123&quot;</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;id&quot;</span> <span class="o">:</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;max_value&quot;</span> <span class="o">:</span> <span class="s2">&quot;999.0&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;min_value&quot;</span> <span class="o">:</span> <span class="s2">&quot;7.0&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;unit&quot;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;conversionBasedUnits&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;label&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;symbol&quot;</span><span class="o">:</span> <span class="s2">&quot;symbol&quot;</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;at&quot;</span> <span class="o">:</span> <span class="s2">&quot;2010-06-24T10:05:49.000000Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;current_value&quot;</span> <span class="o">:</span> <span class="s2">&quot;0000017&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;datapoints&quot;</span> <span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;at&quot;</span> <span class="o">:</span> <span class="s2">&quot;2010-04-12T11:31:51.133782Z&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;value&quot;</span> <span class="o">:</span> <span class="s2">&quot;999&quot;</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;id&quot;</span> <span class="o">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;max_value&quot;</span> <span class="o">:</span> <span class="s2">&quot;19.0&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;min_value&quot;</span> <span class="o">:</span> <span class="s2">&quot;7.0&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+
+</pre>
+<p>JSON callback: this is used only when requesting JSON formatted responses. Including this parameter will enable the response to be wrapped in the callback method of your choice (particularly useful with Javascript and for creating AJAX applications).</p>
+<p>For example, <tt class="docutils literal"><span class="pre">http://api.cosm.com/v2/feeds/504.json?callback=myCallbackFunction</span></tt> will result in a response body of: <tt class="docutils literal"><span class="pre">myCallbackFunction({...})</span></tt> rather than just <tt class="docutils literal"><span class="pre">{...}</span></tt>. Callbacks may only contain alphanumeric characters and underscores; any invalid characters will be stripped. This conforms to the implementation discussed here: <a class="reference external" href="http://developer.yahoo.com/common/json.html#callbackparam">http://developer.yahoo.com/common/json.html#callbackparam</a>.</p>
+</div>
+<div class="section" id="id4">
+<h3>XML</h3>
+<p>The Cosm API uses a specific format of XML called EEML (See <a class="reference external" href="http://www.eeml.org">http://www.eeml.org</a> for more details). It is well suited to integrating with existing systems such as building management systems although it contains the same information as JSON. An example of a full XML representation looks like the following:</p>
+<pre class="code-block xml literal-block">
+<span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;eeml</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.eeml.org/xsd/0.5.1&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">version=</span><span class="s">&quot;0.5.1&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.eeml.org/xsd/0.5.1 http://www.eeml.org/xsd/0.5.1/0.5.1.xsd&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;environment</span> <span class="na">updated=</span><span class="s">&quot;2010-06-08T09:30:11.361937Z&quot;</span> <span class="na">created=</span><span class="s">&quot;2010-05-03T23:43:01.238734Z&quot;</span> <span class="na">id=</span><span class="s">&quot;504&quot;</span> <span class="na">creator=</span><span class="s">&quot;https://cosm.com/users/hdr&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Cosm Office environment<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;feed&gt;</span>http://api.cosm.com/v2/feeds/504.xml<span class="nt">&lt;/feed&gt;</span>
+    <span class="nt">&lt;status&gt;</span>live<span class="nt">&lt;/status&gt;</span>
+    <span class="nt">&lt;website&gt;</span>http://www.haque.co.uk/<span class="nt">&lt;/website&gt;</span>
+    <span class="nt">&lt;private&gt;</span>false<span class="nt">&lt;/private&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>Tag1<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;tag&gt;</span>Tag2<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;location</span> <span class="na">domain=</span><span class="s">&quot;physical&quot;</span> <span class="na">exposure=</span><span class="s">&quot;indoor&quot;</span> <span class="na">disposition=</span><span class="s">&quot;fixed&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;name&gt;</span>office<span class="nt">&lt;/name&gt;</span>
+      <span class="nt">&lt;lat&gt;</span>51.5235375648154<span class="nt">&lt;/lat&gt;</span>
+      <span class="nt">&lt;lon&gt;</span>-0.0807666778564453<span class="nt">&lt;/lon&gt;</span>
+      <span class="nt">&lt;ele&gt;</span>23.0<span class="nt">&lt;/ele&gt;</span>
+    <span class="nt">&lt;/location&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;tag&gt;</span>humidity<span class="nt">&lt;/tag&gt;</span>
+      <span class="nt">&lt;current_value</span> <span class="na">at=</span><span class="s">&quot;2010-06-08T09:30:11.000000Z&quot;</span><span class="nt">&gt;</span>311<span class="nt">&lt;/current_value&gt;</span>
+      <span class="nt">&lt;max_value&gt;</span>847.0<span class="nt">&lt;/max_value&gt;</span>
+      <span class="nt">&lt;min_value&gt;</span>0.0<span class="nt">&lt;/min_value&gt;</span>
+      <span class="nt">&lt;unit</span> <span class="na">type=</span><span class="s">&quot;basicSI&quot;</span> <span class="na">symbol=</span><span class="s">&quot;symbol&quot;</span><span class="nt">&gt;</span>label<span class="nt">&lt;/unit&gt;</span>
+      <span class="nt">&lt;datapoints&gt;</span>
+        <span class="nt">&lt;value</span> <span class="na">at=</span><span class="s">&quot;2009-07-05T09:24:03.339244Z&quot;</span><span class="nt">&gt;</span>008<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;value</span> <span class="na">at=</span><span class="s">&quot;2009-07-05T09:24:03.339244Z&quot;</span><span class="nt">&gt;</span>546<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;value</span> <span class="na">at=</span><span class="s">&quot;2009-07-05T09:24:03.339244Z&quot;</span><span class="nt">&gt;</span>123<span class="nt">&lt;/value&gt;</span>
+      <span class="nt">&lt;/datapoints&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
+  <span class="nt">&lt;/environment&gt;</span>
+<span class="nt">&lt;/eeml&gt;</span>
+
+</pre>
+</div>
+<div class="section" id="id5">
+<h3>CSV</h3>
+<p>CSV is designed for use by very simple embedded devices, such as an <a class="reference external" href="http://www.arduino.cc">Arduino</a> or other low powered microcontroller. It contains none of the metadata that the XML and JSON formats contain (though this can be added separately using the API or the web interface). A full representation of CSV is as follows:</p>
+<pre class="code-block csv literal-block">
+7441,1,2010-06-01T12:01:32.1Z,123
+7441,2,2010-06-01T12:01:32.1Z,456
+&lt;feed_id&gt;,&lt;datastream_id&gt;,&lt;timestamp&gt;,&lt;value&gt;
+
+</pre>
+</div>
+</div>
+    	<footer class="reduced-screen">
+        © 2011 Cosm, a LogMeIn company
+      </footer>
+	  </article>
+  </div> <!-- //#container -->
+	  
+  <aside class="main">
+  	<p>Test Widget</p>
+  </aside>
+  
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>  
+
+  <script>window.jQuery || document.write('<script src="../assets/jquery-1.7.0.min.js"><\/script>')</script>
+  <script defer src="../assets/script.js"></script>
+
+
+
+
+  <script>
+    window._gaq=[["_setAccount","UA-20796726-1"],["_trackPageview"],['_trackPageLoadTime'],['_setDomainName','.cosm.com'],['_setAllowHash', false]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+  
+  <!-- chrome frame -->
+	<!--[if lt IE 7 ]>
+		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+</body>
+</html>

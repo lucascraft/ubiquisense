@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.osc.ezmojo/src-model"
+    editorDirectory="/net.sf.smbt.osc.ezmojo.editor/src" modelPluginID="net.sf.smbt.osc.ezmojo"
+    modelName="Ezmojo" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" testsDirectory="" importerID="org.eclipse.emf.importer.cdo"
+    featureDelegation="Reflective" complianceLevel="6.0" copyrightFields="false" usedGenPackages="platform:/plugin/net.sf.smbt.xcp/model/xcp.genmodel#//xcp platform:/plugin/net.sf.smbt.osc.tuio/model/eztuioX2.genmodel#//eztuio2 platform:/plugin/net.sf.smbt.motion/model/ezmotion.genmodel#//ezmotion platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../net.sf.smbt.osc/model/osccmd.genmodel#//osccmd ../../net.sf.xqz.engine/model/temporal.genmodel#//cmd ../../net.sf.xqz.engine/model/temporal.genmodel#//engine platform:/plugin/net.sf.xqz.script/src-gen/net/sf/xqz/engine/script/Orchestror.genmodel#//orchestror">
+  <foreignModel>ezmojo.ecore</foreignModel>
+  <genPackages prefix="Ezmojo" basePackage="net.sf.smbt" disposableProviderFactory="true"
+      ecorePackage="ezmojo.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezmojo.ecore#//EZMojoKind">
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/GET"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/SET"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/LISTEN"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/UNSET"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/SERVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/QUERY"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/UNLISTEN"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/BIND"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/FORWARD"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/UNFORWARD"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/LEGACY_SET"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/SELECT"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/TRIGGER"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/KINEMATICS"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/COMMAND"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/INFO"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/CLOCK"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/FUNCTION"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/BANG"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/TOGGLE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/MAP"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/UNMAP"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/MNEMONIC"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZMojoKind/PLAY"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezmojo.ecore#//EZCmdKind">
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/LIST"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/RESET"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/CLOSE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/BIND"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/DEPLOY"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/REMOVE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/WTF"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/HELP"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/PROTOCOL"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/ALIAS"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/CLEAR"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/FEEDBACK"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/HOOK"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/UNHOOK"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/SAVE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/LOAD"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/OK"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EZCmdKind/ERROR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezmojo.ecore#//MotionEvalStrategy">
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//MotionEvalStrategy/SCRIPTICAL"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//MotionEvalStrategy/ADDITIVE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezmojo.ecore#//EzVarKind">
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EzVarKind/REGULAR"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmojo.ecore#//EzVarKind/OVERRIDEN"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="ezmojo.ecore#//MotionEngine"/>
+    <genDataTypes ecoreDataType="ezmojo.ecore#//Job"/>
+    <genClasses ecoreClass="ezmojo.ecore#//EZMojoNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoNode/vars"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoNode/elements"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoNode/ttl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoNode/token"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoNode/uuid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoNode/service"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoNode/toggle"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoNode/lastBang"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoNode/listeners"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoNode/forwards"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoNode/motions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoNode/clock"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoNode/root"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoNode/hitsRatePerSec"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoNode/touches"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoNode/scripts"/>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/set">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/set/msg"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/get">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/get/msg"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/unset">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/unset/msg"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/query">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/query/msg"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/bind">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/bind/msg"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/listen">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/listen/msg"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/unlisten">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/unlisten/msg"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/forward">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/forward/msg"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/unforward">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/unforward/msg"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/addTrigger">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/addTrigger/expr"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/addKinematics">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/addKinematics/expr"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/removeTrigger"/>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/removeKinematics"/>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/isService"/>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/getAddr"/>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/bang">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/bang/motionVal"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoNode/getCompatibleCmdPipe">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoNode/getCompatibleCmdPipe/protocolID"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EZMojoCmd">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoCmd/kind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoCmd/osc"/>
+      <genFeatures property="None" notify="false" children="true" createChild="true"
+          ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoCmd/targets"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoCmd/protocol"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EZVar">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZVar/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZVar/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZVar/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZVar/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EZMojoRoot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoRoot/root"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoRoot/selected"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoRoot/targets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoRoot/feedback"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoRoot/motionReactor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoRoot/varsMode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZMojoRoot/index"/>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoRoot/accept">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoRoot/accept/cmd"/>
+      </genOperations>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZMojoRoot/accept.1">
+        <genParameters ecoreParameter="ezmojo.ecore#//EZMojoRoot/accept.1/cmd"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EZMojoTarget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoTarget/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoTarget/hierarchical"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EZMojoAgentCmd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoAgentCmd/cmd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoAgentCmd/text"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EzMojoInfoCmd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EzMojoInfoCmd/text"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EzMojoService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EzMojoService/serviceID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EzMojoService/excluded"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EZMojoTargetedCmd"/>
+    <genClasses ecoreClass="ezmojo.ecore#//MotionEvalCtx">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//MotionEvalCtx/ctx"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//MotionEvalCtx/kicked"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//MotionEvalCtx/script"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//MotionEvalCtx/node"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//MotionEvalCtx/cmd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//MotionEvalCtx/strategy"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EZScript">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZScript/script"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ezmojo.ecore#//EZScript/node"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZScript/label"/>
+      <genOperations ecoreOperation="ezmojo.ecore#//EZScript/eval"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EzMojoKinematicCmd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EzMojoKinematicCmd/script"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EZTUIOVar">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZTUIOVar/motion"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//EZTUIOVar/b3d"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//EZMojoMappedCmd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//EZMojoMappedCmd/alias"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//MotionReactor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//MotionReactor/job"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmojo.ecore#//Index2MojoNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmojo.ecore#//Index2MojoNode/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmojo.ecore#//Index2MojoNode/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

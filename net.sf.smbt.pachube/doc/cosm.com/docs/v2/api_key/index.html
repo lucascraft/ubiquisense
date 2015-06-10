@@ -1,0 +1,436 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Api Keys - Cosm API Documentation</title>
+	<!-- TODO: fill this -->
+	<meta name="description" content="API Documentation">
+	<meta name="author" content="Cosm">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<!-- css -->
+
+  <link rel="stylesheet" href="../../assets/style.css">
+
+	
+	<!-- modernizr -->  
+
+  <script src="../../assets/modernizr.js"></script>
+
+</head>
+
+<body>
+  <header class="main">
+  	<hgroup class="g1">
+  		<h1><a href="https://cosm.com/" title="Go to Cosm.com">Cosm</a></h1>
+  		<h2><a href="https://cosm.com/docs/" title="Go to Documentation Home">API Documentation</a></h2>
+  	</hgroup>
+  	<aside>
+      © 2011 Cosm, a LogMeIn company
+    </aside>
+    <nav class="reduced-screen">
+      <a class="icon list" href="index.html#" title="Toggle sidebar">Toggle sidebar</a>
+    </nav>
+  </header>
+  
+  <nav class="main">
+  	<ul><li><a href="https://cosm.com/docs/">Documentation Home</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/">Quickstarts</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/curl.html">Start using curl</a>
+</li><li><a href="https://cosm.com/docs/quickstart/twitter.html">Track your Twitter stats</a>
+</li></ul></li><li><a href="../index.html">API Documentation</a>
+<ul><li><a href="../authentication.html">Authentication</a>
+</li><li><a href="../feed/index.html">Feeds</a>
+<ul><li><a href="../feed/create.html">Creating a feed</a>
+</li><li><a href="../feed/update.html">Updating a feed</a>
+</li><li><a href="../feed/list.html">Listing all feeds</a>
+</li><li><a href="../feed/show.html">Viewing a feed</a>
+</li><li><a href="../feed/delete.html">Deleting a feed</a>
+</li><li><a href="../feed/mobile.html">Mobile feeds</a>
+</li></ul></li><li><a href="../datastream/index.html">Datastreams</a>
+<ul><li><a href="../datastream/create.html">Creating a datastream</a>
+</li><li><a href="../datastream/update.html">Updating a datastream</a>
+</li><li><a href="../datastream/list.html">Listing all datastreams</a>
+</li><li><a href="../datastream/show.html">Viewing a datastream</a>
+</li><li><a href="../datastream/delete.html">Deleting a datastream</a>
+</li></ul></li><li><a href="../datapoint/index.html">Datapoints</a>
+<ul><li><a href="../datapoint/create.html">Creating a datapoint</a>
+</li><li><a href="../datapoint/update.html">Updating a datapoint</a>
+</li><li><a href="../datapoint/list.html">Listing all datapoints</a>
+</li><li><a href="../datapoint/show.html">Viewing a datapoint</a>
+</li><li><a href="../datapoint/delete.html">Deleting a datapoint</a>
+</li><li><a href="../datapoint/delete_bulk.html">Deleting multiple datapoints</a>
+</li></ul></li><li class="selected"><a href="index.html">Api Keys</a>
+<ul><li><a href="create.html">Creating an API key</a>
+</li><li><a href="update.html">Updating an API key</a>
+</li><li><a href="list.html">Listing all API keys</a>
+</li><li><a href="show.html">Viewing an API key</a>
+</li><li><a href="delete.html">Deleting an API key</a>
+</li></ul></li><li><a href="../trigger/index.html">Triggers</a>
+<ul><li><a href="../trigger/create.html">Creating a trigger</a>
+</li><li><a href="../trigger/update.html">Updating a trigger</a>
+</li><li><a href="../trigger/list.html">Listing all triggers</a>
+</li><li><a href="../trigger/show.html">Viewing a trigger</a>
+</li><li><a href="../trigger/delete.html">Deleting a trigger</a>
+</li></ul></li><li><a href="../user/index.html">Users</a>
+<ul><li><a href="../user/create.html">Creating a user</a>
+</li><li><a href="../user/update.html">Updating a user</a>
+</li><li><a href="../user/list.html">Listing all users</a>
+</li><li><a href="../user/show.html">Viewing a user</a>
+</li><li><a href="../user/delete.html">Deleting a user</a>
+</li></ul></li><li><a href="../history.html">Historical queries</a>
+</li><li><a href="../time_zones/index.html">Time Zones</a>
+<ul><li><a href="../time_zones/place_names.html">Place Names</a>
+</li></ul></li><li><a href="../ip_addresses.html">IP Addresses</a>
+</li></ul></li><li><a href="https://cosm.com/docs/concepts/">Core Concepts</a>
+<ul><li><a href="https://cosm.com/docs/concepts/automatic_manual.html">Automatic vs. manual feeds</a>
+</li><li><a href="https://cosm.com/docs/concepts/live_frozen.html">Live vs. frozen feeds</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/">Beta features</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/">Device Management</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/">Provisioning</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/activation_code.html">Generating the activation code</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/">API</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/">Products</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/create.html">Creating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/update.html">Updating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/list.html">Listing all products</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/show.html">Viewing a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/delete.html">Deleting a product</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/device/">Devices</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/device/create.html">Creating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/update.html">Updating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/list.html">Listing all devices</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/show.html">Viewing a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/delete.html">Deleting a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/activate.html">Activating a device</a>
+</li></ul></li></ul></li></ul></li><li><a href="https://cosm.com/docs/beta/group/">Groups</a>
+<ul><li><a href="https://cosm.com/docs/beta/group/create.html">Creating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/update.html">Updating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/list.html">Listing all groups</a>
+</li><li><a href="https://cosm.com/docs/beta/group/show.html">Viewing a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/delete.html">Deleting a group</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/permission/">Permissions</a>
+<ul><li><a href="https://cosm.com/docs/beta/permission/show.html">Showing permissions</a>
+</li><li><a href="https://cosm.com/docs/beta/permission/query.html">Querying permissions</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/socket_server/">Socket Server</a>
+</li><li><a href="https://cosm.com/docs/beta/mqtt/">MQTT</a>
+</li><li><a href="https://cosm.com/docs/beta/oauth/">OAuth</a>
+</li></ul></li><li><a href="https://cosm.com/docs/v1/">Legacy API</a>
+</li></ul></li></ul>
+  </nav>
+
+	<div id="container" class="clearfix">	  	  
+	  <article id="main" role="main" class="main">
+	  	<header>
+	  		<h1 class="article-title">Api Keys</h1>
+	  	</header>
+	    <p>It is now possible to create API keys which have much more granular permissions compared to the old model of having just one key per user, or even one key per feed/datastream. Keys can now be created that are composed of different sets of permissions, so for example a key could be created that allows read only access all public resources (suitable for embedding in javascript within a web page), but that also allows write access to one specific feed, from one specific IP address. Previously to implement this you'd have had to create two separate keys, which you'd then have to keep track of independently.</p>
+<p>Permissions for a key still cascade so that if a key doesn't include any specific feed restrictions, then it will be able to access all resources that the creating user can, and similarly if you restrict a keys access to just a particular feed, then this key will still have the same level of access to all datastreams contained by that feed.</p>
+<div class="section" id="data-model">
+<h2>Data Model</h2>
+<p>The new Api key data model can be represented as a hierarchy of objects represented like this: Key &gt;&gt; Permission &gt;&gt; Resource. A Key must have at least one Permissions object as part of it's structure, but Resource objects are completely optional. The objects contain the following attributes:</p>
+<div class="section" id="key">
+<h3>Key</h3>
+<p>The key is the top level data structure and contains the following attributes, some of which are required:</p>
+<table border="1" class="params docutils">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Attribute</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">User-settable</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>api_key</td>
+<td>The actual api key token to be used by the client application</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr><td>label</td>
+<td>A label by which the key can be referenced</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr><td>expires_at</td>
+<td>Expiry date for the key after which it won't work</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr><td>private_access</td>
+<td>Flag that indicates whether this key can access private resources belonging to the user</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr><td>permissions</td>
+<td>Collection of Permission objects controlling the access level</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="permission">
+<h3>Permission</h3>
+<p>At least one Permission object is required when creating a key, but more than one are permitted for more complex keys. A permission object contains the following attributes:</p>
+<table border="1" class="params docutils">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Attribute</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">User-settable</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>access_methods</td>
+<td>An array containing one or more of [get, put, post, delete] indicating what type of access the key has</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr><td>source_ip</td>
+<td>An IP address that access should be restricted to, so if specified, only requests coming from this IP address will be permitted</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr><td>referer</td>
+<td>The referer domain. If present this key will only be able to be embedded in a web page with the matching URL. Subdomains are treated as different domains</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr><td>minimum_interval</td>
+<td>Can be used to create a key that can only request data with a certain resolution, i.e. a key could be created that only displays graphs with daily values when embedded in a web page. The same key could not be used to access full resolution data</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr><td>label</td>
+<td>Optional label for identifying permission set</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr><td>resources</td>
+<td>Optional collection of Resource objects restricting access to specific feeds or datastreams</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="resource">
+<h3>Resource</h3>
+<p>Resources can optionally be added to Permission objects, and they cause access to be restricted to just the specified feed or datastream, and have the following attributes:</p>
+<table border="1" class="params docutils">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Attribute</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">User-settable</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>feed_id</td>
+<td>Reference to a specific feed id</td>
+<td>Yes if a datastream is also specified, No otherwise</td>
+<td>Yes</td>
+</tr>
+<tr><td>datastream_id</td>
+<td>Reference to a specific datastream id within a feed. If specified then the feed id must also be specified</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples</h2>
+<div class="section" id="json">
+<h3>JSON</h3>
+<div class="section" id="request">
+<h4>Request</h4>
+<pre class="code-block javascript literal-block">
+<span class="p">{</span>
+  <span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="p">{</span>
+    <span class="s2">&quot;label&quot;</span><span class="o">:</span><span class="s2">&quot;sharing key&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;private_access&quot;</span><span class="o">:</span><span class="s2">&quot;true&quot;</span>
+    <span class="s2">&quot;permissions&quot;</span><span class="o">:</span><span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;access_methods&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="s2">&quot;put&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="s2">&quot;delete&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;source_ip&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.0.1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resources&quot;</span><span class="o">:</span><span class="p">[</span>
+          <span class="p">{</span>
+            <span class="s2">&quot;feed_id&quot;</span><span class="o">:</span><span class="s2">&quot;424&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;datastream_id&quot;</span><span class="o">:</span><span class="s2">&quot;fan1&quot;</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;access_methods&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;get&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;referer&quot;</span><span class="o">:</span><span class="s2">&quot;www.example.com&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</pre>
+</div>
+<div class="section" id="response">
+<h4>Response</h4>
+<pre class="code-block javascript literal-block">
+<span class="p">{</span>
+  <span class="s2">&quot;key&quot;</span><span class="o">:</span><span class="p">{</span>
+    <span class="s2">&quot;api_key&quot;</span><span class="o">:</span><span class="s2">&quot;zR9eEw3WfrSY1-NxO2jUBBoD21wRqVwgBLs3z5WVsu6fivNGjHT4861awP41Rl764q9ChqjaLL10OIvOFPwErQ&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;label&quot;</span><span class="o">:</span> <span class="s2">&quot;sharing key&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;permissions&quot;</span><span class="o">:</span><span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;access_methods&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;get&quot;</span><span class="p">,</span><span class="s2">&quot;put&quot;</span><span class="p">,</span><span class="s2">&quot;post&quot;</span><span class="p">,</span><span class="s2">&quot;delete&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;source_ip&quot;</span><span class="o">:</span><span class="s2">&quot;192.168.0.1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resources&quot;</span><span class="o">:</span><span class="p">[</span>
+          <span class="p">{</span>
+            <span class="s2">&quot;feed_id&quot;</span><span class="o">:</span><span class="s2">&quot;424&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;datastream_id&quot;</span><span class="o">:</span><span class="s2">&quot;fan1&quot;</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;access_methods&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;get&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;referer&quot;</span><span class="o">:</span><span class="s2">&quot;www.example.com&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</pre>
+</div>
+</div>
+<div class="section" id="xml">
+<h3>XML</h3>
+<div class="section" id="id1">
+<h4>Request</h4>
+<pre class="code-block xml literal-block">
+<span class="nt">&lt;key&gt;</span>
+  <span class="nt">&lt;label&gt;</span>sharing key<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;private-access&gt;</span>true<span class="nt">&lt;/private-access&gt;</span>
+  <span class="nt">&lt;permissions&gt;</span>
+    <span class="nt">&lt;permission&gt;</span>
+      <span class="nt">&lt;source-ip&gt;</span>192.168.0.1<span class="nt">&lt;/source-ip&gt;</span>
+      <span class="nt">&lt;access-methods&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>get<span class="nt">&lt;/access-method&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>put<span class="nt">&lt;/access-method&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>post<span class="nt">&lt;/access-method&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>delete<span class="nt">&lt;/access-method&gt;</span>
+      <span class="nt">&lt;/access-methods&gt;</span>
+      <span class="nt">&lt;resources&gt;</span>
+        <span class="nt">&lt;resource&gt;</span>
+          <span class="nt">&lt;feed-id&gt;</span>424<span class="nt">&lt;/feed-id&gt;</span>
+          <span class="nt">&lt;datastream-id&gt;</span>fan1<span class="nt">&lt;/datastream-id&gt;</span>
+        <span class="nt">&lt;/resource&gt;</span>
+      <span class="nt">&lt;/resources&gt;</span>
+    <span class="nt">&lt;/permission&gt;</span>
+    <span class="nt">&lt;permission&gt;</span>
+      <span class="nt">&lt;referer&gt;</span>www.example.com<span class="nt">&lt;/referer&gt;</span>
+      <span class="nt">&lt;access-methods&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>get<span class="nt">&lt;/access-method&gt;</span>
+      <span class="nt">&lt;/access-methods&gt;</span>
+    <span class="nt">&lt;/permission&gt;</span>
+  <span class="nt">&lt;permissions&gt;</span>
+<span class="nt">&lt;/key&gt;</span>
+
+</pre>
+</div>
+<div class="section" id="id2">
+<h4>Response</h4>
+<pre class="code-block xml literal-block">
+<span class="nt">&lt;key&gt;</span>
+  <span class="nt">&lt;api-key&gt;</span>zR9eEw3WfrSY1-NxO2jUBBoD21wRqVwgBLs3z5WVsu6fivNGjHT4861awP41Rl764q9ChqjaLL10OIvOFPwErQ<span class="nt">&lt;/api-key&gt;</span>
+  <span class="nt">&lt;label&gt;</span>sharing key<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;private-access&gt;</span>true<span class="nt">&lt;/private-access&gt;</span>
+  <span class="nt">&lt;permissions&gt;</span>
+    <span class="nt">&lt;permission&gt;</span>
+      <span class="nt">&lt;source-ip&gt;</span>192.168.0.1<span class="nt">&lt;/source-ip&gt;</span>
+      <span class="nt">&lt;access-methods&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>get<span class="nt">&lt;/access-method&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>put<span class="nt">&lt;/access-method&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>post<span class="nt">&lt;/access-method&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>delete<span class="nt">&lt;/access-method&gt;</span>
+      <span class="nt">&lt;/access-methods&gt;</span>
+      <span class="nt">&lt;resources&gt;</span>
+        <span class="nt">&lt;resource&gt;</span>
+          <span class="nt">&lt;feed-id&gt;</span>424<span class="nt">&lt;/feed-id&gt;</span>
+          <span class="nt">&lt;datastream-id&gt;</span>fan1<span class="nt">&lt;/datastream-id&gt;</span>
+        <span class="nt">&lt;/resource&gt;</span>
+      <span class="nt">&lt;/resources&gt;</span>
+    <span class="nt">&lt;/permission&gt;</span>
+    <span class="nt">&lt;permission&gt;</span>
+      <span class="nt">&lt;referer&gt;</span>www.example.com<span class="nt">&lt;/referer&gt;</span>
+      <span class="nt">&lt;access-methods&gt;</span>
+        <span class="nt">&lt;access-method&gt;</span>get<span class="nt">&lt;/access-method&gt;</span>
+      <span class="nt">&lt;/access-methods&gt;</span>
+    <span class="nt">&lt;/permission&gt;</span>
+  <span class="nt">&lt;permissions&gt;</span>
+<span class="nt">&lt;/key&gt;</span>
+
+</pre>
+</div>
+</div>
+<div class="section" id="csv">
+<h3>CSV</h3>
+<pre class="code-block csv literal-block">
+This method doesn't support this data format.
+
+</pre>
+</div>
+</div>
+    	<footer class="reduced-screen">
+        © 2011 Cosm, a LogMeIn company
+      </footer>
+	  </article>
+  </div> <!-- //#container -->
+	  
+  <aside class="main">
+  	<p>Test Widget</p>
+  </aside>
+  
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>  
+
+  <script>window.jQuery || document.write('<script src="../../assets/jquery-1.7.0.min.js"><\/script>')</script>
+  <script defer src="../../assets/script.js"></script>
+
+
+
+
+  <script>
+    window._gaq=[["_setAccount","UA-20796726-1"],["_trackPageview"],['_trackPageLoadTime'],['_setDomainName','.cosm.com'],['_setAllowHash', false]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+  
+  <!-- chrome frame -->
+	<!--[if lt IE 7 ]>
+		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+</body>
+</html>

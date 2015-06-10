@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.pachube/src-model" editDirectory="/net.sf.smbt.pachube.edit/src"
+    editorDirectory="" modelPluginID="net.sf.smbt.pachube" modelName="Eeml" testsDirectory=""
+    importerID="org.eclipse.xsd.ecore.importer" complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>eeml.xsd</foreignModel>
+  <genPackages prefix="_5" basePackage="org.eeml.xsd._0" resource="XML" disposableProviderFactory="true"
+      ecorePackage="eeml051.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eeml051.ecore#//DispositionType">
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//DispositionType/fixed"/>
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//DispositionType/mobile"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eeml051.ecore#//DomainType">
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//DomainType/physical"/>
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//DomainType/virtual"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eeml051.ecore#//ExposureType">
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//ExposureType/indoor"/>
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//ExposureType/outdoor"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eeml051.ecore#//PrivateType">
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//PrivateType/true"/>
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//PrivateType/false"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eeml051.ecore#//StatusType">
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//StatusType/frozen"/>
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//StatusType/live"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eeml051.ecore#//TypeType">
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//TypeType/basicSI"/>
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//TypeType/derivedSI"/>
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//TypeType/conversionBasedUnits"/>
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//TypeType/derivedUnits"/>
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//TypeType/contextDependentUnits"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eeml051.ecore#//VersionType">
+      <genEnumLiterals ecoreEnumLiteral="eeml051.ecore#//VersionType/_051"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="eeml051.ecore#//CreatorType"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//DispositionTypeObject"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//DomainTypeObject"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//ExposureTypeObject"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//LatType"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//LatTypeObject"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//LonType"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//LonTypeObject"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//PrivateTypeObject"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//StatusTypeObject"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//TypeTypeObject"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//UpdatedType"/>
+    <genDataTypes ecoreDataType="eeml051.ecore#//VersionTypeObject"/>
+    <genClasses ecoreClass="eeml051.ecore#//CurrentValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//CurrentValueType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//CurrentValueType/at"/>
+    </genClasses>
+    <genClasses ecoreClass="eeml051.ecore#//DatapointsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eeml051.ecore#//DatapointsType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="eeml051.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//DataType/tag"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eeml051.ecore#//DataType/currentValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//DataType/maxValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//DataType/minValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eeml051.ecore#//DataType/datapoints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eeml051.ecore#//DataType/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//DataType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="eeml051.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference eeml051.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference eeml051.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eeml051.ecore#//DocumentRoot/eeml"/>
+    </genClasses>
+    <genClasses ecoreClass="eeml051.ecore#//EemlType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eeml051.ecore#//EemlType/environment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EemlType/version"/>
+    </genClasses>
+    <genClasses ecoreClass="eeml051.ecore#//EnvironmentType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/feed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/private"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/icon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/website"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/tag"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eeml051.ecore#//EnvironmentType/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eeml051.ecore#//EnvironmentType/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/creator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//EnvironmentType/updated"/>
+    </genClasses>
+    <genClasses ecoreClass="eeml051.ecore#//LocationType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//LocationType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//LocationType/lat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//LocationType/lon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//LocationType/ele"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//LocationType/disposition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//LocationType/domain"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//LocationType/exposure"/>
+    </genClasses>
+    <genClasses ecoreClass="eeml051.ecore#//UnitType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//UnitType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//UnitType/symbol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//UnitType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="eeml051.ecore#//ValueType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//ValueType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eeml051.ecore#//ValueType/at"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

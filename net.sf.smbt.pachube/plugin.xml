@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ezpachube/1.0"
+            class="net.sf.smbt.ezpachube.EzpachubePackage"
+            genModel="model/ezpachube.genmodel"/>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdHandler">
+      <cmdHandler
+            ID="net.sf.smbt.pachube.evtHandler"
+            handler="net.sf.smbt.pachube.cmd.PachubeEventHandler">
+      </cmdHandler>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdInterpreter">
+      <cmdInterpreter
+            ID="net.sf.smbt.pachube.cmdInterpreter"
+            interpreter="net.sf.smbt.pachube.cmd.PachubeCmdInterpreter">
+      </cmdInterpreter>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.frameInterpreter">
+      <frameInterpreter
+            ID="net.sf.smbt.pachube.frameInterpreter"
+            interpreter="net.sf.smbt.pachube.cmd.PachubeFrameInterpreter">
+      </frameInterpreter>
+   </extension>
+   <extension
+         point="net.sf.smbt.comm.topology.protocol">
+      <engine
+      		alias="pachube"
+            ID="net.sf.smbt.pachube"
+            cmdInterpreterID="net.sf.smbt.pachube.cmdInterpreter"
+            eventHandler="net.sf.smbt.pachube.evtHandler"
+            frameInterpreter="net.sf.smbt.pachube.frameInterpreter"
+            instance="0"
+            transports="HTTP"
+            desc="Protocol XML binding for PACHUBE REST APIs over HTTP"     
+            customHTTP="net.sf.smbt.pachube.utils.CosmChannelReactor"
+      >
+      </engine>
+   </extension>
+
+</plugin>

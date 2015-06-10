@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ezmojo/1.0"
+            class="net.sf.smbt.ezmojo.EzmojoPackage"
+            genModel="model/ezmojo.genmodel"/>
+   </extension>
+   <extension
+         point="net.sf.smbt.comm.topology.protocol">
+      <engine
+       		alias="ezmojo"
+            ID="net.sf.smbt.ezmojo"
+            cmdInterpreterID="net.sf.smbt.osc.ezmojo.cmdInterpreter"
+            eventHandler="net.sf.smbt.osc.ezmojo.eventHandler"
+            frameInterpreter="net.sf.smbt.osc.ezmojo.frameInterpreter"
+            instance="0"
+            transports="UDP, TCP"
+            desc="Protocol EzMojo : hypermedia hub protocol command control"      
+      >
+      </engine>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdInterpreter">
+      <cmdInterpreter
+            ID="net.sf.smbt.osc.ezmojo.cmdInterpreter"
+            interpreter="net.sf.smbt.osc.ezmojo.cmd.MojoCmdInterpreter">
+      </cmdInterpreter>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.frameInterpreter">
+      <frameInterpreter
+            ID="net.sf.smbt.osc.ezmojo.frameInterpreter"
+            interpreter="net.sf.smbt.osc.ezmojo.cmd.MojoFrameHandler">
+      </frameInterpreter>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdHandler">
+      <cmdHandler
+            ID="net.sf.smbt.osc.ezmojo.eventHandler"
+            handler="net.sf.smbt.osc.ezmojo.cmd.MojoEventHandler">
+      </cmdHandler>
+   </extension>
+   <extension
+         point="net.sf.smbt.quantic.bonjour">
+      <DnsService
+            id="net.sf.smbt.osc.ezmojo"
+            manager="net.sf.smbt.osc.ezmojo.utils.EzMojoDnsServiceManager">
+      </DnsService>
+   </extension>
+
+</plugin>

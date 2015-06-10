@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         name="Ubiquisense"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            icon="icons/ubiquisense-16.png">
+         <run
+               class="net.sf.smbt.rcp.proximisense.ProxySenseApplication">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="File">
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="Exit">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.window.preferences"
+                  label="Preferences ...">
+            </command>
+            <command
+                  commandId="org.eclipse.ui.help.aboutAction"
+                  label="About ...">
+            </command>
+         </menu>
+         <menu
+               label="Help">
+            <command
+                  commandId="org.eclipse.ui.help.displayHelp"
+                  label="Help"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="net.sf.smbt.rcp.proximisense.application"
+            description="Ubiquitous computing"
+            name="Ubiquisense">
+         <property
+               name="windowImages"
+               value="icons/ubiquisense-16.png,icons/ubiquisense-32.png,icons/ubiquisense-48.png,icons/ubiquisense-64.png,icons/ubiquisense-128.png">
+         </property>
+         <property
+               name="appName"
+               value="Ubiquisense">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="aboutImage"
+               value="about.png">
+         </property>
+         <property
+               name="aboutText"
+               value="Ubiquisense.&#x0A;&#x0A;Lucas Bigeardel 2010 -2014 ©&#x0A;&#x0A;Released under dual head licensing A) EPL 1.0 B) LGPL 3.0">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="C5F7FD">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,230,445,20">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,280,445,15">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.installationPages">
+      <page
+            class="net.sf.smbt.rcp.proximisense.UbiquisenseInstallationPage"
+            id="net.sf.smbt.rcp.proximisense.page"
+            name="Ubiquisense">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.themes">
+      <colorDefinition
+            id="net.sf.smbt.rcp.proximisense.colorDefinition"
+            label="Widgets Foreground"
+            value="COLOR_GRAY">
+      </colorDefinition>
+   </extension>
+
+</plugin>

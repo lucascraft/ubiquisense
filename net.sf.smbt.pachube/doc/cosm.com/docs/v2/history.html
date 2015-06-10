@@ -1,0 +1,287 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Historical queries - Cosm API Documentation</title>
+	<!-- TODO: fill this -->
+	<meta name="description" content="API Documentation">
+	<meta name="author" content="Cosm">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<!-- css -->
+
+  <link rel="stylesheet" href="../assets/style.css">
+
+	
+	<!-- modernizr -->  
+
+  <script src="../assets/modernizr.js"></script>
+
+</head>
+
+<body>
+  <header class="main">
+  	<hgroup class="g1">
+  		<h1><a href="https://cosm.com/" title="Go to Cosm.com">Cosm</a></h1>
+  		<h2><a href="https://cosm.com/docs/" title="Go to Documentation Home">API Documentation</a></h2>
+  	</hgroup>
+  	<aside>
+      © 2011 Cosm, a LogMeIn company
+    </aside>
+    <nav class="reduced-screen">
+      <a class="icon list" href="history.html#" title="Toggle sidebar">Toggle sidebar</a>
+    </nav>
+  </header>
+  
+  <nav class="main">
+  	<ul><li><a href="https://cosm.com/docs/">Documentation Home</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/">Quickstarts</a>
+<ul><li><a href="https://cosm.com/docs/quickstart/curl.html">Start using curl</a>
+</li><li><a href="https://cosm.com/docs/quickstart/twitter.html">Track your Twitter stats</a>
+</li></ul></li><li><a href="index.html">API Documentation</a>
+<ul><li><a href="authentication.html">Authentication</a>
+</li><li><a href="feed/index.html">Feeds</a>
+<ul><li><a href="feed/create.html">Creating a feed</a>
+</li><li><a href="feed/update.html">Updating a feed</a>
+</li><li><a href="feed/list.html">Listing all feeds</a>
+</li><li><a href="feed/show.html">Viewing a feed</a>
+</li><li><a href="feed/delete.html">Deleting a feed</a>
+</li><li><a href="feed/mobile.html">Mobile feeds</a>
+</li></ul></li><li><a href="datastream/index.html">Datastreams</a>
+<ul><li><a href="datastream/create.html">Creating a datastream</a>
+</li><li><a href="datastream/update.html">Updating a datastream</a>
+</li><li><a href="datastream/list.html">Listing all datastreams</a>
+</li><li><a href="datastream/show.html">Viewing a datastream</a>
+</li><li><a href="datastream/delete.html">Deleting a datastream</a>
+</li></ul></li><li><a href="datapoint/index.html">Datapoints</a>
+<ul><li><a href="datapoint/create.html">Creating a datapoint</a>
+</li><li><a href="datapoint/update.html">Updating a datapoint</a>
+</li><li><a href="datapoint/list.html">Listing all datapoints</a>
+</li><li><a href="datapoint/show.html">Viewing a datapoint</a>
+</li><li><a href="datapoint/delete.html">Deleting a datapoint</a>
+</li><li><a href="datapoint/delete_bulk.html">Deleting multiple datapoints</a>
+</li></ul></li><li><a href="api_key/index.html">Api Keys</a>
+<ul><li><a href="api_key/create.html">Creating an API key</a>
+</li><li><a href="api_key/update.html">Updating an API key</a>
+</li><li><a href="api_key/list.html">Listing all API keys</a>
+</li><li><a href="api_key/show.html">Viewing an API key</a>
+</li><li><a href="api_key/delete.html">Deleting an API key</a>
+</li></ul></li><li><a href="trigger/index.html">Triggers</a>
+<ul><li><a href="trigger/create.html">Creating a trigger</a>
+</li><li><a href="trigger/update.html">Updating a trigger</a>
+</li><li><a href="trigger/list.html">Listing all triggers</a>
+</li><li><a href="trigger/show.html">Viewing a trigger</a>
+</li><li><a href="trigger/delete.html">Deleting a trigger</a>
+</li></ul></li><li><a href="user/index.html">Users</a>
+<ul><li><a href="user/create.html">Creating a user</a>
+</li><li><a href="user/update.html">Updating a user</a>
+</li><li><a href="user/list.html">Listing all users</a>
+</li><li><a href="user/show.html">Viewing a user</a>
+</li><li><a href="user/delete.html">Deleting a user</a>
+</li></ul></li><li class="selected"><a href="history.html">Historical queries</a>
+</li><li><a href="time_zones/index.html">Time Zones</a>
+<ul><li><a href="time_zones/place_names.html">Place Names</a>
+</li></ul></li><li><a href="ip_addresses.html">IP Addresses</a>
+</li></ul></li><li><a href="https://cosm.com/docs/concepts/">Core Concepts</a>
+<ul><li><a href="https://cosm.com/docs/concepts/automatic_manual.html">Automatic vs. manual feeds</a>
+</li><li><a href="https://cosm.com/docs/concepts/live_frozen.html">Live vs. frozen feeds</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/">Beta features</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/">Device Management</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/">Provisioning</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/provisioning/activation_code.html">Generating the activation code</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/">API</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/">Products</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/product/create.html">Creating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/update.html">Updating a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/list.html">Listing all products</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/show.html">Viewing a product</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/product/delete.html">Deleting a product</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/device_management/api/device/">Devices</a>
+<ul><li><a href="https://cosm.com/docs/beta/device_management/api/device/create.html">Creating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/update.html">Updating a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/list.html">Listing all devices</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/show.html">Viewing a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/delete.html">Deleting a device</a>
+</li><li><a href="https://cosm.com/docs/beta/device_management/api/device/activate.html">Activating a device</a>
+</li></ul></li></ul></li></ul></li><li><a href="https://cosm.com/docs/beta/group/">Groups</a>
+<ul><li><a href="https://cosm.com/docs/beta/group/create.html">Creating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/update.html">Updating a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/list.html">Listing all groups</a>
+</li><li><a href="https://cosm.com/docs/beta/group/show.html">Viewing a group</a>
+</li><li><a href="https://cosm.com/docs/beta/group/delete.html">Deleting a group</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/permission/">Permissions</a>
+<ul><li><a href="https://cosm.com/docs/beta/permission/show.html">Showing permissions</a>
+</li><li><a href="https://cosm.com/docs/beta/permission/query.html">Querying permissions</a>
+</li></ul></li><li><a href="https://cosm.com/docs/beta/socket_server/">Socket Server</a>
+</li><li><a href="https://cosm.com/docs/beta/mqtt/">MQTT</a>
+</li><li><a href="https://cosm.com/docs/beta/oauth/">OAuth</a>
+</li></ul></li><li><a href="https://cosm.com/docs/v1/">Legacy API</a>
+</li></ul></li></ul>
+  </nav>
+
+	<div id="container" class="clearfix">	  	  
+	  <article id="main" role="main" class="main">
+	  	<header>
+	  		<h1 class="article-title">Historical queries</h1>
+	  	</header>
+	    <p>One of the main features of the v2 API is the ability to make queries for ranges of historical data using <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> formatted dates. These can be made at the datastream level as well as at the environment level but are limited to a specific window per API request, i.e. at full resolution you can request a 24 hour period from last week, or a 24-hour period from 2 months ago, but if you want to retrieve all datapoints from the last week you will have to make multiple individual API requests with a 6 hour window on each.</p>
+<p>Historical queries are triggered by including the relevant parameters in the request URL, for either feeds or datastreams:</p>
+<blockquote>
+<ul>
+<li><p class="first"><strong>start</strong>: Defines the starting point of the query as a timestamp, e.g. <tt class="docutils literal"><span class="pre">2010-05-20T11:01:46Z</span></tt>. The default value is blank.</p>
+</li>
+<li><p class="first"><strong>end</strong>: Defines the end point of the data returned as a timestamp, e.g. <tt class="docutils literal"><span class="pre">2010-05-21T11:01:46Z</span></tt>. The default value is set to the current timestamp</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>duration</strong> Specifies the duration of the query.</dt>
+<dd><ul class="first last">
+<li><p class="first">If used in conjunction with end it will request the data prior to the end date.</p>
+</li>
+<li><p class="first">If used in conjunction with start it will request the data after the start date.</p>
+</li>
+<li><p class="first">If used by itself it will give the most recent data for the duration specified.</p>
+</li>
+<li><p class="first">It is incorrect to specify start, end and duration</p>
+</li>
+<li><p class="first">The format is &lt;number&gt;&lt;time unit&gt; e.g. 10minutes, 6hours</p>
+</li>
+<li><dl class="first docutils">
+<dt>The valid time units are:</dt>
+<dd><ul class="first last simple">
+<li>seconds</li>
+<li>minute(s)</li>
+<li>hour(s)</li>
+<li>day(s)</li>
+<li>week(s)</li>
+<li>month(s)</li>
+<li>year(s)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>time</strong>: Returns the feed with the values as they were at the specified timestamp. There are a few points to note about this functionality:</dt>
+<dd><ul class="first last simple">
+<li>Only the values of the datastream and their timestamps are changed, all other metadata reflects the current state of the feed and its datastreams</li>
+<li>If a datastream had no values at the time specified (either because it didn't exist or because it hadn't been updated) it will be excluded from the output</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>find_previous</strong> Will also return the previous value to the date range being requested. Note that this is useful for any graphing because if you want to draw a graph of the date range you specified you would end up with a small gap until the first value.</p>
+</li>
+<li><p class="first"><strong>interval_type</strong> If set to &quot;discrete&quot; the data will be returned in fixed time interval format according to the inverval value supplied. If this is not set, the raw datapoints will be returned.</p>
+</li>
+<li><p class="first"><strong>interval</strong>: Determines what interval of data is requested and is defined in seconds between the datapoints. If a value is passed in which does not match one of these values, it is rounded up to the next value. The acceptable values are currently:</p>
+</li>
+</ul>
+</blockquote>
+<table border="1" class="params docutils">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Value</th>
+<th class="head">Description</th>
+<th class="head">Maximum range in one query</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>0</td>
+<td>Every snapshot stored</td>
+<td>6 hours</td>
+</tr>
+<tr><td>30</td>
+<td>30 second interval data</td>
+<td>12 hours</td>
+</tr>
+<tr><td>60</td>
+<td>One snapshot every minute</td>
+<td>24 hours</td>
+</tr>
+<tr><td>300</td>
+<td>One snapshot every 5 minutes</td>
+<td>5 days</td>
+</tr>
+<tr><td>900</td>
+<td>One snapshot every 15 minutes</td>
+<td>14 days</td>
+</tr>
+<tr><td>1800</td>
+<td>One snapshot per 30 minutes</td>
+<td>31 days</td>
+</tr>
+<tr><td>3600</td>
+<td>One snapshot per hour</td>
+<td>31 days</td>
+</tr>
+<tr><td>10800</td>
+<td>One snapshot per three hours</td>
+<td>90 days</td>
+</tr>
+<tr><td>21600</td>
+<td>One snapshot per six hours</td>
+<td>180 days</td>
+</tr>
+<tr><td>43200</td>
+<td>One snapshot per twelve hours</td>
+<td>1 year</td>
+</tr>
+<tr><td>86400</td>
+<td>One snapshot per day</td>
+<td>1 year</td>
+</tr>
+</tbody>
+</table>
+<p>The maximum number of datapoints able to be returned from the API in one query is 1000. If you need more than 1000 datapoints for a specific period you should use the start and end times to split them up into smaller chunks.</p>
+<div class="section" id="read-feed-history">
+<h2>Read feed history</h2>
+<p>Apply the parameters in a GET request to an individual feed, e.g. <tt class="docutils literal"><span class="pre">http://api.cosm.com/v2/feeds/504.json?start=2010-08-02T14:01:46Z&amp;end=2010-08-02T17:01:46Z&amp;interval=0</span></tt></p>
+</div>
+<div class="section" id="read-datastream-history">
+<h2>Read datastream history</h2>
+<p>Apply the parameters in a GET request to an individual datastream, e.g. <tt class="docutils literal"><span class="pre">http://api.cosm.com/v2/feeds/504/datastreams/0.csv?start=2010-08-02T14:01:46Z&amp;end=2010-08-02T17:01:46Z&amp;interval=0</span></tt></p>
+</div>
+    	<footer class="reduced-screen">
+        © 2011 Cosm, a LogMeIn company
+      </footer>
+	  </article>
+  </div> <!-- //#container -->
+	  
+  <aside class="main">
+  	<p>Test Widget</p>
+  </aside>
+  
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>  
+
+  <script>window.jQuery || document.write('<script src="../assets/jquery-1.7.0.min.js"><\/script>')</script>
+  <script defer src="../assets/script.js"></script>
+
+
+
+
+  <script>
+    window._gaq=[["_setAccount","UA-20796726-1"],["_trackPageview"],['_trackPageLoadTime'],['_setDomainName','.cosm.com'],['_setAllowHash', false]];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>
+  
+  <!-- chrome frame -->
+	<!--[if lt IE 7 ]>
+		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+</body>
+</html>

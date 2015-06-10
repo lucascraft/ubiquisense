@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.midi/src-model"
+    editorDirectory="" modelPluginID="net.sf.smbt.midi" modelName="Ezmidi" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" testsDirectory="" importerID="org.eclipse.emf.importer.cdo"
+    featureDelegation="Reflective" complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../net.sf.xqz.engine/model/temporal.genmodel#//cmd">
+  <foreignModel>ezmidi.ecore</foreignModel>
+  <genPackages prefix="Ezmidi" basePackage="net.sf.smbt.midi" disposableProviderFactory="true"
+      ecorePackage="ezmidi.ecore#/">
+    <genDataTypes ecoreDataType="ezmidi.ecore#//MidiMessage"/>
+    <genClasses image="false" ecoreClass="ezmidi.ecore#//AbstractMidiCmd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmidi.ecore#//AbstractMidiCmd/addr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmidi.ecore#//AbstractMidiCmd/msgSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmidi.ecore#//AbstractMidiCmd/byte1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmidi.ecore#//AbstractMidiCmd/byte2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmidi.ecore#//AbstractMidiCmd/message"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmidi.ecore#//SysexGSReset"/>
+    <genClasses ecoreClass="ezmidi.ecore#//SysexPatchChanged"/>
+    <genClasses ecoreClass="ezmidi.ecore#//DSLMidiMessage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmidi.ecore#//DSLMidiMessage/channel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmidi.ecore#//DSLMidiMessage/cmd"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmidi.ecore#//NoteON"/>
+    <genClasses ecoreClass="ezmidi.ecore#//NoteOFF"/>
+    <genClasses ecoreClass="ezmidi.ecore#//KeyPressure"/>
+    <genClasses ecoreClass="ezmidi.ecore#//ControllerChange"/>
+    <genClasses ecoreClass="ezmidi.ecore#//ProgramChange"/>
+    <genClasses ecoreClass="ezmidi.ecore#//ChannelPressure"/>
+    <genClasses ecoreClass="ezmidi.ecore#//PitchBend"/>
+    <genClasses ecoreClass="ezmidi.ecore#//SystemExclusive"/>
+    <genClasses ecoreClass="ezmidi.ecore#//SongPosition"/>
+    <genClasses ecoreClass="ezmidi.ecore#//SongSelect"/>
+    <genClasses ecoreClass="ezmidi.ecore#//UnofficialBusSelect"/>
+    <genClasses ecoreClass="ezmidi.ecore#//TuneRequest"/>
+    <genClasses ecoreClass="ezmidi.ecore#//EndOfExclusive"/>
+    <genClasses ecoreClass="ezmidi.ecore#//TimingTick"/>
+    <genClasses ecoreClass="ezmidi.ecore#//StartSong"/>
+    <genClasses ecoreClass="ezmidi.ecore#//ContinueSong"/>
+    <genClasses ecoreClass="ezmidi.ecore#//StopSong"/>
+    <genClasses ecoreClass="ezmidi.ecore#//ActiveSensing"/>
+    <genClasses ecoreClass="ezmidi.ecore#//SystemReset"/>
+    <genClasses ecoreClass="ezmidi.ecore#//MidiTimeCode"/>
+    <genClasses ecoreClass="ezmidi.ecore#//PolyPressure"/>
+    <genClasses ecoreClass="ezmidi.ecore#//TimingClock"/>
+    <genClasses ecoreClass="ezmidi.ecore#//TimeCode"/>
+    <genClasses ecoreClass="ezmidi.ecore#//SysexMessage"/>
+  </genPackages>
+</genmodel:GenModel>

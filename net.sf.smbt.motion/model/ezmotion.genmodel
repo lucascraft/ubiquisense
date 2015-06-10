@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.motion/src-model"
+    editorDirectory="" modelPluginID="net.sf.smbt.motion" modelName="Ezmotion" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" testsDirectory="" importerID="org.eclipse.emf.importer.cdo"
+    featureDelegation="Reflective" complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>ezmotion.ecore</foreignModel>
+  <genPackages prefix="Ezmotion" basePackage="net.sf.smbt" disposableProviderFactory="true"
+      ecorePackage="ezmotion.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezmotion.ecore#//MotionKind">
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionKind/RANDOM"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionKind/CYCLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionKind/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionKind/PATH"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezmotion.ecore#//MotionCinematic">
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/SIN"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/SAW"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/SQR"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/TRI"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/RAMP"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/QUADRATIC"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/CUBIC"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/LOG"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/COMPLEX"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/SQUARE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/LINEAR"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/HARMONIC"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/CIRCULAR"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/GAUSSIAN"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/POISSON"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/IMPULSE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionCinematic/COS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezmotion.ecore#//MotionAxis">
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionAxis/X_AXIS"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionAxis/Y_AXIS"/>
+      <genEnumLiterals ecoreEnumLiteral="ezmotion.ecore#//MotionAxis/Z_AXIS"/>
+    </genEnums>
+    <genClasses ecoreClass="ezmotion.ecore#//Motion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//Motion/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//Motion/ID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//Motion/cinematic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//Motion/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//Motion/amplitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//Motion/sampleRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//Motion/frequency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//Motion/time"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezmotion.ecore#//Motion/discretization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//Motion/axis"/>
+    </genClasses>
+    <genClasses ecoreClass="ezmotion.ecore#//MotionValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//MotionValue/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//MotionValue/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//MotionValue/z"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//MotionValue/xAccel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//MotionValue/yAccel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//MotionValue/zAccel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//MotionValue/xRot"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//MotionValue/yRot"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezmotion.ecore#//MotionValue/zRot"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

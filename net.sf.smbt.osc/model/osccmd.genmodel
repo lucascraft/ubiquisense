@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.osc/src-model"
+    editorDirectory="" modelPluginID="net.sf.smbt.osc" modelName="Osccmd" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" testsDirectory="" importerID="org.eclipse.emf.importer.cdo"
+    featureDelegation="Reflective" complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../net.sf.xqz.engine/model/temporal.genmodel#//cmd">
+  <foreignModel>osccmd.ecore</foreignModel>
+  <genPackages prefix="Osccmd" basePackage="net.sf.smbt" disposableProviderFactory="true"
+      ecorePackage="osccmd.ecore#/">
+    <genDataTypes ecoreDataType="osccmd.ecore#//OSCMessage"/>
+    <genDataTypes ecoreDataType="osccmd.ecore#//OSCPacket"/>
+    <genDataTypes ecoreDataType="osccmd.ecore#//OSCBundle"/>
+    <genClasses ecoreClass="osccmd.ecore#//OscSndCmd"/>
+    <genClasses ecoreClass="osccmd.ecore#//OscRcvCmd"/>
+    <genClasses ecoreClass="osccmd.ecore#//OscCmd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute osccmd.ecore#//OscCmd/msg"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

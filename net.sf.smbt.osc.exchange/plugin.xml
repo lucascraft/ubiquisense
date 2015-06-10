@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ezoscdmx/1.0"
+            class="net.sf.smbt.ezoscdmx.EzoscdmxPackage"
+            genModel="model/ezoscdmx.genmodel"/>
+   </extension>
+   <extension
+         point="net.sf.smbt.mapping.cmdMapping">
+      <mapping
+            ID="net.sf.smbt.osc.mapping.midi"
+            engine="net.sf.smbt.mappings.MidiMapping"
+            name="Midi">
+      </mapping>
+      <mapping
+            ID="net.sf.smbt.osc.mapping.dmx"
+            engine="net.sf.smbt.mappings.DmxMapping"
+            name="DMX">
+      </mapping>
+      <mapping
+            ID="net.sf.smbt.osc.mapping.ubiquino"
+            engine="net.sf.smbt.mappings.UbiquinoMapping"
+            name="Ubiquino">
+      </mapping>
+      <mapping
+            ID="net.sf.smbt.osc.mapping.thingm"
+            engine="net.sf.smbt.mappings.ThingMMapping"
+            name="ThingM">
+      </mapping>
+      <mapping
+            ID="net.sf.smbt.osc.mapping.firmata"
+            engine="net.sf.smbt.mappings.FirmataMapping"
+            name="Firmata">
+      </mapping>
+   </extension>
+
+</plugin>
