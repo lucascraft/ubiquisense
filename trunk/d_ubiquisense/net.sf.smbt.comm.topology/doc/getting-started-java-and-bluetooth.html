@@ -1,0 +1,1091 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html class="js"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"> 
+<title>Getting Started with Java and Bluetooth | Java.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="alternate" type="application/atom+xml" title="Java.net Atom" 
+href="http://today.java.net/node/219503/atom/feed">
+<link rel="shortcut icon" href="http://today.java.net/misc/favicon.ico" 
+type="image/x-icon">
+
+<link type="text/css" rel="stylesheet" media="all" 
+href="getting-started-java-and-bluetooth_fichiers/css_cfb28376d6b62c069779f0eb7de8c36a.css">
+<!--[if IE]>
+<link rel="stylesheet" href="/sites/all/themes/java/ie.css" />
+<![endif]-->
+<link rel="shortcut icon" href="http://community.java.net/favicon.ico">
+<!--  Begin SiteCatalyst code  -->
+<script language="JavaScript">
+<!--
+var s_channel="article";
+//--></script>
+<!--  End SiteCatalyst code  -->
+<link type="text/css" rel="stylesheet" 
+href="getting-started-java-and-bluetooth_fichiers/sharethis.css"></head><body
+ 
+onclick="if(SHARETHIS.buttonClicked==false){SHARETHIS.stopClosing=false;SHARETHIS.openDuration=0;stClose(100);}"
+ id="page-body" leftmargin="0" topmargin="0" rightmargin="0" 
+bgcolor="#ffffff" marginheight="0" marginwidth="0">
+<a name="top"></a>
+<div class="topline">
+  <div class="topbar">
+    <table border="0" cellpadding="0" cellspacing="0" height="25" 
+width="100%">
+      <tbody>
+        <tr>
+          <td rowspan="2" width="100%"><a href="http://www.java.net/"><img
+ src="getting-started-java-and-bluetooth_fichiers/header_jnet_new.jpg" 
+alt="The Source for Java Technology Collaboration" border="0" 
+height="60" width="500"></a></td>
+          <td style="vertical-align: middle;" nowrap="nowrap"><div 
+id="login">
+          	              <form name="loginform" id="loginform" 
+action="https://www.dev.java.net/servlets/TLogin" method="post">
+                <input name="redir" 
+value="http://www.java.net/article/2004/07/26/getting-started-java-and-bluetooth"
+ type="hidden">
+                <div> <strong>User:</strong>
+                  <input name="loginID" id="loginID" size="7" 
+maxlength="32" type="text">
+                  <strong>Password:</strong>
+                  <input name="password" id="password" value="" size="7"
+ maxlength="32" type="password">
+                  <input name="Login" class="buttonred" id="Button" 
+value="Login" type="submit">
+                </div>
+                <div class="small" align="right"><strong> <a 
+href="https://www.dev.java.net/servlets/Join">Register</a> | <a 
+href="https://www.dev.java.net/servlets/TLogin">Login help</a> 
+&nbsp;&nbsp;&nbsp;</strong>
+						</div>
+              </form>
+            </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <noindex>
+    <div class="tabs" id="toptabs">
+      <table border="0" cellpadding="4" cellspacing="0">
+        <tbody>
+          <tr>
+            <!-- make the active tab a TH instead of TD -->
+            <td><a href="https://www.dev.java.net/servlets/StartPage">My
+ pages</a> </td>
+            								<td><a href="http://www.java.net/projects/">Projects</a></td>
+                <td><a href="http://www.java.net/community">Communities</a>
+ </td>
+                <th><a href="http://www.java.net/">java.net</a></th>
+							          </tr>
+        </tbody>
+      </table>
+    </div>
+  </noindex>
+
+  <table id="main" border="0" cellpadding="2" cellspacing="2" 
+width="100%">
+    <tbody>
+      <tr valign="top">
+        <td id="leftcol" rowspan="2" width="170">
+           <div id="block-menu-menu-get-involved" class="clear-block 
+block block-menu">
+
+  <h2>Get Involved</h2>
+
+  <div class="content"><ul class="menu"><li class="leaf first"><a 
+href="http://today.java.net/about-javanet" title="About java.net">About 
+java.net</a></li>
+<li class="leaf"><a href="http://today.java.net/request-project" 
+title="Create a Project">Create a Project</a></li>
+<li class="leaf"><a href="http://today.java.net/publicize-your-project" 
+title="Publicize your Project">Publicize your Project</a></li>
+<li class="leaf"><a href="http://today.java.net/submit-content" 
+title="Submit Content">Submit Content</a></li>
+<li class="leaf"><a href="https://java-net.dev.java.net/" title="">java-net
+ Project</a></li>
+<li class="leaf"><a href="http://today.java.net/enhancements" title="">Java.net
+ Enhancements</a></li>
+<li class="leaf"><a 
+href="https://www.dev.java.net/servlets/OpenCollabNet" title="">Site 
+Help</a></li>
+<li class="leaf last"><a 
+href="http://today.java.net/form/report-inappropriate-content" 
+title="Report Inappropriate Content">Report Inappropriate Content</a></li>
+</ul></div>
+</div>
+<div id="block-menu-menu-get-informed" class="clear-block block 
+block-menu">
+
+  <h2>Get Informed</h2>
+
+  <div class="content"><ul class="menu"><li class="leaf first"><a 
+href="http://today.java.net/articles" title="">Articles</a></li>
+<li class="leaf"><a href="http://today.java.net/blogfront" title="">Blogs</a></li>
+<li class="leaf"><a href="http://today.java.net/events" title="">Events</a></li>
+<li class="leaf"><a href="http://safari.java.net/" title="">java.net 
+Online Books</a></li>
+<li class="leaf last"><a href="http://today.java.net/today/archive" 
+title="Archive">java.net Archives</a></li>
+</ul></div>
+</div>
+<div id="block-menu-menu-get-connected" class="clear-block block 
+block-menu">
+
+  <h2>Get Connected</h2>
+
+  <div class="content"><ul class="menu"><li class="leaf first"><a 
+href="http://forums.java.net/" title="">java.net Forums</a></li>
+<li class="leaf"><a href="http://wiki.java.net/" title="">Wiki</a></li>
+<li class="leaf"><a 
+href="http://wiki.java.net/bin/view/Javapedia/WebHome" title="">Javapedia</a></li>
+<li class="leaf"><a href="http://wiki.java.net/bin/view/People/WebHome" 
+title="">People</a></li>
+<li class="leaf"><a href="http://today.java.net/partners" title="">Partners</a></li>
+<li class="leaf"><a 
+href="http://wiki.java.net/bin/view/Javanet/JobsWiki" title="">Jobs</a></li>
+<li class="leaf"><a href="http://today.java.net/pub/q/rsschannels" 
+title="">RSS Feeds</a></li>
+<li class="leaf last"><a href="http://today.java.net/jugs-list">Java 
+User Groups</a></li>
+</ul></div>
+</div>
+<div id="block-block-1" class="clear-block block block-block">
+
+  <h2>Search</h2>
+
+  <div class="content"><form action="http://www.google.com/cse" 
+id="cse-search-box">
+                  <div>Web and Projects:</div>
+                  <div>
+                   <input style="background: 
+url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;)
+ no-repeat scroll left center rgb(255, 255, 255);" name="q" size="22" 
+type="text">
+                   <input name="cx" 
+value="017555676512375062942:o5-kz1r0m2s" type="hidden">
+                   <input name="ie" value="UTF-8" type="hidden">
+                    <input name="sa" value="Search" type="submit">
+                  </div>
+                <input 
+value="today.java.net/article/2004/07/26/getting-started-java-and-bluetooth"
+ name="siteurl" type="hidden"></form>
+<script type="text/javascript" src="getting-started-java-and-bluetooth_fichiers/brand.js"></script>
+
+
+
+            <!--<script type="text/javascript" src="/images/brand.htm"></script>-->
+                <div>Online Books:</div>
+                <form action="http://safari.java.net/search" 
+method="post" name="searchForm" id="form_searchForm">
+                  <input name="__formName" value="searchForm" 
+type="hidden">
+                  <input value="simple" name="searchmode" 
+id="searchmode" type="hidden">
+                  <input value="0" name="page" id="page" type="hidden">
+                  <input value="summary" name="searchview" 
+id="searchview" type="hidden">
+                  <input value="rank" name="sort" id="sort" 
+type="hidden">
+                  <input value="desc" name="order" id="order" 
+type="hidden">
+                  <input value="1" name="NewSearch" id="NewSearch" 
+type="hidden">
+                  <div>
+                    <input name="searchtextbox" id="searchtextbox" 
+class="medium" size="14" type="text">
+                    <input class="buttonred" value=" » " type="submit" 
+border="0">
+                  </div>
+                </form>
+                <div>java.net on <a target="_blank" 
+href="http://markmail.org/">MarkMail</a>:</div>
+                <form action="http://markmail.org/search/list:net.java">
+                  <div>
+                    <input name="q" id="searchtextbox" class="medium" 
+size="14" type="text">
+                    <input class="buttonred" value=" » " type="submit" 
+border="0">
+                  </div>
+                </form>
+                <div><a href="http://www.java.net/search">Advanced 
+Search</a></div>
+</div>
+</div>
+        </td>
+        <td colspan="2" height="3"><img 
+src="getting-started-java-and-bluetooth_fichiers/a.gif" height="3" 
+width="1"><br></td>
+      </tr>
+      <tr>
+        <td width="10"><img 
+src="getting-started-java-and-bluetooth_fichiers/a.gif" height="1" 
+width="10"></td>
+        <td id="article-td-main" valign="top" width="100%">
+          <br>
+          <a name="skip2content"></a>
+          								    <div id="article-topright-links">
+
+<img src="getting-started-java-and-bluetooth_fichiers/ic_email.gif" 
+alt=" " border="0" height="12" hspace="4" vspace="1" width="14">
+<a 
+href="mailto:?subject=Getting%20Started%20with%20Java%20and%20Bluetooth&amp;body=http://today.java.net/article/2004/07/26/getting-started-java-and-bluetooth">E-mail</a>
+
+<img src="getting-started-java-and-bluetooth_fichiers/ic_print.gif" 
+alt=" " border="0" height="12" hspace="4" width="14">
+<a href="http://today.java.net/print/219503">Print</a>
+<!--
+<img src="/im/ic_discuss.gif" width="13" height="12" hspace="4" border="0" alt=" " />
+<a href="/comment/reply/219503#comment-form">Discuss</a>
+-->
+
+
+            </div>
+                          <h2 class="title">Getting Started with Java 
+and Bluetooth</h2>
+                                                  <div 
+class="article-node node">
+        	    <div class="content"><span class="print-link"></span><div 
+class="field field-type-date field-field-pub-date">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <span class="date-display-single">Tue, 2004-07-27</span>
+        </div>
+        </div>
+</div>
+<div class="field field-type-nodereference field-field-author">
+    <div class="field-items">
+            <div class="field-item odd">
+                    <a href="http://today.java.net/author/bruce-hopkins">Bruce
+ Hopkins</a>        </div>
+        </div>
+</div>
+<div id="node-author-date">
+	</div>
+<div id="clearboth" style="clear: both;"></div><h2>
+  <img 
+src="getting-started-java-and-bluetooth_fichiers/111-java_and_bt.gif" 
+alt="{cs.r.title}" align="left" border="0" height="91" hspace="10" 
+vspace="0" width="111">
+  <csfield name="title">
+</csfield></h2>
+<csfield name="id_author" before="by " hrefaction="pub">
+<br>
+<csfield name="date">
+<br clear="all"><br>
+<cs_comment sidebar="" begins="" --="">
+<cs_comment don="" t="" move="" sidebars="" --="">
+<cs_comment sidebar="" ends="" --="">
+
+<cs_comment toc="" --="">
+<table align="right" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td bgcolor="#000000"><img 
+src="getting-started-java-and-bluetooth_fichiers/a_002.gif" height="1" 
+width="10"></td></tr>
+<tr><td>
+<table align="right" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr><td><img 
+src="getting-started-java-and-bluetooth_fichiers/a_002.gif" height="1" 
+width="10"><br>
+<b>Contents</b></td></tr>
+<tr><td><a href="#What_is_Bluetooth">What is Bluetooth?</a></td></tr>
+<tr><td><a href="#The_Bluetooth_Protocol_Stack">The Bluetooth Protocol 
+Stack</a></td></tr>
+<tr><td><a href="#Bluetooth_Profiles">Bluetooth Profiles</a></td></tr>
+<tr><td><a href="#Java_Bluetooth_Application_Concepts">Java Bluetooth 
+Application Concepts</a></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;<a href="#Stack_Initialization">Stack 
+Initialization</a></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;<a href="#Device_Management">Device Management</a></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;<a href="#Device_Discovery">Device Discovery</a></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;<a href="#Service_Discovery">Service Discovery</a></td></tr>
+<tr>
+          <td>&nbsp;&nbsp;&nbsp;<a href="#Service_Registration">Service 
+Registration</a></td>
+        </tr>
+<tr><td>&nbsp;&nbsp;&nbsp;<a href="#Communication">Communication</a></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;<a 
+href="#Server_Connections_with_the_Serial_Port_Profile">Server 
+Connections with the Serial Port Profile</a></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;<a 
+href="#Client_Connections_with_the_Serial_Port_Profile">Client 
+Connections with the Serial Port Profile</a></td></tr>
+		<tr>
+          <td><a href="#Java_Bluetooth_Development_Kits">Java Bluetooth 
+Development Kits</a></td>
+        </tr>
+		<tr>
+          <td><a href="#Summary">Summary</a></td>
+        </tr>								
+</tbody></table>
+</td></tr>
+<tr><td bgcolor="#000000"><img 
+src="getting-started-java-and-bluetooth_fichiers/a_002.gif" height="1" 
+width="10"></td></tr>
+</tbody></table>
+<cs_comment sidebar="" ends="" --="">
+<p>You're a Java developer, and you've finally got yourself a 
+  Bluetooth device. Maybe it's a cell phone, a PDA, or a USB dongle for 
+  your PC. Or perhaps you've heard a lot about Bluetooth, but you aren't
+ 
+  sure what exactly you can do with it. In either case, you've had some 
+  exposure to Bluetooth, and now you're ready to start flexing your 
+programming 
+  muscles with the technology. Great! The purpose of this article is to 
+give you 
+  a good introduction to the Bluetooth protocol, including an overview 
+of its 
+  protocol layers and profiles. We'll also cover the the classes and 
+methods 
+  of JSR-82, the official Java Bluetooth API. Finally, we'll wrap things
+ 
+  up by describing what software that you'll need in order to get 
+started.</p>
+  
+<h2 id="What_is_Bluetooth" name="What_is_Bluetooth">What is Bluetooth?</h2>
+<p>What exactly is Bluetooth? Well, simply stated, Bluetooth is a 
+wireless communication 
+protocol. Since it's a communication protocol, you can use Bluetooth to 
+communicate 
+to other Bluetooth-enabled devices. In this sense, Bluetooth is like any
+ other 
+communication protocol that you use every day, such as HTTP, FTP, SMTP, 
+or IMAP. Bluetooth 
+has a client-server architecture; the one that initiates the connection 
+is the 
+client, and the one who receives the connection is the server. Bluetooth
+ is a 
+great protocol for wireless communication because it's capable of 
+transmitting 
+data at nearly 1MB/s, while consuming 1/100th of the power of Wi-Fi.</p>
+
+  <p>In order for Bluetooth devices to communicate properly, they all 
+need to 
+  conform to the Bluetooth specification. The Bluetooth specification, 
+like any 
+  other spec, defines the standard that a Bluetooth device should adhere
+ to, as 
+  well as rules that need to be enforced when communicating. You can 
+download 
+  the specification documents at the official <a target="_blank" 
+href="http://www.bluetooth.com/">Bluetooth 
+  web site</a>. The Bluetooth protocol stack and profiles together 
+comprise the 
+  Bluetooth specification.</p>
+
+<h2 id="The_Bluetooth_Protocol_Stack" 
+name="The_Bluetooth_Protocol_Stack">The Bluetooth Protocol Stack</h2>
+
+<p>The Bluetooth stack is the software or firmware component that has 
+direct access 
+  to the Bluetooth device. It has control over things such as device 
+settings, communication 
+  parameters, and power levels for the Bluetooth device. The stack 
+itself consists 
+  of layers, and each layer of the stack has a specific task in the 
+overall functionality 
+  of the Bluetooth device. Since Bluetooth device manufacturers are not 
+required to use all of the layers in the stack, we're only going to 
+cover the main ones that are implemented in almost every Bluetooth 
+device.</p>
+  
+<ul>
+  <li>HCI is the Host Controller Interface. This layer is the interface 
+between 
+    the radio and the host computer.</li>
+  <li>L2CAP stands for Logical Link Controller Adaptation Protocol. This
+ layer 
+    is the multiplexer of all data passing through the unit. Audio 
+signals, however, 
+    have direct access to the HCI.</li>
+  <li>SDP is the Service Discovery Protocol. The SDP layer is used to 
+find services 
+    on remote Bluetooth devices.</li>
+  <li>RFCOMM is widely known as the virtual serial port protocol. </li>
+  <li>OBEX is the object exchange protocol. </li>
+</ul>
+
+<h2 id="Bluetooth_Profiles" name="Bluetooth_Profiles">Bluetooth Profiles</h2>
+<p>Bluetooth Profiles were created to allow different Bluetooth devices 
+to interoperate. 
+  For instance, let's say that you own a Bluetooth-enabled PDA and a 
+Bluetooth-enabled wireless phone. Both devices have Bluetooth stacks. 
+How can you 
+  tell if those two devices will allow you to synchronize the phone 
+lists between 
+  each other? How will you know if you can send a phone number from the 
+PDA to 
+  the phone? And most importantly, how can you determine if these 
+devices will 
+  allow you to browse the Internet from the PDA, using the phone as a 
+wireless modem?</p>
+
+<p>A Bluetooth profile is a designed set of functionality for Bluetooth 
+devices. 
+  For instance, using the examples listed above, the phone and the PDA 
+must both 
+  support the Synchronization Profile in order to synchronize data 
+between them. 
+  In order to send object data such as a .vcf file from the PDA to the 
+phone, then both 
+  devices need to have the Object Push Profile implemented. Finally, the
+ PDA 
+  and the wireless phone must both support the Dialup Networking Profile
+ in order 
+  for the PDA to wirelessly browse the Internet via the phone. If you 
+want your 
+  Bluetooth-enabled devices to interact, having a Bluetooth stack is not
+ good 
+  enough -- they also need to conform to a particular profile.</p>
+  
+  <p>A word of caution here: do not get Bluetooth profiles confused with
+ J2ME profiles.   J2ME profiles are a set of Java classes that extend 
+the functionality of a J2ME 
+  Configuration. For instance, the MID Profile is a set of Java classes 
+that extend 
+  the functionality of the Connected Limited Device Configuration. On 
+the other 
+  hand, a Bluetooth profile can be implemented in any language and on 
+any platform, 
+  because it refers to a defined set of functionality for a 
+Bluetooth-enabled 
+  device. So the Object Push Profile can be implemented on a Palm OS PDA
+ in C++, 
+  and can be implemented on a Bluetooth-enabled printer in assembly 
+language. 
+  For those of you who are familiar with RUP methodology, Bluetooth 
+Profiles are 
+  also called Bluetooth Use Cases.</p>
+  
+<h2 id="Java_Bluetooth_Application_Concepts" 
+name="Java_Bluetooth_Application_Concepts">Java Bluetooth Application 
+Concepts</h2>
+
+<p>The basic concepts of any Bluetooth application (Java or otherwise) 
+consist 
+  of the following components:</p>
+<ul>
+  <li>Stack Initialization </li>
+  <li>Device Discovery </li>
+  <li>Device Management </li>
+  <li>Service Discovery </li>
+  <li>Communication<p></p> </li>
+</ul>
+
+<p>The Java Bluetooth Specification adds a special component to the mix 
+called 
+  the Bluetooth Control Center (BCC), which is outside of the scope of 
+this article.</p>
+
+<h5 id="Stack_Initialization" name="Stack_Initialization">Stack 
+Initialization</h5>
+  <p>Before you can do anything, you need to initialize your stack. 
+Remember, 
+  the stack is the piece of software (or firmware) that controls your 
+Bluetooth 
+  device. Stack initialization can consist of a number of things, but 
+its main 
+  purpose is to get the Bluetooth device ready to start wireless 
+communication. 
+  Every vendor handles stack initialization differently, so we'll cover 
+how to 
+  initialize the stack using the Atinav Java Bluetooth SDK.</p>
+  
+<pre><code>
+import javax.bluetooth.*;
+import javax.microedition.io.*;
+import com.atinav.BCC;
+
+public class WirelessDevice implements DiscoveryListener {
+    LocalDevice localDevice = null; 
+    
+    public WirelessDevice (){ 
+        //setting the port number using Atinav's BCC
+        BCC.setPortName("COM1"); 
+        
+        //setting the baud rate using Atinav's BCC
+        BCC.setBaudRate(57600);
+        
+        //connectable mode using Atinav's BCC
+        BCC.setConnectable(true);
+        
+        //Set discoverable mode using Atinav's BCC 
+        BCC.setDiscoverable(DiscoveryAgent.GIAC); 
+        
+        try{
+            localDevice = LocalDevice.getLoaclDevice(); 
+        }
+        catch (BluetoothStateException exp) {
+        }
+        
+        // implementation of methods in DiscoveryListener class
+        // of javax.bluetooth goes here
+        
+        // now do some work
+    }
+}
+</code></pre>
+<h5 id="Device_Management" name="Device_Management">Device Management</h5>
+  
+<p><code>LocalDevice</code> and <code>RemoteDevice</code> are the two 
+main classes 
+in the Java Bluetooth Specification that allow you to perform Device 
+Management. 
+These classes give you the ability to query statistical information 
+about 
+your own Bluetooth device (<code>LocalDevice</code>) and information 
+on the devices in the area (<code>RemoteDevice</code>). The static 
+method <code>LocalDevice.getLocalDevice()</code> 
+returns an instantiated <code>LocalDevice</code> object for you to use. 
+In order to get the 
+unique address of your Bluetooth radio, just call <code>getBluetoothAddress()</code>
+ on your 
+local device object. The Bluetooth address serves the same purpose of 
+the MAC 
+address on the network card of your computer; every Bluetooth device has
+ a unique 
+address. If you want other Bluetooth devices in the area to find you, 
+then call 
+the <code>setDiscoverable()</code> method in <code>LocalDevice</code> 
+object.</p>
+
+<p>In a nutshell, that's about all it takes to perform Device Management
+ with the 
+Java Bluetooth Specification APIs. Now, let's take a look at the concept
+ in Bluetooth 
+that allows you to discover other Bluetooth devices: device discovery.</p>
+
+<h5 id="Device_Discovery" name="Device_Discovery">Device Discovery</h5>
+<p>
+  Your Bluetooth device has no idea of what other Bluetooth devices are 
+in 
+  the area. Perhaps there are laptops, desktops, printers, mobile 
+phones, or PDAs 
+  in the area. Who knows? The possibilities are endless. In order to 
+find out, 
+  your Bluetooth device will use the Device Discovery classes that are 
+provided 
+  into the Java Bluetooth API in order to see what's out there. </p>
+
+<p>Let's take a look at the two classes needed in order for your 
+Bluetooth 
+  device to discover remote Bluetooth devices in the area: <code>DiscoveryAgent</code>
+ and 
+  <code>DiscoveryListener</code>.</p>
+
+<p>After getting a <code>LocalDevice</code> object, just instantiate a <code>DiscoveryAgent</code>
+ 
+  by calling <code>LocalDevice.getDiscoveryAgent()</code>. </p>
+  
+<pre><code>
+LocalDevice localdevice = LocalDevice.getLocalDevice(); 
+DiscoveryAgent discoveryagent = localdevice.getDiscoveryAgent();
+</code></pre>
+
+<p>The are multiple ways to discover remote Bluetooth devices, but to be
+ brief, 
+  I'll just show you one particular way. First, your object must 
+implement the 
+  <code>DiscoveryListener</code> interface. This interface works like 
+any listener, so it'll 
+  notify you when an event happens. In this case, you'll be notified 
+when Bluetooth 
+  devices are in the area. In order to start the discovery process, just
+ call 
+  the <code>startInquiry()</code> method on your <code>DiscoveryAgent</code>.
+ This method is non-blocking, 
+  so you are free to do other things while you wait for other Bluetooth 
+devices 
+  to be found.</p>
+
+<p>When a Bluetooth device is found, the JVM will call the <code>deviceDiscovered()</code>
+ 
+  method of the class that implemented the <code>DiscoveryListener</code>
+ interface. 
+  This method will pass you a <code>RemoteDevice</code> object that 
+represents the device discovered by 
+  the inquiry. </p>
+<h5 id="Service_Discovery" name="Service_Discovery">Service Discovery</h5>
+  <p>Now that you know how to find other Bluetooth devices, it would be 
+really nice 
+to see what services that those devices offer. Of course, if the <code>RemoteDevice</code>
+ 
+is a printer, then you know that it can offer a printing service. But 
+what if 
+the <code>RemoteDevice</code> is a computer? Would it readily come to 
+mind that you can also print to a 
+printer server? </p> 
+
+<p>That's where Service Discovery comes in. You can never be sure what 
+services 
+  a <code>RemoteDevice</code> may offer; Service Discovery allows you to
+ find out what  they are.</p>
+
+<p>
+  Service Discovery is just like Device Discovery in the sense that you 
+use the 
+  <code>DiscoveryAgent</code> to do the "discovering." The <code>searchServices()</code>
+ 
+  method of the <code>DiscoveryAgent</code> class allows you to search 
+for services 
+  on a <code>RemoteDevice</code>. When services are found, the <code>servicesDiscovered()</code>
+ 
+  will be called by the JVM if your object implemented the <code>DiscoveryListener</code>
+ 
+  interface. This callback method also passes in a <code>ServiceRecord</code>object
+ 
+  that pertains to the service for which you searched. With a <code>ServiceRecord</code>
+ 
+  in hand, you can do plenty of things, but you would most likely would 
+want to 
+  connect to the <code>RemoteDevice</code> where this <code>ServiceRecord</code>
+ originated:</p>
+
+<pre><code>
+String connectionURL = servRecord[i].getConnectionURL(0, false);
+</code></pre>
+    
+<h5 id="Service_Registration" name="Service_Registration">Service 
+Registration</h5>
+  <p>Before a Bluetooth client device can use the Service Discovery on a
+ Bluetooth 
+server device, the Bluetooth server needs to register its services 
+internally 
+in the Service Discovery database (SDDB). That process is called Service
+ Registration. 
+This section will discuss what's involved for Service Registration for a
+ Bluetooth 
+device, and I'll also give you a rundown of the classes needed to 
+accomplish this.</p> 
+
+<p>Note: In a peer-to-peer application, such as a file transfer or chat 
+application, 
+  be sure to remember that any device can act as the client or the 
+server, so 
+  you'll need to incorporate that functionality (both client and server)
+ into 
+  your code in order to handle both scenarios of Service Discovery 
+(i.e., the client) 
+  and Service Registration (i.e., the server). Here's a scenario of 
+what's involved 
+  to get your service registered and stored in the SDDB.</p>
+  
+<ol>
+  <li>Call <code>Connector.open()</code> and cast the resulting <code>Connection</code>
+ to a <code>StreamConnectionNotifier</code>.
+    <ol type="a">
+	  <li><code>Connector.open()</code> creates a new <code>ServiceRecord</code>
+ and sets some attributes.</li></ol>
+  </li>
+  <li>Use the <code>LocalDevice</code> object and the <code>StreamConnectionNotifier</code>
+ to obtain the <code>ServiceRecord</code> that was created by the 
+system.</li>
+  <li> Add or modify the attributes in the <code>ServiceRecord</code> 
+(optional). </li>
+  <li>Use the <code>StreamConnectionNotifier</code> and call <code>acceptAndOpen()</code>
+ and wait for Bluetooth clients to discover this service and connect.
+    <ol type="a"><li>The system creates a service record in the SDDB. </li></ol>
+  </li>
+  <li>Wait until a client connects. </li>
+  <li>When the server is ready to exit, call <code>close()</code> on the
+ <code>StreamConnectionNotifier</code>.
+    <ol type="a"><li>The system removes the service record from the 
+SDDB.</li></ol>
+  </li>
+</ol>
+
+<p><code>StreamConnectionNotifier</code> and <code>Connector</code> both
+ come from the <code>javax.microedition.io</code> 
+  package of the J2ME platform. The code that accomplishes the above 
+task is shown 
+  below in the following snippet:</p>
+  
+<pre><code>
+// lets name our variables
+StreamConnectionNotifier notifier = null;
+StreamConnection sconn = null;
+LocalDevice localdevice = null;
+ServiceRecord servicerecord = null;
+
+// step #1
+// the String url will already be defined with the 
+// correct url parameters
+notifier = (StreamConnectionNotifier)Connector.open(url);
+
+// step #2
+// we will get the LocalDevice if not already done so
+localdevice = LocalDevice.getLocalDevice();
+servicerecord = localdevice.getRecord(notifier);
+
+// step #3 is optional
+
+// step #4
+// this step will block the current thread until
+// a client responds this step will also cause the
+// service record to be stored in the SDDB
+notifier.acceptAndOpen();
+
+// step #5
+// just wait...
+// assume the client has connected and you are ready to exit
+
+// step #6
+// this causes the service record to be removed 
+// from the SDDB
+notifier.close();</code></pre>
+
+<p>And that's all that you need to do Service Registration in Bluetooth.
+ The next 
+  step is Communication.</p>
+  
+<h5 id="Communication" name="" communication="">Communication</h5>
+  <p>Bluetooth is a communication protocol, so how do you communicate 
+with it? 
+  Well, the Java Bluetooth API gives you three ways to send and receive 
+data, 
+  but for right now, we'll cover only one of them: RFCOMM.</p>
+
+<p>Note: RFCOMM is the protocol layer that the Serial Port Profile uses 
+in order 
+  to communicate, but these two items are almost always used 
+synonymously. </p>
+  
+<h5 id="Server_Connections_with_the_Serial_Port_Profile" 
+name="Server_Connections_with_the_Serial_Port_Profile">Server 
+Connections with the Serial Port Profile</h5>
+<p>The code listing below demonstrates what is needed to open a 
+connection on a Bluetooth 
+  device that will act as a server. </p>
+
+<pre><code>
+// let's name our variables
+
+StreamConnectionNotifier notifier = null;
+StreamConnection con = null;
+LocalDevice localdevice = null;
+ServiceRecord servicerecord = null;
+InputStream input;
+OutputStream output;
+
+// let's create a URL that contains a UUID that 
+// has a very low chance of conflicting with anything
+String url = 
+  "btspp://localhost:00112233445566778899AABBCCDDEEFF;name=serialconn";
+// let's open the connection with the url and
+// cast it into a StreamConnectionNotifier
+notifier = (StreamConnectionNotifier)Connector.open(url);
+
+// block the current thread until a client responds
+con = notifier.acceptAndOpen();
+
+// the client has responded, so open some streams
+input = con.openInputStream();
+output = con.openOutputStream();
+
+// now that the streams are open, send and
+// receive some data
+</code></pre>
+
+<p> For the most part, this looks like just about the same code used in 
+Service Registration, 
+  and in fact, it is! Service Registration and Server Communication are 
+both accomplished 
+  using the same lines of code. Here's a few items that I want to point 
+out. The 
+  String <code>url</code> begins with <code>btspp://localhost:</code>, 
+which is 
+  required if you're going to use the Bluetooth Serial Port Profile. 
+Next comes 
+  the UUID part of the URL, which is <code>00112233445566778899AABBCCDDEEFF</code>.
+ 
+  This is simply a custom UUID that I made up for this service; I could 
+have chosen 
+  any string that was either 32 bits or 128 bits long. Finally, we have <code>;name=serialconn</code>
+ 
+  in the <code>url</code> String. I could have left off this part, but I
+ want my custom service 
+  to have a name, so the actual service record in the SDDB has the 
+following entry:</p>
+<pre><code>ServiceName = serialconn</code></pre>
+
+<p>The implementation has also assigned a channel identifier to this 
+service. 
+  The client must provide the channel number along with other parameters
+ in order 
+  to connect to a server.</p>
+<h5 id="Client_Connections_with_the_Serial_Port_Profile" 
+name="Client_Connections_with_the_Serial_Port_Profile">Client 
+Connections with the Serial Port Profile</h5>
+  <p>Establishing a connection with the Serial Port Profile for a J2ME 
+client is 
+simple because the paradigm hasn't changed for J2ME I/O. You simply call
+ <code>Connector.open()</code>.</p> 
+<pre><code>
+StreamConnection con =(StreamConnection)Connector.open(url);
+</code></pre>
+
+<p>You obtain the <code>url</code> String that is needed to connect to 
+the device from the 
+  <code>ServiceRecord</code> object that you get from Service Discovery.
+ Here's a more 
+  complete listing of code that will show you how a Serial Port Profile 
+client 
+  makes a connection to a Serial Port Profile server.</p>
+  
+<pre><code>
+String connectionURL = serviceRecord.getConnectionURL(0, false);
+StreamConnection con =(StreamConnection)Connector.open(connectionURL);
+</code></pre>
+
+<p>What does a SPP client connection URL look like? If the address of 
+the server 
+  is 0001234567AB, the String that the SPP client would look something 
+like this: </p>
+  <pre><code>btspp://0001234567AB:3</code></pre>
+
+<p>The <code>3</code> at the end of the <code>url</code> String is the 
+channel number that the server assigned 
+  to this service when this service was added to the SDDB.</p>
+  
+  <h2 id="Java_Bluetooth_Development_Kits" 
+name="Java_Bluetooth_Development_Kits">Java Bluetooth Development Kits</h2>
+
+<p>The most widely available development kit for Java Bluetooth 
+applications is 
+  the <a target="_blank" 
+href="http://java.sun.com/products/j2mewtoolkit/download-2_2.html">J2ME 
+  Wireless Toolkit 2.2</a> from Sun. It incorporates a Bluetooth network
+ simulator, 
+  and has support for OBEX. And best of all, it's free! The current 
+version of 
+  the J2ME Wireless Toolkit is available on Windows platforms.</p>
+
+<p>If you're targeting JSR-82-enabled Nokia phones, such as the 6600, 
+then you 
+  may also want to try out the <a target="_blank" 
+href="http://www.forum.nokia.com/main/0,,034-2,00.html">Nokia 
+  Developer's Suite 2.1</a>. Much like Sun's Wireless Toolkit, the Nokia
+ Developer's 
+  Suite is free and it also includes a Bluetooth network simulator. The 
+Nokia 
+  Developer's Suite supports Windows and Linux platforms. </p>
+
+<p>SonyEricsson also makes a free development kit for its P900 Java 
+Bluetooth-enabled phone, which can be found at their <a target="_blank" 
+href="http://developer.sonyericsson.com/">developer site</a>.</p>
+
+<p>Atinav makes one of the most comprehensive <a target="_blank" 
+href="http://www.avelink.com/Bluetooth/Products/JSR-82/index.htm">JSR-82
+ 
+  implementations and developer kits</a> with support for J2ME CLDC, 
+J2ME CDC, 
+  and J2SE devices. They support numerous RS-232, UART, USB, CF, and 
+PCMCIA Bluetooth 
+  devices. Their solution is based on an all-Java stack, and their SDK 
+includes 
+  the following profiles: GAP, SDAP, SPP, OBEX, FTP, Sync, OPP, Fax, and
+ Printing 
+  -- whew! They make the only JSR-82 implementation for the PocketPC 
+platform, 
+  and also support Windows and Linux.</p>
+
+<p>Possio makes a <a target="_blank" 
+href="http://www.possio.com/scripts/split.asp?cat=3&amp;prod=wireless&amp;dynfile=wirelessgateways&amp;id=english&amp;dh=3">JSR-82
+ 
+  development kit</a> that complements their Java Bluetooth-enabled 
+access point, 
+  the PX30. The PX30 is a Linux-based access point, and is powered by an
+ Intel XScale 
+  processor. It includes Wi-Fi, Bluetooth, and the CDC Foundation 
+Profile.</p>
+
+<p><a target="_blank" href="http://www.rococosoft.com/">Rococo</a> is 
+famous for making the first 
+  Java Bluetooth Simulator, although they also make a Java Bluetooth 
+developer 
+  kit for the Palm OS 4 platform. The simulator is currently priced at 
+$1000, and supports the following profiles: 
+  GAP, SDAP, SPP, and GOEP.</p>
+
+<p><a target="_blank" 
+href="http://www.avetana-gmbh.de/avetana-gmbh/jsr82.xml">Avetana</a> 
+  is a German company that makes the only JSR-82 implementation for the 
+Mac OS 
+  X platform. They also provide JSR-82 implementations for Windows and 
+Linux.</p>
+
+<h2 id="Summary" name="Summary">Summary</h2>
+  <p>What have we learned here? Hopefully, you should have a good 
+understanding 
+  of what Bluetooth is and how to use it. Before you start communicating
+ to other 
+  Bluetooth devices, you need to discover the devices in your vicinity, 
+and search 
+  for their services. After all of the preliminaries are out of the way,
+ you can 
+  stream data back and forth to any Bluetooth-enabled device in your 
+area, whether 
+  it's running Java or not.</p>
+
+<p>With over one million Bluetooth-enabled devices shipping per week 
+(that's 
+  right, one million devices per week), there's a lot of PDAs, cell 
+phones, laptops, 
+  desktops, access points, cameras, keyboards, mice, printers, audio 
+players, 
+  and vehicles out there for your mobile Java apps to play with!</p>
+  
+  <csinclude record="au/{cs.r.id_author}" template="short_bio.view">
+
+<div class="pad3x0">
+<table bgcolor="#000000" border="0" cellpadding="0" cellspacing="0" 
+width="100%"><tbody><tr><td><img 
+src="getting-started-java-and-bluetooth_fichiers/a_002.gif" alt=" " 
+border="0" height="1" width="1"></td></tr></tbody></table></div>
+
+						<div id="author-info">
+							<a href="http://today.java.net/author/bruce-hopkins">Bruce 
+Hopkins</a> author of <a target="_blank" 
+href="http://www.javabluetooth.com/">Bluetooth for Java</a>, is an 
+enthusiast for mobile, embedded, and wireless application development. 
+He's currently working for the startup <a target="_blank" 
+href="http://www.podblogr.com/">BlogRadio</a>. Bruce is also a <a 
+href="https://java-champions.dev.java.net/">Java Champion</a>.
+						</div>
+					</csinclude></cs_comment></cs_comment></cs_comment></cs_comment></cs_comment></csfield></csfield></div>
+    <div class="links">» <ul class="links inline"><li 
+class="comment_forbidden first"><span><a 
+href="http://today.java.net/user/login?destination=comment%2Freply%2F219503%23comment-form">Login</a>
+ or <a 
+href="http://today.java.net/user/register?destination=comment%2Freply%2F219503%23comment-form">register</a>
+ to post comments</span></li>
+<li class="statistics_counter"><span>34312 visits</span></li>
+<li class="print_html"><a href="http://today.java.net/print/219503" 
+title="Display a printer-friendly version of this page." 
+class="print-page" rel="nofollow">Printer-friendly version</a></li>
+<li class="sharethis_link last"><a st_page="home" 
+href="javascript:void(0)" title="ShareThis via email, AIM, social 
+bookmarking and networking sites, etc." class="stbutton stico_default"><span
+ st_page="home" class="stbuttontext">ShareThis</span></a></li>
+</ul></div>    <div class="taxonomy">Related Topics &gt;&gt;
+        <a href="http://today.java.net/articles/topic/19">Mobility</a> 
+&nbsp; &nbsp; &nbsp;    </div>
+  </div>
+  <div id="comment-header">Comments</div>
+  <div id="comment-header2">Comments are listed in date ascending order 
+(oldest first)</div>
+                                        <div id="content-bottomdiv2">
+                	                </div>
+                            
+        </td>
+              </tr>
+      <tr>
+        <td rowspan="2" valign="bottom"><img 
+src="getting-started-java-and-bluetooth_fichiers/a.gif" alt=" " 
+border="0" height="1" width="170"><br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <img src="getting-started-java-and-bluetooth_fichiers/a.gif" alt=" " 
+border="0" height="1" width="170"><br>
+  <img src="getting-started-java-and-bluetooth_fichiers/a.gif" alt=" " 
+border="0" height="1" width="170"><br>
+
+  <table border="0" cellpadding="0" cellspacing="10" width="100%">
+    <tbody>
+      <tr>
+        <td>&nbsp;
+          <div class="grayline"></div>
+          <table class="vatop" border="0" cellpadding="0" 
+cellspacing="0" width="100%">
+            <tbody>
+              <tr>
+                <td><img 
+src="getting-started-java-and-bluetooth_fichiers/a.gif" alt=" " 
+border="0" height="1" width="190"><br>
+                  &nbsp;&nbsp;<a target="_blank" 
+href="http://www.oracle.com/"><img 
+src="getting-started-java-and-bluetooth_fichiers/logo_oracle_footer.gif"
+ alt=" " border="0" vspace="5"></a></td>
+                <td valign="top" width="60%"><div class="footer">
+                    <a 
+href="https://java-net.dev.java.net/feedback.html">Feedback</a> 
+&nbsp;|&nbsp;<a href="http://today.java.net/javanet-faq">FAQ</a> 
+&nbsp;|&nbsp;<a href="http://today.java.net/javanet-web-site-terms-use">Terms
+ of Use</a><br>
+                    <a target="_blank" 
+href="http://www.sun.com/privacy/">Privacy</a> &nbsp;|&nbsp; <a 
+target="_blank" href="http://www.sun.com/suntrademarks/">Trademarks</a>&nbsp;|&nbsp;<a
+ href="https://java-net.dev.java.net/sitemap.html">Site Map</a> <br>
+                    <span class="sp5">&nbsp;</span><br>
+                    Your use of this web site or any of its content or 
+software indicates your agreement to be bound by these <a 
+href="http://today.java.net/javanet-web-site-terms-use">Terms of 
+Participation</a>.<br>
+                    <span class="sp5">&nbsp;</span><br>
+                    Copyright ©2010, Oracle and/or its affiliates. All 
+rights reserved. Oracle and Java are registered trademarks of Oracle 
+and/or its affiliates. Other names may be trademarks of their respective
+ owners. </div></td>
+                <td align="right" valign="top" width="40%"><div 
+class="footer">
+                <a target="_blank" href="http://www.collab.net/"><img 
+src="getting-started-java-and-bluetooth_fichiers/montague_logo_collabnet.gif"
+ alt="Collabnet Logo" border="0" height="19" width="85"></a>
+                <a target="_blank" href="http://www.cognisync.com/"><img
+ src="getting-started-java-and-bluetooth_fichiers/cognisync.jpg" 
+alt="Cognisync Communities" border="0"></a>
+<br>
+                    Powered by Oracle,<br>
+                    Cognisync and CollabNet </div></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="grayline"></div></td>
+      </tr>
+    </tbody>
+  </table>
+  <!--  Begin SiteCatalyst code   -->
+  <script language="JavaScript" src="getting-started-java-and-bluetooth_fichiers/s_code_remote.js"></script><script type="text/javascript" src="getting-started-java-and-bluetooth_fichiers/metrics_group1.js"></script>
+  <!--  End SiteCatalyst code  -->
+</div>
+<div style="display: none;"> </div>
+<script type="text/javascript" src="getting-started-java-and-bluetooth_fichiers/js_0f344b3b7f2eabf7e16d246cdec2f932.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "extlink": { "extTarget": "_blank", "extClass": 0, "extSubdomains": 1, "extExclude": "", "extInclude": "", "extAlert": 0, "extAlertText": "This link will take you to an external web site. We are not responsible for their content.", "mailtoClass": 0 }, "fivestar": { "titleUser": "Your rating: ", "titleAverage": "Average: ", "feedbackSavingVote": "Saving your vote...", "feedbackVoteSaved": "Your vote has been saved.", "feedbackDeletingVote": "Deleting your vote...", "feedbackVoteDeleted": "Your vote has been deleted." } });
+//--><!]]>
+</script>
+<script language="javascript">
+	$('form#node-form input#form-submit').click(function(){
+		$(this).attr('disabled', 'disabled');
+		$('form#node-form').submit();
+	});
+	$('form#node-form input#edit-submit').click(function(){
+		$(this).attr('disabled', 'disabled');
+		$('form#node-form').submit();
+	});
+	</script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="getting-started-java-and-bluetooth_fichiers/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10612840-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+<div style="visibility: hidden; top: -999px; left: -999px;" 
+class="stwrapper" id="stwrapper"><div class="stclose"></div><iframe 
+src="getting-started-java-and-bluetooth_fichiers/index.html" style="top:
+ 0px; left: 0px; visibility: hidden;" name="stframe" class="stframe" 
+id="stframe" allowtransparency="true" frameborder="0" height="450px" 
+scrolling="no" width="345px"></iframe></div></body></html>

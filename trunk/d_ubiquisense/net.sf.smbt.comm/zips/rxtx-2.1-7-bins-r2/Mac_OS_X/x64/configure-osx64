@@ -1,0 +1,40 @@
+If you want to configure manually, please look at the following procedure.
+ 
+A. Make /var/spool/uucp and /var/lock if there arenÕt these.
+
+sudo mkdir /var/spool/uucp
+sudo mkdir /var/lock
+
+B. Change the permission and group of made directories.
+
+sudo chmod 775 /var/spool/uucp
+sudo chmod 775 /var/lock
+sudo chgrp uucp /var/spool/uucp
+sudo chgrp uucp /var/lock
+
+C. Confirm the permission and group of made directories.
+
+The output is shown as follows if your operation is correct.
+ls -l /var/spool/ | grep uucp
+> drwxrwxr-x 2 _uucp _uucp 68 5 19 03:15 uucp
+
+ls -l /var/ | grep lock
+> drwxrwxr-x 20 root _uucp 680 10 7 14:26 lock
+
+D. Confirm the USER ID.
+
+Your USER ID is shown on <YOU>.
+who -H am i
+> USER 	LINE 	WHEN
+> <YOU> 	ttys000 	Oct 7 15:28
+ 
+E. Append your account to the membership of the UUCP group.
+
+Please change <YOU> to your USER ID.
+(For Max OS X 10.4)
+sudo niutil -appendprop / /groups/uucp users <YOU>
+(For Mac OS X 10.5 or 10.6)
+sudo dscl . -append /Groups/uucp GroupMembership <YOU>
+F. Comfirm the setting of UUCP group.
+dscl . -read /Groups/uucp | grep GroupMembership
+> GroupMembership: <YOU>

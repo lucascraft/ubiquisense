@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.comm/src-model"
+    editDirectory="" editorDirectory="" modelPluginID="net.sf.smbt.comm" modelName="Comm"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory=""
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../net.sf.xqz.engine/model/temporal.genmodel#//engine ../../net.sf.xqz.engine/model/temporal.genmodel#//cmd">
+  <foreignModel>comm.ecore</foreignModel>
+  <genPackages prefix="Comm" basePackage="net.sf.smbt" disposableProviderFactory="true"
+      ecorePackage="comm.ecore#/">
+    <genClasses ecoreClass="comm.ecore#//UdpPort"/>
+    <genClasses ecoreClass="comm.ecore#//TcpPort"/>
+  </genPackages>
+</genmodel:GenModel>

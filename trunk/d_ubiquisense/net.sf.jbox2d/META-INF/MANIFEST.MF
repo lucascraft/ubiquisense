@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquisense - Jbox2d
+Bundle-Vendor: ubiquisense.com
+Bundle-SymbolicName: net.sf.jbox2d
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: net.sf.jbox2d.Activator
+Require-Bundle: org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: core.jar,
+ jbox2d-2.0.1-library-only.jar,
+ .
+Export-Package: net.sf.jbox2d,
+ org.jbox2d.collision,
+ org.jbox2d.common,
+ org.jbox2d.dynamics,
+ org.jbox2d.dynamics.contacts,
+ org.jbox2d.dynamics.joints,
+ org.jbox2d.testbed,
+ org.jbox2d.testbed.tests,
+ org.jbox2d.util.blob,
+ org.jbox2d.util.nonconvex,
+ org.jbox2d.util.sph,
+ processing.core

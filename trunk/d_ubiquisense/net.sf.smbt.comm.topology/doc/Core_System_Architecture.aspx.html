@@ -1,0 +1,1582 @@
+<!DOCTYPE HTML PUBLIC "-/W3C/DTD HTML 4.01 Transitional/EN" "http:/www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+
+
+<meta name="GENERATOR" content="Microsoft SharePoint"><meta 
+http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta 
+http-equiv="Expires" content="0"><meta http-equiv="X-UA-Compatible" 
+content="IE=7"><meta name="google-site-verification" 
+content="rL0Uq2zPkw8-bnupt_LVEzd93cxTMgEKffoicHqjynM"><link 
+rel="shortcut icon" 
+href="http://bluetooth.com/SiteCollectionImages/favicon.ico"><title>
+	
+	Core System Architecture
+
+</title><link rel="stylesheet" type="text/css" 
+href="Core_System_Architecture.aspx_fichiers/controls.css">
+<link rel="stylesheet" type="text/css" 
+href="Core_System_Architecture.aspx_fichiers/HtmlEditorCustomStyles.css">
+<link rel="stylesheet" type="text/css" 
+href="Core_System_Architecture.aspx_fichiers/HtmlEditorTableFormats.css">
+<link rel="stylesheet" type="text/css" 
+href="Core_System_Architecture.aspx_fichiers/pageLayouts.css">
+<link rel="stylesheet" type="text/css" 
+href="Core_System_Architecture.aspx_fichiers/Tabs.css">
+<link rel="stylesheet" type="text/css" 
+href="Core_System_Architecture.aspx_fichiers/zz1_blue.css">
+<link rel="stylesheet" type="text/css" 
+href="Core_System_Architecture.aspx_fichiers/core.css">
+<link rel="stylesheet" type="text/css" 
+href="Core_System_Architecture.aspx_fichiers/Bluetooth_Core.css">
+
+    <!--Styles used for positioning, font and spacing definitions-->
+    <script src="Core_System_Architecture.aspx_fichiers/init.js"></script>
+<script type="text/javascript" language="javascript" src="Core_System_Architecture.aspx_fichiers/core.js" defer="defer"></script>
+<script type="text/javascript" language="javascript" src="Core_System_Architecture.aspx_fichiers/non_ie.js"></script>
+<script type="text/javascript" language="javascript" src="Core_System_Architecture.aspx_fichiers/search.js" defer="defer"></script>
+
+    <!--Placeholder for additional overrides-->
+    
+	<style type="text/css">
+		.ms-pagetitleareaframe table, .ms-titleareaframe
+		{
+			background: none;
+			height: 10px;
+			overflow:hidden;
+		}
+		.ms-pagetitle, .ms-titlearea
+		{
+			display:none;
+		}
+	</style>
+	
+
+
+    <script type="text/javascript">
+        //  alert('Call');	
+
+        function ProcessDefaultOnLoad(onLoadFunctionNames) {
+            //  alert('Call function');	
+            ProcessPNGImages();
+            UpdateAccessibilityUI();
+            for (var i = 0; i < onLoadFunctionNames.length; i++) {
+                var expr = "if(typeof(" + onLoadFunctionNames[i] + ")=='function'){" + onLoadFunctionNames[i] + "();}";
+                eval(expr);
+            }
+            if (typeof (_spUseDefaultFocus) != "undefined")
+                DefaultFocus();
+        } 
+    </script>
+
+    
+    <style type="text/css">
+        .style1
+        {
+            margin-right: 0px;
+        }
+    </style>
+<style type="text/css">
+	.ctl00_PlaceHolderNavSpacer_g_A8D95D2979E34706B2FBA079B7BEE183_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TopZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_NoPaddingLeftZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_NoPaddingMiddleZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_NoPaddingRightZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_NoPaddingEqualLeftZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_NoPaddingEqualRightZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TopColumnZonepl_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TopColumnLeftZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TopColumnRightZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_MiddleLeftZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_MiddleRightZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TripleLeftZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TripleMiddleZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TripleRightZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_BottomSingleZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+
+</style></head><body 
+onload="javascript:_spBodyOnLoadWrapper;getCurrentLang();">
+    <form name="aspnetForm" method="post" 
+action="Core_System_Architecture.aspx" onsubmit="javascript:return 
+WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input name="__SPSCEditMenu" id="__SPSCEditMenu" value="true" 
+type="hidden">
+<input name="MSOWebPartPage_PostbackSource" 
+id="MSOWebPartPage_PostbackSource" value="" type="hidden">
+<input name="MSOTlPn_SelectedWpId" id="MSOTlPn_SelectedWpId" value="" 
+type="hidden">
+<input name="MSOTlPn_View" id="MSOTlPn_View" value="0" type="hidden">
+<input name="MSOTlPn_ShowSettings" id="MSOTlPn_ShowSettings" 
+value="False" type="hidden">
+<input name="MSOGallery_SelectedLibrary" id="MSOGallery_SelectedLibrary"
+ value="" type="hidden">
+<input name="MSOGallery_FilterString" id="MSOGallery_FilterString" 
+value="" type="hidden">
+<input name="MSOTlPn_Button" id="MSOTlPn_Button" value="none" 
+type="hidden">
+<input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
+<input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" 
+type="hidden">
+<input name="__REQUESTDIGEST" id="__REQUESTDIGEST" 
+value="0xF29E6AD5E7E81E6DE93797BEB7F51B82ECF6F2BE12C0DD90FB703583C9F351DE445523EEE4E27C7C16B29076BE831D23151A6990017F2D88F4B08B8965FE1D5A,28
+ Sep 2010 09:47:43 -0000" type="hidden">
+<input name="MSOAuthoringConsole_FormContext" 
+id="MSOAuthoringConsole_FormContext" value="" type="hidden">
+<input name="MSOAC_EditDuringWorkflow" id="MSOAC_EditDuringWorkflow" 
+value="" type="hidden">
+<input name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0" 
+type="hidden">
+<input name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0" 
+type="hidden">
+<input name="MSOSPWebPartManager_DisplayModeName" 
+id="MSOSPWebPartManager_DisplayModeName" value="Browse" type="hidden">
+<input name="MSOWebPartPage_Shared" id="MSOWebPartPage_Shared" value="" 
+type="hidden">
+<input name="MSOLayout_LayoutChanges" id="MSOLayout_LayoutChanges" 
+value="" type="hidden">
+<input name="MSOLayout_InDesignMode" id="MSOLayout_InDesignMode" 
+value="" type="hidden">
+<input name="MSOSPWebPartManager_OldDisplayModeName" 
+id="MSOSPWebPartManager_OldDisplayModeName" value="Browse" type="hidden">
+<input name="MSOSPWebPartManager_StartWebPartEditingName" 
+id="MSOSPWebPartManager_StartWebPartEditingName" value="false" 
+type="hidden">
+<input name="__LASTFOCUS" id="__LASTFOCUS" value="" type="hidden">
+<input name="__VIEWSTATE" id="__VIEWSTATE" 
+value="/wEPDwUBMA9kFgJmD2QWBAICD2QWAgIJD2QWAmYPZBYCAgEPFgIeE1ByZXZpb3VzQ29udHJvbE1vZGULKYgBTWljcm9zb2Z0LlNoYXJlUG9pbnQuV2ViQ29udHJvbHMuU1BDb250cm9sTW9kZSwgTWljcm9zb2Z0LlNoYXJlUG9pbnQsIFZlcnNpb249MTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49NzFlOWJjZTExMWU5NDI5YwFkAgQPZBYMAgEPZBYCAgMPZBYCAgEPFgIeB1Zpc2libGVoFgJmD2QWBAICD2QWAgIDDxYCHwFoZAIDDw8WAh4JQWNjZXNzS2V5BQEvZGQCAw9kFgJmDw8WAh8BaGQWBAIBDw8WAh8BaGRkAgMPDxYCHwFoZBYCAgEPDxYCHwFnZBYEAgEPDxYCHwFoZBYcAgEPDxYCHwFoZGQCAw8WAh8BaGQCBQ8PFgIfAWhkZAIHDxYCHwFoZAIJDw8WAh8BaGRkAgsPDxYCHwFoZGQCDQ8PFgIfAWhkZAIPDw8WBB4HRW5hYmxlZGgfAWhkZAIRDw8WAh8BaGRkAhMPDxYEHwNoHwFoZGQCFQ8PFgIfAWhkZAIXDxYCHwFoZAIZDxYCHwFoZAIbDw8WAh8BZ2RkAgMPDxYCHwFnZBYGAgEPDxYCHwFnZGQCAw8PFgIfAWdkZAIFDw8WAh8BZ2RkAgsPZBYEAgEPDxYCHgtQYXJhbVZhbHVlczLkBAABAAAA/////wEAAAAAAAAADAIAAABYTWljcm9zb2Z0LlNoYXJlUG9pbnQsIFZlcnNpb249MTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49NzFlOWJjZTExMWU5NDI5YwUBAAAAPU1pY3Jvc29mdC5TaGFyZVBvaW50LldlYlBhcnRQYWdlcy5QYXJhbWV0ZXJOYW1lVmFsdWVIYXNodGFibGUBAAAABV9jb2xsAxxTeXN0ZW0uQ29sbGVjdGlvbnMuSGFzaHRhYmxlAgAAAAkDAAAABAMAAAAcU3lzdGVtLkNvbGxlY3Rpb25zLkhhc2h0YWJsZQcAAAAKTG9hZEZhY3RvcgdWZXJzaW9uCENvbXBhcmVyEEhhc2hDb2RlUHJvdmlkZXIISGFzaFNpemUES2V5cwZWYWx1ZXMAAAMDAAUFCwgcU3lzdGVtLkNvbGxlY3Rpb25zLklDb21wYXJlciRTeXN0ZW0uQ29sbGVjdGlvbnMuSUhhc2hDb2RlUHJvdmlkZXII7FE4PwYAAAAKCgsAAAAJBAAAAAkFAAAAEAQAAAAEAAAABgYAAAAGVXNlcklEBgcAAAAGTGlzdElEBggAAAAFVG9kYXkGCQAAAAZXZWJVUkwQBQAAAAQAAAAGCgAAAA9DdXJyZW50VXNlck5hbWUGCwAAACQ2NTQzQjAwRC1FMjg3LTREMjgtOUJBMS05MEMzRjJBREUzOUQGDAAAABQyMDEwLTA5LTI4VDAyOjQ3OjQzWgYNAAAAFHtzaXRlY29sbGVjdGlvbnJvb3R9C2RkAgMPZBYCZg8PFgIfAWhkZAIPD2QWBAIBD2QWAmYPDxYEHgtfIURhdGFCb3VuZGcfAWdkZAIDD2QWAmYPZBYCZg8PZBYCHgVjbGFzcwUYbXMtc2J0YWJsZSBtcy1zYnRhYmxlLWV4ZAIRD2QWAgICD2QWJAIHDxYCHwALKwQBZAIJDxYCHwALKwQBFgJmDw9kZGQCCw8WAh8ACysEARYCZg8PZGRkAg0PZBYCZg8PFgIfAWhkZAIPD2QWAmYPDxYCHwFoZGQCEQ9kFgJmDw8WAh8BaGRkAhMPZBYCZg8PFgIfAWhkZAIVD2QWAmYPDxYCHwFoZGQCFw9kFgJmDw8WAh8BaGRkAhkPZBYCZg8PFgIfAWhkZAIbD2QWAmYPDxYCHwFoZGQCHQ9kFgJmDw8WAh8BaGRkAh8PZBYCZg8PFgIfAWhkZAIhD2QWAmYPDxYCHwFoZGQCIw9kFgJmDw8WAh8BaGRkAiUPZBYCZg8PFgIfAWhkZAInD2QWAmYPDxYCHwFoZGQCKQ9kFgJmDw8WAh8BaGRkAhUPZBYCAgIPZBYCAgEPFgIfAAsrBAFkZJN4D8r5QXWC9Of0urrSjDdQ7ZKi"
+ type="hidden">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="Core_System_Architecture.aspx_fichiers/WebResource.js" type="text/javascript"></script>
+
+<script> var MSOWebPartPageFormName = 'aspnetForm';</script><script type="text/JavaScript" language="JavaScript">
+<!--
+var L_Menu_BaseUrl="/English/Technology/Works";
+var L_Menu_LCID="1033";
+var L_Menu_SiteTheme="";
+//-->
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+                function DoCallBack(filterText)
+                {
+                    WebForm_DoCallback('ctl00$PlaceHolderNavSpacer$g_12a42b2a_b294_41bf_b871_48ad3f9ac9ca',filterText,UpdateFilterCallback,0,CallBackError,true);
+                }
+                function CallBackError(result, clientsideString)
+                {                
+                }
+            function WebForm_OnSubmit() {
+UpdateFormDigest('\u002fEnglish\u002fTechnology\u002fWorks', 1440000);return _spFormOnSubmitWrapper();
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input name="__EVENTVALIDATION" id="__EVENTVALIDATION" 
+value="/wEWAgKOg4rYBwLNrvW5A8TSVUJm+d8/A9U5wh6FDuu8a/fN" type="hidden">
+</div>
+
+    <script language="javascript" type="text/javascript">
+
+        var currlang = "";
+        function getCurrentLang() {
+            var pageUrl = location.href;
+            currlang = getLanguage(parseUri(pageUrl));
+            return currlang;
+        }
+
+        function openHomeWindow() {
+            window.open('/' + getCurrentLang() + '/Pages/Default.aspx', '_self');
+        }
+
+        function openLegalWindow() {
+            window.open('/' + getCurrentLang() + '/Pages/Legal.aspx', '_self');
+        }
+
+        function openPrivacyWindow() {
+            window.open('/' + getCurrentLang() + '/Pages/Privacy.aspx', '_self');
+        }
+
+        function getLang() {
+            var pageUrl = GetPageUrlWithOutQueryString();
+            alert("Called getLang");
+            return getLanguage(parseUri(pageUrl));
+
+        }
+
+        function getLanguage(obj) {
+            var output = "";
+
+            //alert(obj.directoryPath.toLowerCase());
+            if (obj.directoryPath.toLowerCase().indexOf('english') > -1) {
+                output = 'English';
+            }
+            else if (obj.directoryPath.toLowerCase().indexOf('german') > -1) {
+                output = 'German';
+            }
+            else if (obj.directoryPath.toLowerCase().indexOf('chinese') > -1) {
+                output = 'Chinese';
+            }
+            else if (obj.directoryPath.toLowerCase().indexOf('japanese') > -1) {
+                output = 'Japanese';
+            }
+            else if (obj.directoryPath.toLowerCase().indexOf('spanish') > -1) {
+                output = 'Spanish';
+            }
+            else if (obj.directoryPath.toLowerCase().indexOf('french') > -1) {
+                output = 'French';
+            }
+            else
+                output = 'English';
+            return output
+        }
+
+        function parseUri(sourceUri) {
+            var uriPartNames = ["source", "protocol", "authority", "domain", "port", "path", "directoryPath", "fileName", "query", "anchor"];
+            var uriParts = new RegExp("^(?:([^:/?#.]+):)?(?://)?(([^:/?#]*)(?::(\\d*))?)?((/(?:[^?#](?![^?#/]*\\.[^?#/.]+(?:[\\?#]|$)))*/?)?([^?#/]*))?(?:\\?([^#]*))?(?:#(.*))?").exec(sourceUri);
+            var uri = {};
+
+            for (var i = 0; i < 10; i++) {
+                uri[uriPartNames[i]] = (uriParts[i] ? uriParts[i] : "");
+            }
+
+            // Always end directoryPath with a trailing backslash if a path was present in the source URI
+            // Note that a trailing backslash is NOT automatically inserted within or appended to the "path" key
+            if (uri.directoryPath.length > 0) {
+                uri.directoryPath = uri.directoryPath.replace(/\/?$/, "/");
+            }
+
+            return uri;
+        }
+        function addOption(text) {
+            var sel = document.getElementById("varaiation");
+
+            sel.options[sel.options.length] = new Option(text);
+        }
+
+
+        function GetID() {
+            // alert("get id");
+            var regex = new RegExp("(?:(\\?|\\&)pid=|FilterValue1%3d)", "gi");
+            var logID = document.location.href.split(regex);
+            // alert(logID[1] + logID[0]);
+            var pageURL = "NewComments.aspx";
+            //  var pageURL = "/Lists/Blog Comments/NewForm.aspx";
+            var returnURL = "ViewBlogPosts.aspx?pid=" + logID[1];
+            //alert(pageURL + "?Source=" + returnURL + "&LogID=" + logID[1]);
+            window.location = pageURL + "?Source=" + returnURL + "&LogID=" + logID[1];
+        }
+
+        function LoadID() {
+            var RegX = new RegExp("LogID=", "gi");
+            var Log_ID = document.location.href.split(RegX);
+            document.forms[0]["urn:schemas-microsoft-com:office:office#RelatedTo"].value = Log_ID[1];
+            document.forms[0]["urn:schemas-microsoft-com:office:office#Type"].value = "Comment"
+        }
+    </script>
+
+    <script language="javascript" type="text/javascript">
+
+        //function loadBody();
+        //{
+        //alert(theForm);
+        //}
+
+        function GetPageUrlWithOutQueryString() {
+
+            var url = location.href;
+
+            if (url.indexOf("?") > 0) {
+
+                var tokens = url.split("?");
+
+                url = tokens[0];
+
+            }
+
+            return url;
+
+        }
+
+
+
+        //If you are trying to obtain sharepoint web url
+
+
+
+        function GetWebUrlFromPageUrl() {
+
+            //check to see if there is querystring in page url BUG FIX 01/09/2008
+
+            pageUrl = GetPageUrlWithOutQueryString()
+
+            var soap = "<soap:Envelope xmlns:xsi='http:/www.w3.org/2001/XMLSchema-instance' " +
+
+                                                                                                                  "xmlns:xsd='http:/www.w3.org/2001/XMLSchema' " +
+
+                                                                                                                  "xmlns:soap='http:/schemas.xmlsoap.org/soap/envelope/'>" +
+
+                                                                                "<soap:Body>" +
+
+                                                                                                "<WebUrlFromPageUrl xmlns='http:/schemas.microsoft.com/sharepoint/soap/'>" +
+
+                                                                                                                "<pageUrl>" + pageUrl + "</pageUrl>" +
+
+                                                                                                "</WebUrlFromPageUrl>" +
+
+                                                                                "</soap:Body>" +
+
+                                                   "</soap:Envelope>";
+
+            var payLoad = new ActiveXObject("MSXML2.DOMDocument.3.0");
+
+            payLoad.loadXML(soap);
+
+
+
+            var parsingError;
+
+            if (payLoad.parseError.errorCode != 0) {
+
+                parsingError = payLoad.parseError;
+
+                alert("Error parsing soap payload GetWebUrlFromPageUrl " + parsingError.reason);
+
+                return null;
+
+            }
+
+            var xmlHttp = new ActiveXObject("MSXML2.XMLHttp.3.0");
+
+            xmlHttp.Open("POST", "../sites/op/_vti_bin/webs.asmx", false);
+
+            xmlHttp.setRequestHeader("Content-Type", "text/xml");
+
+            xmlHttp.setRequestHeader("Content-Length", payLoad.xml.length);
+
+            xmlHttp.setRequestHeader("SOAPAction", "http:/schemas.microsoft.com/sharepoint/soap/WebUrlFromPageUrl");
+
+            xmlHttp.Send(payLoad);
+
+            if (xmlHttp.status == 200) {
+
+                var response;
+
+                response = new ActiveXObject("MSXML2.DomDocument.3.0");
+
+                response.loadXML(xmlHttp.responseXML.xml);
+
+                response.setProperty("SelectionNamespaces", "xmlns:soap='http:/schemas.xmlsoap.org/soap/envelope/'");
+
+                response.setProperty("SelectionNamespaces", "xmlns='http:/schemas.microsoft.com/sharepoint/soap/'");
+
+                var resultNode = response.selectSingleNode("soap:Envelope/soap:Body/WebUrlFromPageUrlResponse/WebUrlFromPageUrlResult")
+
+                if (resultNode) {
+
+                    return resultNode.text;
+
+                }
+
+            }
+
+            else {
+
+                alert('Problem retrieving xml data');
+
+                alert(xmlHttpRequest.responseText);
+
+            }
+
+            return "";
+
+        }
+    </script>
+
+    
+    
+    
+    
+    
+	
+					
+    <table summary="Holds top bar" border="0" cellpadding="0" 
+cellspacing="0" width="978">
+        <tbody>
+            <tr>
+                <td align="left" valign="top" width="5px">
+                    <img 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" width="5">
+                </td>
+                <td colspan="5" class="gryHeaderFooter" align="right" 
+valign="bottom">
+                    <a 
+href="http://www.gvinedesigns.com/shopping/bluetooth/">Bluetooth SIG 
+Shop</a>
+                    | <a href="https://www.bluetooth.org/apps/content/">Bluetooth.org
+ </a>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" width="5">
+                    <img alt="" 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" width="5">
+                </td>
+                <td class="whtBackground">
+                    <img 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" alt="" 
+height="13" width="200">
+                </td>
+                <td class="ltgryBackground">
+                    <img 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" alt="" 
+height="13" width="13">
+                </td>
+                <td class="ltgryBackground">
+                    <img 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" alt="" 
+height="13" width="287">
+                </td>
+                <td class="yellowBackground">
+                    <img 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" alt="" 
+height="13" width="473">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table summary="main table holds nav, main content and sub content 
+areas plus side bars" border="0" cellpadding="0" cellspacing="0" 
+width="974">
+        <!-- <tr>
+            <td align="right" valign="bottom" class="gryHeaderFooter" colspan="5" style="height: 22px;width:px" align="right">
+                <a href="http://www.gvinedesigns.com/shopping/bluetooth/">Bluetooth SIG Shop</a>
+                | <a href="https://www.bluetooth.org/apps/content/">Bluetooth.org </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="whtBackground" style="line-height: 0px;">
+                <img height="13" width="5" alt="" src="/SiteCollectionImages/spacer.gif" />
+            </td>
+            <td class="whtBackground" style="line-height: 0px;">
+                <img height="13" width="200" alt="" src="/SiteCollectionImages/spacer.gif" />
+            </td>
+            <td class="ms-bodyareacell" valign="top">
+                <table id="MSO_ContentTable" width="773" height="100%" border="0" cellspacing="0"
+                    cellpadding="0" class="ms-propertysheet">
+                    <tr>
+                        <td class="ltgryBackground">
+                            <img height="13" width="13" alt="" src="/SiteCollectionImages/spacer.gif">
+                        </td>
+                        <td class="ltgryBackground">
+                            <img height="13" width="287" alt="" src="/SiteCollectionImages/spacer.gif">
+                        </td>
+                        <td class="yellowBackground">
+                            <img height="13" width="460" alt="" src="/SiteCollectionImages/spacer.gif">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        -->
+        <tbody><tr>
+            <td rowspan="2" align="left" valign="top" width="5">
+                <img alt="" 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" width="5">
+            </td>
+            <td class="whtBackground" rowspan="3" align="left" 
+height="100%" valign="top" width="200">
+                <table border="0" cellpadding="0" cellspacing="0" 
+width="100%">
+                    <tbody><tr>
+                        <td align="left" height="259" valign="top">
+                            <table summary="nav and logo holder" 
+border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                    <td align="left" valign="top">
+                                        
+														<a href="javascript:openHomeWindow();">
+													<img id="ctl00_PlaceHolderLeftNavBarTop_logo" 
+src="Core_System_Architecture.aspx_fichiers/b-logo.gif" 
+style="border-width: 0px;"></a><!--< %$ SPUrl: ~sitecollection/sitecollectionimages/companylogo.gif %>"/>-->
+			 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <!-- Navigation goes here -->
+                                        <!-- NavigationControl Cache Timestamp: 3/6/2009 12:22:06 PM -->
+                                        
+                                                  
+									<div><div class="floatingNav">
+	<a href="http://bluetooth.com/ENGLISH/EXPERIENCE/Pages/default.aspx">Experience
+ More </a>
+</div><div class="floatingNav">
+	<a href="http://bluetooth.com/English/Products/Pages/default.aspx">Product
+ Zone </a>
+</div><div class="floatingNavOn">
+	<a href="http://bluetooth.com/ENGLISH/TECHNOLOGY/Pages/default.aspx">Get
+ Technical </a>
+</div><div class="floatingSubNavOn">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/default.aspx"><img
+ class="subArrow" 
+src="Core_System_Architecture.aspx_fichiers/arrow_gry_dwn.gif">How It 
+Works</a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Bluetooth_low_energy_technology.aspx">Core
+ Specification v4.0 </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Overview_of_Operation.aspx">Overview
+ of Operations </a>
+</div><div class="floatingSubNav2On">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Core_System_Architecture.aspx">Core
+ System Architecture </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Architecture__Radio.aspx">Architecture
+ - Radio </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Architecture__Baseband.aspx">Architecture
+ - Baseband </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Architecture__Link_Manager_Protocol_LMP.aspx">Architecture
+ - LMP </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Architecture__Host_Controller_Interface_HCI.aspx">Architecture
+ - HCI </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Architecture__Logical_Link_Control_and_Adaptation_Protocol_L2CAP.aspx">Architecture
+ - L2CAP </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Data_Transport_Architecture.aspx">Architecture
+ - Data Transport </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Profiles_Overview.aspx">Profiles
+ Overview </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Communications_Topology.aspx">Communication
+ Topology </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/ENGLISH/TECHNOLOGY/WORKS/Pages/Compare.aspx">Compare
+ with Other Technologies </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Security.aspx">Security
+ </a>
+</div><div class="floatingSubNav">
+	<a 
+href="http://bluetooth.com/English/Technology/Building/Pages/default.aspx"><img
+ class="subArrow" 
+src="Core_System_Architecture.aspx_fichiers/arrow_gry_rgt.gif">Building 
+with Bluetooth Technology</a>
+</div><div class="floatingSubNav">
+	<a href="http://bluetooth.com/English/Technology/Pages/Studies.aspx">Business
+ Case Studies </a>
+</div><div class="floatingSubNav">
+	<a href="http://bluetooth.com/English/Technology/Pages/Glossary.aspx">Glossary
+ </a>
+</div><div class="floatingSubNav">
+	<a 
+href="http://bluetooth.com/English/Technology/Pages/Developers-Competition.aspx">Developers'
+ Competition </a>
+</div><div class="floatingNav">
+	<a href="http://bluetooth.com/English/Press/Pages/default.aspx">Press 
+&amp; Analysts </a>
+</div><div class="floatingNav">
+	<a href="http://bluetooth.com/English/SIG/Pages/default.aspx">About the
+ Bluetooth SIG </a>
+</div>
+</div>	
+			  
+                                    </td>
+                                </tr>
+                                <tr width="100%">
+                                    <td style="padding-top: 25px; width:
+ 100%;" align="right" valign="top">
+                                        <div class="leftWebpart">
+                                            
+<p></p>
+
+<table toplevel="" border="0" cellpadding="0" cellspacing="0" 
+width="100%">
+	<tbody><tr>
+		<td valign="top"><div webpartid="00000000-0000-0000-0000-000000000000"
+ haspers="true" id="WebPartWPQ1" width="100%" onlyformepart="true" 
+allowdelete="false" style=""><table 
+xmlns:x="http://www.w3.org/2001/XMLSchema" 
+xmlns:d="http://schemas.microsoft.com/sharepoint/dsp" 
+xmlns:asp="http://schemas.microsoft.com/ASPNET/20" 
+xmlns:__designer="http://schemas.microsoft.com/WebParts/v2/DataView/designer"
+ xmlns:sharepoint="Microsoft.SharePoint.WebControls" 
+xmlns:ddwrt2="urn:frontpage:internal" border="0" width="100%"><tbody><tr><td><table
+ border="0" cellspacing="0" width="100%"><tbody><tr><td 
+class="bt-CornerImage" width="100%"><a 
+href="http://gadgetguide.bluetooth.com/"><img 
+src="Core_System_Architecture.aspx_fichiers/Bluetooth_Gadget_Guide.jpg" 
+alt="" border="0"></a></td></tr></tbody></table></td></tr></tbody></table></div></td>
+	</tr>
+</tbody></table>
+ 
+                                                        <p></p>
+				
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                    <tr valign="bottom">
+                     <!--   <td valign="bottom" style="padding-top: 85px;">-->
+                        <td valign="bottom">
+
+                            
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+            <td rowspan="2" align="left" valign="top" width="100%">
+                <table style="z-index: 1; position: relative; left: 0px;
+ top: 0px; width: 100%;" class="style1" border="0" cellpadding="0" 
+cellspacing="0" height="100%">
+                    <tbody><tr>
+                        <td class="ltgryBackground" align="left" 
+valign="top" width="3%">
+                            <img alt="" 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" height="10" 
+width="13px">
+                        </td>
+                        <td style="vertical-align: top; width: 97%;" 
+align="left" valign="top">
+                            
+										<table summary="langauge and search" border="0" 
+cellpadding="0" cellspacing="0" width="760">
+                                        <tbody>
+                                            <tr>
+                                                <td 
+class=".whtBackground1" style="width: 380px;" align="left" 
+valign="middle">
+                                                    <table 
+id="searchBar__tblLanguageSelector" summary="language select" border="0"
+ cellpadding="0" cellspacing="0" width="380">
+                                                        <tbody>
+                                                            <tr>
+                                                                 <td 
+align="left" valign="middle" width="180">
+                                                                    <table>
+                                                                        
+        	<tbody><tr>
+                                                                        
+        	<td width="33%">
+
+                                                                        
+        	 <span class="selectLanguage">Select Language </span>
+                                                                        
+        	</td>
+                                                                        
+        	                                        	<td width="23%">
+																	<span 
+id="ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1"><span 
+style="display: none;"><menu type="ServerMenu" 
+id="ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate"></menu></span><span
+ title="Open Menu"><div 
+id="ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu_t"
+ class="ms-menubuttoninactivehover" 
+onmouseover="MMU_PopMenuIfShowing(this);MMU_EcbTableMouseOverOut(this, 
+true)" hoveractive="ms-menubuttonactivehover" 
+hoverinactive="ms-menubuttoninactivehover" 
+onclick="MMU_CallbackPreMenuOpen('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate',
+ 
+'ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu',
+ 
+'WebForm_DoCallback(\'ctl00$PlaceHolderSearchArea$labelmenu1$varlabelmenu1VariationFlagControlMenu\',\'\',MMU_CallbackHandler,\'__CALLBACKCONTEXT__\',MMU_CallbackErrHandler,true)',
+ 60000, 'The request for menu items from the server has timed out.', 
+event);  
+MMU_Open(byid('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate'),
+ 
+MMU_GetMenuFromClientId('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu'),event,true,
+ null, 300);" 
+foa="MMU_GetMenuFromClientId('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu')"
+ oncontextmenu="this.click(); return false;" nowrap="nowrap"><a 
+id="ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu"
+ href="#" style="cursor: pointer; white-space: nowrap;" 
+onfocus="MMU_EcbLinkOnFocusBlur(byid('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate'),
+ this, true);" 
+onkeydown="MMU_EcbLinkOnKeyDown(byid('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate'),
+ 
+MMU_GetMenuFromClientId('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu'),
+ event);" onclick="javascript:return false;" 
+oncontextmenu="this.click(); return false;" 
+menutokenvalues="MENUCLIENTID=ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu,TEMPLATECLIENTID=ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate"
+ 
+serverclientid="ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu">English<img
+ src="Core_System_Architecture.aspx_fichiers/blank.gif" alt="Use 
+SHIFT+ENTER to open the menu (new window)." border="0"></a><img 
+src="Core_System_Architecture.aspx_fichiers/menudark.gif" alt="" 
+align="absbottom"></div></span></span> 
+
+
+                                                                        
+        	</td>
+                                                                        
+        	</tr>
+                                                                        
+        	</tbody></table>
+                                                                </td>
+                                                                <td 
+align="right" valign="middle" width="200">
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td 
+class=".whtBackground1search" style="width: 400px;" align="right" 
+valign="middle">
+                                                 
+													<table id="searchBar__tblSearch" style="width: 100%;" 
+border="0" cellpadding="0" cellspacing="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td 
+class="searchText" align="right" valign="middle" width="280">
+                                                                    
+Search Site
+                                                                </td>
+                                                                <td 
+class="grySearch" valign="middle" width="120">
+                                                                <!-- Search Control -->
+                                                                <table 
+toplevel="" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td valign="top"><div webpartid="00000000-0000-0000-0000-000000000000"
+ haspers="true" id="WebPartWPQ2" width="100%" onlyformepart="true" 
+allowdelete="false" style=""><div id="SRSB"> <div>
+			<table class="ms-sbtable ms-sbtable-ex" border="0">
+				<tbody><tr class="ms-sbrow">
+					<td class="ms-sbcell"><input 
+name="ctl00$PlaceHolderSearchArea$ctl01$S3031AEBB_InputKeywords" 
+maxlength="200" 
+id="ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_InputKeywords" 
+accesskey="S" title="Enter search words" class="ms-sbplain" alt="Enter 
+search words" onkeypress="javascript:return S3031AEBB_OSBEK(event);" 
+style="width: 170px;" type="text"></td><td class="ms-sbgo ms-sbcell"><a 
+id="ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_go" title="Go Search" 
+href="javascript:S3031AEBB_Submit()"><img title="Go Search" 
+onmouseover="this.src='/_layouts/images/gosearch.gif'" 
+onmouseout="this.src='/_layouts/images/gosearch.gif'" alt="Go Search" 
+src="Core_System_Architecture.aspx_fichiers/gosearch.gif" 
+style="border-width: 0px;"></a></td><td class="ms-sbLastcell"></td>
+				</tr>
+			</tbody></table>
+		</div></div></div></td>
+	</tr>
+</tbody></table>
+                                                                <!-- Search Control -->
+                                                                </td>
+                                                              <!-- <td class="gry" valign="middle">
+                                                                    <a id="searchBar__searchSiteButton" class="searchButton" href="javascript:__doPostBack('searchBar$_searchSiteButton','')">
+                                                                        search&nbsp;<img src="/SiteCollectionImages/arrow_blu_rgt.gif"></a>
+                                                                </td>
+                                                               -->
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                               
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>																			
+				
+		  
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ltgryBackground" align="left" 
+valign="top" width="13">
+                        </td>
+                        <td class="ms-bodyareacell" valign="top" 
+width="760px">
+                            <placeholder id="ctl00_MSO_ContentDiv">
+						<table id="Table1" class="ms-propertysheet" border="0" 
+cellpadding="0" cellspacing="0" height="100%" width="760px">
+							<tbody><tr>
+									<td class="ms-bodyareaframe" height="100%" valign="top" 
+width="760px"><a name="mainContent"></a>
+									 <div id="MainContentDiv" class="MainContent">
+                                    <!-- Main Body -->
+                                    
+	
+	<div class="ms-pagebreadcrumb removeMargins">
+		<span id="ctl00_PlaceHolderMain_siteMapPath"><span><a 
+class="ms-sitemapdirectional" 
+href="http://bluetooth.com/Pages/VariationRoot.aspx">Bluetooth.com</a></span><span>
+ &gt; </span><span><a class="ms-sitemapdirectional" 
+href="http://bluetooth.com/ENGLISH/Pages/default.aspx">English</a></span><span>
+ &gt; </span><span><a class="ms-sitemapdirectional" 
+href="http://bluetooth.com/ENGLISH/TECHNOLOGY/Pages/default.aspx">Get 
+Technical</a></span><span> &gt; </span><span><a 
+class="ms-sitemapdirectional" 
+href="http://bluetooth.com/English/Technology/Works/Pages/default.aspx">How
+ It Works</a></span><span> &gt; </span><span 
+class="ms-sitemapdirectional">Core System Architecture</span></span>
+	</div>
+	
+	<div class="pageContent">
+		<div 
+id="ctl00_PlaceHolderMain_PageContent__ControlWrapper_RichHtmlField" 
+style="display: inline;"><table style="z-index: 1; position: relative;" 
+border="0" cellpadding="0" cellspacing="0" width="760">
+<tbody>
+<tr>
+<td class="whtBackground" align="left" height="100%" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td align="left" width="100%"></td></tr></tbody></table>
+<table class="dkgryBackground" cellpadding="0" cellspacing="0" 
+width="100%">
+<tbody>
+<tr>
+<td class="wht">
+<h1>Core System Architecture</h1></td>
+<td></td></tr></tbody></table>
+<table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="medCell">
+<table border="0" height="100%" width="100%">
+<tbody>
+<tr>
+<td colspan="2">
+<h2><a name="top"></a>Core Architecture Blocks</h2>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td valign="top">
+<h2>Contents</h2>
+<p></p>
+<ul>
+<li><a href="#8">Core System Definition</a></li>
+<li><a href="#9"><em>Bluetooth</em> Controller</a></li>
+<li><a href="#10">Core System Protocols and Signaling</a></li>
+<li><a href="#11">Host to Controller Interface (HCI): Splits <em>Bluetooth</em>
+ Stack Into Controller and Host</a></li>
+<li><a href="#12">Error Detection in L2CAP Layer</a></li>
+<li><a href="#13">Testing Interfaces: RF and Test Control Interface 
+(TCI)</a></li>
+<li><a href="#14">Core Architecture Blocks</a> 
+<ul>
+<li><a href="#1">Channel Manager</a></li>
+<li><a href="#2">L2CAP Resource Manager</a></li>
+<li><a href="#3">Device Manager</a></li>
+<li><a href="#4">Link Manager</a></li>
+<li><a href="#5">Baseband Resource Manager</a></li>
+<li><a href="#6">Link Controller</a></li>
+<li><a href="#7">RF</a></li></ul></li></ul></td>
+<td><img alt="Architecture Blocks" 
+src="Core_System_Architecture.aspx_fichiers/Controller.jpg" 
+usemap="#Map" align="right" border="0" height="465" width="400"> <map 
+name="Map"><area href="#1" shape="RECT" alt="Channel Manager" 
+coords="218,87,264,121"><area href="#2" shape="RECT" alt="L2CAP Resource
+ Manager" coords="148,86,193,120"><area href="#3" shape="RECT" 
+alt="Device Manager" coords="36,198,83,287"><area href="#4" shape="RECT"
+ alt="Link Manager" coords="187,197,248,229"><area href="#5" 
+shape="RECT" alt="Baseband Resource Manager" coords="105,259,243,292"><area
+ href="#6" shape="RECT" alt="Link Controller" coords="80,319,235,336"><area
+ href="#7" shape="RECT" alt="RF" coords="79,367,235,382"></map></td></tr></tbody></table>
+<hr>
+
+<p><a name="8"></a></p>
+<h3>Core System Definition</h3>The <em>Bluetooth</em> core system covers
+ the four lowest layers and associated protocols defined by the <em>Bluetooth</em>
+ specification as well as one common service layer protocol, the service
+ discovery protocol (SDP) and the overall profile requirements are 
+specified in the generic access profile (GAP). A complete <em>Bluetooth</em>
+ application requires a number of additional services and higher layer 
+protocols that are defined in the <em>Bluetooth</em> specification. 
+<p></p>
+<p><a name="9"></a></p>
+<h3><i>Bluetooth</i> Controller</h3>The lowest three layers are 
+sometimes grouped into a subsystem known as the <em>Bluetooth</em> 
+controller. This is a common implementation involving a standard 
+physical communications interface between the <em>Bluetooth</em> 
+controller and remainder of the <em>Bluetooth</em> system including the 
+L2CAP, service layers and higher layers (known as the <em>Bluetooth</em>
+ host). Although this interface is optional, the architecture is 
+designed to allow for its existence and characteristics. The <em>Bluetooth</em>
+ specification enables interoperability between independent <em>Bluetooth</em>
+ enabled systems by defining the protocol messages exchanged between 
+equivalent layers, and also interoperability between independent <em>Bluetooth</em>
+ sub-systems by defining a common interface between <em>Bluetooth</em> 
+controllers and <em>Bluetooth</em> hosts. 
+<p></p>
+<p>A number of functional blocks are shown and the path of services and 
+data between these. The functional blocks shown in the diagram are 
+informative; in general the <em>Bluetooth</em> specification does not 
+define the details of implementations except where this is required for 
+interoperability.</p>
+<p><a name="10"></a></p>
+<h3>Core System Protocols and Signaling</h3>Standard interactions are 
+defined for all inter-device operation, where <em>Bluetooth</em> devices
+ exchange protocol signaling according to the <em>Bluetooth</em> 
+specification. The <em>Bluetooth</em> core system protocols are the 
+radio (RF) protocol, link control (LC) protocol, link manager (LM) 
+protocol and logical link control and adaptation protocol (L2CAP), all 
+of which are fully defined in subsequent parts of the <em>Bluetooth</em>
+ specification. In addition, the service discovery protocol (SDP) is a 
+service layer protocol required by all <em>Bluetooth</em> applications. 
+<p></p>
+<p>The <em>Bluetooth</em> core system offers services through a number 
+of service access points that are shown in the diagram as ellipses. 
+These services consist of the basic primitives that control the <em>Bluetooth</em>
+ core system. The services can be split into three types. There are 
+device control services that modify the behavior and modes of a <em>Bluetooth</em>
+ device, transport control services that create, modify and release 
+traffic bearers (channels and links), and data services that are used to
+ submit data for transmission over traffic bearers. It is common to 
+consider the first two as belonging to the C-plane and the last as 
+belonging to the U-plane.</p>
+<p><a name="11"></a></p>
+<h3>Host to Controller Interface (HCI): Splits Bluetooth Stack Into 
+Controller and Host </h3>A service interface to the <em>Bluetooth</em> 
+controller sub-system is defined such that the <em>Bluetooth</em> 
+controller may be considered a standard part. In this configuration the <em>Bluetooth</em>
+ controller operates the lowest three layers and the L2CAP layer is 
+contained with the rest of the <em>Bluetooth</em> application in a host 
+system. The standard interface is called the host to controller 
+interface (HCI). Implementation of this standard service interface is 
+optional. 
+<p></p>
+<p>As the <em>Bluetooth</em> architecture is defined with the 
+possibility of a separate host and controller communicating through an 
+HCI, a number of general assumptions are made. The <em>Bluetooth</em> 
+controller is assumed to have limited data buffering capabilities in 
+comparison with the host. Therefore the L2CAP layer is expected to carry
+ out some simple resource management when submitting L2CAP PDUs to the 
+controller for transport to a peer device. This includes segmentation of
+ L2CAP SDUs into more manageable PDUs and then the fragmentation of PDUs
+ into start and continuation packets of a size suitable for the 
+controller buffers, and management of the use of controller buffers to 
+ensure availability for channels with quality of service (QoS) 
+commitments.</p>
+<p><a name="12"></a></p>
+<h3>Error Detection in L2CAP Layer</h3>The baseband layer provides the 
+basic ARQ protocol in <em>Bluetooth</em> technology. The L2CAP layer can
+ optionally provide a further error detection and retransmission to the 
+L2CAP PDUs. This feature is recommended for applications with 
+requirements for a low probability of undetected errors in the user 
+data. A further optional feature of L2CAP is a window-based flow control
+ that can be used to manage buffer allocation in the receiving device. 
+Both of these optional features augment the QoS performance in certain 
+scenarios. 
+<p></p>
+<p>Although these assumptions may not be required for embedded <em>Bluetooth</em>
+ technology implementations that combine all layers in a single system, 
+the general architectural and QoS models are defined with these 
+assumptions in mind, in effect a lowest common denominator.</p>
+<p><a name="13"></a></p>
+<h4>Testing Interfaces: RF and Test Control Interface (TCI)</h4>Automated
+ conformance testing of implementations of the <em>Bluetooth</em> core 
+system is required. This is achieved by allowing the tester to control 
+the implementation through the RF interface, which is common to all <em>Bluetooth</em>
+ systems, and through the test control interface (TCI), which is only 
+required for conformance testing. 
+<p></p>
+<p>The tester uses exchanges with the implementation under test (IUT) 
+through the RF interface to ensure the correct responses to requests 
+from remote devices. The tester controls the IUT through the TCI to 
+cause the IUT to originate exchanges through the RF interface so that 
+these can also be verified as conformant.</p>
+<p>The TCI uses a different command-set (service interface) for the 
+testing of each architectural layer and protocol. A subset of the HCI 
+command-set issued as the TCI service interface for each of the layers 
+and protocols within the <em>Bluetooth</em> controller subsystem. A 
+separate service interface is used for testing the L2CAP layer and 
+protocol. As an L2CAP service interface is not defined in the <em>Bluetooth</em>
+ core specification it is defined separately in the TCI specification. 
+Implementation of the L2CAP service interface is only required for 
+conformance testing.</p>
+<p><a href="#top">Top</a></p><a name="#14"></a>
+<h3>Core Architecture Blocks</h3>
+<p><a name="1"></a></p>
+<h4>Channel Manager</h4>The channel manager is responsible for creating,
+ managing, and destroying L2CAP channels for the transport of service 
+protocols and application data streams. The channel manager uses the 
+L2CAP protocol to interact with a channel manager on a remote (peer) 
+device to create these L2CAP channels and connect their endpoints to the
+ appropriate entities. The channel manager interacts with its local link
+ manager to create new logical links (if necessary) and to configure 
+these links to provide the required QoS for the type of data being 
+transported. 
+<p></p>
+<p><a name="2"></a></p>
+<h4>L2CAP Resource Manager</h4>The L2CAP resource manager block is 
+responsible for managing the ordering of submission of PDU fragments to 
+the baseband and some relative scheduling between channels to ensure 
+that L2CAP channels with QoS commitments are not denied access to the 
+physical channel due to <em>Bluetooth</em> controller resource 
+exhaustion. This is required because the architectural model does not 
+assume that the <em>Bluetooth</em> controller has limitless buffering, 
+or that the HCI is a pipe of infinite bandwidth. 
+<p></p>
+<p>L2CAP resource managers may also carry out traffic conformance 
+policing to ensure that applications are submitting L2CAP SDUs within 
+the bounds of their negotiated QoS settings. The general <em>Bluetooth</em>
+ data transport model assumes well-behaved applications, and does not 
+define how an implementation is expected to deal with this problem.</p>
+<p><a name="3"></a></p>
+<h4>Device Manager</h4>The device manager is the functional block in the
+ baseband that controls the general behavior of the <em>Bluetooth</em> 
+enabled device. It is responsible for all operation of the <em>Bluetooth</em>
+ system that is not directly related to data transport, such as 
+inquiring for the presence of other nearby <em>Bluetooth</em> enabled 
+devices, connecting to other <em>Bluetooth</em> enabled devices or 
+making the local <em>Bluetooth</em> enabled device discoverable or 
+connectable by other devices. 
+<p></p>
+<p>The device manager requests access to the transport medium from the 
+baseband resource controller in order to carry out its functions.</p>
+<p>The device manager also controls local device behavior implied by a 
+number of the HCI commands, such as managing the device local name, any 
+stored link keys, and other functionality.</p>
+<p><a href="#top">Top</a></p>
+<p><a name="4"></a></p>
+<h4>Link Manager</h4>The link manager is responsible for the creation, 
+modification, and release of logical links (and, if required, their 
+associated logical transports), as well as the update of parameters 
+related to physical links between devices. The link manager achieves 
+this by communicating with the link manager in remote <em>Bluetooth</em>
+ devices using the link management protocol (LMP). 
+<p></p>
+<p>The LMP allows the creation of new logical links and logical 
+transports between devices when required, as well as the general control
+ of link and transport attributes such as the enabling of encryption on 
+the logical transport, the adapting of transmit power on the physical 
+link or the adjustment of QoS settings for a logical link.</p>
+<p><a name="5"></a></p>
+<h4>Baseband Resource Manager</h4>The baseband resource manager is 
+responsible for all access to the radio medium. It has two main 
+functions. At its heart is a scheduler that grants time on the physical 
+channels to all of the entities that have negotiated an access contract.
+ The other main function is to negotiate access contracts with these 
+entities. An access contract is effectively a commitment to deliver a 
+certain QoS that is required in order to provide a user application with
+ an expected performance. 
+<p></p>
+<p>The access contract and scheduling function must take account of any 
+behavior that requires use of the <em>Bluetooth</em> radio. This 
+includes, for example, the normal exchange of data between connected 
+devices over logical links and logical transports, as well as the use of
+ the radio medium to carry out inquiries, make connections, be 
+discoverable or connectable, or to take readings from unused carriers 
+during the use of AFH mode.</p>
+<p>In some cases the scheduling of a logical link results in changing to
+ a different physical channel from the one that was previously used. 
+This may be, for example, due to involvement in scatternet, a periodic 
+inquiry function, or page scanning. When the physical channels are not 
+time slot aligned, then the resource manager also accounts for the 
+realignment time between slots on the original physical channel and 
+slots on the new physical channel. In some cases the slots will be 
+naturally aligned due to the same device clock being used as a reference
+ for both physical channels.</p>
+<p><a name="6"></a></p>
+<h4>Link Controller</h4>The link controller is responsible for the 
+encoding and decoding of <em>Bluetooth</em> packets from the data 
+payload and parameters related to the physical channel, logical 
+transport and logical link. 
+<p></p>
+<p>The link controller carries out the link control protocol signaling 
+(in close conjunction with the scheduling function of the resource 
+manager), which is used to communicate flow control and acknowledgement 
+and retransmission request signals. The interpretation of these signals 
+is a characteristic of the logical transport associated with the 
+baseband packet. Interpretation and control of the link control 
+signaling is normally associated with the resource manager’s scheduler.</p>
+<p><a name="7"></a></p>
+<h4>RF</h4>The RF block is responsible for transmitting and receiving 
+packets of information on the physical channel. A control path between 
+the baseband and the RF block allows the baseband block to control the 
+timing and frequency carrier of the RF block. The RF block transforms a 
+stream of data to and from the physical channel and the baseband into 
+required formats. 
+<p></p>
+<p><a href="#top">Top</a></p></td></tr></tbody></table></td></tr>
+<tr>
+<td><img src="Core_System_Architecture.aspx_fichiers/spacer.gif" 
+height="20"></td></tr></tbody></table></td></tr></tbody></table></div>
+	</div>
+	<table class="summaryLinks" width="100%">
+		<tbody><tr>
+			<td valign="top" width="50%">
+			<div 
+id="ctl00_PlaceHolderMain_LeftColumnSummaryLinks__ControlWrapper_SummaryLinkFieldControl"
+ style="display: inline;"><script type="text/javascript" language="javascript">
+        var slwp;
+        if (slwp == null) slwp = new Array();
+        slwp['ctl00_PlaceHolderMain_LeftColumnSummaryLinks_LeftColumnSummaryLinks'] = "WebForm_DoPostBackWithOptions\u0028new WebForm_PostBackOptions\u0028\u0022ctl00$PlaceHolderMain$LeftColumnSummaryLinks$LeftColumnSummaryLinks\u0022, \u0022SLWPToken\u0022, false, \u0022\u0022, \u0022\u0022, true, true\u0029\u0029";
+      </script><table 
+id="slwp_ctl00_PlaceHolderMain_LeftColumnSummaryLinks_LeftColumnSummaryLinks"
+ class="slm-layout-main" cellpadding="0" cellspacing="0"><tbody><tr></tr></tbody></table><div><div
+ id="footer"></div></div></div>
+			</td>
+			<td valign="top" width="50%">
+			<div 
+id="ctl00_PlaceHolderMain_RightColumnSummaryLinks__ControlWrapper_SummaryLinkFieldControl"
+ style="display: inline;"><script type="text/javascript" language="javascript">
+        var slwp;
+        if (slwp == null) slwp = new Array();
+        slwp['ctl00_PlaceHolderMain_RightColumnSummaryLinks_RightColumnSummaryLinks'] = "WebForm_DoPostBackWithOptions\u0028new WebForm_PostBackOptions\u0028\u0022ctl00$PlaceHolderMain$RightColumnSummaryLinks$RightColumnSummaryLinks\u0022, \u0022SLWPToken\u0022, false, \u0022\u0022, \u0022\u0022, true, true\u0029\u0029";
+      </script><table 
+id="slwp_ctl00_PlaceHolderMain_RightColumnSummaryLinks_RightColumnSummaryLinks"
+ class="slm-layout-main" cellpadding="0" cellspacing="0"><tbody><tr></tr></tbody></table><div><div
+ id="footer"></div></div></div>
+			</td>
+		</tr>
+	</tbody></table>
+	<table class="webpartHolder" id="webpartHolderTop" border="0">
+		<tbody><tr>
+			<td>
+				<table cellpadding="0" cellspacing="0" width="100%">
+					
+					<tbody><tr>
+						<td colspan="2" valign="top" width="100%">
+								
+						</td>
+					</tr>
+				</tbody></table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table cellpadding="0" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td valign="top" width="33%">
+							
+						</td>
+						<td valign="top" width="34%">
+							
+						</td>
+
+						<td valign="top" width="33%">
+							
+						</td>
+					</tr>
+				</tbody></table>
+			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table cellpadding="0" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td valign="top" width="50%">
+							
+						</td>
+						<td valign="top" width="50%">
+							
+						</td>
+					</tr>
+				</tbody></table>
+			
+			</td>
+		</tr>
+
+		</tbody></table>
+		<table class="webpartHolderPaddedPL" id="webpartHolder" border="0px" 
+width="100%">
+    <tbody><tr>
+        <!-- Single Zone-->
+        <td colspan="3" class="TopZone" width="100%">
+            <div class="divColumnPadded">
+            <!-- Div Padded-->
+                
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <!-- Double Equal  Zone-->
+        <td colspan="3" class="EqualSplitTwoPartZone">
+                        <!-- Div Padded-->
+<div class="divTablePadded">
+
+                <table cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="EqualSplitTwoPartLeftZone" 
+width="50%">
+                         <div class="divColumnPadded">
+
+                            
+                     </div>
+
+                        </td>
+                        <td class="EqualSplitTwoPartRightZone" 
+width="50%">
+                        <div class="divColumnPadded">
+
+                            
+                       </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="divTablePadded">
+                        <!-- Div Padded-->
+
+                <table width="100%">
+                    <tbody><tr>
+                        <!-- Double Zone-->
+                        <td colspan="2" class="MiddleLeftZone" 
+width="75%">
+                        <div class="divColumnPadded">
+                            
+                       </div>
+                        </td>
+                        <td class="MiddleRightZone" width="25%">
+                          <div class="divColumnPadded">
+					   
+                        </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="divTablePadded">
+                        <!-- Div Padded-->
+
+                <table width="100%">
+                    <tbody><tr>
+                        <!-- Triple Zone -->
+                        <td height="100%" valign="top" width="33%">
+                        <div class="divColumnPadded">
+
+                            
+                        </div>
+                        </td>
+                        <td height="100%" valign="top" width="33%">
+                        <div class="divColumnPadded">
+
+                            
+                        </div>
+                        </td>
+                        <td height="100%" valign="top" width="33%">
+                         <div class="divColumnPadded">
+   							
+                        </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" class="BottomSingleZone" width="100%">
+            <div class="divColumnPadded">
+                        <!-- Div Padded-->
+
+                
+            </div>
+        </td>
+    </tr>
+</tbody></table>
+
+
+                                    <!-- Main Body -->
+                                    </div>
+				 <script type="text/javascript" id="ChangeTableWidth">
+				     //                                 alert("ChangeTableWidth");
+				     var eleDiv = document.getElementById("MainContentDiv");
+				     // alert(eleDiv);
+				     var eleTables = eleDiv.getElementsByTagName("table");
+				     //  alert(eleTables );
+				     for (var i = 0; i < eleTables.length; i++) {
+				         try {
+				             if (Number(eleTables[i].getAttribute("width")) > Number("759")) {
+				                 // grab the data 
+				                 eleTables[i].setAttribute("width", "760");
+				                 //  alert(eleTables[i].getAttribute("width"));    }
+				             }
+
+				         }
+				         catch (err) {
+
+				         }
+
+				     }
+       </script>
+																												</td>
+																								</tr>
+																				</tbody></table>
+		</placeholder>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yellowBackground" align="left" 
+height="13" valign="top" width="13">
+                            <img 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" height="13" 
+width="5">
+                        </td>
+                        <td align="left" height="13" valign="bottom">
+                            <table summary="bottom bar white and blue" 
+style="width: 773px;" border="0" cellpadding="0" cellspacing="0" 
+height="13">
+                                <tbody><tr>
+                                    <td class="yellowBackground" 
+align="left" height="13" valign="top" width="295">
+                                        <img 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" height="13" 
+width="5">
+                                    </td>
+                                    <td class="whtBackground" 
+align="left" height="13" valign="top">
+                                        <img 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" height="13" 
+width="5">
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td class=".whtBackground1" align="left" 
+valign="top">
+                        </td>
+                        <td class="NewsDisplayHolder" align="left" 
+valign="top">
+                            
+                            <!-- News Display -->
+                            <!-- <div style="position: relative; display: block; float: left; width: 100%;">
+                                <span style="vertical-align: top; width: 760px; position: relative; float: left;
+                                    left: 0px; top: 0px;">
+                                </span>
+                            </div>
+                            -->
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+            <td rowspan="2" align="left" valign="top" width="5">
+            </td>
+        </tr>
+    </tbody></table>
+    <div style="position: relative; display: block; float: left;">
+        <table border="0" cellpadding="0" cellspacing="0" width="978">
+            <tbody><tr>
+                <td>
+                    <table border="0" cellpadding="0" cellspacing="0" 
+width="100%">
+                        <tbody><tr>
+                            <td align="left" valign="top" width="5px">
+                                <img 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" width="5">
+                            </td>
+                            <td colspan="2" 
+class="companyLogoBackground" align="center" valign="top">
+                                <table summary="brands" border="0" 
+cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody><tr>
+                                        <td align="center" valign="top">
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.ericsson.com/bluetooth','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Core_System_Architecture.aspx_fichiers/brand_ericsson.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.intel.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Core_System_Architecture.aspx_fichiers/brand_intel.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.lenovo.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Core_System_Architecture.aspx_fichiers/brand_ibm.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.microsoft.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Core_System_Architecture.aspx_fichiers/brand_microsoft.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.motorola.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Core_System_Architecture.aspx_fichiers/brand_motorola.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.nokia.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Core_System_Architecture.aspx_fichiers/brand_nokia.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.toshiba.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Core_System_Architecture.aspx_fichiers/brand_toshiba.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a zref="" name="a" 
+title="b">
+                                                <img 
+src="Core_System_Architecture.aspx_fichiers/brand_allSig.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="Variation">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="bottom">
+                                <img 
+src="Core_System_Architecture.aspx_fichiers/spacer.gif" height="17" 
+width="5">
+                            </td>
+                            <td class="gryHeaderFooter" align="left" 
+nowrap="nowrap" width="50%">
+                                © 2010 Bluetooth SIG, Inc. All rights 
+reserved.
+                            </td>
+                            <td class="gryHeaderFooter" align="right" 
+nowrap="nowrap" valign="bottom" width="50%">
+                                <a href="javascript:openLegalWindow();">legal</a>
+ | <a href="javascript:openPrivacyWindow();">
+                                    privacy policy</a>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+
+        <script language="javascript" type="text/javascript">
+            if (/msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent)) // For IE
+                document.getElementById("tweakTableID").style.width = "102.4%";
+            else if (/firefox/i.test(navigator.userAgent)) // For Firefox
+                document.getElementById("tweakTableID").style.width = "100.8%";
+            // Do nothing for Safari & Chrome browsers since they ignore this value.
+        </script>
+
+    </div>
+    
+    
+    
+    <!-- Fix for Firfox Search issue-->
+    <div class="content">
+        <input name="__spDummyText1" style="display: none;" size="1" 
+type="text">
+        <input name="__spDummyText2" style="display: none;" size="1" 
+type="text"></div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+WebForm_InitCallback();var __wpmExportWarning='This Web Part Page has been personalized. As a result, one or more Web Part properties may contain confidential information. Make sure the properties contain information that is safe for others to read. After exporting this Web Part, view properties in the Web Part description file (.WebPart) by using a text editor such as Microsoft Notepad.';var __wpmCloseProviderWarning='You are about to close this Web Part.  It is currently providing data to other Web Parts, and these connections will be deleted if this Web Part is closed.  To close this Web Part, click OK.  To keep this Web Part, click Cancel.';var __wpmDeleteWarning='You are about to permanently delete this Web Part.  Are you sure you want to do this?  To delete this Web Part, click OK.  To keep this Web Part, click Cancel.';//]]>
+</script>
+<script type="text/javascript" language="JavaScript" defer="defer">
+<!--
+function S3031AEBB_Submit() {GoSearch(null,'ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_InputKeywords',null,true,false,null,null,null,null,'\u002fSearch\u002fResults.aspx', 'This Site','This List', 'This Folder', 'Related Sites', '\u002fEnglish\u002fTechnology\u002fWorks\u002f_layouts\u002fOSSSearchResults.aspx');}
+// -->
+</script><script type="text/javascript" language="JavaScript">
+// append an onload event handler
+var S3031AEBB__onload= document.body.onload;
+if(typeof document.body.onload == 'function')
+{
+ document.body.onload = function()
+ {
+S3031AEBB__onload();        
+  document.getElementById('ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_InputKeywords').name = 'InputKeywords';
+ }
+}
+else
+{
+ document.body.onload = function()
+ {
+  eval(S3031AEBB__onload);        
+  document.getElementById('ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_InputKeywords').name = 'InputKeywords';
+ }
+}
+
+function S3031AEBB_OSBEK(event1) { 
+var kCode = String.fromCharCode(event1.keyCode);
+if(kCode == "\n" || kCode == "\r")
+{   
+S3031AEBB_Submit();
+}
+}
+// -->
+</script></form>
+    <!-- Google Analytics-->
+    
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Core_System_Architecture.aspx_fichiers/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5227748-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript" src="Core_System_Architecture.aspx_fichiers/erte.js"></script>
+</body></html>

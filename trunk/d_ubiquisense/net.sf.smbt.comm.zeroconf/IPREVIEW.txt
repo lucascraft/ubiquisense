@@ -1,0 +1,5 @@
+jmdns is apache 2.0 : see NOTICE.txt
+
+wrote code inspired from example only
+
+EPL compatible : status OK

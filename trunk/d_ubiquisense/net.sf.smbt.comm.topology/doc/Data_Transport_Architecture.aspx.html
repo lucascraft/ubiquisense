@@ -1,0 +1,2407 @@
+<!DOCTYPE HTML PUBLIC "-/W3C/DTD HTML 4.01 Transitional/EN" "http:/www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+
+
+<meta name="GENERATOR" content="Microsoft SharePoint"><meta 
+http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta 
+http-equiv="Expires" content="0"><meta http-equiv="X-UA-Compatible" 
+content="IE=7"><meta name="google-site-verification" 
+content="rL0Uq2zPkw8-bnupt_LVEzd93cxTMgEKffoicHqjynM"><link 
+rel="shortcut icon" 
+href="http://bluetooth.com/SiteCollectionImages/favicon.ico"><title>
+	
+	Architecture - Data Transport
+
+</title><link rel="stylesheet" type="text/css" 
+href="Data_Transport_Architecture.aspx_fichiers/controls.css">
+<link rel="stylesheet" type="text/css" 
+href="Data_Transport_Architecture.aspx_fichiers/HtmlEditorCustomStyles.css">
+<link rel="stylesheet" type="text/css" 
+href="Data_Transport_Architecture.aspx_fichiers/HtmlEditorTableFormats.css">
+<link rel="stylesheet" type="text/css" 
+href="Data_Transport_Architecture.aspx_fichiers/Tabs.css">
+<link rel="stylesheet" type="text/css" 
+href="Data_Transport_Architecture.aspx_fichiers/zz1_blue.css">
+<link rel="stylesheet" type="text/css" 
+href="Data_Transport_Architecture.aspx_fichiers/core.css">
+<link rel="stylesheet" type="text/css" 
+href="Data_Transport_Architecture.aspx_fichiers/Bluetooth_Core.css">
+
+    <!--Styles used for positioning, font and spacing definitions-->
+    <script src="Data_Transport_Architecture.aspx_fichiers/init.js"></script>
+<script type="text/javascript" language="javascript" src="Data_Transport_Architecture.aspx_fichiers/core.js" defer="defer"></script>
+<script type="text/javascript" language="javascript" src="Data_Transport_Architecture.aspx_fichiers/non_ie.js"></script>
+<script type="text/javascript" language="javascript" src="Data_Transport_Architecture.aspx_fichiers/search.js" defer="defer"></script>
+
+    <!--Placeholder for additional overrides-->
+    
+
+    <script type="text/javascript">
+        //  alert('Call');	
+
+        function ProcessDefaultOnLoad(onLoadFunctionNames) {
+            //  alert('Call function');	
+            ProcessPNGImages();
+            UpdateAccessibilityUI();
+            for (var i = 0; i < onLoadFunctionNames.length; i++) {
+                var expr = "if(typeof(" + onLoadFunctionNames[i] + ")=='function'){" + onLoadFunctionNames[i] + "();}";
+                eval(expr);
+            }
+            if (typeof (_spUseDefaultFocus) != "undefined")
+                DefaultFocus();
+        } 
+    </script>
+
+    
+    <style type="text/css">
+        .style1
+        {
+            margin-right: 0px;
+        }
+    </style>
+<style type="text/css">
+	.ctl00_PlaceHolderNavSpacer_g_FC16D653B4E947BBB3D52F2BDC1B25CE_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TopColumnZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TopZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_NoPaddingLeftZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_NoPaddingMiddleZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_NoPaddingRightZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_NoPaddingEqualLeftZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_NoPaddingEqualRightZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TopColumnZonepl_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TopColumnLeftZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TopColumnRightZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_MiddleLeftZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_MiddleRightZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TripleLeftZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TripleMiddleZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_TripleRightZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.ctl00_PlaceHolderMain_BottomSingleZone_0 { border-color:Black;border-width:1px;border-style:Solid; }
+
+</style></head><body 
+onload="javascript:_spBodyOnLoadWrapper;getCurrentLang();">
+    <form name="aspnetForm" method="post" 
+action="Data_Transport_Architecture.aspx" onsubmit="javascript:return 
+WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input name="__SPSCEditMenu" id="__SPSCEditMenu" value="true" 
+type="hidden">
+<input name="MSOWebPartPage_PostbackSource" 
+id="MSOWebPartPage_PostbackSource" value="" type="hidden">
+<input name="MSOTlPn_SelectedWpId" id="MSOTlPn_SelectedWpId" value="" 
+type="hidden">
+<input name="MSOTlPn_View" id="MSOTlPn_View" value="0" type="hidden">
+<input name="MSOTlPn_ShowSettings" id="MSOTlPn_ShowSettings" 
+value="False" type="hidden">
+<input name="MSOGallery_SelectedLibrary" id="MSOGallery_SelectedLibrary"
+ value="" type="hidden">
+<input name="MSOGallery_FilterString" id="MSOGallery_FilterString" 
+value="" type="hidden">
+<input name="MSOTlPn_Button" id="MSOTlPn_Button" value="none" 
+type="hidden">
+<input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
+<input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" 
+type="hidden">
+<input name="__REQUESTDIGEST" id="__REQUESTDIGEST" 
+value="0xA71267C3EF29AE9644AF16661CB2D43E0520ED117AECF819A03EA542DB1EFBCFD991ADC8E19961B56BC43BBF24A9874C5048D295B712B4CBE711723E473B91E1,28
+ Sep 2010 09:45:31 -0000" type="hidden">
+<input name="MSOAuthoringConsole_FormContext" 
+id="MSOAuthoringConsole_FormContext" value="" type="hidden">
+<input name="MSOAC_EditDuringWorkflow" id="MSOAC_EditDuringWorkflow" 
+value="" type="hidden">
+<input name="MSOSPWebPartManager_DisplayModeName" 
+id="MSOSPWebPartManager_DisplayModeName" value="Browse" type="hidden">
+<input name="MSOWebPartPage_Shared" id="MSOWebPartPage_Shared" value="" 
+type="hidden">
+<input name="MSOLayout_LayoutChanges" id="MSOLayout_LayoutChanges" 
+value="" type="hidden">
+<input name="MSOLayout_InDesignMode" id="MSOLayout_InDesignMode" 
+value="" type="hidden">
+<input name="MSOSPWebPartManager_OldDisplayModeName" 
+id="MSOSPWebPartManager_OldDisplayModeName" value="Browse" type="hidden">
+<input name="MSOSPWebPartManager_StartWebPartEditingName" 
+id="MSOSPWebPartManager_StartWebPartEditingName" value="false" 
+type="hidden">
+<input name="__VIEWSTATE" id="__VIEWSTATE" 
+value="/wEPDwUBMA9kFgJmD2QWBAICD2QWAgIJD2QWAmYPZBYCAgEPFgIeE1ByZXZpb3VzQ29udHJvbE1vZGULKYgBTWljcm9zb2Z0LlNoYXJlUG9pbnQuV2ViQ29udHJvbHMuU1BDb250cm9sTW9kZSwgTWljcm9zb2Z0LlNoYXJlUG9pbnQsIFZlcnNpb249MTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49NzFlOWJjZTExMWU5NDI5YwFkAgQPZBYKAgEPZBYCAgMPZBYCAgEPFgIeB1Zpc2libGVoFgJmD2QWBAICD2QWAgIDDxYCHwFoZAIDDw8WAh4JQWNjZXNzS2V5BQEvZGQCAw9kFgJmDw8WAh8BaGQWBAIBDw8WAh8BaGRkAgMPDxYCHwFoZBYCAgEPDxYCHwFnZBYEAgEPDxYCHwFoZBYcAgEPDxYCHwFoZGQCAw8WAh8BaGQCBQ8PFgIfAWhkZAIHDxYCHwFoZAIJDw8WAh8BaGRkAgsPDxYCHwFoZGQCDQ8PFgIfAWhkZAIPDw8WBB4HRW5hYmxlZGgfAWhkZAIRDw8WAh8BaGRkAhMPDxYEHwNoHwFoZGQCFQ8PFgIfAWhkZAIXDxYCHwFoZAIZDxYCHwFoZAIbDw8WAh8BZ2RkAgMPDxYCHwFnZBYGAgEPDxYCHwFnZGQCAw8PFgIfAWdkZAIFDw8WAh8BZ2RkAgsPZBYCAgEPZBYCZg8PFgIfAWhkZAIPD2QWBAIBD2QWAmYPDxYEHgtfIURhdGFCb3VuZGcfAWdkZAIDD2QWAmYPZBYCZg8PZBYCHgVjbGFzcwUYbXMtc2J0YWJsZSBtcy1zYnRhYmxlLWV4ZAIRD2QWAgICD2QWKAIDDxYCHwALKwQBZAIFD2QWAgIBDxYCHwALKwQBZAILDxYCHwALKwQBZAINDxYEHwALKwQBHwFoZAIPD2QWAmYPDxYCHwFoZGQCEQ9kFgJmDw8WAh8BaGRkAhMPZBYCZg8PFgIfAWhkZAIVD2QWAmYPDxYCHwFoZGQCFw9kFgJmDw8WAh8BaGRkAhkPZBYCZg8PFgIfAWhkZAIbD2QWAmYPDxYCHwFoZGQCHQ9kFgJmDw8WAh8BaGRkAh8PZBYCZg8PFgIfAWhkZAIhD2QWAmYPDxYCHwFoZGQCIw9kFgJmDw8WAh8BaGRkAiUPZBYCZg8PFgIfAWhkZAInD2QWAmYPDxYCHwFoZGQCKQ9kFgJmDw8WAh8BaGRkAisPZBYCZg8PFgIfAWhkZAItD2QWAmYPDxYCHwFoZGRkDPH21sTaPkViMbWAkE+DLooZr9E="
+ type="hidden">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script> var MSOWebPartPageFormName = 'aspnetForm';</script><script type="text/JavaScript" language="JavaScript">
+<!--
+var L_Menu_BaseUrl="/English/Technology/Works";
+var L_Menu_LCID="1033";
+var L_Menu_SiteTheme="";
+//-->
+</script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+UpdateFormDigest('\u002fEnglish\u002fTechnology\u002fWorks', 1440000);return _spFormOnSubmitWrapper();
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input name="__EVENTVALIDATION" id="__EVENTVALIDATION" 
+value="/wEWAgLsq8i6AQLNrvW5A8AkGbJjfMtVoUKb5ghVGtj9TnKc" type="hidden">
+</div>
+
+    <script language="javascript" type="text/javascript">
+
+        var currlang = "";
+        function getCurrentLang() {
+            var pageUrl = location.href;
+            currlang = getLanguage(parseUri(pageUrl));
+            return currlang;
+        }
+
+        function openHomeWindow() {
+            window.open('/' + getCurrentLang() + '/Pages/Default.aspx', '_self');
+        }
+
+        function openLegalWindow() {
+            window.open('/' + getCurrentLang() + '/Pages/Legal.aspx', '_self');
+        }
+
+        function openPrivacyWindow() {
+            window.open('/' + getCurrentLang() + '/Pages/Privacy.aspx', '_self');
+        }
+
+        function getLang() {
+            var pageUrl = GetPageUrlWithOutQueryString();
+            alert("Called getLang");
+            return getLanguage(parseUri(pageUrl));
+
+        }
+
+        function getLanguage(obj) {
+            var output = "";
+
+            //alert(obj.directoryPath.toLowerCase());
+            if (obj.directoryPath.toLowerCase().indexOf('english') > -1) {
+                output = 'English';
+            }
+            else if (obj.directoryPath.toLowerCase().indexOf('german') > -1) {
+                output = 'German';
+            }
+            else if (obj.directoryPath.toLowerCase().indexOf('chinese') > -1) {
+                output = 'Chinese';
+            }
+            else if (obj.directoryPath.toLowerCase().indexOf('japanese') > -1) {
+                output = 'Japanese';
+            }
+            else if (obj.directoryPath.toLowerCase().indexOf('spanish') > -1) {
+                output = 'Spanish';
+            }
+            else if (obj.directoryPath.toLowerCase().indexOf('french') > -1) {
+                output = 'French';
+            }
+            else
+                output = 'English';
+            return output
+        }
+
+        function parseUri(sourceUri) {
+            var uriPartNames = ["source", "protocol", "authority", "domain", "port", "path", "directoryPath", "fileName", "query", "anchor"];
+            var uriParts = new RegExp("^(?:([^:/?#.]+):)?(?://)?(([^:/?#]*)(?::(\\d*))?)?((/(?:[^?#](?![^?#/]*\\.[^?#/.]+(?:[\\?#]|$)))*/?)?([^?#/]*))?(?:\\?([^#]*))?(?:#(.*))?").exec(sourceUri);
+            var uri = {};
+
+            for (var i = 0; i < 10; i++) {
+                uri[uriPartNames[i]] = (uriParts[i] ? uriParts[i] : "");
+            }
+
+            // Always end directoryPath with a trailing backslash if a path was present in the source URI
+            // Note that a trailing backslash is NOT automatically inserted within or appended to the "path" key
+            if (uri.directoryPath.length > 0) {
+                uri.directoryPath = uri.directoryPath.replace(/\/?$/, "/");
+            }
+
+            return uri;
+        }
+        function addOption(text) {
+            var sel = document.getElementById("varaiation");
+
+            sel.options[sel.options.length] = new Option(text);
+        }
+
+
+        function GetID() {
+            // alert("get id");
+            var regex = new RegExp("(?:(\\?|\\&)pid=|FilterValue1%3d)", "gi");
+            var logID = document.location.href.split(regex);
+            // alert(logID[1] + logID[0]);
+            var pageURL = "NewComments.aspx";
+            //  var pageURL = "/Lists/Blog Comments/NewForm.aspx";
+            var returnURL = "ViewBlogPosts.aspx?pid=" + logID[1];
+            //alert(pageURL + "?Source=" + returnURL + "&LogID=" + logID[1]);
+            window.location = pageURL + "?Source=" + returnURL + "&LogID=" + logID[1];
+        }
+
+        function LoadID() {
+            var RegX = new RegExp("LogID=", "gi");
+            var Log_ID = document.location.href.split(RegX);
+            document.forms[0]["urn:schemas-microsoft-com:office:office#RelatedTo"].value = Log_ID[1];
+            document.forms[0]["urn:schemas-microsoft-com:office:office#Type"].value = "Comment"
+        }
+    </script>
+
+    <script language="javascript" type="text/javascript">
+
+        //function loadBody();
+        //{
+        //alert(theForm);
+        //}
+
+        function GetPageUrlWithOutQueryString() {
+
+            var url = location.href;
+
+            if (url.indexOf("?") > 0) {
+
+                var tokens = url.split("?");
+
+                url = tokens[0];
+
+            }
+
+            return url;
+
+        }
+
+
+
+        //If you are trying to obtain sharepoint web url
+
+
+
+        function GetWebUrlFromPageUrl() {
+
+            //check to see if there is querystring in page url BUG FIX 01/09/2008
+
+            pageUrl = GetPageUrlWithOutQueryString()
+
+            var soap = "<soap:Envelope xmlns:xsi='http:/www.w3.org/2001/XMLSchema-instance' " +
+
+                                                                                                                  "xmlns:xsd='http:/www.w3.org/2001/XMLSchema' " +
+
+                                                                                                                  "xmlns:soap='http:/schemas.xmlsoap.org/soap/envelope/'>" +
+
+                                                                                "<soap:Body>" +
+
+                                                                                                "<WebUrlFromPageUrl xmlns='http:/schemas.microsoft.com/sharepoint/soap/'>" +
+
+                                                                                                                "<pageUrl>" + pageUrl + "</pageUrl>" +
+
+                                                                                                "</WebUrlFromPageUrl>" +
+
+                                                                                "</soap:Body>" +
+
+                                                   "</soap:Envelope>";
+
+            var payLoad = new ActiveXObject("MSXML2.DOMDocument.3.0");
+
+            payLoad.loadXML(soap);
+
+
+
+            var parsingError;
+
+            if (payLoad.parseError.errorCode != 0) {
+
+                parsingError = payLoad.parseError;
+
+                alert("Error parsing soap payload GetWebUrlFromPageUrl " + parsingError.reason);
+
+                return null;
+
+            }
+
+            var xmlHttp = new ActiveXObject("MSXML2.XMLHttp.3.0");
+
+            xmlHttp.Open("POST", "../sites/op/_vti_bin/webs.asmx", false);
+
+            xmlHttp.setRequestHeader("Content-Type", "text/xml");
+
+            xmlHttp.setRequestHeader("Content-Length", payLoad.xml.length);
+
+            xmlHttp.setRequestHeader("SOAPAction", "http:/schemas.microsoft.com/sharepoint/soap/WebUrlFromPageUrl");
+
+            xmlHttp.Send(payLoad);
+
+            if (xmlHttp.status == 200) {
+
+                var response;
+
+                response = new ActiveXObject("MSXML2.DomDocument.3.0");
+
+                response.loadXML(xmlHttp.responseXML.xml);
+
+                response.setProperty("SelectionNamespaces", "xmlns:soap='http:/schemas.xmlsoap.org/soap/envelope/'");
+
+                response.setProperty("SelectionNamespaces", "xmlns='http:/schemas.microsoft.com/sharepoint/soap/'");
+
+                var resultNode = response.selectSingleNode("soap:Envelope/soap:Body/WebUrlFromPageUrlResponse/WebUrlFromPageUrlResult")
+
+                if (resultNode) {
+
+                    return resultNode.text;
+
+                }
+
+            }
+
+            else {
+
+                alert('Problem retrieving xml data');
+
+                alert(xmlHttpRequest.responseText);
+
+            }
+
+            return "";
+
+        }
+    </script>
+
+    
+    
+    
+    
+    
+	
+					
+    <table summary="Holds top bar" border="0" cellpadding="0" 
+cellspacing="0" width="978">
+        <tbody>
+            <tr>
+                <td align="left" valign="top" width="5px">
+                    <img 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" width="5">
+                </td>
+                <td colspan="5" class="gryHeaderFooter" align="right" 
+valign="bottom">
+                    <a 
+href="http://www.gvinedesigns.com/shopping/bluetooth/">Bluetooth SIG 
+Shop</a>
+                    | <a href="https://www.bluetooth.org/apps/content/">Bluetooth.org
+ </a>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" width="5">
+                    <img alt="" 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" width="5">
+                </td>
+                <td class="whtBackground">
+                    <img 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" alt="" 
+height="13" width="200">
+                </td>
+                <td class="ltgryBackground">
+                    <img 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" alt="" 
+height="13" width="13">
+                </td>
+                <td class="ltgryBackground">
+                    <img 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" alt="" 
+height="13" width="287">
+                </td>
+                <td class="yellowBackground">
+                    <img 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" alt="" 
+height="13" width="473">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table summary="main table holds nav, main content and sub content 
+areas plus side bars" border="0" cellpadding="0" cellspacing="0" 
+width="974">
+        <!-- <tr>
+            <td align="right" valign="bottom" class="gryHeaderFooter" colspan="5" style="height: 22px;width:px" align="right">
+                <a href="http://www.gvinedesigns.com/shopping/bluetooth/">Bluetooth SIG Shop</a>
+                | <a href="https://www.bluetooth.org/apps/content/">Bluetooth.org </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="whtBackground" style="line-height: 0px;">
+                <img height="13" width="5" alt="" src="/SiteCollectionImages/spacer.gif" />
+            </td>
+            <td class="whtBackground" style="line-height: 0px;">
+                <img height="13" width="200" alt="" src="/SiteCollectionImages/spacer.gif" />
+            </td>
+            <td class="ms-bodyareacell" valign="top">
+                <table id="MSO_ContentTable" width="773" height="100%" border="0" cellspacing="0"
+                    cellpadding="0" class="ms-propertysheet">
+                    <tr>
+                        <td class="ltgryBackground">
+                            <img height="13" width="13" alt="" src="/SiteCollectionImages/spacer.gif">
+                        </td>
+                        <td class="ltgryBackground">
+                            <img height="13" width="287" alt="" src="/SiteCollectionImages/spacer.gif">
+                        </td>
+                        <td class="yellowBackground">
+                            <img height="13" width="460" alt="" src="/SiteCollectionImages/spacer.gif">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        -->
+        <tbody><tr>
+            <td rowspan="2" align="left" valign="top" width="5">
+                <img alt="" 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" width="5">
+            </td>
+            <td class="whtBackground" rowspan="3" align="left" 
+height="100%" valign="top" width="200">
+                <table border="0" cellpadding="0" cellspacing="0" 
+width="100%">
+                    <tbody><tr>
+                        <td align="left" height="259" valign="top">
+                            <table summary="nav and logo holder" 
+border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody><tr>
+                                    <td align="left" valign="top">
+                                        
+														<a href="javascript:openHomeWindow();">
+													<img id="ctl00_PlaceHolderLeftNavBarTop_logo" 
+src="Data_Transport_Architecture.aspx_fichiers/b-logo.gif" 
+style="border-width: 0px;"></a><!--< %$ SPUrl: ~sitecollection/sitecollectionimages/companylogo.gif %>"/>-->
+			 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <!-- Navigation goes here -->
+                                        <!-- NavigationControl Cache Timestamp: 3/6/2009 12:22:06 PM -->
+                                        
+                                                  
+									<div><div class="floatingNav">
+	<a href="http://bluetooth.com/ENGLISH/EXPERIENCE/Pages/default.aspx">Experience
+ More </a>
+</div><div class="floatingNav">
+	<a href="http://bluetooth.com/English/Products/Pages/default.aspx">Product
+ Zone </a>
+</div><div class="floatingNavOn">
+	<a href="http://bluetooth.com/ENGLISH/TECHNOLOGY/Pages/default.aspx">Get
+ Technical </a>
+</div><div class="floatingSubNavOn">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/default.aspx"><img
+ class="subArrow" 
+src="Data_Transport_Architecture.aspx_fichiers/arrow_gry_dwn.gif">How It
+ Works</a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Bluetooth_low_energy_technology.aspx">Core
+ Specification v4.0 </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Overview_of_Operation.aspx">Overview
+ of Operations </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Core_System_Architecture.aspx">Core
+ System Architecture </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Architecture__Radio.aspx">Architecture
+ - Radio </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Architecture__Baseband.aspx">Architecture
+ - Baseband </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Architecture__Link_Manager_Protocol_LMP.aspx">Architecture
+ - LMP </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Architecture__Host_Controller_Interface_HCI.aspx">Architecture
+ - HCI </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Architecture__Logical_Link_Control_and_Adaptation_Protocol_L2CAP.aspx">Architecture
+ - L2CAP </a>
+</div><div class="floatingSubNav2On">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Data_Transport_Architecture.aspx">Architecture
+ - Data Transport </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Profiles_Overview.aspx">Profiles
+ Overview </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Communications_Topology.aspx">Communication
+ Topology </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/ENGLISH/TECHNOLOGY/WORKS/Pages/Compare.aspx">Compare
+ with Other Technologies </a>
+</div><div class="floatingSubNav2">
+	<a 
+href="http://bluetooth.com/English/Technology/Works/Pages/Security.aspx">Security
+ </a>
+</div><div class="floatingSubNav">
+	<a 
+href="http://bluetooth.com/English/Technology/Building/Pages/default.aspx"><img
+ class="subArrow" 
+src="Data_Transport_Architecture.aspx_fichiers/arrow_gry_rgt.gif">Building
+ with Bluetooth Technology</a>
+</div><div class="floatingSubNav">
+	<a href="http://bluetooth.com/English/Technology/Pages/Studies.aspx">Business
+ Case Studies </a>
+</div><div class="floatingSubNav">
+	<a href="http://bluetooth.com/English/Technology/Pages/Glossary.aspx">Glossary
+ </a>
+</div><div class="floatingSubNav">
+	<a 
+href="http://bluetooth.com/English/Technology/Pages/Developers-Competition.aspx">Developers'
+ Competition </a>
+</div><div class="floatingNav">
+	<a href="http://bluetooth.com/English/Press/Pages/default.aspx">Press 
+&amp; Analysts </a>
+</div><div class="floatingNav">
+	<a href="http://bluetooth.com/English/SIG/Pages/default.aspx">About the
+ Bluetooth SIG </a>
+</div>
+</div>	
+			  
+                                    </td>
+                                </tr>
+                                <tr width="100%">
+                                    <td style="padding-top: 25px; width:
+ 100%;" align="right" valign="top">
+                                        <div class="leftWebpart">
+                                            
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td id="MSOZoneCell_WebPartWPQ2" valign="top"><table toplevel="" 
+style="width: 200px;" border="0" cellpadding="0" cellspacing="0" 
+width="100%">
+			<tbody><tr>
+				<td valign="top"><div 
+webpartid="d050fea3-f9ed-4edd-a606-5d847a000d76" haspers="false" 
+id="WebPartWPQ2" class="ms-WPBody" allowdelete="false" style="width: 
+200px; overflow: auto;"><a 
+onclick="window.open('http://gadgetGuide.bluetooth.com','_blank','width=960,height=690,directories=no,location=no,menubar=no,resizable=yes,scrollbars=1,status=no,toolbar=no');"
+ 
+href="http://bluetooth.com/English/Products/Pages/Bluetooth_Gadget_Guide.aspx"><img
+ 
+src="Data_Transport_Architecture.aspx_fichiers/Bluetooth_Gadget_Guide.jpg"></a>
+</div></td>
+			</tr>
+		</tbody></table></td>
+	</tr>
+</tbody></table>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                    <tr valign="bottom">
+                     <!--   <td valign="bottom" style="padding-top: 85px;">-->
+                        <td valign="bottom">
+
+                            
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+            <td rowspan="2" align="left" valign="top" width="100%">
+                <table style="z-index: 1; position: relative; left: 0px;
+ top: 0px; width: 100%;" class="style1" border="0" cellpadding="0" 
+cellspacing="0" height="100%">
+                    <tbody><tr>
+                        <td class="ltgryBackground" align="left" 
+valign="top" width="3%">
+                            <img alt="" 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" height="10" 
+width="13px">
+                        </td>
+                        <td style="vertical-align: top; width: 97%;" 
+align="left" valign="top">
+                            
+										<table summary="langauge and search" border="0" 
+cellpadding="0" cellspacing="0" width="760">
+                                        <tbody>
+                                            <tr>
+                                                <td 
+class=".whtBackground1" style="width: 380px;" align="left" 
+valign="middle">
+                                                    <table 
+id="searchBar__tblLanguageSelector" summary="language select" border="0"
+ cellpadding="0" cellspacing="0" width="380">
+                                                        <tbody>
+                                                            <tr>
+                                                                 <td 
+align="left" valign="middle" width="180">
+                                                                    <table>
+                                                                        
+        	<tbody><tr>
+                                                                        
+        	<td width="33%">
+
+                                                                        
+        	 <span class="selectLanguage">Select Language </span>
+                                                                        
+        	</td>
+                                                                        
+        	                                        	<td width="23%">
+																	<span 
+id="ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1"><span 
+style="display: none;"><menu type="ServerMenu" 
+id="ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate"></menu></span><span
+ title="Open Menu"><div 
+id="ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu_t"
+ class="ms-menubuttoninactivehover" 
+onmouseover="MMU_PopMenuIfShowing(this);MMU_EcbTableMouseOverOut(this, 
+true)" hoveractive="ms-menubuttonactivehover" 
+hoverinactive="ms-menubuttoninactivehover" 
+onclick="MMU_CallbackPreMenuOpen('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate',
+ 
+'ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu',
+ 
+'WebForm_DoCallback(\'ctl00$PlaceHolderSearchArea$labelmenu1$varlabelmenu1VariationFlagControlMenu\',\'\',MMU_CallbackHandler,\'__CALLBACKCONTEXT__\',MMU_CallbackErrHandler,true)',
+ 60000, 'The request for menu items from the server has timed out.', 
+event);  
+MMU_Open(byid('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate'),
+ 
+MMU_GetMenuFromClientId('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu'),event,true,
+ null, 300);" 
+foa="MMU_GetMenuFromClientId('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu')"
+ oncontextmenu="this.click(); return false;" nowrap="nowrap"><a 
+id="ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu"
+ href="#" style="cursor: pointer; white-space: nowrap;" 
+onfocus="MMU_EcbLinkOnFocusBlur(byid('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate'),
+ this, true);" 
+onkeydown="MMU_EcbLinkOnKeyDown(byid('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate'),
+ 
+MMU_GetMenuFromClientId('ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu'),
+ event);" onclick="javascript:return false;" 
+oncontextmenu="this.click(); return false;" 
+menutokenvalues="MENUCLIENTID=ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu,TEMPLATECLIENTID=ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenuTemplate"
+ 
+serverclientid="ctl00_PlaceHolderSearchArea_labelmenu1_varlabelmenu1VariationFlagControlMenu">English<img
+ src="Data_Transport_Architecture.aspx_fichiers/blank.gif" alt="Use 
+SHIFT+ENTER to open the menu (new window)." border="0"></a><img 
+src="Data_Transport_Architecture.aspx_fichiers/menudark.gif" alt="" 
+align="absbottom"></div></span></span> 
+
+
+                                                                        
+        	</td>
+                                                                        
+        	</tr>
+                                                                        
+        	</tbody></table>
+                                                                </td>
+                                                                <td 
+align="right" valign="middle" width="200">
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td 
+class=".whtBackground1search" style="width: 400px;" align="right" 
+valign="middle">
+                                                 
+													<table id="searchBar__tblSearch" style="width: 100%;" 
+border="0" cellpadding="0" cellspacing="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td 
+class="searchText" align="right" valign="middle" width="280">
+                                                                    
+Search Site
+                                                                </td>
+                                                                <td 
+class="grySearch" valign="middle" width="120">
+                                                                <!-- Search Control -->
+                                                                <table 
+toplevel="" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td valign="top"><div webpartid="00000000-0000-0000-0000-000000000000"
+ haspers="true" id="WebPartWPQ1" width="100%" onlyformepart="true" 
+allowdelete="false" style=""><div id="SRSB"> <div>
+			<table class="ms-sbtable ms-sbtable-ex" border="0">
+				<tbody><tr class="ms-sbrow">
+					<td class="ms-sbcell"><input 
+name="ctl00$PlaceHolderSearchArea$ctl01$S3031AEBB_InputKeywords" 
+maxlength="200" 
+id="ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_InputKeywords" 
+accesskey="S" title="Enter search words" class="ms-sbplain" alt="Enter 
+search words" onkeypress="javascript:return S3031AEBB_OSBEK(event);" 
+style="width: 170px;" type="text"></td><td class="ms-sbgo ms-sbcell"><a 
+id="ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_go" title="Go Search" 
+href="javascript:S3031AEBB_Submit()"><img title="Go Search" 
+onmouseover="this.src='/_layouts/images/gosearch.gif'" 
+onmouseout="this.src='/_layouts/images/gosearch.gif'" alt="Go Search" 
+src="Data_Transport_Architecture.aspx_fichiers/gosearch.gif" 
+style="border-width: 0px;"></a></td><td class="ms-sbLastcell"></td>
+				</tr>
+			</tbody></table>
+		</div></div></div></td>
+	</tr>
+</tbody></table>
+                                                                <!-- Search Control -->
+                                                                </td>
+                                                              <!-- <td class="gry" valign="middle">
+                                                                    <a id="searchBar__searchSiteButton" class="searchButton" href="javascript:__doPostBack('searchBar$_searchSiteButton','')">
+                                                                        search&nbsp;<img src="/SiteCollectionImages/arrow_blu_rgt.gif"></a>
+                                                                </td>
+                                                               -->
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                               
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>																			
+				
+		  
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ltgryBackground" align="left" 
+valign="top" width="13">
+                        </td>
+                        <td class="ms-bodyareacell" valign="top" 
+width="760px">
+                            <placeholder id="ctl00_MSO_ContentDiv">
+						<table id="Table1" class="ms-propertysheet" border="0" 
+cellpadding="0" cellspacing="0" height="100%" width="760px">
+							<tbody><tr>
+									<td class="ms-bodyareaframe" height="100%" valign="top" 
+width="760px"><a name="mainContent"></a>
+									 <div id="MainContentDiv" class="MainContent">
+                                    <!-- Main Body -->
+                                    
+
+
+<div style="display: block;" id="headerBarID">
+	<table cellpadding="3" cellspacing="0" width="100%">
+		<tbody><tr>
+		<!--
+		<td class="headerText" bgcolor="#6A737B" valign="middle" height="32px">
+				<span style="font-family:Arial, Helvetica, sans-serif; font-size: 200%; font-weight:bold; color: #FFFFFF; margin-left: 5px;"
+						id="headerTextID">
+					Architecture - Data Transport&nbsp;
+				</span>
+			</td>
+
+		-->
+			<td class="headerText">
+				<div id="ctl00_PlaceHolderMain_EditModePanelDisplay">
+	
+					<span id="headerTextID">
+					Architecture - Data Transport
+					</span>
+				
+</div>
+				
+				
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+
+
+<div class="pageContent">
+	<div 
+id="ctl00_PlaceHolderMain_PageContent__ControlWrapper_RichHtmlField" 
+style="display: inline;"><table style="z-index: 1; position: relative;" 
+border="0" cellpadding="0" cellspacing="0" width="760">
+<tbody>
+<tr>
+<td class="whtBackground" align="left" height="100%" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td align="left" width="100%"></td></tr></tbody></table>
+<table cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="medCell">
+<table border="0" height="100%" width="100%">
+<tbody>
+<tr>
+<td colspan="2"><a name="top"></a>
+<table border="2" bordercolor="#cbd6df" cellpadding="3" cellspacing="0" 
+width="100%">
+<tbody>
+<tr>
+<td bgcolor="#cbd6df">
+<h4>Contents</h4></td>
+<td bgcolor="#cbd6df" width="33%">&nbsp;</td>
+<td bgcolor="#cbd6df" width="33%">&nbsp;</td></tr>
+<tr>
+<td valign="top">
+<ul>
+<li><a href="#1">Core Traffic Bearers</a></li>
+<li><a href="#2">Framed Data Traffic</a></li>
+<li><a href="#3">Unframed Data Traffic</a></li>
+<li><a href="#4">Reliability of Traffic Bearers</a></li>
+<li><a href="#5">Transport Architecture Entities</a></li>
+<li><a href="#6"><em>Bluetooth</em> Generic Packet Structure</a></li>
+<li><a href="#7">Physical Channels</a></li>
+<li><a href="#8">Basic Piconet Channel</a></li>
+<li><a href="#9">Adapted Piconet Channel</a></li>
+<li><a href="#10">Inquiry Scan Channel</a></li></ul></td>
+<td valign="top">
+<ul>
+<li><a href="#11">Page Scan Channel</a></li>
+<li><a href="#12">Physical Links</a></li>
+<li><a href="#13">Links Supported by the Basic and Adapted Piconet 
+Physical Channel</a></li>
+<li><a href="#14">Links Supported by the Scanning Physical Channels</a></li>
+<li><a href="#15">Asynchronous Connection-Oriented (ACL)</a></li>
+<li><a href="#16">Synchronous Connection-Oriented (SCO)</a></li></ul></td>
+<td valign="top">
+<ul>
+<li><a href="#17">Active Slave Broadcast (ASB)</a></li>
+<li><a href="#18">Parked Slave Broadcast (PSB)</a></li>
+<li><a href="#19">Logical Links</a></li>
+<li><a href="#20">ACL Control Logical Link (ACL-C)</a></li>
+<li><a href="#21">User Asynchronous/Isochronous Logical Link (ACL-U)</a></li>
+<li><a href="#22">User Synchronous/Extended Synchronous Logical Links 
+(SCO-S/eSCO-S)</a></li>
+<li><a href="#23">L2CAP Channels</a></li></ul></td></tr></tbody></table>
+<p><img 
+src="Data_Transport_Architecture.aspx_fichiers/GenericDataTransportArchitecture1.jpg"
+ align="right"></p>
+<p>The <em>Bluetooth</em> data transport system follows a layered 
+architecture. This description of the <em>Bluetooth</em> system 
+describes the <em>Bluetooth</em> core transport layers up to and 
+including L2CAP channels. All <em>Bluetooth</em> operational modes 
+follow the same generic transport architecture.</p>
+<p>For efficiency and legacy reasons, the <em>Bluetooth</em> transport 
+architecture includes a sub-division of the logical layer, 
+distinguishing between logical links and logical transports. This 
+sub-division provides a general and commonly understood concept of a 
+logical link that provides an independent transport between two or more 
+devices. The logical transport sub-layer is required to describe the 
+inter-dependence between some of the logical link types, mainly for 
+reasons of legacy behavior.</p>
+<p>The <em>Bluetooth</em> 1.1 specification described the ACL and SCO 
+links as physical links. With the addition of extended SCO (eSCO) and 
+for future expansion it is better to consider these as logical transport
+ types, which more accurately encapsulates their purpose. However, they 
+are not as independent as might be desired, due to their shared use of 
+resources such as the LT_ADDR and acknowledgement/repeat request (ARQ) 
+scheme. Hence the architecture is incapable of representing these 
+logical transports with a single transport layer. The additional logical
+ transport layer goes some way towards describing this behavior.</p><a 
+name="1"></a>
+<p></p>
+<h2>Core Traffic Bearers</h2>The <em>Bluetooth</em> core system provides
+ a number of standard traffic bearers for the transport of service 
+protocol and application data. 
+<p></p>
+<p>The logical links are named using the names of the associated logical
+ transport and a suffix that indicates the type of data that is 
+transported: C for control links carrying LMP messages, U for L2CAP 
+links carrying user data (L2CAP PDUs) and S for stream links carrying 
+unformatted synchronous or isochronous data. It is common for the suffix
+ to be removed from the logical link without introducing ambiguity, thus
+ a reference to the default ACL logical transport can be resolved to 
+mean the ACL-C logical link in cases where the LMP protocol is being 
+discussed, or the ACL-U logical link when the L2CAP layer is being 
+discussed.</p>
+<p>The mapping of application traffic types to <em>Bluetooth</em> core 
+traffic bearers is based on matching the traffic characteristics with 
+the bearer characteristics. It is recommended to use these mappings as 
+they provide the most natural and efficient method of transporting the 
+data with its given characteristics.</p>
+<p>An application, or an implementation of the <em>Bluetooth</em> core 
+system, may choose to use a different traffic bearer or a different 
+mapping to achieve a similar result. For example, in a piconet with only
+ one slave, the master may choose to transport L2CAP broadcasts over the
+ ACL-U logical link rather than over the ASB-U or PSB-U logical links. 
+This will probably be more efficient in terms of bandwidth if the 
+physical channel quality is not too degraded. Use of alternative 
+transport paths is only acceptable if the characteristics of the 
+application traffic type are preserved.</p>
+<p>Application traffic types are used to classify the types of data that
+ may be submitted to the <em>Bluetooth</em> core system. The original 
+data traffic type may not be the same as the type that is submitted to 
+the <em>Bluetooth</em> core system if an intervening process modifies 
+it. For example, video data is generated at a constant rate but an 
+intermediate coding process may alter this to variable rate, e.g. by 
+MPEG4 encoding. For the purposes of the <em>Bluetooth</em> core system, 
+only the characteristic of the submitted data is of interest.</p><a 
+name="2"></a>
+<p></p>
+<h2>Framed Data Traffic </h2>The L2CAP layer services provide a 
+frame-oriented transport for asynchronous and isochronous user data. The
+ application submits data to this service in variable-sized frames (up 
+to a negotiated maximum for the channel) and these frames are delivered 
+in the same form to the corresponding application on the remote device. 
+There is no requirement for the application to insert additional framing
+ information into the data, although it may do so if this is required. 
+(Such framing is invisible to the <em>Bluetooth</em> core system.) 
+<p></p>
+<p>Connection-oriented L2CAP channels may be created for transport of 
+unicast (point-to-point) data between two <em>Bluetooth</em> enabled 
+devices. A connectionless L2CAP channel exists for broadcasting data. In
+ the case of piconet topologies the master device is always the source 
+of broadcast data and the slave device(s) are the recipients. Traffic on
+ the broadcast L2CAP channel is uni-directional. Unicast L2CAP channels 
+may be uni-directional or bi-directional.</p>
+<p>L2CAP channels have an associated QoS setting that defines 
+constraints on the delivery of the frames of data. These QoS settings 
+may be used to indicate, for example, that the data is isochronous and 
+therefore has a limited lifetime after which it becomes invalid, that 
+the data should be delivered within a given time period, or that the 
+data is reliable and should be delivered without error, however long 
+this takes.</p>
+<p>The L2CAP channel manager is responsible for arranging to transport 
+theL2CAP channel data frames on an appropriate baseband logical link, 
+possibly multiplexing this onto the baseband logical link with other 
+L2CAP channels with similar characteristics.</p>
+<p><a href="#top">Top</a></p><a name="3"></a>
+<p></p>
+<h2>Unframed Data Traffic</h2>If the application does not require 
+delivery of data in frames, possibly because it includes in-stream 
+framing, or because the data is a pure stream, then it may avoid the use
+ of L2CAP channels and make direct use of a baseband logical link. 
+<p></p>
+<p>The <em>Bluetooth</em> core system supports the direct transport of 
+application data that is isochronous and of a constant rate (either 
+bit-rate or frame-rate for preframed data), using a SCO-S or eSCO-S 
+logical link. These logical links reserve physical channel bandwidth and
+ provide a constant rate transport locked to the piconet clock. Data is 
+transported in fixed size packets at fixed intervals with both of these 
+parameters negotiated during channel establishment. eSCO links provide a
+ greater choice of bit-rates and also provide greater reliability by 
+using limited retransmission in case of error. Enhanced Data Rate 
+operation is supported for eSCO, but not for SCO logical transports. SCO
+ and eSCO logical transports do not support multiplexed logical links or
+ any further layering within the <em>Bluetooth</em> core. An application
+ may choose to layer a number of streams within the submitted SCO/eSCO 
+stream, provided that the submitted stream is, or has the appearance of 
+being, a constant rate stream.</p>
+<p>The application chooses the most appropriate type of logical link 
+from those available at the baseband, creates and configures it to 
+transport the data stream and releases it when completed. (The 
+application will normally also use a framed L2CAP unicast channel to 
+transport its C-plane information to the peer application on the remote 
+device.)</p>
+<p>If the application data is isochronous and of a variable rate, then 
+this may only be carried by the L2CAP unicast channel, and hence will be
+ treated as framed data.</p><a name="4"></a>
+<p></p>
+<h2>Reliability of Traffic Bearers</h2><em>Bluetooth</em> technology is a
+ wireless communications system. In poor RF environments, this system 
+should be considered inherently unreliable. To counteract this the 
+system provides levels of protection at each layer. The baseband packet 
+header uses forward error correcting (FEC) coding to allow error 
+correction by the receiver and a header error check (HEC) to detect 
+errors remaining after correction. Certain Baseband packet types include
+ FEC for the payload. Furthermore, some baseband packet types include a 
+cyclic redundancy error check (CRC). 
+<p></p>
+<p>On ACL logical transports the results of the error detection 
+algorithm are used to drive a simple ARQ protocol. This provides an 
+enhanced reliability by re-transmitting packets that do not pass the 
+receiver’s error checking algorithm. It is possible to modify this 
+scheme to support latency-sensitive packets by discarding an 
+unsuccessfully transmitted packet at the transmitter if the packet’s 
+useful life has expired. eSCO links use a modified version of this 
+scheme to improve reliability by allowing a limited number of 
+retransmissions.</p>
+<p>The resulting reliability gained by this ARQ scheme is only as 
+dependable as the ability of the HEC and CRC codes to detect errors. In 
+most cases this is sufficient, however it has been shown that for the 
+longer packet types the probability of an undetected error is too high 
+to support typical applications, especially those with a large amount of
+ data being transferred.</p>
+<p>The L2CAP layer provides an additional level of error control that is
+ designed to detect the occasional undetected errors in the baseband 
+layer and request retransmission of the affected data. This provides the
+ level of reliability required by typical <em>Bluetooth</em> 
+applications.</p>
+<p>Broadcast links have no feedback route, and are unable to use the ARQ
+ scheme (although the receiver is still able to detect errors in 
+received packets). Instead each packet is transmitted several times in 
+the hope that the receiver is able to receive at least one of the copies
+ successfully. Despite this approach there are still no guarantees of 
+successful receipt, and so these links are considered unreliable.</p>
+<p>In summary, if a link or channel is characterized as reliable this 
+means that the receiver is capable of detecting errors in received 
+packets and requesting retransmission until the errors are removed. Due 
+to the error detection system used some residual (undetected) errors may
+ still remain in the received data. For L2CAP channels the level of 
+these is comparable to other communication systems, although for logical
+ links the residual error level is somewhat higher.</p>
+<p>The transmitter may remove packets from the transmit queue such that 
+the receiver does not receive all the packets in the sequence. If this 
+happens detection of the missing packets is delegated to the L2CAP 
+layer.</p>
+<p>On an unreliable link the receiver is capable of detecting errors in 
+received packets but cannot request retransmission. The packets passed 
+on by the receiver may be without error, but there is no guarantee that 
+all packets in the sequence are received. Hence the link is considered 
+fundamentally unreliable. There are limited uses for such links, and 
+these uses are normally dependent on the continuous repetition of data 
+from the higher layers while it is valid.</p>
+<p>Stream links have a reliability characteristic somewhere between a 
+reliable and an unreliable link, depending on the current operating 
+conditions.</p>
+<p><a href="#top">Top</a></p><a name="5"></a>
+<h2>Transport Architecture Entities</h2><a name="6"></a>
+<p></p>
+<h3><em>Bluetooth</em> Generic Packet Structure</h3>The general packet 
+structure reflects the architectural layers found in the <em>Bluetooth</em>
+ system. The packet structure is designed for optimal use in normal 
+operation. 
+<p></p>
+<p>Packets normally only include the fields that are necessary to 
+represent the layers required by the transaction. Thus a simple inquiry 
+request over an inquiry scan physical channel does not create or require
+ a logical link or higher layer and therefore consists only of the 
+channel access code (associated with the physical channel). General 
+communication within a piconet uses packets that include all of the 
+fields, as all of the architectural layers are used.</p>
+<p>All packets include the channel access code. This is used to identify
+ communications on a particular physical channel, and to exclude or 
+ignore packets on a different physical channel that happens to be using 
+the same RF carrier in physical proximity.</p>
+<p>There is no direct field within the <em>Bluetooth</em> packet 
+structure that represents or contains information relating to physical 
+links. This information is implied in the logical transport address 
+(LT_ADDR) carried in the packet header.</p>
+<p>Most packets include a packet header. The packet header is always 
+present in packets transmitted on physical channels that support 
+physical links, logical transports and logical links. The packet header 
+carries the LT_ADDR, which is used by each receiving device to determine
+ if the packet is addressed to the device and is used to route the 
+packet internally.</p>
+<p>The packet header also carries part of the LC protocol that is 
+operated per logical transport (except for ACL and SCO transports that 
+operate a shared LC protocol carried on either logical transport).</p>
+<p>The EDR packets have a guard time and synchronization sequence before
+ the payload. This is a field used for physical layer change of 
+modulation scheme.</p>
+<p>The payload header is present in all packets on logical transports 
+that support multiple logical links. The payload header includes a 
+logical link identifier field used for routing the payload and a field 
+indicating the length of the payload. Some packet types also include a 
+CRC after the packet payload that is used to detect most errors in 
+received packets. EDR packets have a trailer after the CRC.</p>
+<p>The packet payload is used to transport the user data. The 
+interpretation of this data is dependent on the logical transport and 
+logical link identifiers. For ACL logical transports LMP messages and 
+L2CAP signals are transported in the packet payload, along with general 
+user data from applications. For SCO and eSCO logical transports the 
+payload contains the user data for the logical link.</p><a name="7"></a>
+<p></p>
+<h3>Physical Channels</h3>The lowest architectural layer in the <em>Bluetooth</em>
+ wireless technology system is the physical channel. A number of types 
+of physical channels are defined. All <em>Bluetooth</em> physical 
+channels are characterized by an RF frequency combined with temporal 
+parameters and restricted by spatial considerations. For the basic and 
+adapted piconet physical channels, frequency hopping is used to change 
+frequency periodically to reduce the effects of interference and for 
+regulatory reasons. 
+<p></p>
+<p>Two <em>Bluetooth</em> enabled devices use a shared physical channel 
+for communication. To achieve this their transceivers need to be tuned 
+to the same RF frequency at the same time, and they need to be within a 
+nominal range of each other.</p>
+<p>Given that the number of RF carriers is limited and that many <em>Bluetooth</em>
+ enabled devices may be operating independently within the same spatial 
+and temporal area, there is a strong likelihood of two independent <em>Bluetooth</em>
+ enabled devices having their transceivers tuned to the same RF carrier,
+ resulting in a physical channel collision. To mitigate the unwanted 
+effects of this collision each transmission on a physical channel starts
+ with an access code that is used as a correlation code by devices tuned
+ to the physical channel. This channel access code is a property of the 
+physical channel. The access code is always present at the start of 
+every transmitted packet.</p>
+<p>Four <em>Bluetooth</em> physical channels are defined. Each is 
+optimized and used for a different purpose. Two of these physical 
+channels (the basic piconet channel and adapted piconet channel) are 
+used for communication between connected devices and are associated with
+ a specific piconet. The remaining physical channels are used for 
+discovering <em>Bluetooth</em> enabled devices (the inquiry scan 
+channel) and for connecting <em>Bluetooth</em> enabled devices (the page
+ scan channel).</p>
+<p>A <em>Bluetooth</em> enabled device can only use one of these 
+physical channels at any given time. In order to support multiple 
+concurrent operations the device uses time division multiplexing between
+ the channels. In this way, a <em>Bluetooth</em> enabled device can 
+appear to operate simultaneously in several piconets, as well as being 
+discoverable and connectable.</p>
+<p>Whenever a <em>Bluetooth</em> device is synchronized to the timing, 
+frequency, and access code of a physical channel, it is said to be 
+‘connected’ to this channel (whether or not it is actively involved in 
+communications over the channel). The <em>Bluetooth</em> specification 
+assumes that a device is only capable of connecting to one physical 
+channel at any time. Advanced devices may be capable of connecting 
+simultaneously to more than one physical channel, but the specification 
+does not assume that this is possible.</p>
+<p><a href="#top">Top</a></p><a name="8"></a>
+<h3>Basic Piconet Channel</h3>
+<table align="right" border="2" bordercolor="#cbd6df" cellpadding="3" 
+cellspacing="0" width="20%">
+<tbody>
+<tr>
+<td>
+<ul>
+<li><a href="#30">Overview</a></li>
+<li><a href="#31">Characteristics</a></li>
+<li><a href="#32">Topology</a></li>
+<li><a href="#33">Supported Layers</a></li></ul></td></tr></tbody></table><a
+ name="30"></a>
+<p></p>
+<h4>Overview</h4>The basic piconet channel is used for communication 
+between connected devices during normal operation. 
+<p></p><a name="31"></a>
+<p></p>
+<h4>Characteristics</h4>The basic piconet channel is characterized by a 
+pseudo-random sequence hopping through the RF channels. The hopping 
+sequence is unique for the piconet and is determined by the <em>Bluetooth</em>
+ enabled device address of the master. The phase in the hopping sequence
+ is determined by the <em>Bluetooth</em> clock of the master. All <em>Bluetooth</em>
+ enabled devices participating in the piconet are time- and 
+hop-synchronized to the channel. 
+<p></p>
+<p>The channel is divided into time slots where each slot corresponds to
+ an RF hop frequency. Consecutive hops correspond to different RF hop 
+frequencies. The time slots are numbered according to the <em>Bluetooth</em>
+ clock of the piconet master. Packets are transmitted by <em>Bluetooth</em>
+ devices participating in the piconet aligned to start at a slot 
+boundary. Each packet starts with the channel’s access code, which is 
+derived from the <em>Bluetooth</em> device address of the piconet.</p>
+<p>On the basic piconet channel the master controls access to the 
+channel. The master starts its transmission in even-numbered time slots 
+only. Packets transmitted by the master are aligned with the slot start 
+and define the piconet timing. Packets transmitted by the master may 
+occupy up to five time slots depending on the packet type.</p>
+<p>Each master transmission is a packet carrying information on one of 
+the logical transports. Slave devices may transmit on the physical 
+channel in response. The characteristics of the response are defined by 
+the logical transport that is addressed.</p>
+<p>For example, on the asynchronous connection-oriented logical 
+transport the addressed slave device responds by transmitting a packet 
+containing information for the same logical transport that is nominally 
+aligned with the next (odd numbered) slot start. Such a packet may 
+occupy up to five time slots, depending on the packet type. On a 
+broadcast logical transport no slaves are allowed to respond.</p>
+<p>A special characteristic of the basic piconet physical channel is the
+ use of some reserved slots to transmit a beacon train. The beacon train
+ is only used if the piconet physical channel has parked slaves 
+connected to it. In this situation the master transmits a packet in the 
+reserved beacon train slots (these packets are used by the slave to 
+resynchronize to the piconet physical channel). The master may transmit 
+packets from any logical transport onto these slots, providing there is a
+ transmission starting in each of the slots. In the case where there is 
+information from the parked slave broadcast (PSB) logical transport to 
+be transmitted then this is transmitted in the beacon train slots and 
+takes priority over any other logical transport.</p><a name="32"></a>
+<p></p>
+<h4>Topology</h4>A basic piconet channel may be shared by any number of <em>Bluetooth</em>
+ enabled devices, limited only by the resources available on the piconet
+ master device. Only one device is the piconet master, all others being 
+piconet slaves. All communication is between the master and slave 
+devices. There is no direct communication between slave devices on the 
+piconet channel. 
+<p></p>
+<p>There is, however, a limitation on the number of logical transports 
+that can be supported within a piconet. This means that although there 
+is no theoretical limit to the number of <em>Bluetooth</em> enabled 
+devices that share a channel, there is a limit to the number of these 
+devices that can be actively involved in exchanging data with the 
+master.</p><a name="33"></a>
+<p></p>
+<h4>Supported Layers</h4>The basic piconet channel supports a number of 
+physical links, logical transports, logical links and L2CAP channels 
+used for general purpose communications. 
+<p></p><a name="9"></a>
+<p></p>
+<h3>Adapted Piconet Channel</h3>
+<h4>Overview</h4>The adapted piconet channel differs from the basic 
+piconet channel in two ways. First the frequencies on which the slaves 
+transmit are the same as the preceding master transmit frequency. In 
+other words, the frequency is not recomputed between master and 
+subsequent slave packets. The second way in which the adapted piconet 
+channel differs from the basic piconet channel is that the adapted type 
+can be based on fewer than the full 79 frequencies. A number of 
+frequencies may be excluded from the hopping pattern by being marked as 
+“unused.” The remainder of the 79 frequencies are included. The two 
+sequences are the same except that whenever the basic pseudo-random 
+hopping sequence would have selected an unused frequency, it is replaced
+ with an alternative chosen from the used set. 
+<p></p>
+<p>Because the adapted piconet channel uses the same timing and access 
+code as the basic piconet channel, the two channels are often 
+coincident. This provides a deliberate benefit as it allows slaves in 
+either the basic piconet channel or the adapted piconet channel to 
+adjust their synchronization to the master.</p>
+<p>The topology and supported layers of the adapted piconet physical 
+channel are identical to the basic piconet physical channel.</p>
+<p><a href="#top">Top</a></p><a name="10"></a>
+<p></p>
+<h3>Inquiry Scan Channel</h3>
+<table align="right" border="2" bordercolor="#cbd6df" cellpadding="3" 
+cellspacing="0" width="20%">
+<tbody>
+<tr>
+<td>
+<ul>
+<li><a href="#40">Overview</a></li>
+<li><a href="#41">Characteristics</a></li>
+<li><a href="#42">Topology</a></li>
+<li><a href="#43">Supported Layers</a></li></ul></td></tr></tbody></table><a
+ name="40"></a>
+<h4>Overview</h4>In order for a device to be discovered, an inquiry scan
+ channel is used. A discoverable device listens for inquiry requests on 
+its inquiry scan channel and then sends responses to these requests. In 
+order for a device to discover other devices, it iterates (hops) through
+ all possible inquiry scan channel frequencies in a pseudo-random 
+fashion, sending an inquiry request on each frequency and listening for 
+any response. 
+<p></p><a name="41"></a>
+<p></p>
+<h4>Characteristics</h4>Inquiry scan channels follow a slower hopping 
+pattern and use an access code to distinguish between occasional 
+occupancy of the same radio frequency by two co-located devices using 
+different physical channels. 
+<p></p>
+<p>The access code used on the inquiry scan channel is taken from a 
+reserved set of inquiry access codes that are shared by all <em>Bluetooth</em>
+ enabled devices. One access code is used for general inquiries and a 
+number of additional access codes are reserved for limited inquiries. 
+Each device has access to a number of different inquiry scan channels. 
+As all of these channels share an identical hopping pattern, a device 
+may concurrently occupy more than one inquiry scan channel if it is 
+capable of concurrently correlating more than one access code.</p>
+<p>A device using one of its inquiry scan channel remains passive until 
+it receives an inquiry message on this channel from another <em>Bluetooth</em>
+ enabled device. This is identified by the appropriate inquiry access 
+code. The inquiry scanning device will then follow the inquiry response 
+procedure to return a response to the inquiring device.</p>
+<p>In order for a device to discover other <em>Bluetooth</em> enabled 
+devices, it uses the inquiry scan channel of these devices to send 
+inquiry requests. As it has no prior knowledge of the devices to 
+discover, it cannot know the exact characteristics of the inquiry scan 
+channel.</p>
+<p>The device takes advantage of the fact that inquiry scan channels 
+have a reduced number of hop frequencies and a slower rate of hopping. 
+The inquiring device transmits inquiry requests on each of the inquiry 
+scan hop frequencies and listens for an inquiry response. This is done 
+at a faster rate, allowing the inquiring device to cover all inquiry 
+scan frequencies in a reasonably short time period.</p><a name="42"></a>
+<p></p>
+<h4>Topology</h4>Inquiring and discoverable devices use a simple 
+exchange of packets to fulfill the inquiring function. The topology 
+formed during this transaction is a simple and transient point-to-point 
+connection. 
+<p></p><a name="43"></a>
+<p></p>
+<h4>Supported Layers</h4>During the exchange of packets between an 
+inquiring and discoverable device it may be considered that a temporary 
+physical link exists between these devices. However, the concept is 
+quite irrelevant as it has no physical representation but is only 
+implied by the brief transaction between the devices. No further 
+architectural layers are considered to be supported. 
+<p></p><a name="11"></a>
+<p></p>
+<h3>Page Scan Channel</h3>
+<table align="right" border="2" bordercolor="#cbd6df" cellpadding="3" 
+cellspacing="0" width="20%">
+<tbody>
+<tr>
+<td>
+<ul>
+<li><a href="#50">Overview</a></li>
+<li><a href="#51">Characteristics</a></li>
+<li><a href="#52">Topology</a></li>
+<li><a href="#53">Supported Layers</a></li></ul></td></tr></tbody></table><a
+ name="50"></a>
+<h4>Overview</h4>A connectable device (one that is prepared to accept 
+connections) does sousing an page scan channel. A connectable device 
+listens for page requests on its page scan channel and enters into a 
+sequence of exchanges with this device. In order for a device to connect
+ to another device, it iterates (hops) through all page scan channel 
+frequencies in a pseudo-random fashion, sending an page request on each 
+frequency and listening for any response. 
+<p></p><a name="51"></a>
+<p></p>
+<h4>Characteristics</h4>The page scan channel uses an access code 
+derived from the scanning device’s <em>Bluetooth</em> device address to 
+identify communications on the channel. The page scan channel uses a 
+slower hopping rate than the hop rate of the basic and adapted piconet 
+channels. The hop selection algorithm uses the <em>Bluetooth</em> device
+ clock of the scanning device as an input. 
+<p></p>
+<p>A device using its page scan channel remains passive until it 
+receives a page request from another <em>Bluetooth</em> enabled device. 
+This is identified by the page scan channel access code. The two devices
+ will then follow the page procedure to form a connection. Following a 
+successful conclusion of the page procedure both devices switch to the 
+basic piconet channel that is characterized by having the paging device 
+as master.</p>
+<p>In order for a device to connect to another <em>Bluetooth</em> 
+enabled device it uses the page scan channel of the target device in 
+order to send page requests. If the paging device does not know the 
+phase of the target device’s page scan channel it therefore does not 
+know the current hop frequency of the target device. The paging device 
+transmits page requests on each of the page scan hop frequencies and 
+listens for a page response. This is done at a faster hop rate, allowing
+ the paging device to cover all page scan frequencies in a reasonably 
+short time period.</p>
+<p>The paging device may have some knowledge of the target device’s <em>Bluetooth</em>
+ clock (indicated during a previous inquiry transaction between the two 
+devices, or as a result of a previous involvement in a piconet with the 
+device), in which case it is able to predict the phase of the target 
+device’s page scan channel. It may use this information to optimize the 
+synchronization of the paging and page scanning process and speed up the
+ formation of the connection.</p><a name="52"></a>
+<p></p>
+<h4>Topology</h4>Paging and connectable devices use a simple exchange of
+ packets to fulfill the paging function. The topology formed during this
+ transaction is a simple and transient point-to-point connection. 
+<p></p><a name="53"></a>
+<p></p>
+<h4>Supported Layers</h4>During the exchange of packets between a paging
+ and connectable device it may be considered that a temporary physical 
+link exists between these devices. However, the concept is quite 
+irrelevant as it has no physical representation but is only implied by 
+the brief transaction between the devices. No further architectural 
+layers are considered to be supported. 
+<p></p><a name="12"></a>
+<p></p>
+<h3>Physical Links</h3>A physical link represents a baseband connection 
+between <em>Bluetooth</em> enabled devices. A physical link is always 
+associated with exactly one physical channel (although a physical 
+channel may support more than one physical link). 
+<p></p>
+<p>Within the <em>Bluetooth</em> technology system a physical link is a 
+virtual concept that has no direct representation within the structure 
+of a transmitted packet. The access code packet field, together with the
+ clock and address of the master <em>Bluetooth</em> device, are used to 
+identify a physical channel. However there is no subsequent part of the 
+packet that directly identifies the physical link. Instead the physical 
+link may be identified by association with the logical transport, as 
+each logical transport is only received on one physical link.</p>
+<p>Some physical link types have properties that may be modified. An 
+example of this is the transmit power for the link. Other physical link 
+types have no such properties. In the case of physical links with 
+modifiable properties the LM protocol is used to adapt these properties.
+ As the LM protocol is supported at a higher layer (by a logical link) 
+the appropriate physical link is identified by implication from the 
+logical link that transports the LM signaling.</p>
+<p>In the situation where a transmission is broadcast over a number of 
+different physical links, then the transmission parameters are selected 
+to be suitable for all of the physical links.</p>
+<p><a>Top</a></p><a name="13"></a>
+<p></p>
+<h3>Links Supported by the Basic and Adapted Piconet Physical Channel</h3>
+<table align="right" border="2" bordercolor="#cbd6df" cellpadding="3" 
+cellspacing="0" width="20%">
+<tbody>
+<tr>
+<td>
+<ul>
+<li><a href="#60">Active Physical Link</a></li>
+<li><a href="#61">Parked Physical Link</a></li></ul></td></tr></tbody></table>The
+ basic and adapted piconet physical channels support a physical link 
+which may be active or parked. The physical link is a point-to-point 
+link between the master and a slave. It is always present when the slave
+ is synchronized in the piconet. 
+<p></p><a name="60"></a>
+<p></p>
+<h4>Active Physical Link</h4>The physical link between a master and a 
+slave device is active if a default ACL logical transport exists between
+ the devices. Active physical links have no direct identification of 
+their own, but are identified by association with the default ACL 
+logical transport ID with which there is a one-to-one correspondence. 
+<p></p>
+<p>An active physical link has the associated properties of radio 
+transmit power in each direction. Transmissions from slave devices are 
+always directed over the active physical link to the master, and use the
+ transmit power that is a property of this link in the slave to master 
+direction. Transmissions from the master maybe directed over a single 
+active physical link (to a specific slave) or over a number of physical 
+links (to a group of slaves in the piconet). In the case of 
+point-to-point transmissions the master uses the appropriate transmit 
+power for the physical link in question. (In the case of 
+point-to-multipoint transmissions the master uses a transmit power 
+appropriate for the set of devices addressed.)</p>
+<p>Active physical links may be placed into hold or sniff mode. The 
+effect of these modes is to modify the periods when the physical link is
+ active and may carry traffic. Logical transports that have defined 
+scheduling characteristics are not affected by these modes and continue 
+according to their pre-defined scheduling behavior. The default ACL 
+logical transport and other links with undefined scheduling 
+characteristics are subject to the mode of the active physical link.</p><a
+ name="61"></a>
+<p></p>
+<h4>Parked Physical Link</h4>The physical link between a master and a 
+slave device is parked when the slave remains synchronized in the 
+piconet but has no default ACL logical transport. Such a slave is also 
+said to be parked. A beacon train is used to provide regular 
+synchronization to all parked slaves connected to the piconet physical 
+channel. A parked slave broadcast (PSB) logical transport is used to 
+allow communication of a subset of LMP signaling and broadcast L2CAP to 
+parked slaves. The PSB logical transport is closely associated with the 
+beacon train. 
+<p></p>
+<p>A slave is parked (its active link is changed to a parked link) using
+ the park procedure. The master is not allowed to park a slave that has 
+any user created logical transport supported by the physical link. These
+ logical transports are first removed, and any L2CAP channels that are 
+built on these logical transports are also removed. The broadcast 
+logical transport and default ACL logical transports are not considered 
+as user created and are not explicitly removed. When the active link is 
+replaced with a parked link the default ACL logical transport is 
+implicitly removed. The supported logical links and L2CAP channels 
+remain in existence but become suspended. It is not possible to use 
+these links and L2CAP channels to transport signaling or data while the 
+active link is absent.</p>
+<p>A parked slave may become active using the unpark procedure. This 
+procedure is requested by the slave at an access window and initiated by
+ the master. Following the unpark procedure, the parked physical link is
+ changed to an active physical link and the default ACL logical 
+transport is re-created. L2CAP channels that were suspended during the 
+most recent park procedure are associated with the new default ACL 
+logical transport and become active again.</p>
+<p>Parked links do not support radio power control, as there is no 
+feedback path from parked slaves to the piconet master that can be used 
+to signal received signal strength at the slave or for the master to 
+measure received signal strength from the slave. Transmissions are 
+carried out at nominal power on parked links.</p>
+<p>Parked links use the same physical channel as their associated active
+ link. If a master manages a piconet that contains parked slaves using 
+the basic piconet physical channel and also parked slaves using the 
+adapted piconet physical channel then it must create a parked slave 
+broadcast logical transport (and associated transport) for each of these
+ physical channels.</p>
+<p>A parked slave may use the inactive periods of the parked slave 
+broadcast logical transport to save power, or it may carry out 
+activities on other physical channels unrelated to the piconet within 
+which it is parked.</p><a name="14"></a>
+<p></p>
+<h3>Links Supported by the Scanning Physical Channels</h3>
+<table align="right" border="2" bordercolor="#cbd6df" cellpadding="3" 
+cellspacing="0" width="20%">
+<tbody>
+<tr>
+<td>
+<ul>
+<li><a href="#70">Logical Links and Logical Transports</a></li>
+<li><a href="#71">Logical Transport Types (Table)</a></li>
+<li><a href="#72">Casting</a></li>
+<li><a href="#73">Scheduling and Acknowledgement Scheme</a></li>
+<li><a href="#74">Class of Data</a></li></ul></td></tr></tbody></table>In
+ the case of the inquiry scan and page scan channels, the physical link 
+exists for a relatively short time and cannot be controlled or modified 
+in any way. These types of physical link are not further elaborated. 
+<p></p><a name="70"></a>
+<p></p>
+<h4>Logical Links and Logical Transports</h4>A variety of logical links 
+are available to support different application data transport 
+requirements. Each logical link is associated with a logical transport, 
+which has a number of characteristics. These characteristics include 
+flow control, acknowledgement/repeat mechanisms, sequence numbering and 
+scheduling behavior. Logical transports are able to carry different 
+types of logical links (depending on the type of the logical transport).
+ In the case of some of the <em>Bluetooth</em> Version 1.1 logical links
+ these are multiplexed onto the same logical transport. Logical 
+transports may be carried by active physical links on either the basic 
+or the adapted piconet physical channel. 
+<p></p>
+<p>Logical transport identification and real-time (link control) 
+signaling are carried in the packet header and for some logical links, 
+identification is carried in the payload header. Control signaling that 
+does not require single slot response times is carried out using the LMP
+ protocol.</p><a name="71"></a>
+<p>The following table lists all of the logical transport types, the 
+supported logical link types, which type of physical links and physical 
+channels can support them and a brief description of the purpose of the 
+logical transport.</p>
+<p><a href="#top">Top</a></p>
+<table border="2" bordercolor="#cbd6df" cellpadding="3" cellspacing="0" 
+width="100%">
+<tbody>
+<tr>
+<td bgcolor="#cbd6df">
+<h4>Logical Transport</h4></td>
+<td bgcolor="#cbd6df">
+<h4>Links Support</h4></td>
+<td bgcolor="#cbd6df">
+<h4>Supported By</h4></td>
+<td bgcolor="#cbd6df">
+<h4>Overview</h4></td></tr>
+<tr>
+<td>Asynchronous Connection-Oriented (ACL)</td>
+<td>Control (LMP) ACL-C <br>User (L2CAP) ACL-U </td>
+<td>Active physical link, basic or adapted physical channel </td>
+<td>Reliable or time-bounded, bi- directional, point-to-point. </td></tr>
+<tr>
+<td>Synchronous Connection-Oriented <br>(SCO) </td>
+<td>Stream (unframed)<br>SCO-S </td>
+<td>Active physical link, basic or adapted physical channel </td>
+<td>Bi-directional, symmetric, point-to-point, AV channels. Used for 
+64Kb/s constant rate data. </td></tr>
+<tr>
+<td>Extended Synchronous Connection-Oriented<br>(eSCO) </td>
+<td>Stream (unframed) <br>eSCO-S </td>
+<td>Active physical link, basic or adapted physical channel </td>
+<td>Bi-directional, symmetric or asymmetric, point-to-point, general 
+regular data, limited retransmission. Used for constant rate data 
+synchronized to the master <em>Bluetooth</em> clock.</td></tr>
+<tr>
+<td>Active slave broadcast<br>(ASB) </td>
+<td>User (L2CAP) ASB-U </td>
+<td>Active physical link, basic or adapted physical channel. </td>
+<td>Unreliable, uni-directional broadcast to any devices synchronized 
+with the physical channel. Used for broadcast L2CAP groups. </td></tr>
+<tr>
+<td>Parked slave broad- cast (PSB) </td>
+<td>Control (LMP) PSB- C, User (L2CAP) PSB-U </td>
+<td>Parked physical link, basic or adapted physical channel. </td>
+<td>Unreliable, uni-directional broadcast to all piconet devices. Used 
+for LMP and L2CAP traffic to parked devices, and for access requests 
+from parked devices. </td></tr></tbody></table>
+<p>&nbsp;</p>
+<p>The names given to the logical links and logical transports reflect 
+some of the names used in <em>Bluetooth</em> Version 1.1, in order to 
+provide some degree of familiarity and continuation. However these names
+ do not reflect a consistent scheme, which is outlined below.</p>
+<p>The classification of each link type follows from a selection 
+procedure within three categories.</p><a name="72"></a>
+<p></p>
+<h4>Casting</h4>The first category is that of casting. This may be 
+either unicast or broadcast. There are no multicast links defined in <em>Bluetooth</em>
+ Version 1.2. 
+<p></p>
+<ul>
+<li>Unicast links. Unicast links exist between exactly two endpoints. 
+Traffic may be sent in either direction on unicast links. All unicast 
+links are connection-oriented, meaning that a connection procedure takes
+ place before the link may be used. In the case of the default ACL 
+links, the connection procedure is an implicit step within the general 
+paging procedure used to form ad-hoc piconets. </li>
+<li>Broadcast links. Broadcast links exist between one source device and
+ zero or more receiver devices. Traffic is unidirectional, i.e. only 
+sent from the source devices to the receiver devices. Broadcast links 
+are connectionless, meaning that there is no procedure to create these 
+links, and data may be sent over them at any time. Broadcast links are 
+unreliable, and there is no guarantee that the data will be received.</li></ul><a
+ name="73"></a>
+<h4>Scheduling and Acknowledgement Scheme</h4>
+<p>The second category relates to the scheduling and acknowledgement 
+scheme of the link and implies the type of traffic that is supported by 
+the link. These are synchronous, isochronous or asynchronous. There are 
+no specific isochronous links defined in <em>Bluetooth</em> Version 1.2,
+ though the default ACL link can be configured to operate in this 
+fashion.</p>
+<ul>
+<li>Synchronous links. Synchronous links provide a method of associating
+ the <em>Bluetooth</em> piconet clock with the transported data. This is
+ achieved by reserving regular slots on the physical channel, and 
+transmitting fixed size packets at these regular intervals. Such links 
+are suitable for constant rate isochronous data. </li>
+<li>Asynchronous links. Asynchronous links provide a method for 
+transporting data that has no time-based characteristics. The data is 
+normally expected to be retransmitted until successfully received and 
+each data entity can be processed at any time after receipt without 
+reference to the time of receipt of any previous or successive entity in
+ the stream (providing the ordering of data entities is preserved). </li>
+<li>Isochronous links. Isochronous links provide a method for 
+transporting data that has time-based characteristics. The data may be 
+retransmitted until received or expired. The data rate on the link need 
+not be constant (this being the main difference from synchronous links).</li></ul><a
+ name="74"></a>
+<h4>Class of Data</h4>
+<p>The final category is related to the class of data that is carried by
+ the link. This is either control (LMP) data or user data. The user data
+ category is sub-divided into L2CAP (or framed) data and stream (or 
+unframed) data.</p>
+<ul>
+<li>Control links. Control links are only used for transporting LMP 
+messages between two link managers. These links are invisible above the 
+baseband layer, and cannot be directly instantiated, configured or 
+released by applications, other than by the use of the connection and 
+disconnection services that have this effect implicitly. Control links 
+are always multiplexed with an equivalent L2CAP link onto an ACL logical
+ transport. Subject to the rules defining the ARQ scheme, the control 
+link traffic always takes priority over the L2CAP link traffic. </li>
+<li>L2CAP links. L2CAP links are used to transport L2CAP PDUs, which may
+ carry the L2CAP signaling channel (on the default ACL-U logical link 
+only) or framed user data submitted to user-instantiated L2CAP channels.
+ L2CAPframes submitted to the baseband may be larger than the available 
+baseband packets. A link control protocol embedded within the LLID field
+ preserves the frame-start and frame-continuation semantics when the 
+frame is transmitted in a number of fragments to the receiver. </li>
+<li>Stream links. Stream links are used to transport user data that has 
+no inherent framing that should be preserved when delivering the data. 
+Lost data may be replaced by padding at the receiver.</li></ul><a 
+name="15"></a>
+<p></p>
+<h3>Asynchronous Connection-Oriented (ACL)</h3>The asynchronous 
+connection-oriented (ACL) logical transport is used to carry LMP and 
+L2CAP control signaling and best effort asynchronous user data. The ACL 
+logical transport uses a simple 1-bit ARQN/SEQN scheme to provide simple
+ channel reliability. Every active slave device within a piconet has one
+ ACL logical transport to the piconet master, known as the default ACL. 
+<p></p>
+<p>The default ACL is created between the master and the slave when a 
+device joins a piconet (connects to the basic piconet physical channel).
+ This default ACL is assigned a logical transport address (LT_ADDR) by 
+the piconet master. This LT_ADDR is also used to identify the active 
+physical link when required (or as a piconet active member identifier, 
+effectively for the same purpose).</p>
+<p>The LT_ADDR for the default ACL is reused for synchronous 
+connection-oriented logical transports between the same master and 
+slave. (This is for reasons of compatibility with earlier <em>Bluetooth</em>
+ specifications.) Thus the LT_ADDR is not sufficient on its own to 
+identify the default ACL. However the packet types used on the ACL are 
+different from those used on the synchronous connection-oriented logical
+ transport. Therefore, the ACL logical transport can be identified by 
+the LT_ADDR field in the packet header in combination with the packet 
+type field.</p>
+<p>The default ACL may be used for isochronous data transport by 
+configuring it to automatically flush packets after the packets have 
+expired.</p>
+<p>If the default ACL is removed from the active physical link then all 
+other logical transports that exist between the master and the slave are
+ also removed. In the case of unexpected loss of synchronization to the 
+piconet physical channel the physical link and all logical transports 
+and logical links cease to exist at the time that this synchronization 
+loss is detected.</p>
+<p>A device may remove its default ACL (and by implication its active 
+physical link) but remain synchronized to the piconet. This procedure is
+ known as parking, and a device that is synchronized to the piconet, but
+ has no active physical link, is parked within that piconet.</p>
+<p>When the device transitions to the parked state, the default ACL 
+logical links that are transported on the default ACL logical transport 
+remain in existence but become suspended. No data may be transferred 
+across a suspended logical link. When the device transitions from the 
+parked state back into active state, a new default ACL logical transport
+ is created (it may have a different LT_ADDR from the previous one) and 
+the suspended logical links are attached to this default ACL and become 
+active once again.</p><a name="16"></a>
+<p></p>
+<h3>Synchronous Connection-Oriented (SCO)</h3>The synchronous 
+connection-oriented (SCO) logical transport is a symmetric, 
+point-to-point channel between the master and a specific slave. The SCO 
+logical transport reserves slots on the physical channel and can 
+therefore be considered as a circuit-switched connection between the 
+master and the slave. SCO logical transports carry 64 kb/s of 
+information synchronized with the piconet clock. Typically this 
+information is an encoded voice stream. Three different SCO 
+configurations exist, offering a balance between robustness, delay, and 
+bandwidth consumption. 
+<p></p>
+<p>Each SCO-S logical link is supported by a single SCO logical 
+transport, which is assigned the same LT_ADDR as the default ACL logical
+ transport between the devices. Therefore the LT_ADDR field is not 
+sufficient to identify the destination of a received packet. Because the
+ SCO links use reserved slots, a device uses a combination of the 
+LT_ADDR, the slot numbers (a property of the physical channel), and the 
+packet type to identify transmissions on the SCO link.</p>
+<p>The reuse of the default ACL’s LT_ADDR for SCO logical transports is 
+due to legacy behavior from the <em>Bluetooth</em> Version 1.1 
+specification. In this earlier version of the <em>Bluetooth</em> 
+specification, the LT_ADDR (then known as the active member address) was
+ used to identify the piconet member associated with each transmission. 
+This was not easily extensible for enabling more logical links, and so 
+the purpose of this field was redefined for the new features. Some <em>Bluetooth</em>
+ Version 1.1 features, however, do not cleanly fit into the more 
+formally described architecture.</p>
+<p>Although slots are reserved for the SCO, it is permissible to use a 
+reserved slot for traffic from another channel that has a higher 
+priority. This may be required as a result of QoS commitments, or to 
+send LMP signaling on the default ACL when the physical channel 
+bandwidth is fully occupied by SCOs. As SCOs carry different packet 
+types to ACLs, the packet type is used to identify SCO traffic (in 
+addition to the slot number and LT_ADDR.) There are no further 
+architectural layers defined by the Bluetooth core specification that 
+are transported over an SCO link. A number of standard formats are 
+defined for the 64 kb/s stream that is transported, or an unformatted 
+stream is allowed where the application is responsible for interpreting 
+the encoding of the stream.</p>
+<p>3.5.6 Extended Synchronous Connection-Oriented (eSCO)<br>The extended
+ synchronous connection-oriented (eSCO) logical transport is asymmetric 
+or asymmetric, point-to-point link between the master and a specific 
+slave. The eSCO reserves slots on the physical channel and can therefore
+ be considered as a circuit-switched connection between the master and 
+the slave. eSCO links offer a number of extensions over the standard SCO
+ links, in that they support a more flexible combination of packet types
+ and selectable data contents in the packets and selectable slot 
+periods, allowing a range of synchronous bit rates to be supported.</p>
+<p>eSCO links also can offer limited retransmission of packets (unlike 
+SCO links where there is no retransmission). If these retransmissions 
+are required they take place in the slots that follow the reserved 
+slots, otherwise the slots may be used for other traffic.</p>
+<p>Each eSCO-S logical link is supported by a single eSCO logical 
+transport, identified by a LT_ADDR that is unique within the piconet for
+ the duration of the eSCO. eSCO-S links are created using LM signaling 
+and follow scheduling rules similar to SCO-S links.</p>
+<p>There are no further architectural layers defined by the <em>Bluetooth</em>
+ core specification that are transported over an eSCO-S link. Instead, 
+applications may use the data stream for whatever purpose they require, 
+subject to the transport characteristics of the stream being suitable 
+for the data being transported.</p>
+<p><a href="#top">Top</a></p><a name="17"></a>
+<p></p>
+<h3>Active Slave Broadcast (ASB)</h3>The active slave broadcast logical 
+transport is used to transport L2CAP user traffic to all devices in the 
+piconet that are currently connected to the physical channel that is 
+used by the ASB. There is no acknowledgement protocol and the traffic is
+ uni-directional from the piconet master to the slaves. The ASB channel 
+may be used for L2CAP group traffic (a legacy of the Version 1.1 
+specification), and is never used for L2CAP connection-oriented 
+channels, L2CAP control signaling or LMP control signaling. 
+<p></p>
+<p>The ASB logical transport is inherently unreliable because of the 
+lack of acknowledgement. To improve the reliability, each packet is 
+transmitted a number of times. An identical sequence number is used to 
+assist with filtering retransmissions at the slave device.</p>
+<p>The ASB logical transport is identified by a reserved LT_ADDR. (The 
+reserved LT_ADDR address is also used by the PSB logical transport.) An 
+active slave will receive traffic on both logical transports and cannot 
+readily distinguish between them. As the ASB logical transport does not 
+carry LMP traffic, an active slave can ignore packets received over the 
+LMP logical link on the ASB logical transport. However, L2CAP traffic 
+transmitted over the PSB logical transport is also received by active 
+slaves on the ASB logical transport and cannot be distinguished from 
+L2CAP traffic sent on the ASB transport.</p>
+<p>An ASB is implicitly created whenever a piconet exists, and there is 
+always one ASB associated with each of the basic and adapted piconet 
+physical channels that exist within the piconet. Because the basic and 
+adapted piconet physical channels are mostly coincident, a slave device 
+cannot distinguish which of the ASB channels is being used to transmit 
+the packets. This adds to the general unreliability of the ASB channel. 
+(Although it is, perhaps, no more unreliable than general missed 
+packets.)</p>
+<p>A master device may decide to use only one of its two possible ASBs 
+(when it has both a basic and adapted piconet physical channel), as with
+ sufficient retransmissions it is possible to address both groups of 
+slaves on the same ASB channel.</p>
+<p>The ASB channel is never used to carry LMP or L2CAP control signals.</p><a
+ name="18"></a>
+<p></p>
+<h3>Parked Slave Broadcast (PSB)</h3>The parked slave broadcast logical 
+transport is used for communications between the master and slaves that 
+are parked (have given up their default ACL logical transport). The 
+parked slave broadcast link is the only logical transport that exists 
+between the piconet master and parked slaves. 
+<p></p>
+<p>The PSB logical transport is more complex than the other logical 
+transports as it consists of a number of phases, each having a different
+ purpose. These phases are the control information phase (used to carry 
+the LMP logical link), the user information phase (used to carry the 
+L2CAP logical link), and the access phase (carrying baseband signaling).
+ The control information and broadcast information phases are usually 
+mutually exclusive as only one of them can be supported in a single 
+beacon interval. (Even if there is no controller user information phase,
+ the master is still required to transmit a packet in the beacon slots 
+so that the parked slaves can resynchronize.) The access phase is 
+normally present unless cancelled in a control information message.</p>
+<p>The control information phase is used for the master to send 
+information to the parked slaves containing modifications to the PSB 
+transport attributes, modifications to the beacon train attributes or a 
+request for a parked slave to become active in the piconet (known as 
+unparking). This control information is carried in LMP messages on the 
+LMP logical link. (The control information phase is also present in the 
+case of a user information phase where the user information requires 
+more than one baseband packet.)</p>
+<p>Packets in the control information phase are always transmitted in 
+the physical channel beacon train slots and cannot be transmitted on any
+ other slots. The control information occupies a single DM1 packet and 
+is repeated in every beacon train slot within a single beacon interval. 
+(If there is no control information then there may be a user information
+ phase that uses the beacon slots. If neither phase is used then the 
+beacon slots are used for other logical transport traffic or for NULL 
+packets.)</p>
+<p>The user information phase is used for the master to send L2CAP 
+packets that are destined for all piconet slaves. User information may 
+occupy one or more baseband packets. If the user information occupies a 
+single packet then the user information packet is repeated in each of 
+the piconet channel beacon train slots.</p>
+<p>If the user information occupies more than one baseband packets then 
+it is transmitted in slots after the beacon train (the broadcast scan 
+window), and the beacon slots are used to transmit a control information
+ phase message that contains the timing attributes of this broadcast 
+scan window. This is required so that the parked slaves remain connected
+ to the piconet physical channel to receive the user information.</p>
+<p>The access phase is normally present unless temporarily cancelled by a
+ control message carried in the control information broadcast phase. The
+ access window consists of a sequence of slots that follow the beacon 
+train. In order for a parked slave to become active in the piconet, it 
+must send such an access request to the piconet master during the access
+ window. Each parked slave is allocated an access request address (not 
+necessarily unique) that controls when during the access window the 
+slave requests access.</p>
+<p>The PSB logical transport is identified by the reserved LT_ADDR of 0.
+ This reserved LT_ADDR address is also used by the ASB logical 
+transport. Parked slaves are not normally confused by the duplicated use
+ of the LT_ADDR as they are only connected to the piconet physical 
+channel during the time that the PSB transport is being used.</p><a 
+name="19"></a>
+<p></p>
+<h3>Logical Links</h3>Some logical transports are capable of supporting 
+different logical links, either concurrently multiplexed, or one of the 
+choice. Within such logical transports, the logical link is identified 
+by the logical link identifier (LLID) bits in the payload header of 
+baseband packets that carry a data payload. The logical links 
+distinguish between a limited set of core protocols that are able to 
+transmit and receive data on the logical transports. Not all of the 
+logical transports are able to carry all of the logical links. In 
+particular the SCO and eSCO logical transports are only able to carry 
+constant data rate streams, and these are uniquely identified by the 
+LT_ADDR. Such logical transports only use packets that do not contain a 
+payload header, as their length is known in advance, and no LLID is 
+necessary. 
+<p></p><a name="20"></a>
+<p></p>
+<h3>ACL Control Logical Link (ACL-C)</h3>The ACL control logical link 
+(ACL-C) is used to carry LMP signaling between devices in the piconet. 
+The control link is only carried on the default ACL logical transport 
+and on the PSB logical transport (in the control information phase).The 
+ACL-C link is always given priority over the ACL-U (see below) link when
+ carried on the same logical transport. 
+<p></p><a name="21"></a>
+<p></p>
+<h3>User Asynchronous/Isochronous Logical Link (ACL-U)</h3>The user 
+asynchronous/isochronous logical link (ACL-U) is used to carry all 
+asynchronous and isochronous framed user data. The ACL-U link is carried
+ on all but the synchronous logical transports. Packets on the ACL-U 
+link are identified by one of two reserved LLID values. One value is 
+used to indicate whether the baseband packet contains the start of an 
+L2CAP frame and the other indicates a continuation of a previous frame. 
+This ensures correct synchronization of the L2CAP reassembler following 
+flushed packets. The use of this technique removes the need for a more 
+complex L2CAP header in every baseband packet (the header is only 
+required in the L2CAP start packets), but adds the requirement that a 
+complete L2CAP frame shall be transmitted before a new one is 
+transmitted. (An exception to this rule being the ability to flush a 
+partially transmitted L2CAP frame in favor of another L2CAP frame.) 
+<p></p><a name="22"></a>
+<p></p>
+<h3>User Synchronous/Extended Synchronous Logical Links (SCO-S/eSCO-S)</h3>Synchronous
+ (SCO-S) and extended synchronous (eSCO-S) logical links are used to 
+support isochronous data delivered in a stream without framing. These 
+links are associated with a single logical transport where data is 
+delivered in constant sized units at a constant rate. There is no LLID 
+within the packets on these transports, as only a single logical link 
+can be supported, and the packet length and scheduling period are 
+pre-defined and remain fixed during the lifetime of the link. 
+<p></p>
+<p>Variable rate isochronous data cannot be carried by the SCO-S or 
+eSCO-S logical links. In this case the data must be carried on ACL-U 
+logical links, which use packets with a payload header. <em>Bluetooth</em>
+ technology has some limitations when supporting variable-rate 
+isochronous data concurrently with reliable user data.</p><a name="23"></a>
+<p></p>
+<h3>L2CAP Channels</h3>L2CAP provides a multiplexing role allowing many 
+different applications to share the resources of an ACL-U logical link 
+between two devices. Applications and service protocols interface with 
+L2CAP using a channel-oriented interface to create connections to 
+equivalent entities on other devices. 
+<p></p>
+<p>L2CAP channel endpoints are identified to their clients by a channel 
+identifier (CID). This is assigned by L2CAP, and each L2CAP channel 
+endpoint on any device has a different CID.</p>
+<p>L2CAP channels may be configured to provide an appropriate QoS to the
+ application. L2CAP maps the channel onto the ACL-U logical link.</p>
+<p>L2CAP supports channels that are connection-oriented and others that 
+are group-oriented. Group-oriented channels may be mapped onto the ASB-U
+ logical link, or implemented as iterated transmission to each member in
+ turn over an ACL-U logical link.</p>
+<p>Apart from the creation, configuration and dismantling of channels, 
+the main role of L2CAP is to multiplex service data units (SDUs) from 
+the channel clients onto the ACL-U logical links, and to carry out a 
+simple level of scheduling, selecting SDUs according to relative 
+priority.</p>
+<p>L2CAP can provide a per channel flow control with the peer L2CAP 
+layer. This option is selected by the application when the channel is 
+established. L2CAPcan also provide enhanced error detection and 
+retransmission to (a) reduce the probability of undetected errors being 
+passed to the application and (b) recover from loss of portions of the 
+user data when the baseband layer performs a flush on the ACL-U logical 
+link.</p>
+<p>In the case where an HCI is present, the L2CAP is also required to 
+segment L2CAP SDUs into fragments that will fit into the baseband 
+buffers, and also to operate a token based flow control procedure over 
+the HCI, submitting fragments to the baseband only when allowed to do 
+so. This may affect the scheduling algorithm.</p>
+<p><a href="#top">Top</a></p></td></tr></tbody></table></td></tr>
+<tr>
+<td><img src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" 
+height="20"></td></tr></tbody></table></td></tr></tbody></table></div>
+</div>
+
+
+
+<table class="webpartHolder" id="webpartHolderTop" border="0px">
+		<tbody><tr>
+			<td>
+				<table cellpadding="0" cellspacing="0" width="100%">
+					
+					<tbody><tr>
+						<td colspan="2" valign="top" width="100%">
+								
+						</td>
+					</tr>
+				</tbody></table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table cellpadding="0" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td valign="top" width="33%">
+							
+						</td>
+						<td valign="top" width="34%">
+							
+						</td>
+
+						<td valign="top" width="33%">
+							
+						</td>
+					</tr>
+				</tbody></table>
+			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table cellpadding="0" cellspacing="0" width="100%">
+					<tbody><tr>
+						<td valign="top" width="50%">
+							
+						</td>
+						<td valign="top" width="50%">
+							
+						</td>
+					</tr>
+				</tbody></table>
+			
+			</td>
+		</tr>
+
+		</tbody></table>
+
+<table class="webpartHolderPaddedPL" id="webpartHolder" border="0px" 
+width="100%">
+    <tbody><tr>
+        <!-- Single Zone-->
+        <td colspan="3" class="TopZone" width="100%">
+            <div class="divColumnPadded">
+            <!-- Div Padded-->
+                
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <!-- Double Equal  Zone-->
+        <td colspan="3" class="EqualSplitTwoPartZone">
+                        <!-- Div Padded-->
+<div class="divTablePadded">
+
+                <table cellpadding="0" cellspacing="0" width="100%">
+                    <tbody><tr>
+                        <td class="EqualSplitTwoPartLeftZone" 
+width="50%">
+                         <div class="divColumnPadded">
+
+                            
+                     </div>
+
+                        </td>
+                        <td class="EqualSplitTwoPartRightZone" 
+width="50%">
+                        <div class="divColumnPadded">
+
+                            
+                       </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+                </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="divTablePadded">
+                        <!-- Div Padded-->
+
+                <table width="100%">
+                    <tbody><tr>
+                        <!-- Double Zone-->
+                        <td colspan="2" class="MiddleLeftZone" 
+width="75%">
+                        <div class="divColumnPadded">
+                            
+                       </div>
+                        </td>
+                        <td class="MiddleRightZone" width="25%">
+                          <div class="divColumnPadded">
+					   
+                        </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="divTablePadded">
+                        <!-- Div Padded-->
+
+                <table width="100%">
+                    <tbody><tr>
+                        <!-- Triple Zone -->
+                        <td height="100%" valign="top" width="33%">
+                        <div class="divColumnPadded">
+
+                            
+                        </div>
+                        </td>
+                        <td height="100%" valign="top" width="33%">
+                        <div class="divColumnPadded">
+
+                            
+                        </div>
+                        </td>
+                        <td height="100%" valign="top" width="33%">
+                         <div class="divColumnPadded">
+   							
+                        </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" class="BottomSingleZone" width="100%">
+            <div class="divColumnPadded">
+                        <!-- Div Padded-->
+
+                
+            </div>
+        </td>
+    </tr>
+</tbody></table>
+
+<script language="javascript" type="text/javascript">
+	headerText = document.getElementById("headerTextID").innerHTML;
+	headerTextTest = headerText.replace(/&nbsp;|\s/ig, "");		// Remove any white space.
+
+	if (headerTextTest.length > 0)								// Show the header 
+	{
+		headerText = headerText.replace(/&nbsp;/ig, "");		// Remove any non breaking spaces.
+		headerText = headerText.replace(/bluetooth(?! SIG)(?! Special Interest Group)/ig, "<em>$&</em>");
+		document.getElementById("headerTextID").innerHTML = headerText;
+		document.getElementById("headerBarID").style.display = "block";
+	}
+	else
+	{
+		document.getElementById("headerBarID").style.display = "none";
+	}
+</script>
+
+
+                                    <!-- Main Body -->
+                                    </div>
+				 <script type="text/javascript" id="ChangeTableWidth">
+				     //                                 alert("ChangeTableWidth");
+				     var eleDiv = document.getElementById("MainContentDiv");
+				     // alert(eleDiv);
+				     var eleTables = eleDiv.getElementsByTagName("table");
+				     //  alert(eleTables );
+				     for (var i = 0; i < eleTables.length; i++) {
+				         try {
+				             if (Number(eleTables[i].getAttribute("width")) > Number("759")) {
+				                 // grab the data 
+				                 eleTables[i].setAttribute("width", "760");
+				                 //  alert(eleTables[i].getAttribute("width"));    }
+				             }
+
+				         }
+				         catch (err) {
+
+				         }
+
+				     }
+       </script>
+																												</td>
+																								</tr>
+																				</tbody></table>
+		</placeholder>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="yellowBackground" align="left" 
+height="13" valign="top" width="13">
+                            <img 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" height="13" 
+width="5">
+                        </td>
+                        <td align="left" height="13" valign="bottom">
+                            <table summary="bottom bar white and blue" 
+style="width: 773px;" border="0" cellpadding="0" cellspacing="0" 
+height="13">
+                                <tbody><tr>
+                                    <td class="yellowBackground" 
+align="left" height="13" valign="top" width="295">
+                                        <img 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" height="13" 
+width="5">
+                                    </td>
+                                    <td class="whtBackground" 
+align="left" height="13" valign="top">
+                                        <img 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" height="13" 
+width="5">
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <td class=".whtBackground1" align="left" 
+valign="top">
+                        </td>
+                        <td class="NewsDisplayHolder" align="left" 
+valign="top">
+                            
+                            <!-- News Display -->
+                            <!-- <div style="position: relative; display: block; float: left; width: 100%;">
+                                <span style="vertical-align: top; width: 760px; position: relative; float: left;
+                                    left: 0px; top: 0px;">
+                                </span>
+                            </div>
+                            -->
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+            <td rowspan="2" align="left" valign="top" width="5">
+            </td>
+        </tr>
+    </tbody></table>
+    <div style="position: relative; display: block; float: left;">
+        <table border="0" cellpadding="0" cellspacing="0" width="978">
+            <tbody><tr>
+                <td>
+                    <table border="0" cellpadding="0" cellspacing="0" 
+width="100%">
+                        <tbody><tr>
+                            <td align="left" valign="top" width="5px">
+                                <img 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" width="5">
+                            </td>
+                            <td colspan="2" 
+class="companyLogoBackground" align="center" valign="top">
+                                <table summary="brands" border="0" 
+cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody><tr>
+                                        <td align="center" valign="top">
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.ericsson.com/bluetooth','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Data_Transport_Architecture.aspx_fichiers/brand_ericsson.gif" 
+alt="" border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.intel.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Data_Transport_Architecture.aspx_fichiers/brand_intel.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.lenovo.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Data_Transport_Architecture.aspx_fichiers/brand_ibm.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.microsoft.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Data_Transport_Architecture.aspx_fichiers/brand_microsoft.gif" 
+alt="" border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.motorola.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Data_Transport_Architecture.aspx_fichiers/brand_motorola.gif" 
+alt="" border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.nokia.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Data_Transport_Architecture.aspx_fichiers/brand_nokia.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a href="#" 
+onclick="javascript:void(window.open('http://www.toshiba.com','','width=770,height=600,scrollbars=1,resizable=1,menubar=1'));">
+                                                <img 
+src="Data_Transport_Architecture.aspx_fichiers/brand_toshiba.gif" alt=""
+ border="0"></a>
+                                        </td>
+                                        <td align="center" valign="top">
+                                            <a zref="" name="a" 
+title="b">
+                                                <img 
+src="Data_Transport_Architecture.aspx_fichiers/brand_allSig.gif" alt="" 
+border="0"></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="Variation">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="bottom">
+                                <img 
+src="Data_Transport_Architecture.aspx_fichiers/spacer.gif" height="17" 
+width="5">
+                            </td>
+                            <td class="gryHeaderFooter" align="left" 
+nowrap="nowrap" width="50%">
+                                © 2010 Bluetooth SIG, Inc. All rights 
+reserved.
+                            </td>
+                            <td class="gryHeaderFooter" align="right" 
+nowrap="nowrap" valign="bottom" width="50%">
+                                <a href="javascript:openLegalWindow();">legal</a>
+ | <a href="javascript:openPrivacyWindow();">
+                                    privacy policy</a>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+
+        <script language="javascript" type="text/javascript">
+            if (/msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent)) // For IE
+                document.getElementById("tweakTableID").style.width = "102.4%";
+            else if (/firefox/i.test(navigator.userAgent)) // For Firefox
+                document.getElementById("tweakTableID").style.width = "100.8%";
+            // Do nothing for Safari & Chrome browsers since they ignore this value.
+        </script>
+
+    </div>
+    
+    
+    
+    <!-- Fix for Firfox Search issue-->
+    <div class="content">
+        <input name="__spDummyText1" style="display: none;" size="1" 
+type="text">
+        <input name="__spDummyText2" style="display: none;" size="1" 
+type="text"></div>
+    
+<script src="Data_Transport_Architecture.aspx_fichiers/WebResource.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var __wpmExportWarning='This Web Part Page has been personalized. As a result, one or more Web Part properties may contain confidential information. Make sure the properties contain information that is safe for others to read. After exporting this Web Part, view properties in the Web Part description file (.WebPart) by using a text editor such as Microsoft Notepad.';var __wpmCloseProviderWarning='You are about to close this Web Part.  It is currently providing data to other Web Parts, and these connections will be deleted if this Web Part is closed.  To close this Web Part, click OK.  To keep this Web Part, click Cancel.';var __wpmDeleteWarning='You are about to permanently delete this Web Part.  Are you sure you want to do this?  To delete this Web Part, click OK.  To keep this Web Part, click Cancel.';//]]>
+</script>
+<script type="text/javascript" language="JavaScript" defer="defer">
+<!--
+function S3031AEBB_Submit() {GoSearch(null,'ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_InputKeywords',null,true,false,null,null,null,null,'\u002fSearch\u002fResults.aspx', 'This Site','This List', 'This Folder', 'Related Sites', '\u002fEnglish\u002fTechnology\u002fWorks\u002f_layouts\u002fOSSSearchResults.aspx');}
+// -->
+</script><script type="text/javascript" language="JavaScript">
+// append an onload event handler
+var S3031AEBB__onload= document.body.onload;
+if(typeof document.body.onload == 'function')
+{
+ document.body.onload = function()
+ {
+S3031AEBB__onload();        
+  document.getElementById('ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_InputKeywords').name = 'InputKeywords';
+ }
+}
+else
+{
+ document.body.onload = function()
+ {
+  eval(S3031AEBB__onload);        
+  document.getElementById('ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_InputKeywords').name = 'InputKeywords';
+ }
+}
+
+function S3031AEBB_OSBEK(event1) { 
+var kCode = String.fromCharCode(event1.keyCode);
+if(kCode == "\n" || kCode == "\r")
+{   
+S3031AEBB_Submit();
+}
+}
+// -->
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+WebForm_InitCallback();//]]>
+</script>
+</form>
+    <!-- Google Analytics-->
+    
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Data_Transport_Architecture.aspx_fichiers/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5227748-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript" src="Data_Transport_Architecture.aspx_fichiers/erte.js"></script>
+</body></html>

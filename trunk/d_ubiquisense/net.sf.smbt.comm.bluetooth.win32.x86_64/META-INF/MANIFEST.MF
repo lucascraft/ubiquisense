@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquisense - Bluetooth Communication Win32 X86_64
+Bundle-SymbolicName: net.sf.smbt.comm.bluetooth.win32.x86_64
+Bundle-Version: 0.5.0.qualifier
+Bundle-Vendor: ubiquisense.com
+Fragment-Host: net.sf.smbt.comm.bluetooth;bundle-version="0.5.0"
+Bundle-RequiredExecutionEnvironment: J2SE-1.2
+Eclipse-PlatformFilter: (& (osgi.os=win32) (osgi.arch=x86_64))
+Bundle-ClassPath: lib/
+Bundle-NativeCode: lib/bluecove.dll,\
+                   lib/intelbth_x64.dll, \
+                   lib/intelbth.dll
