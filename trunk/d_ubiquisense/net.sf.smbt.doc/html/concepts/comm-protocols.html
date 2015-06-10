@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Communication Protocols</title>
+	<LINK rel=stylesheet type="text/css" href="../css/layout.css">
+	<LINK rel=stylesheet type="text/css" href="../css/style.css">
+</head>
+
+<body>
+<h1>Communication Protocols</h1>
+<p>
+Ubiquisense proposes an abstract communication model decoupling transport from protocol, relying on full-duplex queuing infrastructure.
+</p>
+<p>
+By selecting a communication protocol, you choose to only accept this particular protocol framing into a communication channel. 
+</p>
+<p>
+The communication channel will then be the tube transporting corresponding frames.  
+</p>
+<p>
+This model proposes several main communication protocols : 
+<ul>
+<li>OSC</li>
+<li>Firmata</li>
+<li>DMX</li>
+<li>Midi</li>
+</ul>
+</p>
+<h2>OSC : Open Sound Control</h2>
+<p>
+This protocol is known as a Midi replacement. It is the Ubiquisense pivotal protocol. All information is expressed as '/' separated message with associated arguments.
+</p>
+ 
+<h2>DMX</h2>
+<p>
+Lighting protocol massively distributed worlwide. Ubiquisense mainly rely on OpenDMX APIs which are associated to the ENTTEC PRO USB devices.
+</p>
+
+<h2>Midi</h2>
+<p>
+This protocol is the worldwide standard for digital musical devices controllers. Ubiquisense offers a native routing for it.
+</p>
+
+</body>
+</html>

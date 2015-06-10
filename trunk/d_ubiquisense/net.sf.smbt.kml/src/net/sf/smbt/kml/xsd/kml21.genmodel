@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.kml/src-model"
+    modelPluginID="net.sf.smbt.kml" modelName="Kml21" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>kml21.xsd</foreignModel>
+  <genPackages prefix="v21" basePackage="com.google.earth.kml" resource="XML" disposableProviderFactory="true"
+      fileExtensions="kml" ecorePackage="_2.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="_2.ecore#//AltitudeModeEnum">
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//AltitudeModeEnum/clampToGround"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//AltitudeModeEnum/relativeToGround"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//AltitudeModeEnum/absolute"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="_2.ecore#//ColorModeEnum">
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ColorModeEnum/normal"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ColorModeEnum/random"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="_2.ecore#//ItemIconStateEnum">
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ItemIconStateEnum/open"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ItemIconStateEnum/closed"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ItemIconStateEnum/error"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ItemIconStateEnum/fetching0"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ItemIconStateEnum/fetching1"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ItemIconStateEnum/fetching2"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="_2.ecore#//ListItemTypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ListItemTypeEnum/radioFolder"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ListItemTypeEnum/check"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ListItemTypeEnum/checkHideChildren"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ListItemTypeEnum/checkOffOnly"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="_2.ecore#//RefreshModeEnum">
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//RefreshModeEnum/onChange"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//RefreshModeEnum/onInterval"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//RefreshModeEnum/onExpire"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="_2.ecore#//StyleStateEnum">
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//StyleStateEnum/normal"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//StyleStateEnum/highlight"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="_2.ecore#//UnitsEnum">
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//UnitsEnum/fraction"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//UnitsEnum/pixels"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//UnitsEnum/insetPixels"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="_2.ecore#//ViewRefreshModeEnum">
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ViewRefreshModeEnum/never"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ViewRefreshModeEnum/onRequest"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ViewRefreshModeEnum/onStop"/>
+      <genEnumLiterals ecoreEnumLiteral="_2.ecore#//ViewRefreshModeEnum/onRegion"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="_2.ecore#//AltitudeModeEnumObject"/>
+    <genDataTypes ecoreDataType="_2.ecore#//Angle180"/>
+    <genDataTypes ecoreDataType="_2.ecore#//Angle180Object"/>
+    <genDataTypes ecoreDataType="_2.ecore#//Angle360"/>
+    <genDataTypes ecoreDataType="_2.ecore#//Angle360Object"/>
+    <genDataTypes ecoreDataType="_2.ecore#//Angle90"/>
+    <genDataTypes ecoreDataType="_2.ecore#//Angle90Object"/>
+    <genDataTypes ecoreDataType="_2.ecore#//Anglepos90"/>
+    <genDataTypes ecoreDataType="_2.ecore#//Anglepos90Object"/>
+    <genDataTypes ecoreDataType="_2.ecore#//Color"/>
+    <genDataTypes ecoreDataType="_2.ecore#//ColorModeEnumObject"/>
+    <genDataTypes ecoreDataType="_2.ecore#//CoordinatesType"/>
+    <genDataTypes ecoreDataType="_2.ecore#//DateTimeType"/>
+    <genDataTypes ecoreDataType="_2.ecore#//ItemIconStateEnumObject"/>
+    <genDataTypes ecoreDataType="_2.ecore#//ItemIconStateType"/>
+    <genDataTypes ecoreDataType="_2.ecore#//ListItemTypeEnumObject"/>
+    <genDataTypes ecoreDataType="_2.ecore#//RefreshModeEnumObject"/>
+    <genDataTypes ecoreDataType="_2.ecore#//StyleStateEnumObject"/>
+    <genDataTypes ecoreDataType="_2.ecore#//UnitsEnumObject"/>
+    <genDataTypes ecoreDataType="_2.ecore#//ViewRefreshModeEnumObject"/>
+    <genClasses ecoreClass="_2.ecore#//BalloonStyleType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//BalloonStyleType/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//BalloonStyleType/bgColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//BalloonStyleType/textColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//BalloonStyleType/text"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//BoundaryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//BoundaryType/linearRing"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//ChangeType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//ChangeType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ChangeType/objectGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//ChangeType/object"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ChangeType/featureGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//ChangeType/feature"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ChangeType/geometryGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//ChangeType/geometry"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ChangeType/styleSelectorGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//ChangeType/styleSelector"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ChangeType/timePrimitiveGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//ChangeType/timePrimitive"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="_2.ecore#//ColorStyleType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ColorStyleType/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ColorStyleType/colorMode"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="_2.ecore#//ContainerType"/>
+    <genClasses ecoreClass="_2.ecore#//CreateType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//CreateType/folder"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//DeleteType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//DeleteType/featureGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//DeleteType/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/balloonStyle"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/object"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//DocumentRoot/coordinates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/document"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/feature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/folder"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/geometry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/groundOverlay"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/iconStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/kml"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/labelStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/latLonAltBox"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/latLonBox"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/linearRing"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/lineString"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/lineStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/link"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/listStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/lod"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/lookAt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/model"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/multiGeometry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/networkLink"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/orientation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/placemark"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/point"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/polygon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/polyStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/region"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/scale"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/screenOverlay"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/style"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/styleSelector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/styleMap"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//DocumentRoot/styleUrl"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/timePrimitive"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/timeSpan"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//DocumentRoot/timeStamp"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//DocumentType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//DocumentType/featureGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//DocumentType/feature"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="_2.ecore#//FeatureType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//FeatureType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//FeatureType/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//FeatureType/open"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//FeatureType/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//FeatureType/phoneNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//FeatureType/snippet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//FeatureType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//FeatureType/lookAt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//FeatureType/timePrimitiveGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//FeatureType/timePrimitive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//FeatureType/styleUrl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//FeatureType/styleSelectorGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//FeatureType/styleSelector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//FeatureType/region"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//FeatureType/metadata"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//FolderType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//FolderType/featureGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//FolderType/feature"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="_2.ecore#//GeometryType"/>
+    <genClasses ecoreClass="_2.ecore#//GroundOverlayType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//GroundOverlayType/altitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//GroundOverlayType/altitudeMode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//GroundOverlayType/latLonBox"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//IconStyleIconType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//IconStyleIconType/href"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//IconStyleType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//IconStyleType/scale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//IconStyleType/heading"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//IconStyleType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//IconStyleType/hotSpot"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//IconType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//IconType/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//IconType/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//IconType/w"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//IconType/h"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//ItemIconType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ItemIconType/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ItemIconType/href"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//KmlType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//KmlType/networkLinkControl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//KmlType/featureGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//KmlType/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//LabelStyleType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LabelStyleType/scale"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//LatLonAltBoxType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LatLonAltBoxType/minAltitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LatLonAltBoxType/maxAltitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LatLonAltBoxType/altitudeMode"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//LatLonBoxType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LatLonBoxType/north"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LatLonBoxType/south"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LatLonBoxType/east"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LatLonBoxType/west"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LatLonBoxType/rotation"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//LinearRingType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinearRingType/extrude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinearRingType/tessellate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinearRingType/altitudeMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinearRingType/coordinates"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//LineStringType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LineStringType/extrude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LineStringType/tessellate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LineStringType/altitudeMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LineStringType/coordinates"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//LineStyleType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LineStyleType/width"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//LinkType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinkType/href"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinkType/refreshMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinkType/refreshInterval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinkType/viewRefreshMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinkType/viewRefreshTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinkType/viewBoundScale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinkType/viewFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LinkType/httpQuery"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//ListStyleType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ListStyleType/listItemType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ListStyleType/bgColor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//ListStyleType/itemIcon"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//LocationType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LocationType/longitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LocationType/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LocationType/altitude"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//LodType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LodType/minLodPixels"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LodType/maxLodPixels"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LodType/minFadeExtent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LodType/maxFadeExtent"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//LookAtType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LookAtType/longitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LookAtType/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LookAtType/altitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LookAtType/range"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LookAtType/tilt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LookAtType/heading"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//LookAtType/altitudeMode"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//MetadataType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//MetadataType/any"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//ModelType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ModelType/altitudeMode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//ModelType/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//ModelType/orientation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//ModelType/scale"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//ModelType/link"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//MultiGeometryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//MultiGeometryType/geometryGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//MultiGeometryType/geometry"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//NetworkLinkControlType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//NetworkLinkControlType/minRefreshPeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//NetworkLinkControlType/cookie"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//NetworkLinkControlType/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//NetworkLinkControlType/linkName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//NetworkLinkControlType/linkDescription"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//NetworkLinkControlType/linkSnippet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//NetworkLinkControlType/expires"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//NetworkLinkControlType/update"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//NetworkLinkControlType/lookAt"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//NetworkLinkType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//NetworkLinkType/refreshVisibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//NetworkLinkType/flyToView"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//NetworkLinkType/link"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//NetworkLinkType/url"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="_2.ecore#//ObjectType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ObjectType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ObjectType/targetId"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//OrientationType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//OrientationType/heading"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//OrientationType/tilt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//OrientationType/roll"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="_2.ecore#//OverlayType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//OverlayType/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//OverlayType/drawOrder"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//OverlayType/icon"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//PlacemarkType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//PlacemarkType/geometryGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//PlacemarkType/geometry"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//PointType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//PointType/extrude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//PointType/tessellate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//PointType/altitudeMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//PointType/coordinates"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//PolygonType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//PolygonType/extrude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//PolygonType/tessellate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//PolygonType/altitudeMode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//PolygonType/outerBoundaryIs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//PolygonType/innerBoundaryIs"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//PolyStyleType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//PolyStyleType/fill"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//PolyStyleType/outline"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//RegionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//RegionType/latLonAltBox"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//RegionType/lod"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//ReplaceType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//ReplaceType/featureGroup"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//ReplaceType/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//ScaleType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ScaleType/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ScaleType/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ScaleType/z"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//ScreenOverlayType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//ScreenOverlayType/overlayXY"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//ScreenOverlayType/screenXY"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//ScreenOverlayType/rotationXY"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//ScreenOverlayType/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//ScreenOverlayType/rotation"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//SnippetType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//SnippetType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//SnippetType/maxLines"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//StyleMapPairType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//StyleMapPairType/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//StyleMapPairType/styleUrl"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//StyleMapType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//StyleMapType/pair"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="_2.ecore#//StyleSelectorType"/>
+    <genClasses ecoreClass="_2.ecore#//StyleType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//StyleType/iconStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//StyleType/labelStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//StyleType/lineStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//StyleType/polyStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//StyleType/balloonStyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference _2.ecore#//StyleType/listStyle"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="_2.ecore#//TimePrimitiveType"/>
+    <genClasses ecoreClass="_2.ecore#//TimeSpanType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//TimeSpanType/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//TimeSpanType/end"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//TimeStampType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//TimeStampType/when"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//UpdateType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//UpdateType/targetHref"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute _2.ecore#//UpdateType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//UpdateType/create"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//UpdateType/delete"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//UpdateType/change"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference _2.ecore#//UpdateType/replace"/>
+    </genClasses>
+    <genClasses ecoreClass="_2.ecore#//Vec2Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//Vec2Type/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//Vec2Type/xunits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//Vec2Type/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute _2.ecore#//Vec2Type/yunits"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

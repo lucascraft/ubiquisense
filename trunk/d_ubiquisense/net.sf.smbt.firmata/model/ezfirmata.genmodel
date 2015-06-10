@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.firmata/src-model"
+    editorDirectory="" modelPluginID="net.sf.smbt.firmata" modelName="Ezfirmata" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" testsDirectory="" importerID="org.eclipse.emf.importer.cdo"
+    featureDelegation="Reflective" complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../net.sf.smbt.midi/model/ezmidi.genmodel#//ezmidi ../../net.sf.xqz.engine/model/temporal.genmodel#//cmd">
+  <foreignModel>ezfirmata.ecore</foreignModel>
+  <genPackages prefix="Ezfirmata" basePackage="net.sf.smbt.protocol" disposableProviderFactory="true"
+      ecorePackage="ezfirmata.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezfirmata.ecore#//FIRMATA_I2C_RW_MODE">
+      <genEnumLiterals ecoreEnumLiteral="ezfirmata.ecore#//FIRMATA_I2C_RW_MODE/WRITE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezfirmata.ecore#//FIRMATA_I2C_RW_MODE/READ_ONCE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezfirmata.ecore#//FIRMATA_I2C_RW_MODE/READ_CONTINUOUSLY"/>
+      <genEnumLiterals ecoreEnumLiteral="ezfirmata.ecore#//FIRMATA_I2C_RW_MODE/STOP_READING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezfirmata.ecore#//FIRMATA_I2C_ADDR_MODE">
+      <genEnumLiterals ecoreEnumLiteral="ezfirmata.ecore#//FIRMATA_I2C_ADDR_MODE/I2C_ADDR_MODE_7_BITS"/>
+      <genEnumLiterals ecoreEnumLiteral="ezfirmata.ecore#//FIRMATA_I2C_ADDR_MODE/I2C_ADDR_MODE_10_BITS"/>
+    </genEnums>
+    <genClasses ecoreClass="ezfirmata.ecore#//FirmataCmd"/>
+    <genClasses ecoreClass="ezfirmata.ecore#//FirmataReportDigitalPinCmd"/>
+    <genClasses ecoreClass="ezfirmata.ecore#//FirmataReportAnalogPinCmd"/>
+    <genClasses ecoreClass="ezfirmata.ecore#//FirmataSetPinModeCmd"/>
+    <genClasses ecoreClass="ezfirmata.ecore#//FirmataProtocolVersionCmd"/>
+    <genClasses ecoreClass="ezfirmata.ecore#//FirmataSystemResetCmd"/>
+    <genClasses ecoreClass="ezfirmata.ecore#//FirmataAnalogIOMsgCmd"/>
+    <genClasses ecoreClass="ezfirmata.ecore#//FirmataDigitalIOMsgCmd"/>
+    <genClasses ecoreClass="ezfirmata.ecore#//SysexStart"/>
+    <genClasses ecoreClass="ezfirmata.ecore#//SysexStop"/>
+    <genClasses ecoreClass="ezfirmata.ecore#//FirmataSysexMessage"/>
+  </genPackages>
+</genmodel:GenModel>

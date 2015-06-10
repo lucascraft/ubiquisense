@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+<!--
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="net.sf.smbt.ezmapping.presentation.EzmappingModelWizardID"
+            name="%_UI_EzmappingModelWizard_label"
+            class="net.sf.smbt.ezmapping.presentation.EzmappingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/EzmappingModelFile.gif">
+         <description>%_UI_EzmappingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.sf.smbt.ezmapping.presentation.EzmappingEditorID"
+            name="%_UI_EzmappingEditor_label"
+            icon="icons/full/obj16/EzmappingModelFile.gif"
+            extensions="ezmapping"
+            class="net.sf.smbt.ezmapping.presentation.EzmappingEditor"
+            contributorClass="net.sf.smbt.ezmapping.presentation.EzmappingActionBarContributor">
+      </editor>
+   </extension>
+-->
+
+</plugin>

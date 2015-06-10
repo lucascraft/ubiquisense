@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contexts>
+    <context id="comm_protocol_context" title="Communication Protocols">
+        <description>This page helps you to select the communication medium.</description>
+        <topic href="html/concepts/comm-protocols.html" label="Communication Protocols"/>
+    </context>
+    <context id="transport_protocol_context" title="Transport Protocols">
+        <description>This page helps you to select the transport protocol.</description>
+        <topic href="html/concepts/transport-protocols.html" label="Transport Protocols"/>
+    </context>
+    <context id="comm_ip_context" title="IP Configuration">
+        <description>This page helps you to configure the IP address configuration.</description>
+        <topic href="html/concepts/udp.html" label="UDP"/>
+        <topic href="html/concepts/tcp.html" label="TCP"/>
+    </context>
+    <context id="bluetooth_context" title="Bluetooth Configuration">
+        <description>This page helps you to configure the Bluetooth configuration.</description>
+        <topic href="html/concepts/bluetooth.html" label="Bluetooth"/>
+    </context>
+    <context id="midi_context" title="Midi Configuration">
+        <description>This page helps you to configure the Midi configuration.</description>
+        <topic href="html/concepts/midi.html" label="Midi"/>
+    </context>
+    <context id="usb_context" title="USB Configuration">
+        <description>This page helps you to configure the USB configuration.</description>
+        <topic href="html/concepts/usb.html" label="USB"/>
+    </context>
+    <context id="xbee_context" title="XBee Configuration">
+        <description>This page helps you to configure the XBee configuration.</description>
+        <topic href="html/concepts/xbee.html" label="XBee"/>
+    </context>
+</contexts>

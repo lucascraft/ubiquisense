@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.dmx/src-model" modelPluginID="net.sf.smbt.dmx"
+    modelName="Qxf" testsDirectory="" importerID="org.eclipse.xsd.ecore.importer"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>qxf.xsd</foreignModel>
+  <genPackages prefix="Qxf" basePackage="net.sf.smbt.dmx.model" resource="XML" disposableProviderFactory="true"
+      ecorePackage="qxf.ecore#/">
+    <genClasses ecoreClass="qxf.ecore#//Bulb">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Bulb/colourTemperature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Bulb/lumens"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Bulb/type"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//Capability">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Capability/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Capability/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Capability/min"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//Channel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//Channel/group"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//Channel/colour"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//Channel/capability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Channel/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Channel/number"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//Colour">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Colour/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Colour/name"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//Creator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Creator/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Creator/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Creator/author"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//Dimensions">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Dimensions/depth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Dimensions/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Dimensions/weight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Dimensions/width"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//FixtureDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//FixtureDefinition/creator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute qxf.ecore#//FixtureDefinition/manufacturer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute qxf.ecore#//FixtureDefinition/model"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute qxf.ecore#//FixtureDefinition/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//FixtureDefinition/channel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//FixtureDefinition/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//Focus">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Focus/panMax"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Focus/tiltMax"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Focus/type"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//Group">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Group/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Group/byte"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//Lens">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Lens/degreesMax"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Lens/degreesMin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Lens/name"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//Mode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//Mode/physical"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference qxf.ecore#//Mode/channel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Mode/name"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//ModeChannel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//ModeChannel/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//ModeChannel/number"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//Physical">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//Physical/bulb"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//Physical/dimensions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//Physical/lens"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//Physical/focus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference qxf.ecore#//Physical/technical"/>
+    </genClasses>
+    <genClasses ecoreClass="qxf.ecore#//Technical">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Technical/dmxConnector"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute qxf.ecore#//Technical/powerConsumption"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

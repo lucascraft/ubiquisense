@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<!--
+   <extension
+         point="net.sf.xqz.engine.cmdHandler">
+      <cmdHandler
+            ID="net.sf.smbt.json.evtHandler"
+            handler="net.sf.smbt.json.cmd.JsonEventHandler">
+      </cmdHandler>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.cmdInterpreter">
+      <cmdInterpreter
+            ID="net.sf.smbt.json.cmdInterpreter"
+            interpreter="net.sf.smbt.json.cmd.JsonCmdInterpreter">
+      </cmdInterpreter>
+   </extension>
+   <extension
+         point="net.sf.xqz.engine.frameInterpreter">
+      <frameInterpreter
+            ID="net.sf.smbt.json.frameInterpreter"
+            interpreter="net.sf.xqz.model.engine.impl.AbstractFrameInterpreterImpl">
+      </frameInterpreter>
+   </extension>
+   <extension
+         point="net.sf.smbt.comm.topology.protocol">
+      <engine
+            ID="net.sf.smbt.json"
+            alias="json"
+            cmdInterpreterID="net.sf.smbt.json.cmdInterpreter"
+            desc="Json protocol"
+            eventHandler="net.sf.smbt.json.evtHandler"
+            frameInterpreter="net.sf.smbt.json.frameInterpreter"
+            instance="0"
+            transports="HTTP, USB, TCP, UDP, XBEE">
+      </engine>
+   </extension>
+-->
+</plugin>

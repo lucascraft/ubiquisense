@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.dmx/src-model"
+    editorDirectory="" modelPluginID="net.sf.smbt.dmx" modelName="Ezdmx" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" testsDirectory="" importerID="org.eclipse.emf.importer.cdo"
+    featureDelegation="Reflective" complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../net.sf.xqz.engine/model/temporal.genmodel#//cmd">
+  <foreignModel>ezdmx.ecore</foreignModel>
+  <genPackages prefix="Ezdmx" basePackage="net.sf.smbt.dmx.model" disposableProviderFactory="true"
+      ecorePackage="ezdmx.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezdmx.ecore#//OpenDMXFirmware">
+      <genEnumLiterals ecoreEnumLiteral="ezdmx.ecore#//OpenDMXFirmware/NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="ezdmx.ecore#//OpenDMXFirmware/RDM"/>
+      <genEnumLiterals ecoreEnumLiteral="ezdmx.ecore#//OpenDMXFirmware/RDM_SNIFFER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezdmx.ecore#//OpenDMXStates">
+      <genEnumLiterals ecoreEnumLiteral="ezdmx.ecore#//OpenDMXStates/DISC_MUTE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezdmx.ecore#//OpenDMXStates/DISC_UN_MUTE"/>
+      <genEnumLiterals ecoreEnumLiteral="ezdmx.ecore#//OpenDMXStates/ACK_TIMER"/>
+      <genEnumLiterals ecoreEnumLiteral="ezdmx.ecore#//OpenDMXStates/NONE"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="ezdmx.ecore#//OpenDMXCmd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmx.ecore#//OpenDMXCmd/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmx.ecore#//OpenDMXCmd/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmx.ecore#//OpenDMXCmd/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmx.ecore#//OpenDMXCmd/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmx.ecore#//OpenDMXCmd/end"/>
+    </genClasses>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXReprogramFirmwareRequestCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXProgramFlashPageRequestCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXProgramFlashPageReply"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXGetWidgetParamRequestCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXGetWidgetParamsReplyCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXSetWidgetParamsRequestCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXReceivedPacketsCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXOutputOnlySendDMXPacketsRequestCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXSendRDMPacketCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXReceiveDMXCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXChangeOfStatePacketCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXGetWidgetSerialNumberRequestCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXGetWidgetSerialNumberReplyCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXSendRDMDiscoveryRequestCmd"/>
+    <genClasses ecoreClass="ezdmx.ecore#//OpenDMXWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezdmx.ecore#//OpenDMXWidget/uid"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

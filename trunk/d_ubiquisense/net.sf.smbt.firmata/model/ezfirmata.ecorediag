@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_2ID40L9kEd-S8b2c1hJIkA" type="EcoreTools" name="ezfirmata" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_fLGYYL9lEd-S8b2c1hJIkA" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fLR-kL9lEd-S8b2c1hJIkA" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fLR-kb9lEd-S8b2c1hJIkA" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_fLKCwL9lEd-S8b2c1hJIkA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_fLKCwb9lEd-S8b2c1hJIkA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_fLKCwr9lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_fLKCw79lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_fLKCxL9lEd-S8b2c1hJIkA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_fLKCxb9lEd-S8b2c1hJIkA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_fLKCxr9lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_fLKp0L9lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_fLKp0b9lEd-S8b2c1hJIkA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_fLGYYb9lEd-S8b2c1hJIkA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/net.sf.smbt.midi/model/ezmidi.ecore#//SysexMessage"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fLGYYr9lEd-S8b2c1hJIkA" x="112" y="548"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_mv7bwL9lEd-S8b2c1hJIkA" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mwL6cL9lEd-S8b2c1hJIkA" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mwL6cb9lEd-S8b2c1hJIkA" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_mv8C0L9lEd-S8b2c1hJIkA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_mv8C0b9lEd-S8b2c1hJIkA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_mv8C0r9lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_mv8C079lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_mv8C1L9lEd-S8b2c1hJIkA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_mv8C1b9lEd-S8b2c1hJIkA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_mv8C1r9lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_mv8C179lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_mv8C2L9lEd-S8b2c1hJIkA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_mv7bwb9lEd-S8b2c1hJIkA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/net.sf.smbt.midi/model/ezmidi.ecore#//AbstractMidiCmd"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mv7bwr9lEd-S8b2c1hJIkA" x="320" y="40"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_oA8XsL9lEd-S8b2c1hJIkA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_oA8-wL9lEd-S8b2c1hJIkA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_oA8-wb9lEd-S8b2c1hJIkA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_oA8-wr9lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_oA8-w79lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_oA8-xL9lEd-S8b2c1hJIkA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_oA9l0L9lEd-S8b2c1hJIkA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_oA9l0b9lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_oA9l0r9lEd-S8b2c1hJIkA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_oA9l079lEd-S8b2c1hJIkA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_oA8Xsb9lEd-S8b2c1hJIkA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ezfirmata.ecore#//FirmataCmd"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oA8Xsr9lEd-S8b2c1hJIkA" x="296" y="328"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_bxUK8L_aEd-095Xfv_XCvA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_bxUyAL_aEd-095Xfv_XCvA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_bxUyAb_aEd-095Xfv_XCvA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_bxUyAr_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_bxUyA7_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_bxUyBL_aEd-095Xfv_XCvA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_bxUyBb_aEd-095Xfv_XCvA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_bxUyBr_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_bxUyB7_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_bxUyCL_aEd-095Xfv_XCvA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_bxUK8b_aEd-095Xfv_XCvA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ezfirmata.ecore#//FirmataReportAnalogPinCmd"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bxUK8r_aEd-095Xfv_XCvA" y="504"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_pl5VIL_aEd-095Xfv_XCvA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_pl58ML_aEd-095Xfv_XCvA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_pl58Mb_aEd-095Xfv_XCvA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_pl58Mr_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_pl58M7_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_pl58NL_aEd-095Xfv_XCvA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_pl6jQL_aEd-095Xfv_XCvA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_pl6jQb_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_pl6jQr_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_pl6jQ7_aEd-095Xfv_XCvA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_pl5VIb_aEd-095Xfv_XCvA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ezfirmata.ecore#//FirmataSetPinModeCmd"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pl5VIr_aEd-095Xfv_XCvA" x="312" y="388"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_t4t1ML_aEd-095Xfv_XCvA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_t4vDUL_aEd-095Xfv_XCvA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_t4vDUb_aEd-095Xfv_XCvA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_t4vDUr_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_t4vDU7_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_t4vDVL_aEd-095Xfv_XCvA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_t4vqYL_aEd-095Xfv_XCvA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_t4vqYb_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_t4vqYr_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_t4vqY7_aEd-095Xfv_XCvA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_t4t1Mb_aEd-095Xfv_XCvA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ezfirmata.ecore#//FirmataProtocolVersionCmd"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t4t1Mr_aEd-095Xfv_XCvA" x="214" y="515"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_wg4xUL_aEd-095Xfv_XCvA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_wg5YYL_aEd-095Xfv_XCvA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_wg5YYb_aEd-095Xfv_XCvA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_wg5YYr_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_wg5YY7_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_wg5YZL_aEd-095Xfv_XCvA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_wg5YZb_aEd-095Xfv_XCvA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_wg5YZr_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_wg5YZ7_aEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_wg5YaL_aEd-095Xfv_XCvA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_wg4xUb_aEd-095Xfv_XCvA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ezfirmata.ecore#//FirmataSystemResetCmd"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wg4xUr_aEd-095Xfv_XCvA" x="408" y="468"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_5h6s8L_aEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* This protocol uses the MIDI message format, but does not use the whole&#xA; * protocol.  Most of the command mappings here will not be directly usable in&#xA; * terms of MIDI controllers and synths.  It should co-exist with MIDI without&#xA; * trouble and can be parsed by standard MIDI interpreters.  Just some of the&#xA; * message data is used differently.&#xA; *&#xA; * MIDI format: http://www.harmony-central.com/MIDI/Doc/table1.html&#xA; * &#xA; *                              MIDI       &#xA; * type                command  channel    first byte            second byte &#xA; *----------------------------------------------------------------------------&#xA; * analog I/O message    0xE0   pin #      LSB(bits 0-6)         MSB(bits 7-13)&#xA; * digital I/O message   0x90   port       LSB(bits 0-6)         MSB(bits 7-13)&#xA; * report analog pin     0xC0   pin #      disable/enable(0/1)   - n/a -&#xA; * report digital port   0xD0   port       disable/enable(0/1)   - n/a -&#xA; *&#xA; * sysex start           0xF0   &#xA; * set pin mode(I/O)     0xF4              pin # (0-127)         pin state(0=in)&#xA; * sysex end             0xF7   &#xA; * protocol version      0xF9              major version         minor version&#xA; * system reset          0xFF&#xA; *&#xA; */ ">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_5h--YL_aEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_5h--Yb_aEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5h6s8b_aEd-095Xfv_XCvA" x="488" y="196" width="465"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_KPkWAL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* SysEx-based commands (0x00-0x7F) are used for an extended command set.&#xA; *&#xA; * type                command  first byte       second byte      ...&#xA; *-----------------------------------------------------------------------------&#xA; * string                0x71   char *string ...&#xA; * firmware name/version 0x79   major version   minor version     char *name...&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_KPk9EL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_KPk9Eb_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KPkWAb_bEd-095Xfv_XCvA" x="572" y="492"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_PLhSoL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* set pin mode&#xA; * 1  set digital pin mode (0xF4) (MIDI Undefined)&#xA; * 2  pin number (0-127)&#xA; * 3  state (INPUT/OUTPUT/ANALOG/PWM/SERVO, 0/1/2/3/4)&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_PLh5sL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_PLh5sb_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PLhSob_bEd-095Xfv_XCvA" x="580" y="596"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_RS8SIL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* toggle analogIn reporting by pin&#xA; * 0  toggle digitalIn reporting (0xC0-0xCF) (MIDI Program Change)&#xA; * 1  disable(0)/enable(non-zero) &#xA; */">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_RS8SIr_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_RS85ML_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RS8SIb_bEd-095Xfv_XCvA" x="576" y="672"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_TVfYsL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* toggle digital port reporting by port&#xA; * 0  toggle digital port reporting (0xD0-0xDF) (MIDI Aftertouch)&#xA; * 1  disable(0)/enable(non-zero) &#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_TVf_wL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_TVf_wb_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TVfYsb_bEd-095Xfv_XCvA" x="364" y="752"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_VcN0oL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* request version report&#xA; * 0  request version report (0xF9) (MIDI Undefined)&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_VcObsL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_VcObsb_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VcN0ob_bEd-095Xfv_XCvA" x="96" y="757"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_YnkWUL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* Generic Sysex Message&#xA; * 0     START_SYSEX (0xF0)&#xA; * 1     sysex command (0x00-0x7F)&#xA; * x     between 0 and MAX_DATA_BYTES 7-bit bytes of arbitrary data&#xA; * last  END_SYSEX (0xF7)&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_YnkWUr_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_Ynk9YL_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YnkWUb_bEd-095Xfv_XCvA" x="168" y="681"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_ewy-YL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* Query Firmware Name and Version&#xA; * 0  START_SYSEX (0xF0)&#xA; * 1  queryFirmware (0x79)&#xA; * 2  END_SYSEX (0xF7)&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_ew0zkL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_ew1aoL_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ewy-Yb_bEd-095Xfv_XCvA" y="685"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_ki5f4L_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* Receive Firmware Name and Version (after query)&#xA; * 0  START_SYSEX (0xF0)&#xA; * 1  queryFirmware (0x79)&#xA; * 2  major version (0-127)&#xA; * 3  minor version (0-127)&#xA; * 4  first 7-bits of firmware name&#xA; * 5  second 7-bits of firmware name&#xA; * x  ...for as many bytes as it needs)&#xA; * 6  END_SYSEX (0xF7)&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_ki6G8L_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_ki6G8b_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ki5f4b_bEd-095Xfv_XCvA" x="62" y="812"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_mVSqkL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* I2C read/write request&#xA; * -------------------------------&#xA; * 0  START_SYSEX (0xF0) (MIDI System Exclusive)&#xA; * 1  I2C_REQUEST (0x76)&#xA; * 2  slave address (LSB)&#xA; * 3  slave address (MSB) + read/write and address mode bits&#xA;      {7: always 0} + {6: reserved} + {5: address mode, 1 means 10-bit mode} +&#xA;      {4-3: read/write, 00 => write, 01 => read once, 10 => read continuously, 11 => stop reading} +&#xA;      {2-0: slave address MSB in 10-bit mode, not used in 7-bit mode}&#xA; * 4  data 0 (LSB)&#xA; * 5  data 0 (MSB)&#xA; * 6  data 1 (LSB)&#xA; * 7  data 1 (MSB)&#xA; * ...&#xA; * n  END_SYSEX (0xF7)&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_mVUfwL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_mVUfwb_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mVSqkb_bEd-095Xfv_XCvA" x="320" y="804"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_oSv1wL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* I2C reply&#xA; * -------------------------------&#xA; * 0  START_SYSEX (0xF0) (MIDI System Exclusive)&#xA; * 1  I2C_REPLY (0x77)&#xA; * 2  slave address (LSB)&#xA; * 3  slave address (MSB)&#xA; * 4  register (LSB)&#xA; * 5  register (MSB)&#xA; * 6  data 0 LSB&#xA; * 7  data 0 MSB&#xA; * ...&#xA; * n  END_SYSEX (0xF7)&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_oSy5EL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_oSy5Eb_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oSv1wb_bEd-095Xfv_XCvA" x="776" y="804"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_q10PcL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* I2C config&#xA; * -------------------------------&#xA; * 0  START_SYSEX (0xF0) (MIDI System Exclusive)&#xA; * 1  I2C_CONFIG (0x78)&#xA; * 2  Power pin settings (0:off or 1:on)&#xA; * 3  Delay in microseconds (LSB)&#xA; * 4  Delay in microseconds (MSB)&#xA; * ... user defined for special cases, etc&#xA; * n  END_SYSEX (0xF7)&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_q12rsL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_q12rsb_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q102gL_bEd-095Xfv_XCvA" x="1024" y="804"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_s_4TQL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* Set sampling interval&#xA; * -------------------------------&#xA; * 0  START_SYSEX (0xF0) (MIDI System Exclusive)&#xA; * 1  SAMPLING_INTERVAL (0x7A)&#xA; * 2  sampling interval on the millisecond time scale (LSB)&#xA; * 3  sampling interval on the millisecond time scale (MSB)&#xA; * 4  END_SYSEX (0xF7)&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_s_6IcL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_s_6Icb_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s_4TQb_bEd-095Xfv_XCvA" x="61" y="976"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_vwcWYL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="This is the current proposal for adding Servo support based on feedback from Bjoern Hartmann, Shigeru Kobayashi, and Erik Sjodin. The core idea is to just add a &quot;config&quot; message, then use the SET_PIN_MODE  message to attach/detach Servo support to a pin. This is how hardware PWM is currently handled. This would save space in the protocol by reusing the SET_PIN_MODE message, but the host software implementation could have a different interface, e.g. Arduino's attach()  and detach().&#xA;&#xA;minPulse, maxPulse, and angle are all 14-bit unsigned integers. Angle is in degrees. The SERVO_CONFIG can be sent at any time to change the settings.&#xA;&#xA;/* servo config&#xA; * --------------------&#xA; * 0  START_SYSEX (0xF0)&#xA; * 1  SERVO_CONFIG (0x70)&#xA; * 2  pin number (0-127)&#xA; * 3  minPulse LSB (0-6)&#xA; * 4  minPulse MSB (7-13)&#xA; * 5  maxPulse LSB (0-6)&#xA; * 6  maxPulse MSB (7-13)&#xA; * 7  angle LSB (0-6)&#xA; * 8  angle MSB (7-13)&#xA; * 9  END_SYSEX (0xF7)&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_vweLkL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_vweLkb_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vwcWYb_bEd-095Xfv_XCvA" x="374" y="1040"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_yqa0ML_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* set digital pin mode&#xA; * --------------------&#xA; * 1  set digital pin mode (0xF4) (MIDI Undefined)&#xA; * 2  pin number (0-127)&#xA; * 3  state (INPUT/OUTPUT/ANALOG/PWM/SERVO, 0/1/2/3/4)&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_yqbbQL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_yqbbQb_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yqa0Mb_bEd-095Xfv_XCvA" x="544" y="1113"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_0l63kL_bEd-095Xfv_XCvA" type="Text" fontName="Lucida Grande" description="/* write to servo, servo write is performed if the pins mode is SERVO&#xA; * ------------------------------&#xA; * 0  ANALOG_MESSAGE (0xE0-0xEF)&#xA; * 1  value lsb&#xA; * 2  value msb&#xA; */&#xA;">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_0l7eoL_bEd-095Xfv_XCvA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_0l7eob_bEd-095Xfv_XCvA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0l63kb_bEd-095Xfv_XCvA" x="924" y="1117"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_ASO4QL_dEd-095Xfv_XCvA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_ASPfUL_dEd-095Xfv_XCvA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_ASPfUb_dEd-095Xfv_XCvA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_ASPfUr_dEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ASPfU7_dEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ASPfVL_dEd-095Xfv_XCvA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ASPfVb_dEd-095Xfv_XCvA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_ASPfVr_dEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ASPfV7_dEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ASPfWL_dEd-095Xfv_XCvA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_ASO4Qb_dEd-095Xfv_XCvA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ezfirmata.ecore#//FirmataAnalogIOMsgCmd"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ASO4Qr_dEd-095Xfv_XCvA" x="64" y="456"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_B4UFQL_dEd-095Xfv_XCvA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_B4UsUL_dEd-095Xfv_XCvA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_B4UsUb_dEd-095Xfv_XCvA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_B4UsUr_dEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_B4UsU7_dEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_B4UsVL_dEd-095Xfv_XCvA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_B4UsVb_dEd-095Xfv_XCvA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_B4UsVr_dEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_B4UsV7_dEd-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_B4UsWL_dEd-095Xfv_XCvA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_B4UFQb_dEd-095Xfv_XCvA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ezfirmata.ecore#//FirmataDigitalIOMsgCmd"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B4UFQr_dEd-095Xfv_XCvA" x="232" y="448"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_zCO0QL_8Ed-095Xfv_XCvA" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zC6wwL_8Ed-095Xfv_XCvA" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zC6wwb_8Ed-095Xfv_XCvA" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_zCTswL_8Ed-095Xfv_XCvA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_zCTswb_8Ed-095Xfv_XCvA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zCTswr_8Ed-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zCTsw7_8Ed-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zCTsxL_8Ed-095Xfv_XCvA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_zCTsxb_8Ed-095Xfv_XCvA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_zCTsxr_8Ed-095Xfv_XCvA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_zCTsx7_8Ed-095Xfv_XCvA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_zCTsyL_8Ed-095Xfv_XCvA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_zCO0Qb_8Ed-095Xfv_XCvA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/net.sf.smbt.midi/model/ezmidi.ecore#//DSLMidiMessage"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zCPbUL_8Ed-095Xfv_XCvA" x="312" y="216"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_5t0vAMCrEd-lN4EQt_ZTag" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_5t2kMMCrEd-lN4EQt_ZTag" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_5t3LQMCrEd-lN4EQt_ZTag" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_5t3LQcCrEd-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5t3LQsCrEd-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5t3LQ8CrEd-lN4EQt_ZTag"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_5t3yUMCrEd-lN4EQt_ZTag" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_5t3yUcCrEd-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_5t3yUsCrEd-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_5t3yU8CrEd-lN4EQt_ZTag"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_5t0vAcCrEd-lN4EQt_ZTag" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ezfirmata.ecore#//SysexStart"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5t0vAsCrEd-lN4EQt_ZTag" x="445" y="624"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_7kDQ0MCrEd-lN4EQt_ZTag" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_7kD34MCrEd-lN4EQt_ZTag" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_7kD34cCrEd-lN4EQt_ZTag" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_7kD34sCrEd-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_7kD348CrEd-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_7kD35MCrEd-lN4EQt_ZTag"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_7kD35cCrEd-lN4EQt_ZTag" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_7kD35sCrEd-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_7kD358CrEd-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_7kD36MCrEd-lN4EQt_ZTag"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_7kDQ0cCrEd-lN4EQt_ZTag" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ezfirmata.ecore#//SysexStop"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7kDQ0sCrEd-lN4EQt_ZTag" x="336" y="620"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_RrOF0MC4Ed-lN4EQt_ZTag" type="1001">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RroVgMC4Ed-lN4EQt_ZTag" source="Shortcut">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RroVgcC4Ed-lN4EQt_ZTag" key="modelID" value="EcoreTools"/>
+    </eAnnotations>
+    <children xmi:type="notation:Node" xmi:id="_RrRwMMC4Ed-lN4EQt_ZTag" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_RrRwMcC4Ed-lN4EQt_ZTag" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_RrRwMsC4Ed-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_RrRwM8C4Ed-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_RrRwNMC4Ed-lN4EQt_ZTag"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_RrUMcMC4Ed-lN4EQt_ZTag" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_RrUMccC4Ed-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_RrUMcsC4Ed-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_RrUMc8C4Ed-lN4EQt_ZTag"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_RrOF0cC4Ed-lN4EQt_ZTag" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="platform:/resource/net.sf.smbt.midi/model/ezmidi.ecore#//SysexMessage"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RrOF0sC4Ed-lN4EQt_ZTag" x="416" y="520"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_bvCUIMC4Ed-lN4EQt_ZTag" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_bvFXcMC4Ed-lN4EQt_ZTag" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_bvFXccC4Ed-lN4EQt_ZTag" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_bvFXcsC4Ed-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_bvFXc8C4Ed-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_bvFXdMC4Ed-lN4EQt_ZTag"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_bvFXdcC4Ed-lN4EQt_ZTag" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_bvFXdsC4Ed-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_bvFXd8C4Ed-lN4EQt_ZTag"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_bvFXeMC4Ed-lN4EQt_ZTag"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_bvCUIcC4Ed-lN4EQt_ZTag" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="ezfirmata.ecore#//FirmataSysexMessage"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bvCUIsC4Ed-lN4EQt_ZTag" x="180" y="624"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_f-Um4MGbEd-UK927pxc9VA" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_f-XDIMGbEd-UK927pxc9VA" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_f-XqMMGbEd-UK927pxc9VA" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_tMJTEMGbEd-UK927pxc9VA" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="ezfirmata.ecore#//FIRMATA_I2C_RW_MODE/WRITE"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_tMJTEcGbEd-UK927pxc9VA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_vSJ9UMGbEd-UK927pxc9VA" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="ezfirmata.ecore#//FIRMATA_I2C_RW_MODE/READ_ONCE"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_vSJ9UcGbEd-UK927pxc9VA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_wNSI0MGbEd-UK927pxc9VA" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="ezfirmata.ecore#//FIRMATA_I2C_RW_MODE/READ_CONTINUOUSLY"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wNSI0cGbEd-UK927pxc9VA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_r-MSMMGbEd-UK927pxc9VA" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="ezfirmata.ecore#//FIRMATA_I2C_RW_MODE/STOP_READING"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_r-MSMcGbEd-UK927pxc9VA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_f-XqMcGbEd-UK927pxc9VA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_f-XqMsGbEd-UK927pxc9VA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_f-XqM8GbEd-UK927pxc9VA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_f-Um4cGbEd-UK927pxc9VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="ezfirmata.ecore#//FIRMATA_I2C_RW_MODE"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f-Um4sGbEd-UK927pxc9VA" x="-20" y="212"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_JNZ-YMGcEd-UK927pxc9VA" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_JNbMgMGcEd-UK927pxc9VA" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_JNbzkMGcEd-UK927pxc9VA" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_K1_s0MGcEd-UK927pxc9VA" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="ezfirmata.ecore#//FIRMATA_I2C_ADDR_MODE/I2C_ADDR_MODE_7_BITS"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_K1_s0cGcEd-UK927pxc9VA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_OYaqsMGcEd-UK927pxc9VA" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="ezfirmata.ecore#//FIRMATA_I2C_ADDR_MODE/I2C_ADDR_MODE_10_BITS"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_OYaqscGcEd-UK927pxc9VA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_JNbzkcGcEd-UK927pxc9VA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_JNbzksGcEd-UK927pxc9VA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_JNbzk8GcEd-UK927pxc9VA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_JNZ-YcGcEd-UK927pxc9VA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="ezfirmata.ecore#//FIRMATA_I2C_ADDR_MODE"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JNZ-YsGcEd-UK927pxc9VA" x="126" y="213"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_2ID40b9kEd-S8b2c1hJIkA"/>
+  <element xmi:type="ecore:EPackage" href="ezfirmata.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_mwDXkL9lEd-S8b2c1hJIkA" type="3003" source="_fLGYYL9lEd-S8b2c1hJIkA" target="_oA8XsL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_mwDXkb9lEd-S8b2c1hJIkA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_mwDXkr9lEd-S8b2c1hJIkA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mwDXk79lEd-S8b2c1hJIkA" points="[-50, -22, 269, 117]$[-318, -139, 1, 0]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1rzekL_8Ed-095Xfv_XCvA" id="(0.3333333333333333,0.8333333333333334)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_pS3SkL9lEd-S8b2c1hJIkA" type="3003" source="_oA8XsL9lEd-S8b2c1hJIkA" target="_zCO0QL_8Ed-095Xfv_XCvA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_pS3Skb9lEd-S8b2c1hJIkA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_pS3Skr9lEd-S8b2c1hJIkA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pS3Sk79lEd-S8b2c1hJIkA" points="[5, -6, -92, 121]$[95, -73, -2, 54]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pS5HwL9lEd-S8b2c1hJIkA" id="(0.5,0.16666666666666666)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2KJAYL_8Ed-095Xfv_XCvA" id="(0.6078431372549019,0.8333333333333334)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_Z7SdcL_aEd-095Xfv_XCvA" type="3003" target="_oA8XsL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_Z7Sdcb_aEd-095Xfv_XCvA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Z7Sdcr_aEd-095Xfv_XCvA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Z7Sdc7_aEd-095Xfv_XCvA" points="[-4, -5, 141, 159]$[-95, -165, 50, -1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Z7USoL_aEd-095Xfv_XCvA" id="(0.2413793103448276,0.14285714285714285)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_edDYcL_aEd-095Xfv_XCvA" type="3003" source="_bxUK8L_aEd-095Xfv_XCvA" target="_oA8XsL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_edDYcb_aEd-095Xfv_XCvA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_edDYcr_aEd-095Xfv_XCvA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_edDYc7_aEd-095Xfv_XCvA" points="[1, -5, -37, 192]$[-12, -186, -50, 11]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_edF0sL_aEd-095Xfv_XCvA" id="(0.15527950310559005,0.14285714285714285)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_i5cEML_aEd-095Xfv_XCvA" type="3003" target="_mv7bwL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_i5cEMb_aEd-095Xfv_XCvA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_i5cEMr_aEd-095Xfv_XCvA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_i5cEM7_aEd-095Xfv_XCvA" points="[-3, -6, 78, 238]$[-97, -190, -16, 54]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i5fHgL_aEd-095Xfv_XCvA" id="(0.2389937106918239,0.16666666666666666)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_q_ygQL_aEd-095Xfv_XCvA" type="3003" source="_pl5VIL_aEd-095Xfv_XCvA" target="_oA8XsL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_q_ygQb_aEd-095Xfv_XCvA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_q_ygQr_aEd-095Xfv_XCvA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q_ygQ7_aEd-095Xfv_XCvA" points="[-5, -4, 142, 138]$[-5, -72, 142, 70]$[-184, -72, -37, 70]$[-184, -117, -37, 25]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_q_0VcL_aEd-095Xfv_XCvA" id="(0.25,0.11904761904761904)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_v6AXgL_aEd-095Xfv_XCvA" type="3003" source="_t4t1ML_aEd-095Xfv_XCvA" target="_oA8XsL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_v6AXgb_aEd-095Xfv_XCvA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_v6AXgr_aEd-095Xfv_XCvA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_v6AXg7_aEd-095Xfv_XCvA" points="[-2, -5, 82, 279]$[-82, -257, 2, 27]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_v6CMsL_aEd-095Xfv_XCvA" id="(0.17197452229299362,0.14285714285714285)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_0Dul8L_aEd-095Xfv_XCvA" type="3003" source="_wg4xUL_aEd-095Xfv_XCvA" target="_oA8XsL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_0Dul8b_aEd-095Xfv_XCvA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_0Dul8r_aEd-095Xfv_XCvA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0Dul87_aEd-095Xfv_XCvA" points="[-5, -4, 241, 225]$[-244, -206, 2, 23]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0DwbIL_aEd-095Xfv_XCvA" id="(0.2765957446808511,0.11904761904761904)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cn2uAMcEEd-rk6N-YwgPvQ" id="(0.4803921568627451,0.9761904761904762)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_A-N0gL_dEd-095Xfv_XCvA" type="3003" source="_ASO4QL_dEd-095Xfv_XCvA" target="_oA8XsL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_A-N0gb_dEd-095Xfv_XCvA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_A-N0gr_dEd-095Xfv_XCvA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_A-N0g7_dEd-095Xfv_XCvA" points="[0, -4, 10, 254]$[43, -260, 53, -2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_A-PpsL_dEd-095Xfv_XCvA" id="(0.25517241379310346,0.11904761904761904)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_DmSC8L_dEd-095Xfv_XCvA" type="3003" source="_B4UFQL_dEd-095Xfv_XCvA" target="_oA8XsL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_DmSC8b_dEd-095Xfv_XCvA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_DmSC8r_dEd-095Xfv_XCvA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DmSC87_dEd-095Xfv_XCvA" points="[-4, -10, 84, 205]$[-86, -195, 2, 20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DmT4IL_dEd-095Xfv_XCvA" id="(0.1258741258741259,0.2619047619047619)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_zCvxoL_8Ed-095Xfv_XCvA" type="3003" source="_zCO0QL_8Ed-095Xfv_XCvA" target="_mv7bwL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_zCvxob_8Ed-095Xfv_XCvA" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zCvxor_8Ed-095Xfv_XCvA" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zCvxo7_8Ed-095Xfv_XCvA" points="[1, 0, -204, -66]$[153, 49, -52, -17]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_RrdWYMC4Ed-lN4EQt_ZTag" type="3003" source="_RrOF0MC4Ed-lN4EQt_ZTag" target="_zCO0QL_8Ed-095Xfv_XCvA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_RrdWYcC4Ed-lN4EQt_ZTag" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_RrdWYsC4Ed-lN4EQt_ZTag" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RrdWY8C4Ed-lN4EQt_ZTag" points="[1, 1, -366, -281]$[318, 245, -49, -37]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_3x6EgMcEEd-rk6N-YwgPvQ" type="3003" source="_bvCUIMC4Ed-lN4EQt_ZTag" target="_fLGYYL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_3x6EgccEEd-rk6N-YwgPvQ" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_3x6EgscEEd-rk6N-YwgPvQ" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3x6Eg8cEEd-rk6N-YwgPvQ" points="[-2, -2, 19, 32]$[-19, -26, 2, 8]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3x8gwMcEEd-rk6N-YwgPvQ" id="(0.15748031496062992,0.07142857142857142)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3x8gwccEEd-rk6N-YwgPvQ" id="(0.6666666666666666,0.8518518518518519)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_4Z4qgMcEEd-rk6N-YwgPvQ" type="3003" source="_7kDQ0MCrEd-lN4EQt_ZTag" target="_fLGYYL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_4Z4qgccEEd-rk6N-YwgPvQ" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_4Z4qgscEEd-rk6N-YwgPvQ" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4Z4qg8cEEd-rk6N-YwgPvQ" points="[-50, -14, 174, 52]$[-191, -40, 33, 26]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_5CY08McEEd-rk6N-YwgPvQ" type="3003" source="_5t0vAMCrEd-lN4EQt_ZTag" target="_fLGYYL9lEd-S8b2c1hJIkA">
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_5CY08ccEEd-rk6N-YwgPvQ" routing="Rectilinear" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5CY08scEEd-rk6N-YwgPvQ" fontName="Lucida Grande"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5CY088cEEd-rk6N-YwgPvQ" points="[-23, -4, 283, 50]$[-266, -28, 40, 26]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5CbRMMcEEd-rk6N-YwgPvQ" id="(0.23529411764705882,0.11904761904761904)"/>
+  </edges>
+</notation:Diagram>

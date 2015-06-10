@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <!--
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="net.sf.smbt.ui"
+            name="Ubiquisense"/>
+      <wizard
+            id="net.sf.smbt.dmx.model.qxf.presentation.QxfModelWizardID"
+            name="Fixture Definition"
+            class="net.sf.smbt.dmx.model.qxf.presentation.QxfModelWizard"
+            category="net.sf.smbt.ui"
+            icon="icons/beamer-big.jpg">
+         <description>Create a new fixture definition</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+   -->
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.sf.smbt.dmx.model.qxf.presentation.QxfEditorID"
+            name="DMX Fixture"
+            icon="icons/beamer-mini.gif"
+            extensions="qxf"
+            class="net.sf.smbt.dmx.model.qxf.presentation.QxfEditor"
+            contributorClass="net.sf.smbt.dmx.model.qxf.presentation.QxfActionBarContributor">
+      </editor>
+   </extension>
+<!--
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="net.sf.smbt.ui"
+            name="Ubiquisense"/>
+      <wizard
+            id="net.sf.smbt.dmx.ezdmxctrl.presentation.EzdmxctrlModelWizardID"
+            name="DMX Configuration"
+            class="net.sf.smbt.dmx.ezdmxctrl.presentation.EzdmxctrlModelWizard"
+            category="net.sf.smbt.ui"
+            icon="icons/control_wheel.png">
+         <description>Create a new DMX configuration</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+-->
+
+</plugin>

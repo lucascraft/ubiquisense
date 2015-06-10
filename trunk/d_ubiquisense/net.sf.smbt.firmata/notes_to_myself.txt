@@ -1,0 +1,18 @@
+Notes to myself
+
+in the context of Firmata protocol :
+
+- see if exists a way to properly address * devices w/ funnelIO
+- Session+funnel ID ?
+- XBee special configuration for multipoint ?
+
+
+The idea would be to be able to create an install where all the hardware is blended and host emulated for various IOs (in a Funnel way I guess)
+
+Advantages : 
+  - 1 XBee topology configuration : All work done in the host side thanks to 1 device - 1 Arduino abstraction blender
+  - Piloting/monitoring made easier w/ Metamodel based capabilities
+  - Is device auto discovery (w/ XBee config) a Firmata possibility (to eplore ???)
+  - Think to a dedicated UI for Arduino blended layer (inspire ourselve from Some existing stuff ? Could be rapidly done in JFace (sliders + combos ... more ?)
+   
+
