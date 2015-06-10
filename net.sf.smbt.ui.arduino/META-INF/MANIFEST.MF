@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquisense - Arduino UI
+Bundle-SymbolicName: net.sf.smbt.ui.arduino;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: net.sf.smbt.ui.arduino.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ net.sf.smbt.arduino;bundle-version="0.5.0",
+ net.sf.smbt.ui;bundle-version="0.5.0",
+ net.sf.xqz.engine;bundle-version="0.5.0",
+ net.sf.smbt.quantic;bundle-version="0.5.0",
+ net.sf.smbt.ui.logging;bundle-version="0.5.0",
+ org.eclipse.ui.intro,
+ org.eclipse.ui.intro.universal,
+ net.sf.smbt.arduino.edit;bundle-version="0.5.0",
+ net.sf.smbt.arduino.editor;bundle-version="0.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.sf.smbt.ui.arduino,
+ net.sf.smbt.ui.arduino.dialogs,
+ net.sf.smbt.ui.arduino.wizards,
+ net.sf.smbt.ui.firmata.ubiquino.model.arduinocfg,
+ net.sf.smbt.ui.firmata.ubiquino.model.arduinocfg.impl,
+ net.sf.smbt.ui.firmata.ubiquino.model.arduinocfg.util
+Bundle-Vendor: ubiquisense.com

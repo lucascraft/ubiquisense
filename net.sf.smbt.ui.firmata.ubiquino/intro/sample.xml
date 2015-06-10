@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="netsfsmbtuipachube-introExtension" style="css/sample.css" name="Ubiquisense For Cosm" path="overview/@">
+		<group style-id="content-group" id="netsfsmbtuipachube-introLink-group">
+       		<link label="Cosm / Pachube" url="http://ubiquisense.com/index.php?option=com_content&view=section&layout=blog&id=19&Itemid=39" id="netsfsmbtuipachube-introLink" style-id="content-link">
+          		<text>Ubiquisense For Cosm</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

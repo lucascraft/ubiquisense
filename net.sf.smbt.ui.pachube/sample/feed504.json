@@ -1,0 +1,52 @@
+{
+	"version":"1.0.0",
+	"status":"live",
+	"website":"http://www.pachube.com/",
+	"feed":"https://api.cosm.com/v2/feeds/504.json",
+	"creator":"https://cosm.com/users/hdr",
+	"location":
+	{
+		"domain":"physical",
+		"lat":51.5235375648154,
+		"disposition":"fixed",
+		"ele":"23.0",
+		"name":"office",
+		"exposure":"indoor",
+		"lon":-0.0807666778564453
+	},
+	"created":"2008-08-30T15:25:04.905005Z",
+	"private":"false",
+	"datastreams":
+	[
+		{
+			"max_value":"658.0",
+			"at":"2012-09-21T09:56:03.011733Z",
+			"min_value":"0.0",
+			"tags":[
+				"humidity"
+			],
+			"id":"0",
+			"current_value":"43"
+		},
+		{
+			"max_value":"1001.0",
+			"at":"2012-09-21T09:56:03.011733Z",
+			"min_value":"0.0",
+			"tags":
+			[
+				"light level"
+			],
+			"id":"1",
+			"current_value":"856"
+		}
+	],
+	"updated":"2012-09-21T09:56:03.143226Z",
+	"title":"Pachube Office environment",
+	"tags":
+	[
+		"hq",
+		"office"
+	],
+	"id":504,
+	"description":"Sensors in Pachube.com's headquarters."
+}

@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquisense - Cosm UI
+Bundle-Vendor: ubiquisense.com
+Bundle-SymbolicName: net.sf.smbt.ui.pachube; singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: net.sf.smbt.ui.pachube.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ net.sf.smbt.pachube;bundle-version="0.5.0",
+ net.sf.smbt.pachube.edit;bundle-version="0.5.0",
+ net.sf.smbt.quantic;bundle-version="0.5.0",
+ net.sf.smbt.ui;bundle-version="0.5.0",
+ org.eclipse.emf.edit.ui,
+ org.eclipse.help;bundle-version="3.6.0",
+ org.eclipse.help.ui;bundle-version="3.5.200",
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.emf.ecoretools.tabbedproperties;bundle-version="0.8.0",
+ org.eclipse.ui.intro,
+ org.eclipse.ui.intro.universal,
+ net.sf.smbt.kml;bundle-version="0.5.0",
+ net.sf.smbt.gpx;bundle-version="0.5.0",
+ net.sf.smbt.osc.ezmojo;bundle-version="0.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: .
+Export-Package: net.sf.smbt.ui.pachube,
+ net.sf.smbt.ui.pachube.actions,
+ net.sf.smbt.ui.pachube.controller,
+ net.sf.smbt.ui.pachube.dialogs,
+ net.sf.smbt.ui.pachube.editors,
+ net.sf.smbt.ui.pachube.preferences,
+ net.sf.smbt.ui.pachube.properties,
+ net.sf.smbt.ui.pachube.views,
+ net.sf.smbt.ui.pachube.wizards

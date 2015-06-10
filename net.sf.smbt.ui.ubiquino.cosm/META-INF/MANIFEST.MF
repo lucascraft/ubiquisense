@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquino For Cosm Extension (Incubation)
+Bundle-SymbolicName: net.sf.smbt.ui.ubiquino.cosm;singleton:=true
+Bundle-Version: 0.5.0.qualifier
+Bundle-Vendor: www.ubiquisense.com
+Fragment-Host: net.sf.smbt.ui.firmata.ubiquino;bundle-version="0.5.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: net.sf.smbt.pachube;bundle-version="0.5.0",
+ net.sf.smbt.pachube.edit;bundle-version="0.5.0",
+ net.sf.smbt.pachube.editor;bundle-version="0.5.0",
+ net.sf.smbt.ui.pachube;bundle-version="0.5.0"
+Export-Package: net.sf.smbt.ui.ubiquino.cosm.ext

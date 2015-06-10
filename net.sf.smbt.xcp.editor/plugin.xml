@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated xcp -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="net.sf.smbt.xcp.presentation.XcpModelWizardID"
+            name="%_UI_XcpModelWizard_label"
+            class="net.sf.smbt.xcp.presentation.XcpModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XcpModelFile.gif">
+         <description>%_UI_XcpModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated xcp -->
+      <editor
+            id="net.sf.smbt.xcp.presentation.XcpEditorID"
+            name="%_UI_XcpEditor_label"
+            icon="icons/full/obj16/XcpModelFile.gif"
+            extensions="xcp"
+            class="net.sf.smbt.xcp.presentation.XcpEditor"
+            contributorClass="net.sf.smbt.xcp.presentation.XcpActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

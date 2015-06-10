@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.sf.smbt.ui.arduino.diagram"
+      label="Arduino Diagram"
+      version="0.5.0.qualifier"
+      provider-name="ubiquisense.com">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Ubiquisense - A smart ambient utilities framework
+ Copyright (c) 2008 - 2015, Lucas Bigeardel
+   </copyright>
+
+   <license url="http://ubiquisense.com/p/ubiquisense/license">
+      Ubiquisense - A smart ambient utilities framework 
+ 
+ Copyright (c) 2008 - 2015, Lucas Bigeardel
+ 
+ The library is released under:
+ 
+ A) LGPL
+ 
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 3 of the License, or (at your option) any later version.
+ 
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General
+ Public License along with this library; if not, write to the
+ Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ Boston, MA 02110-1301 USA
+ 
+ B) EPL
+ 
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+     Lucas Bigeardel (lucas.bigeardel@gmail.com) - Initial API and implementation
+   </license>
+
+   <includes
+         id="org.eclipse.sirius.runtime"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.runtime.ide.eef"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.sirius"/>
+      <import plugin="org.eclipse.sirius.common.acceleo.mtl"/>
+      <import plugin="net.sf.smbt.arduino" version="0.5.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="net.sf.smbt.arduino.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

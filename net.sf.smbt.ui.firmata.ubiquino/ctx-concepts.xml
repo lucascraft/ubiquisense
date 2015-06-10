@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contexts>
+    <context id="ubiquino_context" title="Ubiquino">
+        <description>Ubiquino is a Firmata protocol adaption for ubiquisense framework. It offers to monitor/pilot Arduino boards analog/digital pins with Midi based protocol</description>
+        <topic href="html/concepts/ubiqiuno.html" label="Ubiquino"/>
+    </context>
+    <context id="firmata_context" title="Firmata">
+        <description>Firmata is a generic protocol for communicating with microcontrollers from software on a host computer. It is intended to work with any host computer software package.</description>
+        <topic href="html/concepts/firmata.html" label="Firmata"/>
+    </context>
+</contexts>

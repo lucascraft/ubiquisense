@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.ui/src"
+    modelPluginID="net.sf.smbt.ui" modelName="RGBArgs" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>RGBArgs.ecore</foreignModel>
+  <genPackages prefix="Rgbargs" disposableProviderFactory="true" ecorePackage="RGBArgs.ecore#/">
+    <genClasses ecoreClass="RGBArgs.ecore#//RGBStepNDelayArgs">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RGBArgs.ecore#//RGBStepNDelayArgs/r"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RGBArgs.ecore#//RGBStepNDelayArgs/g"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RGBArgs.ecore#//RGBStepNDelayArgs/b"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RGBArgs.ecore#//RGBStepNDelayArgs/rMotion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RGBArgs.ecore#//RGBStepNDelayArgs/gMotion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RGBArgs.ecore#//RGBStepNDelayArgs/bMotion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RGBArgs.ecore#//RGBStepNDelayArgs/increment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RGBArgs.ecore#//RGBStepNDelayArgs/delay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RGBArgs.ecore#//RGBStepNDelayArgs/running"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

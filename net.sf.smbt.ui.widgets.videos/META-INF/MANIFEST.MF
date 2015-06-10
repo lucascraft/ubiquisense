@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquisense Videos
+Bundle-SymbolicName: net.sf.smbt.ui.widgets.videos
+Bundle-Version: 0.5.0.qualifier
+Bundle-Vendor: ubiquisense.com
+Fragment-Host: net.sf.smbt.ui.widgets;bundle-version="0.5.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: res/,
+ .
