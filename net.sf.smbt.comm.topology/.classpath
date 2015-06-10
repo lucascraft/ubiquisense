@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src-model"/>
+	<classpathentry kind="src" path="src-cmd"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src-factories"/>
+	<classpathentry kind="src" path="src-zeroconf"/>
+	<classpathentry kind="src" path="src-usb"/>
+	<classpathentry kind="src" path="src-utils"/>
+	<classpathentry kind="src" path="src-xbee"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src-discovery"/>
+	<classpathentry kind="src" path="src-services"/>
+	<classpathentry kind="src" path="src-bt"/>
+	<classpathentry kind="src" path="src-extensions"/>
+	<classpathentry kind="src" path="src-gen"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,5 @@
+bluecove is apache 2.0 : see Apache-License-2_0.txt
+
+wrote code inspired from example only
+
+EPL compatible : status OK

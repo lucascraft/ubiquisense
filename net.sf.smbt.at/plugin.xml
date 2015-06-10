@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://atcmdset/1.0"
+            class="net.sf.smbt.at.atcmdset.AtcmdsetPackage"
+            genModel="model/atcmdset.genmodel"/>
+   </extension>
+
+
+
+	<extension
+	      point="net.sf.xqz.engine.cmdInterpreter">
+	   <cmdInterpreter
+	         ID="net.sf.smbt.at.cmdInterpreter" 
+	         interpreter="net.sf.smbt.at.cmd.ATCmdInterpreter"
+	         
+	         >
+	   </cmdInterpreter>
+	</extension>
+	
+	<extension
+	      point="net.sf.xqz.engine.frameInterpreter">
+	   <frameInterpreter
+	         ID="net.sf.smbt.at.frameInterpreter" 
+	         interpreter="net.sf.smbt.at.cmd.ATFrameInterpreter"
+	         
+	         >
+	   </frameInterpreter>
+	</extension>
+
+<extension
+      point="net.sf.xqz.engine.cmdHandler">
+   <cmdHandler
+         ID="net.sf.smbt.at.evtHandler"
+         handler="net.sf.smbt.at.cmd.ATQxEventHandler"
+         
+         >
+   </cmdHandler>
+</extension>
+	
+	<extension
+	      point="net.sf.smbt.comm.topology.protocol">
+	   <engine
+          ID="net.sf.smbt.at.engine"
+          alias="at"
+          cmdInterpreterID="net.sf.smbt.at.cmdInterpreter"
+          desc="AT Modem Commands"
+          eventHandler="net.sf.smbt.at.evtHandler"
+          frameInterpreter="net.sf.smbt.at.frameInterpreter"
+          instance="0"
+          transports="USB">
+	   </engine>
+	</extension>
+	
+</plugin>

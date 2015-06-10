@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.comm.http/src-model" editDirectory="/net.sf.smbt.comm.http.edit/src"
+    editorDirectory="" modelPluginID="net.sf.smbt.comm.http" modelName="Httpcmd" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" testsDirectory="" importerID="org.eclipse.emf.importer.ecore"
+    featureDelegation="Reflective" complianceLevel="6.0" suppressGenModelAnnotations="false"
+    copyrightFields="false" usedGenPackages="../../net.sf.xqz.engine/model/temporal.genmodel#//cmd">
+  <foreignModel>httpcmd.ecore</foreignModel>
+  <genPackages prefix="Httpcmd" basePackage="net.sf.smbt.comm" disposableProviderFactory="true"
+      ecorePackage="httpcmd.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="httpcmd.ecore#//HttpMethod">
+      <genEnumLiterals ecoreEnumLiteral="httpcmd.ecore#//HttpMethod/POST"/>
+      <genEnumLiterals ecoreEnumLiteral="httpcmd.ecore#//HttpMethod/PUT"/>
+      <genEnumLiterals ecoreEnumLiteral="httpcmd.ecore#//HttpMethod/GET"/>
+      <genEnumLiterals ecoreEnumLiteral="httpcmd.ecore#//HttpMethod/DELETE"/>
+    </genEnums>
+    <genClasses ecoreClass="httpcmd.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute httpcmd.ecore#//Property/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute httpcmd.ecore#//Property/value"/>
+    </genClasses>
+    <genClasses ecoreClass="httpcmd.ecore#//HttpCommCmd">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference httpcmd.ecore#//HttpCommCmd/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute httpcmd.ecore#//HttpCommCmd/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute httpcmd.ecore#//HttpCommCmd/command"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

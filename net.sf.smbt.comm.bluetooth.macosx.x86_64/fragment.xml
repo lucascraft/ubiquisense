@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fragment>
+<extension
+      point="org.eclipse.core.expressions.definitions">
+   <definition
+         id="net.sf.smbt.comm.bluetooth.macosx.x86_64.definition1">
+   </definition>
+</extension>
+<extension
+      point="org.eclipse.jdt.core.classpathVariableInitializer">
+   <classpathVariableInitializer
+         class="net.sf.smbt.comm.bluetooth.macosx.x86_64.ClasspathVariableInitializer1"
+         variable="net.sf.smbt.comm.bluetooth.macosx.x86_64.classpathVariableInitializer1">
+   </classpathVariableInitializer>
+</extension>
+</fragment>
+
+
+

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.at/src-model"
+    editorDirectory="" modelPluginID="net.sf.smbt.at" modelName="Atcmdset" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" testsDirectory="" importerID="org.eclipse.emf.importer.cdo"
+    featureDelegation="Reflective" complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../net.sf.xqz.engine/model/temporal.genmodel#//cmd">
+  <foreignModel>atcmdset.ecore</foreignModel>
+  <genPackages prefix="Atcmdset" basePackage="net.sf.smbt.at" disposableProviderFactory="true"
+      ecorePackage="atcmdset.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="atcmdset.ecore#//AT_COMMAND_TYPES">
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/A_SLASH"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATA"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/D"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATDT"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATE"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATF"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATH"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATI"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATL"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATM"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATN"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATO"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATQ"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATS"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATV"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATW"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATX"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATY"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/ATZ"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_C"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_D"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_F"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_G"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_K"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/RTS_SLASH_CTS"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/XON_SLASH_XOFF"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_P"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_Q"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_R"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_S"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_T"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_V"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_W"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/T_AND_X"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_Y"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_AND_Z"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_PERCENT_E"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_PERCENT_C"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_BSLASH_G"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_BSLASH_N"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/BSLASH_A"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/BRACE_M"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/MINUS_K"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COMMAND_TYPES/AT_STAR_CN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="atcmdset.ecore#//V34_COMMAND_TYPES">
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//V34_COMMAND_TYPES/AROBASE_M"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//V34_COMMAND_TYPES/TWODOTS_E"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//V34_COMMAND_TYPES/PLUS_MS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="atcmdset.ecore#//AT_RET_CODES">
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/OK"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/RING"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/NO_CARRIER"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/ERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/NO_DIALTONE"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/BUSY"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/NO_ANSWER"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_O600"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_2400"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_4800"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_9600"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_7200"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_12000"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_14400"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_19200"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_38400"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_57600"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_115200"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_75TX_1200RX"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_1200TX_75RX"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/DELAYED"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/BLACKLISTED"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/FAX"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/DATA"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CARRIER_300"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CARRIER_1200_75"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CARRIER_75_1200"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CAARRIER_1200"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CARRIER_2400"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CARRIER_4800"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CARRIER_9600"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CARRIER_7200"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CARRIER_12000"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CARRIER_14400"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_16800"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CARRIER_19200"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_21600"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_24000"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_26400"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_28800"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_31200"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/CONNECT_36600"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/COMPRESSION_CLASS_5"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/COMPRESSION_V42_BIS"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/COMPRESSION_NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/PROTOCOL_NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/PROTOCOL_LAPM"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/PROTOCOL_ALT"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/PROTOCOL_ALT_CELLULAR"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_RET_CODES/PLUS_F4_PLUS_FCERROR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="atcmdset.ecore#//AT_COUNTRY_CODES">
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/AUSTRALIA"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/AUSTRIA"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/BELGIUM"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/DENMARK"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/FINLAND"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/FRANCE"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/GERMANY"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/GREECE"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/NETHERLANDS"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/IRELAND"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/ITALY"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/JAPAN"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/NAMIBIA"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/NORWAY"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/PORTUGAL"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/SOUTH_AFRICA"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/SPAIN"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/SWEDEN"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/SWITZERLAND"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/UK"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/CZECH_REPUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/POLAND"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/RUSSIA"/>
+      <genEnumLiterals ecoreEnumLiteral="atcmdset.ecore#//AT_COUNTRY_CODES/UNITED_STATES"/>
+    </genEnums>
+    <genClasses ecoreClass="atcmdset.ecore#//ATCmd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute atcmdset.ecore#//ATCmd/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute atcmdset.ecore#//ATCmd/token"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute atcmdset.ecore#//ATCmd/data"/>
+    </genClasses>
+    <genClasses ecoreClass="atcmdset.ecore#//ATRetCmd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute atcmdset.ecore#//ATRetCmd/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute atcmdset.ecore#//ATRetCmd/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute atcmdset.ecore#//ATRetCmd/message"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

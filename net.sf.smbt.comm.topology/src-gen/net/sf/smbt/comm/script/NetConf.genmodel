@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.comm.script.config/src-gen"
+    editDirectory="/net.sf.smbt.comm.script.config.edit/src" editorDirectory="/net.sf.smbt.comm.script.config.editor/src"
+    modelPluginID="net.sf.smbt.comm.script.config" forceOverwrite="true" modelName="NetConf"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="net.sf.smbt.comm.script.config.edit"
+    editorPluginID="net.sf.smbt.comm.script.config.editor" usedGenPackages="../../../../../../../net.sf.xqz.script/src-gen/net/sf/xqz/engine/script/Orchestror.genmodel#//orchestror">
+  <genPackages prefix="NetConf" basePackage="net.sf.smbt.comm.script" disposableProviderFactory="true"
+      ecorePackage="NetConf.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="NetConf.ecore#//TRANSPORT_PROTOCOL">
+      <genEnumLiterals ecoreEnumLiteral="NetConf.ecore#//TRANSPORT_PROTOCOL/USB"/>
+      <genEnumLiterals ecoreEnumLiteral="NetConf.ecore#//TRANSPORT_PROTOCOL/TCP"/>
+      <genEnumLiterals ecoreEnumLiteral="NetConf.ecore#//TRANSPORT_PROTOCOL/UDP"/>
+      <genEnumLiterals ecoreEnumLiteral="NetConf.ecore#//TRANSPORT_PROTOCOL/HTTP"/>
+      <genEnumLiterals ecoreEnumLiteral="NetConf.ecore#//TRANSPORT_PROTOCOL/BLUETOOTH"/>
+      <genEnumLiterals ecoreEnumLiteral="NetConf.ecore#//TRANSPORT_PROTOCOL/XBEE"/>
+      <genEnumLiterals ecoreEnumLiteral="NetConf.ecore#//TRANSPORT_PROTOCOL/MIDI"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="NetConf.ecore#//RxKind">
+      <genEnumLiterals ecoreEnumLiteral="NetConf.ecore#//RxKind/UNICAST"/>
+      <genEnumLiterals ecoreEnumLiteral="NetConf.ecore#//RxKind/MULTICAST"/>
+      <genEnumLiterals ecoreEnumLiteral="NetConf.ecore#//RxKind/BROADCAST"/>
+    </genEnums>
+    <genClasses ecoreClass="NetConf.ecore#//NetCfg">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetCfg/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetCfg/listeners"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetCfg/interpreters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetCfg/decoders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetCfg/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetCfg/orchestrorScopes"/>
+    </genClasses>
+    <genClasses ecoreClass="NetConf.ecore#//DSLOrchestrorImport">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//DSLOrchestrorImport/importURI"/>
+    </genClasses>
+    <genClasses ecoreClass="NetConf.ecore#//NetPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetPort/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetPort/portID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetPort/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetPort/speed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetPort/ports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetPort/ipExpr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetPort/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="NetConf.ecore#//NetDecoder">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetDecoder/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetDecoder/clazz"/>
+    </genClasses>
+    <genClasses ecoreClass="NetConf.ecore#//NetInterpreter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetInterpreter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetInterpreter/clazz"/>
+    </genClasses>
+    <genClasses ecoreClass="NetConf.ecore#//NetListener">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetListener/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetConf.ecore#//NetListener/clazz"/>
+    </genClasses>
+    <genClasses ecoreClass="NetConf.ecore#//NetOrchestrorScope">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetOrchestrorScope/dslOrchestror"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetOrchestrorScope/binds"/>
+    </genClasses>
+    <genClasses ecoreClass="NetConf.ecore#//NetBind">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetBind/engine"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetBind/interpreter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetBind/cmdInject"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetBind/decoder"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetBind/frameInject"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetBind/port"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference NetConf.ecore#//NetBind/listeners"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

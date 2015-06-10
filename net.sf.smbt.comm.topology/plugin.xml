@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+   <extension-point id="protocol" name="Smart Ambient Comm Protocol" schema="schema/protocol.exsd"/>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ezxtopology/1.0"
+            class="net.sf.smbt.comm.ezxtopology.EzxtopologyPackage"
+            genModel="model/ezxtopology.genmodel"/>
+   </extension>
+      <extension
+         point="net.sf.smbt.comm.topology.protocol">
+      <engine
+            ID="net.sf.smbt.comm.raw.engine"
+            alias="raw"
+            cmdInterpreterID="net.sf.smbt.comm.raw.cmdInterpreter"
+            desc="Raw bytes communication protocol"
+            eventHandler="net.sf.smbt.comm.raw.evtHandler"
+            frameInterpreter="net.sf.smbt.comm.raw.frameInterpreter"
+            instance="0"
+            transports="USB,UDP,TCP,XBEE,BT,HTTP"
+            customHTTP="net.sf.smbt.comm.topology.utils.HttpCommunicatorReactor"
+      >
+      </engine>
+   </extension>
+      <extension
+            point="net.sf.xqz.engine.cmdInterpreter">
+         <cmdInterpreter
+               ID="net.sf.smbt.comm.serializer.cmdInterpreter"
+               interpreter="net.sf.smbt.comm.topology.cmd.ObjSerializeCmdInterpreter">
+         </cmdInterpreter>
+      </extension>
+      <extension
+            point="net.sf.xqz.engine.cmdHandler">
+         <cmdHandler
+               ID="net.sf.smbt.comm.serializer.cmdHandler"
+               handler="net.sf.smbt.comm.topology.cmd.ObjSerializeDxEventHandler">
+         </cmdHandler>
+      </extension>
+      <extension
+            point="net.sf.xqz.engine.frameInterpreter">
+         <frameInterpreter
+               ID="net.sf.smbt.comm.serializer.frameInterpreter"
+               interpreter="net.sf.smbt.comm.topology.cmd.ObjSerializeFrameInterpreter">
+         </frameInterpreter>
+      </extension>
+      <extension
+            point="net.sf.smbt.comm.topology.protocol">
+         <engine
+               ID="net.sf.smbt.comm.serializer"
+               alias="serializer"
+               cmdInterpreterID="net.sf.smbt.comm.serializer.cmdInterpreter"
+               desc="Java Object Serializer"
+               eventHandler="net.sf.smbt.comm.serializer.cmdHandler"
+               frameInterpreter="net.sf.smbt.comm.serializer.frameInterpreter"
+               instance="0"
+               transports="UDP,TCP,HTTP"
+	           customHTTP="net.sf.smbt.comm.topology.utils.HttpCommunicatorReactor"
+               >
+         </engine>
+      </extension>
+
+   
+</plugin>

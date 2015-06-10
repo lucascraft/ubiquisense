@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.comm.topology/src-model"
+    editorDirectory="" modelPluginID="net.sf.smbt.comm.topology" modelName="Ezxtopology"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" reflectiveDelegation="true"
+    testsDirectory="" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages=" ../../net.sf.xqz.script/src-gen/net/sf/xqz/engine/script/Orchestror.genmodel#//orchestror ../../net.sf.smbt.xcp/model/xcp.genmodel#//xcp">
+  <foreignModel>ezxtopology.ecore</foreignModel>
+  <genPackages prefix="Ezxtopology" basePackage="net.sf.smbt.comm" disposableProviderFactory="true"
+      ecorePackage="ezxtopology.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ezxtopology.ecore#//Mime">
+      <genEnumLiterals ecoreEnumLiteral="ezxtopology.ecore#//Mime/BLUETOOTH_MIME"/>
+      <genEnumLiterals ecoreEnumLiteral="ezxtopology.ecore#//Mime/UDP_MIME"/>
+      <genEnumLiterals ecoreEnumLiteral="ezxtopology.ecore#//Mime/TCP_MIME"/>
+      <genEnumLiterals ecoreEnumLiteral="ezxtopology.ecore#//Mime/USB_MIME"/>
+      <genEnumLiterals ecoreEnumLiteral="ezxtopology.ecore#//Mime/XBEE_MIME"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="ezxtopology.ecore#//Serial"/>
+    <genDataTypes ecoreDataType="ezxtopology.ecore#//BluetoothL2CAPConnection"/>
+    <genDataTypes ecoreDataType="ezxtopology.ecore#//DatagramSocket"/>
+    <genDataTypes ecoreDataType="ezxtopology.ecore#//Socket"/>
+    <genDataTypes ecoreDataType="ezxtopology.ecore#//XBee"/>
+    <genClasses ecoreClass="ezxtopology.ecore#//TopologyCache">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezxtopology.ecore#//TopologyCache/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezxtopology.ecore#//TopologyCache/session"/>
+    </genClasses>
+    <genClasses ecoreClass="ezxtopology.ecore#//TopologyNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezxtopology.ecore#//TopologyNode/device"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ezxtopology.ecore#//TopologyNode/bindings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezxtopology.ecore#//TopologyNode/mime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezxtopology.ecore#//TopologyNode/ID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezxtopology.ecore#//TopologyNode/heartBeat"/>
+    </genClasses>
+    <genClasses ecoreClass="ezxtopology.ecore#//TopologyGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezxtopology.ecore#//TopologyGroup/children"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ezxtopology.ecore#//AbstractTopologyItem"/>
+    <genClasses ecoreClass="ezxtopology.ecore#//SessionManager">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezxtopology.ecore#//SessionManager/networkConf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezxtopology.ecore#//SessionManager/usbConnections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezxtopology.ecore#//SessionManager/bluetoothConnections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezxtopology.ecore#//SessionManager/udpConnections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezxtopology.ecore#//SessionManager/tcpConnections"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ezxtopology.ecore#//SessionManager/xbeeConnections"/>
+    </genClasses>
+    <genClasses ecoreClass="ezxtopology.ecore#//UsbConnection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezxtopology.ecore#//UsbConnection/serial"/>
+    </genClasses>
+    <genClasses ecoreClass="ezxtopology.ecore#//BluetoothConnection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezxtopology.ecore#//BluetoothConnection/l2cap"/>
+    </genClasses>
+    <genClasses ecoreClass="ezxtopology.ecore#//UDPConnection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezxtopology.ecore#//UDPConnection/datagramSocket"/>
+    </genClasses>
+    <genClasses ecoreClass="ezxtopology.ecore#//TcpConnection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezxtopology.ecore#//TcpConnection/socket"/>
+    </genClasses>
+    <genClasses ecoreClass="ezxtopology.ecore#//XBeeConnection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ezxtopology.ecore#//XBeeConnection/xbee"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

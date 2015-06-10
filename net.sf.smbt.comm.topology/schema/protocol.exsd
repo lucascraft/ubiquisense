@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="net.sf.smbt.comm.topology" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="net.sf.smbt.comm.topology" id="protocol" name="Smart Ambient Comm Protocol"/>
+      </appInfo>
+      <documentation>
+         &lt;p&gt;
+protocol extension defines ways to connect and handle discrete communication streams. 
+&lt;/p&gt;
+&lt;p&gt;
+It comes with four different notions : 
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+Input stream handler
+&lt;/li&gt;
+&lt;li&gt;
+Output stream handler
+&lt;/li&gt;
+&lt;li&gt;
+Event dispatching
+&lt;/li&gt;
+&lt;li&gt;
+Communication channel 
+&lt;/li&gt;
+&lt;/ul&gt;
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="engine"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="engine">
+      <complexType>
+         <attribute name="ID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  unique engine ID
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="instance" type="string">
+            <annotation>
+               <documentation>
+                  instance rank among possibles. Start at 0 index.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="cmdInterpreterID" type="string">
+            <annotation>
+               <documentation>
+                  Existing command interpreter ID
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="frameInterpreter" type="string">
+            <annotation>
+               <documentation>
+                  Existing frame interpreter ID
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="eventHandler" type="string">
+            <annotation>
+               <documentation>
+                  Existing event handler ID
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="transports" type="string">
+            <annotation>
+               <documentation>
+                  comma separated transports in USB, TCP, UDP, HTTP, XBEE, MIDI (eg: Midi for now)
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="alias" type="string" use="required">
+            <annotation>
+               <documentation>
+                  alias as dmx, osc, midi for instance
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="desc" type="string">
+            <annotation>
+               <documentation>
+                  free textual description
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="customHTTP" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":net.sf.xqz.engine.utils.ICommunicatorReactor"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="customMIDI" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":net.sf.xqz.engine.utils.ICommunicatorReactor"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="customUDP" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":net.sf.xqz.engine.utils.ICommunicatorReactor"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="customTCP" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":net.sf.xqz.engine.utils.ICommunicatorReactor"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="customXBEE" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":net.sf.xqz.engine.utils.ICommunicatorReactor"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="customUSB" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":net.sf.xqz.engine.utils.ICommunicatorReactor"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="customBT" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":net.sf.xqz.engine.utils.ICommunicatorReactor"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         0.1.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         &lt;extension
+         point=&quot;net.sf.smbt.comm.topology.protocol&quot;&gt;
+      &lt;engine
+        alias=&quot;dmx&quot;
+            ID=&quot;net.sf.smbt.opendmx&quot;
+            cmdInterpreterID=&quot;net.sf.smbt.dmx.cmdInterpreter&quot;
+            eventHandler=&quot;net.sf.smbt.dmx.cmdEventHandler&quot;
+            frameInterpreter=&quot;net.sf.smbt.dmx.frameInterpreter&quot;
+            instance=&quot;0&quot;
+            transports=&quot;USB, UDP&quot;
+            desc=&quot;Protocol handling Enttec OpenDMX packets as sent/received to/from ENTTEC™ Pro device w/ serial connection&quot;      
+      &gt;
+      &lt;/engine&gt;
+   &lt;/extension&gt;
+   &lt;extension
+         point=&quot;net.sf.xqz.engine.cmdHandler&quot;&gt;
+      &lt;cmdHandler
+            ID=&quot;net.sf.smbt.dmx.cmdEventHandler&quot;
+            handler=&quot;net.sf.smbt.dmx.handlers.DmxEventHandler&quot;&gt;
+      &lt;/cmdHandler&gt;
+   &lt;/extension&gt;
+   &lt;extension
+         point=&quot;net.sf.xqz.engine.cmdInterpreter&quot;&gt;
+      &lt;cmdInterpreter
+            ID=&quot;net.sf.smbt.dmx.cmdInterpreter&quot;
+            interpreter=&quot;net.sf.smbt.dmx.handlers.DmxCmdHandler&quot;&gt;
+      &lt;/cmdInterpreter&gt;
+   &lt;/extension&gt;
+   &lt;extension
+         point=&quot;net.sf.xqz.engine.frameInterpreter&quot;&gt;
+      &lt;frameInterpreter
+            ID=&quot;net.sf.smbt.dmx.frameInterpreter&quot;
+            interpreter=&quot;net.sf.smbt.dmx.handlers.DmxFrameHandler&quot;&gt;
+      &lt;/frameInterpreter&gt;
+   &lt;/extension&gt;
+      </documentation>
+   </annotation>
+
+
+
+
+</schema>
