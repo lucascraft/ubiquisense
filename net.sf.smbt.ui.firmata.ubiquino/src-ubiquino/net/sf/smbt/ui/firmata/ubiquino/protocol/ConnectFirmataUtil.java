@@ -143,7 +143,4 @@ public class ConnectFirmataUtil {
 			return Status.OK_STATUS;
 		}
 	}
-	
-
-	
 }

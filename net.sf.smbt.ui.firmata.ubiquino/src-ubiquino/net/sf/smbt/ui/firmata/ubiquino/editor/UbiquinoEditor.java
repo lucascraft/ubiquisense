@@ -1,7 +1,7 @@
 /***********************************************************************************
  * Ubiquisense - A smart ambient utilities framework 
  * 
- * Copyright (c) 2012, Lucas Bigeardel
+ * Copyright (c) 2012 - 2015, Lucas Bigeardel
  * 
  * The library is released under:
  * 
@@ -80,7 +80,6 @@ import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.PartInitException;
@@ -143,7 +142,6 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 		//
 		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView("org.eclipse.ui.views.ContentOutline");
 		
-		
 		if (ubiquino.getConfig() == null) {
 			ubiquino.setConfig(UbiquinoFactory.eINSTANCE.createUbiquinoConfig());
 		}
@@ -184,7 +182,6 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 	@Override
 	public void createPartControl(final Composite parent) {
 		parent.setBackground(GUIToolkit.BG);
-
 		parentContainer = parent;
 		setSelection(new StructuredSelection(ubiquino));
 	}
@@ -246,34 +243,6 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 			}
 		}
 	}
-    public void enableComposite(Composite composite, boolean status) {
-/*
-    	if (composite != null) {
-			for (Control c : composite.getChildren()) {
-				if (c instanceof Composite) {
-					enableComposite((Composite) c, status);
-				}
-				if (c != null && !c.isDisposed()) {
-					c.setEnabled(status);
-				}
-			}
-    	}
-*/
-    }
-    private void layoutComposite(Composite composite) {
-    	if (composite != null) {
-			for (Control c : composite.getChildren()) {
-				if (!c.isDisposed()) {
-					if (c instanceof Composite) {
-						Composite cmp = (Composite) c;
-						cmp.layout(true);
-						layoutComposite(cmp);
-					}
-					c.redraw();
-				}
-			}
-    	}
-    }
     
 	public void createUbiquinoUI() {
 		parentContainer.setBackground(GUIToolkit.BG);
@@ -302,8 +271,6 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 				scrollComposite.setMinSize(parent.computeSize(r.width, SWT.DEFAULT));
 			}
 		});
-
-	    enableComposite(inside, false);
 	    
 	    inside.addDisposeListener(new DisposeListener() {
 			@Override
@@ -371,7 +338,6 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 			ubiquinoPipe.setLocked(true);		
 			
 		}	
-		enableComposite(inside, pipe != null);
 	}
 	
 	@Override

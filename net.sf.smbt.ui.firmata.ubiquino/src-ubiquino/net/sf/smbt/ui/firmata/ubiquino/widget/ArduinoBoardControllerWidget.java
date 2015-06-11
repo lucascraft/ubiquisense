@@ -39,6 +39,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.crypto.spec.OAEPParameterSpec;
+
 import net.sf.smbt.firmata.handlers.FirmataQxEventHandler;
 import net.sf.smbt.firmata.ubiquino.PortConfig;
 import net.sf.smbt.firmata.ubiquino.PortConfigKind;
@@ -54,8 +56,10 @@ import net.sf.smbt.mdl.arduino.PIN_MODE;
 import net.sf.smbt.mdl.arduino.PWM_MODE;
 import net.sf.smbt.mdl.arduino.Port;
 import net.sf.smbt.midi.ezmidi.DSLMidiMessage;
+import net.sf.smbt.ui.hmi.GUIColors;
 import net.sf.smbt.ui.hmi.GUIToolkit;
 import net.sf.smbt.ui.hmi.UbiJob;
+import net.sf.smbt.ui.widgets.vu.UbiOscilloscope;
 import net.sf.smbt.ui.widgets.vu.UbiVuMeter;
 import net.sf.xqz.engine.cmd.utils.CmdUtil;
 import net.sf.xqz.model.cmd.CompoundCmd;
@@ -96,6 +100,7 @@ public class ArduinoBoardControllerWidget extends Composite {
 	private Label statusLabel;
 	private static Ubiquino ubiquino;
 	
+	private Map<Port, UbiOscilloscope> 	analogOscilloMap;
 	private Map<Port, Label> 		analogLabelsMap;
 	private Map<Port, Button> 		analogButtonMaps;
 	private Map<Port, Composite> 	analogBagsMap;
@@ -136,6 +141,7 @@ public class ArduinoBoardControllerWidget extends Composite {
 		
 		font = Display.getDefault().getSystemFont();
 		
+		analogOscilloMap 		= new HashMap<Port, UbiOscilloscope>();
 		analogLabelsMap			= new HashMap<Port, Label>();
 		analogButtonMaps		= new HashMap<Port, Button>();
 		analogBagsMap			= new HashMap<Port, Composite>();
@@ -195,7 +201,10 @@ public class ArduinoBoardControllerWidget extends Composite {
 				for (Port p : ubiquino.getBoard().getAnalogPorts()) {
 					if (p instanceof AnalogPort) {
 						if (metersMap.get(p) != null && !metersMap.get(p).isDisposed()) {
-								metersMap.get(p).setLevel(((AnalogPort)p).getValue());
+							metersMap.get(p).setLevel(((AnalogPort)p).getValue());
+						}
+						if (analogOscilloMap.get(p) != null && !analogOscilloMap.get(p).isDisposed()) {
+							analogOscilloMap.get(p).pushValue(((AnalogPort)p).getValue());
 						}
 						if (!analogLabelsMap.get(p).isDisposed()) {
 							analogLabelsMap.get(p).setText("A"+p.getChannel()+" : " + ((AnalogPort)p).getValue());
@@ -264,7 +273,7 @@ public class ArduinoBoardControllerWidget extends Composite {
 		analogGrp.setBackground(GUIToolkit.BG);
 
 		Composite analogContainer = new Composite(analogGrp, SWT.NONE);
-		analogContainer.setLayout(GridLayoutFactory.fillDefaults().margins(0, 0).spacing(0, 0).extendedMargins(0, 0, 0, 0).numColumns(5).create());
+		analogContainer.setLayout(GridLayoutFactory.fillDefaults().margins(0, 0).spacing(0, 0).extendedMargins(0, 0, 0, 0).numColumns(6).create());
 		analogContainer.setLayoutData(GridDataFactory.fillDefaults().create());
 		analogContainer.setBackground(GUIToolkit.BG);
 
@@ -659,7 +668,15 @@ public class ArduinoBoardControllerWidget extends Composite {
 		vuMeter.setMax(510f);
 		vuMeter.setLayoutData(GridDataFactory.fillDefaults().align(SWT.BEGINNING, SWT.CENTER).hint(250, SWT.DEFAULT).minSize(250, SWT.DEFAULT).indent(25, 0).align(SWT.RIGHT, SWT.CENTER).grab(false, false).create());
 		
-		metersMap.put(p, vuMeter);	
+		metersMap.put(p, vuMeter);
+		
+		final UbiOscilloscope oscillo = new UbiOscilloscope(parent, 500);
+		oscillo.setValues(new float[0]);
+		oscillo.setLayout(GridLayoutFactory.fillDefaults().create());
+		oscillo.setLayoutData(GridDataFactory.fillDefaults().align(SWT.BEGINNING, SWT.CENTER).grab(true, false).hint(250, 50).minSize(250, 50).create());
+		oscillo.setForeground(GUIToolkit.FG);
+		oscillo.setBackground(GUIToolkit.BG);
+		analogOscilloMap.put(p, oscillo);	
 
 		final ISelectionChangedListener l = new ISelectionChangedListener() {
 			@Override
@@ -676,16 +693,25 @@ public class ArduinoBoardControllerWidget extends Composite {
 								if (metersMap.get(p) != null) {
 									metersMap.get(p).setVisible(false);
 								}
+								if (analogOscilloMap.get(p) != null) {
+									analogOscilloMap.get(p).setVisible(false);
+								}
 								break;
 							case OUTPUT:
 								stackLayout.topControl = analogButtonMaps.get(p);
 								if (metersMap.get(p) != null) {
 									metersMap.get(p).setVisible(false);
 								}
+								if (analogOscilloMap.get(p) != null) {
+									analogOscilloMap.get(p).setVisible(false);
+								}
 								break;
 							case ANALOG:
 								if (metersMap.get(p) != null) {
 									metersMap.get(p).setVisible(true);
+								}
+								if (analogOscilloMap.get(p) != null) {
+									analogOscilloMap.get(p).setVisible(true);
 								}
 								stackLayout.topControl = analogLabelsMap.get(p);
 								break;
