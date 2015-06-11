@@ -93,7 +93,6 @@ public class UbiOscilloscope extends Canvas implements IUbiWidget {
 							float l = array.length;
 							float x = i * ( w / l);
 							float y = computeY(inside.height, fmin, fmax, array[i]);
-							System.out.print("["+x+","+y+"]");
 							points.add(new Pt(x, y));
 						}
 						drawPath(e, points);
@@ -128,13 +127,11 @@ public class UbiOscilloscope extends Canvas implements IUbiWidget {
 			pts[1]		= 0;
 			int i = 2;
 			for (Pt pt : points) {
-				System.out.print("|"+pt.x+":"+pt.y+"|");
 				pts[i++] = pt.x;
 				pts[i++] = pt.y;
 			}
 			pts[ptLength - 2] = e.width;
 			pts[ptLength - 1] = 0;
-			System.out.println();
 			
 			//
 			// types
