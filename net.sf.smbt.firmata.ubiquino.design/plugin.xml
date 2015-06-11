@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="net.sf.smbt.firmata.ubiquino.design.Activator"
+               id="net.sf.smbt.firmata.ubiquino.design"
+	       name="ubiquino">
+    </component>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.viewpointSpecificationModel">
+     <definition
+           path="description/ubiquino.odesign">
+     </definition>
+  </extension>
+</plugin>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:ubiquino="http://ubiquisense.com/ubiquino/1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description" xmi:id="_wRjjcA7IEeWqcM4B0HSTqA" selectedViews="_E0giwA7MEeW0-Khrl2-dIg" version="8.1.1">
+  <models xmi:type="ubiquino:Ubiquino" href="configuration.firmata#/"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_E0giwA7MEeW0-Khrl2-dIg" initialized="true">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_HIpIkA7MEeW0-Khrl2-dIg" name="Ubiquino Configuration Diagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_HJ2pgA7MEeW0-Khrl2-dIg" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_HJ2pgQ7MEeW0-Khrl2-dIg" type="Sirius" element="_HIpIkA7MEeW0-Khrl2-dIg" measurementUnit="Pixel">
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_HJ2pgg7MEeW0-Khrl2-dIg"/>
+        </data>
+      </ownedAnnotationEntries>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/net.sf.smbt.firmata.ubiquino.design/description/ubiquino.odesign#//@ownedViewpoints[name='Ubiquino']/@ownedRepresentations[name='UbiquinoConfigDiagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_HIpIkQ7MEeW0-Khrl2-dIg"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/net.sf.smbt.firmata.ubiquino.design/description/ubiquino.odesign#//@ownedViewpoints[name='Ubiquino']/@ownedRepresentations[name='UbiquinoConfigDiagram']/@defaultLayer"/>
+      <target xmi:type="ubiquino:Ubiquino" href="configuration.firmata#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/net.sf.smbt.firmata.ubiquino.design/description/ubiquino.odesign#//@ownedViewpoints[name='Ubiquino']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>
