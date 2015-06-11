@@ -49,7 +49,7 @@ import net.sf.smbt.osc.utils.OscCmdUtils;
 import net.sf.smbt.osccmd.OscCmd;
 import net.sf.smbt.quantic.services.XCPAddressUtils;
 import net.sf.smbt.quantic.warp.QuanticMojo;
-import net.sf.smbt.ui.firmata.ubiquino.widget.ArduinoBoardControllerContainer;
+import net.sf.smbt.ui.firmata.ubiquino.widget.ArduinoBoardControllerWidget;
 import net.sf.smbt.ui.hmi.GUIToolkit;
 import net.sf.smbt.xcp.XCPAddress;
 import net.sf.smbt.xcp.provider.XcpItemProviderAdapterFactory;
@@ -75,11 +75,13 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.ControlListener;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.graphics.Rectangle;
+import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.IEditorInput;
@@ -94,14 +96,14 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 public class UbiquinoEditor extends EditorPart implements ISelectionProvider, ITabbedPropertySheetPageContributor {
 
 	private static Ubiquino		ubiquino;
-	private Composite			container;
-	private ScrolledComposite	sc;
-	
+	private ScrolledComposite scrollComposite;
+	private Composite parentContainer;
+
 	private CmdPipe ubiquinoPipe;
 
 	private ConcurrentLinkedQueue<ISelectionChangedListener> listeners;
 	
-	private ArduinoBoardControllerContainer	inside;
+	private ArduinoBoardControllerWidget	inside;
 	private EzUbiquinoCmdDumper				ezDumperQxHandler;
 	private ComposedAdapterFactory			adapterFactory;
 	
@@ -178,21 +180,15 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 	public boolean isSaveAsAllowed() {
 		return false;
 	}
-	public void redraw() {
-		container.layout(true);
-		container.redraw();
-	}
+	
+
 	public void updatePipe(CmdPipe pipe) {}
 	
 	@Override
 	public void createPartControl(final Composite parent) {
 		parent.setBackground(GUIToolkit.BG);
-		container = GUIToolkit.INSTANCE.createComposite(parent, SWT.NONE);
-		container.setBackground(GUIToolkit.BG);
-		container.setLayout(GridLayoutFactory.fillDefaults().create());
-		container.setLayoutData(GridDataFactory.fillDefaults().indent(25, 25).grab(true, true).create());
-		container.setBackground(GUIToolkit.BG);
 
+		parentContainer = parent;
 		setSelection(new StructuredSelection(ubiquino));
 	}
 	public Ubiquino getUbiquino() {
@@ -283,55 +279,33 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
     }
     
 	public void createUbiquinoUI() {
-	    sc = GUIToolkit.INSTANCE.createScrolledComposite(container, SWT.V_SCROLL | SWT.H_SCROLL | SWT.BORDER);
-	    sc.setLayout(GridLayoutFactory.fillDefaults().create());
-	    sc.setLayoutData(GridDataFactory.fillDefaults().grab(true, true).create());
-	    sc.setBackground(GUIToolkit.BG);
+		parentContainer.setBackground(GUIToolkit.BG);
 
-		inside = new ArduinoBoardControllerContainer(sc, ubiquino, null);
+		scrollComposite = new ScrolledComposite(parentContainer, SWT.V_SCROLL | SWT.BORDER);
+		scrollComposite.setBackground(GUIToolkit.BG);
+
+		final Composite parent = new Composite(scrollComposite, SWT.NONE);
+		parent.setBackground(GUIToolkit.BG);
+
+		inside = new ArduinoBoardControllerWidget(parent, ubiquino, null);
 		inside.setLayout(GridLayoutFactory.fillDefaults().create());
-		inside.setLayoutData(GridDataFactory.fillDefaults().grab(true, true).indent(25, 25).create());
 		inside.setBackground(GUIToolkit.BG);
 		
-	    sc.setAlwaysShowScrollBars(true);
-	    sc.setExpandVertical(true);
-	    sc.setExpandHorizontal(true);
-
-		sc.setContent(inside);
-			
-	    container.addControlListener(
-	        new ControlListener() {
-				@Override
-				public void controlResized(ControlEvent e) {
-					Rectangle r = inside.getClientArea();
-				    sc.setMinSize(r.width, r.height);
-				        
-				    container.layout(true);
-				    container.redraw();
-				    sc.layout(true);
-				    sc.redraw();
-				    inside.layout(true);
-				    inside.redraw();
-			        
-			        layoutComposite(container);
-				}
-				@Override
-				public void controlMoved(ControlEvent e) {}
+		RowLayout layout = new RowLayout(SWT.HORIZONTAL);
+		layout.wrap = true;
+		parent.setLayout(layout);
+		
+		scrollComposite.setContent(parent);
+		scrollComposite.setExpandVertical(true);
+		scrollComposite.setExpandHorizontal(true);
+		scrollComposite.addControlListener(new ControlAdapter() {
+			@Override
+			public void controlResized(ControlEvent e) {
+				Rectangle r = scrollComposite.getClientArea();
+				scrollComposite.setMinSize(parent.computeSize(r.width, SWT.DEFAULT));
 			}
-	    );
-	        
-		Rectangle r = container.getClientArea();
-	    sc.setMinSize(r.width, r.height);
-	        
-	    container.layout(true);
-	    container.redraw();
-	    sc.layout(true);
-	    sc.redraw();
-	    inside.layout(true);
-	    inside.redraw();
-	        
-	    layoutComposite(container);
-	    
+		});
+
 	    enableComposite(inside, false);
 	    
 	    inside.addDisposeListener(new DisposeListener() {
@@ -343,7 +317,23 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 	    
 	    updateUbiquinoUI(ubiquino.getDefault());
 	    
-	    setSelection(getSelection());
+	    setSelection(getSelection());	
+		
+		Rectangle r = scrollComposite.getClientArea();
+		scrollComposite.setMinSize(parent.computeSize(r.width, SWT.DEFAULT));
+ 
+	    inside.layout(true);
+	    inside.pack(true);
+	    
+	    parent.layout(true);
+	    parent.pack(true);
+	    
+	    parentContainer.layout(true);
+	    parentContainer.pack(true);
+
+	    scrollComposite.layout(true);
+	    scrollComposite.pack(true);
+	    
 	}
 	
 	public void toggleOscFirmataDump(boolean status) {

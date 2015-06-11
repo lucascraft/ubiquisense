@@ -168,8 +168,6 @@ public class ArduinoBoardControllerWidget extends Composite {
 		updatePipe(pipe);
 		
 		setBackground(GUIToolkit.BG);
-		setLayout(GridLayoutFactory.fillDefaults().create());
-		setLayoutData(GridDataFactory.fillDefaults().hint(SWT.DEFAULT, 200).minSize(SWT.DEFAULT, 200).indent(25, 25).grab(true, true).create());
 		
 		createContent(this);
 		
@@ -539,7 +537,9 @@ public class ArduinoBoardControllerWidget extends Composite {
 		final Label placeholder = new Label(parent, SWT.NONE);
 		placeholder.setText("");
 			
+		layout(true, true);
 		parent.layout(true, true);
+		parent.getParent().layout(true, true);
 	}
 		
 	private void updatePort(Port p, boolean active, PIN_MODE mode, PWM_MODE pwm) {

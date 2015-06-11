@@ -183,8 +183,6 @@ public class ConnectFirmataUtil {
 				for (int i=2;i<sysex.getMessage().length-1;i++) {
 					byte mapping = sysex.getMessage()[i];
 					if (mapping != 0x7f) {
-						
-						
 						for (PortConfig p : ubiquinoEditor.getUbiquino().getConfig().getPorts()) {
 							if (p.getTarget().getMap().getValue() == pin) {
 								System.out.println("pin " + pin + " <--> channel : " + CmdUtil.INSTANCE.getFrameHexInfo(new byte[]{mapping}));
