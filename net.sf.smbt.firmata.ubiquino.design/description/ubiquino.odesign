@@ -4,7 +4,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="UbiquinoConfigDiagram" label="Ubiquino Configuration Diagram" domainClass="ubiquino.Ubiquino">
       <defaultLayer name="UbiquinoDefaultLayer">
         <nodeMappings name="Arduino" semanticCandidatesExpression="feature:board" domainClass="arduino.Arduino">
-          <style xsi:type="style:BundledImageDescription" resizeKind="NSEW">
+          <style xsi:type="style:BundledImageDescription" iconPath="/net.sf.smbt.firmata.ubiquino.design/description/arduino_svg" sizeComputationExpression="25" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>

@@ -376,17 +376,6 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 		enableComposite(inside, pipe != null);
 	}
 	
-	private String valueOf(byte num) {
-		String hex = Integer.toHexString((int) num & 0xFF);
-		return "0x" + (hex.length() == 1 ? "0" : "") + hex;
-	}
-
-	public String getKind(byte hex) {
-		return valueOf((byte) (hex & 0xff));
-	}
-	public String getIOKind(byte hex) {
-		return valueOf((byte) (hex & 0xf0));
-	}
 	@Override
 	public boolean isSaveOnCloseNeeded() {
 		return true;
