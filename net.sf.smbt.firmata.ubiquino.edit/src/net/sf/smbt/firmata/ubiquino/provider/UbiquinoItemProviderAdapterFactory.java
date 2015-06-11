@@ -144,6 +144,29 @@ public class UbiquinoItemProviderAdapterFactory extends UbiquinoAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link net.sf.smbt.firmata.ubiquino.PortSampler} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PortSamplerItemProvider portSamplerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link net.sf.smbt.firmata.ubiquino.PortSampler}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPortSamplerAdapter() {
+		if (portSamplerItemProvider == null) {
+			portSamplerItemProvider = new PortSamplerItemProvider(this);
+		}
+
+		return portSamplerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -245,6 +268,7 @@ public class UbiquinoItemProviderAdapterFactory extends UbiquinoAdapterFactory i
 		if (ubiquinoItemProvider != null) ubiquinoItemProvider.dispose();
 		if (ubiquinoConfigItemProvider != null) ubiquinoConfigItemProvider.dispose();
 		if (portConfigItemProvider != null) portConfigItemProvider.dispose();
+		if (portSamplerItemProvider != null) portSamplerItemProvider.dispose();
 	}
 
 }
