@@ -164,6 +164,14 @@ public class UbiWidgetsView extends ViewPart{
 		TabFactory.INSTANCE.addDotCharMatrix(folder, dotCharMatrixItem);
 		
 		//
+		// LCD Char Dot Matrix Display
+		//
+
+		TabItem oscilloscopesItem = new TabItem(folder, SWT.BOTTOM);
+		oscilloscopesItem.setText("Oscilloscopes");
+		TabFactory.INSTANCE.addOscilloscope(folder, oscilloscopesItem);
+		
+		//
 		// Dot Matrix Display
 		//
 

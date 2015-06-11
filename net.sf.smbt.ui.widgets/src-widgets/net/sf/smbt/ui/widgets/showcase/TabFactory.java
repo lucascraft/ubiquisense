@@ -60,6 +60,7 @@ import net.sf.smbt.ui.widgets.vu.UbiEQ;
 import net.sf.smbt.ui.widgets.vu.UbiEQAdvanced;
 import net.sf.smbt.ui.widgets.vu.UbiKnob;
 import net.sf.smbt.ui.widgets.vu.UbiKnobGrid;
+import net.sf.smbt.ui.widgets.vu.UbiOscilloscope;
 import net.sf.smbt.ui.widgets.vu.UbiSelectionListener;
 import net.sf.smbt.ui.widgets.vu.UbiSlider;
 import net.sf.smbt.ui.widgets.vu.UbiVuMeter;
@@ -115,6 +116,7 @@ public class TabFactory {
 	private Label labelH1, labelH2, labelH3, l1, l2, l3, lcdLabel1, lcdLabel2, lbl;
 	private UbiSlider hslider1, hslider2, hslider3, vslider1, vslider2, vslider3;
 	private UbiVuMeter vuH1, vuV1;
+	private UbiOscilloscope oscH1;
 	private SevenSegmentsDisplay disp7Segments1;
 	private SixteenSegmentsDisplay disp16Segments1, disp16Segments2;
 	private DotMatrixCharDisplay dotMatrixDisplay;
@@ -136,6 +138,7 @@ public class TabFactory {
 	private static VusAnimationJob 			vusAnimationJob;
 	private static KnobAnimationJob			knobAnimationJob;
 	private static FontAnimationJob			fontAnimationJob;
+	private static OscilloscopeAnimationJob oscAnimationJob;
 	
 	private Button 	slidersStimulationButton, 
 					matrixStimulationButton, 
@@ -144,6 +147,7 @@ public class TabFactory {
 					b16StimulationButton, 
 					knobStimulationButton, 
 					vusStimulationButton, 
+					oscStimulationButton, 
 					fontStimulationButton;
 	
 	public TabFactory() {
@@ -157,6 +161,7 @@ public class TabFactory {
 		vusAnimationJob			= new VusAnimationJob();
 		knobAnimationJob		= new KnobAnimationJob();
 		fontAnimationJob		= new FontAnimationJob();
+		oscAnimationJob			= new OscilloscopeAnimationJob();
 	}
 	
 	public void dispose() {
@@ -407,6 +412,22 @@ public class TabFactory {
 		}
 	}
 	
+	class OscilloscopeAnimationJob extends UIJob {
+		public OscilloscopeAnimationJob() {
+			super("Oscilloscopes Animation Job");
+			setSystem(true);
+			setPriority(INTERACTIVE);
+		}
+		@Override
+		public IStatus runInUIThread(IProgressMonitor monitor) {
+			if (oscH1 != null) {
+				oscH1.pushValue(randomizer.nextFloat()*100f);
+			}
+			schedule(75);
+			return Status.OK_STATUS;
+		}
+	}
+	
 	public void addUbiSlider(TabFolder folder, TabItem item) {
 		Composite container = new Composite(folder, SWT.NONE);
 		container.setLayout(GridLayoutFactory.fillDefaults().numColumns(2).create());
@@ -596,6 +617,45 @@ public class TabFactory {
 		vuV1.setLayoutData(GridDataFactory.fillDefaults().align(SWT.BEGINNING, SWT.BOTTOM).hint(20, 200).minSize(20, 200).create());
 		vuV1.setLevel(66f);
 		vuV1.setLevel(66f);
+		
+		item.setControl(container);
+	}
+	
+	public void addOscilloscope(TabFolder folder, TabItem item) {
+		Composite container = new Composite(folder, SWT.NONE);
+		container.setLayout(GridLayoutFactory.fillDefaults().create());
+		container.setLayoutData(GridDataFactory.fillDefaults().minSize(SWT.DEFAULT, 300).grab(true, true).create());
+
+		oscStimulationButton = new Button(container, SWT.TOGGLE);
+		oscStimulationButton.setLayoutData(GridDataFactory.fillDefaults().align(SWT.BEGINNING, SWT.BOTTOM).create());
+		oscStimulationButton.setText("Animate");
+		oscStimulationButton.addSelectionListener(
+			new SelectionListener() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					if (oscStimulationButton.getSelection()) {
+						oscAnimationJob.schedule();
+					} else {
+						oscAnimationJob.cancel();
+					}
+				}
+				@Override
+				public void widgetDefaultSelected(SelectionEvent e) {
+					widgetSelected(e);
+				}
+			}
+		);
+
+
+		Composite hcontainer = new Composite(container, SWT.NONE);
+		hcontainer.setLayout(GridLayoutFactory.fillDefaults().create());
+		hcontainer.setLayoutData(GridDataFactory.fillDefaults().grab(true, true).create());
+
+		oscH1 = new UbiOscilloscope(hcontainer, 500);
+		oscH1.setLayout(GridLayoutFactory.fillDefaults().create());
+		oscH1.setLayoutData(GridDataFactory.fillDefaults().align(SWT.BEGINNING, SWT.CENTER).grab(true, false).hint(250, 50).minSize(250, 50).create());
+		
+		
 		
 		item.setControl(container);
 	}

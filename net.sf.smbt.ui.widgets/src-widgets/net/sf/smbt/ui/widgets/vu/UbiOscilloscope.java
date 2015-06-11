@@ -1,7 +1,7 @@
 /***********************************************************************************
  * Ubiquisense - A smart ambient utilities framework 
  * 
- * Copyright (c) 2011 - 2012, Lucas Bigeardel
+ * Copyright (c) 2011 - 2015, Lucas Bigeardel
  * 
  * The library is released under:
  * 
@@ -39,7 +39,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
@@ -56,7 +55,13 @@ public class UbiOscilloscope extends Canvas implements IUbiWidget {
 	private volatile float[] array;
 	private int size = 500;
 	private float max;
-
+	private class Pt {
+		public float x, y;
+		public Pt(float _x, float _y) {
+			x = _x;
+			y = _y;
+		}
+	}
 	public UbiOscilloscope(Composite parent, int size) {
 		this(parent, size, -1);
 	}
@@ -77,15 +82,19 @@ public class UbiOscilloscope extends Canvas implements IUbiWidget {
 					if (array != null && array.length>0) {
 						float fmin=array[0], fmax=array[0];
 						Rectangle inside = new Rectangle(e.x+1,e.y+1,e.width-2,e.height-2);
+						
 						for (int i=0; i<array.length; i++) {
 							if (fmin>array[i]) { fmin=array[i]; }
 							if (fmax<array[i]) { fmax=array[i]; }
 						}
-						List<Point> points = new ArrayList<Point>();
+						List<Pt> points = new ArrayList<Pt>();
 						for (int i=0; i<array.length; i++) {
-							int x = i * (inside.width / array.length);
-							int y = computeY(inside.height, fmin, fmax, array[i]);
-							points.add(new Point(x, y));
+							float w = inside.width;
+							float l = array.length;
+							float x = i * ( w / l);
+							float y = computeY(inside.height, fmin, fmax, array[i]);
+							System.out.print("["+x+","+y+"]");
+							points.add(new Pt(x, y));
 						}
 						drawPath(e, points);
 						drawLabels(e, fmin, fmax, points.get(0));
@@ -94,8 +103,8 @@ public class UbiOscilloscope extends Canvas implements IUbiWidget {
 			}
 		});
 	}
-	
-	private void drawLabels(PaintEvent e, float fmin, float fmax, Point p) {
+		
+	private void drawLabels(PaintEvent e, float fmin, float fmax, Pt p) {
 		String lmax = ""+fmax;
 		String lmin = ""+fmin;
 		//org.eclipse.swt.graphics.Point fmaxExt = e.gc.textExtent(lmax);
@@ -106,26 +115,43 @@ public class UbiOscilloscope extends Canvas implements IUbiWidget {
 	}
 
 	
-	private void drawPath(PaintEvent e, List<Point> points) {
+	private void drawPath(PaintEvent e, List<Pt> points) {
 		if (points != null && !points.isEmpty() ) {
 			PathData pData = new PathData();
-			int i = 0;
-			int j = 1;
-			int size 		= points.size();
-			int ptLength 	= 2 * size;
-			byte[] types	= new byte[size];
+
+			//
+			// points
+			//
+			int ptLength = 2 * (2 + points.size());
 			float[] pts		= new float[ptLength];
-			types[0]	= SWT.PATH_MOVE_TO;
-			for (Point pt : points) {
+			pts[0]		= 0;
+			pts[1]		= 0;
+			int i = 2;
+			for (Pt pt : points) {
+				System.out.print("|"+pt.x+":"+pt.y+"|");
 				pts[i++] = pt.x;
 				pts[i++] = pt.y;
-				if (j < size) {
-					types[j++]		= SWT.PATH_LINE_TO;
-				}
-				pData.types = types;
-				pData.points = pts;
 			}
+			pts[ptLength - 2] = e.width;
+			pts[ptLength - 1] = 0;
+			System.out.println();
+			
+			//
+			// types
+			//
+			byte[] types	= new byte[2 + points.size()];
+			types[0]	= SWT.PATH_MOVE_TO;
+			int j = 1;
+			for (Pt pt : points) {
+				types[j++]		= SWT.PATH_LINE_TO;
+			}
+			types[1 + points.size()] = SWT.PATH_LINE_TO;
+			
+			pData.types = types;
+			pData.points = pts;
+			
 			Path path = new Path(Display.getDefault(), pData);
+			
 			e.gc.drawPath(path);
 		}
 
