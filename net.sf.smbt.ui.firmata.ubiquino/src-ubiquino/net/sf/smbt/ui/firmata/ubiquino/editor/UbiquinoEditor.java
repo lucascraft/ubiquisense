@@ -37,8 +37,6 @@ package net.sf.smbt.ui.firmata.ubiquino.editor;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-import javax.imageio.stream.ImageOutputStream;
-
 import net.sf.smbt.firmata.ubiquino.Ubiquino;
 import net.sf.smbt.firmata.ubiquino.UbiquinoFactory;
 import net.sf.smbt.firmata.ubiquino.core.UbiquinoUtils;
