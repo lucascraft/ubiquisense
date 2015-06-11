@@ -37,13 +37,14 @@ package net.sf.smbt.ui.firmata.ubiquino.editor;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+import javax.imageio.stream.ImageOutputStream;
+
 import net.sf.smbt.firmata.ubiquino.Ubiquino;
 import net.sf.smbt.firmata.ubiquino.UbiquinoFactory;
 import net.sf.smbt.firmata.ubiquino.core.UbiquinoUtils;
 import net.sf.smbt.firmata.ubiquino.provider.UbiquinoItemProviderAdapterFactory;
 import net.sf.smbt.mdl.arduino.provider.ArduinoItemProviderAdapterFactory;
 import net.sf.smbt.midi.ezmidi.DSLMidiMessage;
-import net.sf.smbt.midi.ezmidi.NoteOFF;
 import net.sf.smbt.midi.ezmidi.NoteON;
 import net.sf.smbt.osc.utils.OscCmdUtils;
 import net.sf.smbt.osccmd.OscCmd;
@@ -66,7 +67,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
-import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -77,7 +77,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
-import org.eclipse.swt.events.ControlListener;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.graphics.Rectangle;
