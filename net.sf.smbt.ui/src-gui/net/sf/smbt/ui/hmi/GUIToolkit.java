@@ -87,6 +87,7 @@ import org.eclipse.ui.forms.widgets.ImageHyperlink;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.ScrolledPageBook;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.forms.widgets.SharedScrolledComposite;
 import org.eclipse.ui.internal.forms.widgets.FormFonts;
 import org.eclipse.ui.internal.forms.widgets.FormUtil;
 
@@ -366,6 +367,21 @@ public class GUIToolkit {
 	 */
 	public ScrolledComposite createScrolledComposite(Composite parent, int style) {
 		ScrolledComposite composite = new ScrolledComposite(parent, style | orientation);
+		adapt(composite);
+		return composite;
+	}
+
+	/**
+	 * Creates the composite as part of the form using the provided style.
+	 * 
+	 * @param parent
+	 *            the composite parent
+	 * @param style
+	 *            the composite style
+	 * @return the composite widget
+	 */
+	public ScrolledForm createScrolledForm(Composite parent, int style) {
+		ScrolledForm composite = new ScrolledForm(parent, style | orientation);
 		adapt(composite);
 		return composite;
 	}
