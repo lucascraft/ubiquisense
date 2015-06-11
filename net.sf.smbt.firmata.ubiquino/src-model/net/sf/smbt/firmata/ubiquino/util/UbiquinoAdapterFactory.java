@@ -87,6 +87,10 @@ public class UbiquinoAdapterFactory extends AdapterFactoryImpl {
 				return createPortConfigAdapter();
 			}
 			@Override
+			public Adapter casePortSampler(PortSampler object) {
+				return createPortSamplerAdapter();
+			}
+			@Override
 			public Adapter caseIConnectedUnit(IConnectedUnit object) {
 				return createIConnectedUnitAdapter();
 			}
@@ -149,6 +153,20 @@ public class UbiquinoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPortConfigAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link net.sf.smbt.firmata.ubiquino.PortSampler <em>Port Sampler</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see net.sf.smbt.firmata.ubiquino.PortSampler
+	 * @generated
+	 */
+	public Adapter createPortSamplerAdapter() {
 		return null;
 	}
 

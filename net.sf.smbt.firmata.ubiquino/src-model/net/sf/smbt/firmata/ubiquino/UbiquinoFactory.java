@@ -53,6 +53,15 @@ public interface UbiquinoFactory extends EFactory {
 	PortConfig createPortConfig();
 
 	/**
+	 * Returns a new object of class '<em>Port Sampler</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Port Sampler</em>'.
+	 * @generated
+	 */
+	PortSampler createPortSampler();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

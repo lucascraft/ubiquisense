@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.firmata.ubiquino/src-model"
-    editDirectory="/net.sf.smbt.firmata.ubiquino.edit/src" editorDirectory="/net.sf.smbt.firmata.ubiquino.editor/src"
-    modelPluginID="net.sf.smbt.firmata.ubiquino" modelName="Ubiquino" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.firmata.ubiquino/src-model" editDirectory="/net.sf.smbt.firmata.ubiquino.edit/src"
+    editorDirectory="/net.sf.smbt.firmata.ubiquino.editor/src" modelPluginID="net.sf.smbt.firmata.ubiquino"
+    modelName="Ubiquino" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     featureMapWrapperInternalInterface="" testsDirectory="" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../net.sf.smbt.arduino/model/arduino.genmodel#//arduino platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../net.sf.smbt.xcp/model/xcp.genmodel#//xcp ../../net.sf.xqz.engine/model/temporal.genmodel#//engine ../../net.sf.xqz.engine/model/temporal.genmodel#//cmd"
     interfaceNamePattern="">
@@ -18,10 +17,13 @@
       <genEnumLiterals ecoreEnumLiteral="ubiquino.ecore#//PortConfigKind/HIGH"/>
       <genEnumLiterals ecoreEnumLiteral="ubiquino.ecore#//PortConfigKind/LOW"/>
       <genEnumLiterals ecoreEnumLiteral="ubiquino.ecore#//PortConfigKind/SERVO"/>
+      <genEnumLiterals ecoreEnumLiteral="ubiquino.ecore#//PortConfigKind/DIGITAL"/>
+      <genEnumLiterals ecoreEnumLiteral="ubiquino.ecore#//PortConfigKind/UNKNOWN"/>
     </genEnums>
     <genClasses ecoreClass="ubiquino.ecore#//Ubiquino">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ubiquino.ecore#//Ubiquino/board"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ubiquino.ecore#//Ubiquino/config"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ubiquino.ecore#//Ubiquino/lastAddress"/>
     </genClasses>
     <genClasses ecoreClass="ubiquino.ecore#//UbiquinoConfig">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ubiquino.ecore#//UbiquinoConfig/ports"/>
@@ -29,6 +31,16 @@
     <genClasses ecoreClass="ubiquino.ecore#//PortConfig">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ubiquino.ecore#//PortConfig/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ubiquino.ecore#//PortConfig/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ubiquino.ecore#//PortConfig/enabled"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ubiquino.ecore#//PortConfig/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ubiquino.ecore#//PortConfig/pwm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ubiquino.ecore#//PortConfig/channel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ubiquino.ecore#//PortConfig/sampler"/>
+    </genClasses>
+    <genClasses ecoreClass="ubiquino.ecore#//PortSampler">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EAttribute ubiquino.ecore#//PortSampler/samples"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ubiquino.ecore#//PortSampler/sampleRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ubiquino.ecore#//PortSampler/size"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

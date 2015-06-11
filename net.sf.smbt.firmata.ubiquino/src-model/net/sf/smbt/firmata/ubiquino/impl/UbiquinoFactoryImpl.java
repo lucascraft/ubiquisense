@@ -68,6 +68,7 @@ public class UbiquinoFactoryImpl extends EFactoryImpl implements UbiquinoFactory
 			case UbiquinoPackage.UBIQUINO: return createUbiquino();
 			case UbiquinoPackage.UBIQUINO_CONFIG: return createUbiquinoConfig();
 			case UbiquinoPackage.PORT_CONFIG: return createPortConfig();
+			case UbiquinoPackage.PORT_SAMPLER: return createPortSampler();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -131,6 +132,16 @@ public class UbiquinoFactoryImpl extends EFactoryImpl implements UbiquinoFactory
 	public PortConfig createPortConfig() {
 		PortConfigImpl portConfig = new PortConfigImpl();
 		return portConfig;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortSampler createPortSampler() {
+		PortSamplerImpl portSampler = new PortSamplerImpl();
+		return portSampler;
 	}
 
 	/**

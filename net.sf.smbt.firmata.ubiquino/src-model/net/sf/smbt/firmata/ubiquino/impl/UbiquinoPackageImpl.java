@@ -8,6 +8,7 @@ package net.sf.smbt.firmata.ubiquino.impl;
 
 import net.sf.smbt.firmata.ubiquino.PortConfig;
 import net.sf.smbt.firmata.ubiquino.PortConfigKind;
+import net.sf.smbt.firmata.ubiquino.PortSampler;
 import net.sf.smbt.firmata.ubiquino.Ubiquino;
 import net.sf.smbt.firmata.ubiquino.UbiquinoConfig;
 import net.sf.smbt.firmata.ubiquino.UbiquinoFactory;
@@ -52,6 +53,13 @@ public class UbiquinoPackageImpl extends EPackageImpl implements UbiquinoPackage
 	 * @generated
 	 */
 	private EClass portConfigEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass portSamplerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,6 +257,51 @@ public class UbiquinoPackageImpl extends EPackageImpl implements UbiquinoPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPortConfig_Sampler() {
+		return (EReference)portConfigEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPortSampler() {
+		return portSamplerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPortSampler_Samples() {
+		return (EAttribute)portSamplerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPortSampler_SampleRate() {
+		return (EAttribute)portSamplerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPortSampler_Size() {
+		return (EAttribute)portSamplerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPortConfigKind() {
 		return portConfigKindEEnum;
 	}
@@ -296,6 +349,12 @@ public class UbiquinoPackageImpl extends EPackageImpl implements UbiquinoPackage
 		createEAttribute(portConfigEClass, PORT_CONFIG__MODE);
 		createEAttribute(portConfigEClass, PORT_CONFIG__PWM);
 		createEAttribute(portConfigEClass, PORT_CONFIG__CHANNEL);
+		createEReference(portConfigEClass, PORT_CONFIG__SAMPLER);
+
+		portSamplerEClass = createEClass(PORT_SAMPLER);
+		createEAttribute(portSamplerEClass, PORT_SAMPLER__SAMPLES);
+		createEAttribute(portSamplerEClass, PORT_SAMPLER__SAMPLE_RATE);
+		createEAttribute(portSamplerEClass, PORT_SAMPLER__SIZE);
 
 		// Create enums
 		portConfigKindEEnum = createEEnum(PORT_CONFIG_KIND);
@@ -353,6 +412,12 @@ public class UbiquinoPackageImpl extends EPackageImpl implements UbiquinoPackage
 		initEAttribute(getPortConfig_Mode(), theArduinoPackage.getPIN_MODE(), "mode", null, 0, 1, PortConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortConfig_Pwm(), theArduinoPackage.getPWM_MODE(), "pwm", null, 0, 1, PortConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortConfig_Channel(), theEcorePackage.getEInt(), "channel", null, 0, 1, PortConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortConfig_Sampler(), this.getPortSampler(), null, "sampler", null, 0, 1, PortConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(portSamplerEClass, PortSampler.class, "PortSampler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPortSampler_Samples(), ecorePackage.getEInt(), "samples", null, 0, -1, PortSampler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortSampler_SampleRate(), theEcorePackage.getEInt(), "sampleRate", null, 0, 1, PortSampler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortSampler_Size(), theEcorePackage.getELong(), "size", null, 0, 1, PortSampler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(portConfigKindEEnum, PortConfigKind.class, "PortConfigKind");

@@ -20,6 +20,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EEnum ../../net.sf.smbt.arduino/model/arduino.ecore#//PIN_MODE"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pwm" eType="ecore:EEnum ../../net.sf.smbt.arduino/model/arduino.ecore#//PWM_MODE"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="channel" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sampler" eType="#//PortSampler"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PortConfigKind">
     <eLiterals name="ANALOGIC"/>
@@ -31,5 +32,11 @@
     <eLiterals name="SERVO" value="6"/>
     <eLiterals name="DIGITAL" value="7"/>
     <eLiterals name="UNKNOWN"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortSampler">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="samples" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sampleRate" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ELong"/>
   </eClassifiers>
 </ecore:EPackage>

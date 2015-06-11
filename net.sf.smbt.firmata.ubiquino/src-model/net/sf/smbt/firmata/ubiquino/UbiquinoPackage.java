@@ -219,13 +219,68 @@ public interface UbiquinoPackage extends EPackage {
 	int PORT_CONFIG__CHANNEL = 5;
 
 	/**
+	 * The feature id for the '<em><b>Sampler</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_CONFIG__SAMPLER = 6;
+
+	/**
 	 * The number of structural features of the '<em>Port Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_CONFIG_FEATURE_COUNT = 6;
+	int PORT_CONFIG_FEATURE_COUNT = 7;
+
+	/**
+	 * The meta object id for the '{@link net.sf.smbt.firmata.ubiquino.impl.PortSamplerImpl <em>Port Sampler</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see net.sf.smbt.firmata.ubiquino.impl.PortSamplerImpl
+	 * @see net.sf.smbt.firmata.ubiquino.impl.UbiquinoPackageImpl#getPortSampler()
+	 * @generated
+	 */
+	int PORT_SAMPLER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Samples</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_SAMPLER__SAMPLES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Sample Rate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_SAMPLER__SAMPLE_RATE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_SAMPLER__SIZE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Port Sampler</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_SAMPLER_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link net.sf.smbt.firmata.ubiquino.PortConfigKind <em>Port Config Kind</em>}' enum.
@@ -235,7 +290,7 @@ public interface UbiquinoPackage extends EPackage {
 	 * @see net.sf.smbt.firmata.ubiquino.impl.UbiquinoPackageImpl#getPortConfigKind()
 	 * @generated
 	 */
-	int PORT_CONFIG_KIND = 3;
+	int PORT_CONFIG_KIND = 4;
 
 
 	/**
@@ -379,6 +434,60 @@ public interface UbiquinoPackage extends EPackage {
 	EAttribute getPortConfig_Channel();
 
 	/**
+	 * Returns the meta object for the reference '{@link net.sf.smbt.firmata.ubiquino.PortConfig#getSampler <em>Sampler</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sampler</em>'.
+	 * @see net.sf.smbt.firmata.ubiquino.PortConfig#getSampler()
+	 * @see #getPortConfig()
+	 * @generated
+	 */
+	EReference getPortConfig_Sampler();
+
+	/**
+	 * Returns the meta object for class '{@link net.sf.smbt.firmata.ubiquino.PortSampler <em>Port Sampler</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Port Sampler</em>'.
+	 * @see net.sf.smbt.firmata.ubiquino.PortSampler
+	 * @generated
+	 */
+	EClass getPortSampler();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link net.sf.smbt.firmata.ubiquino.PortSampler#getSamples <em>Samples</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Samples</em>'.
+	 * @see net.sf.smbt.firmata.ubiquino.PortSampler#getSamples()
+	 * @see #getPortSampler()
+	 * @generated
+	 */
+	EAttribute getPortSampler_Samples();
+
+	/**
+	 * Returns the meta object for the attribute '{@link net.sf.smbt.firmata.ubiquino.PortSampler#getSampleRate <em>Sample Rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Sample Rate</em>'.
+	 * @see net.sf.smbt.firmata.ubiquino.PortSampler#getSampleRate()
+	 * @see #getPortSampler()
+	 * @generated
+	 */
+	EAttribute getPortSampler_SampleRate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link net.sf.smbt.firmata.ubiquino.PortSampler#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see net.sf.smbt.firmata.ubiquino.PortSampler#getSize()
+	 * @see #getPortSampler()
+	 * @generated
+	 */
+	EAttribute getPortSampler_Size();
+
+	/**
 	 * Returns the meta object for enum '{@link net.sf.smbt.firmata.ubiquino.PortConfigKind <em>Port Config Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -519,6 +628,48 @@ public interface UbiquinoPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PORT_CONFIG__CHANNEL = eINSTANCE.getPortConfig_Channel();
+
+		/**
+		 * The meta object literal for the '<em><b>Sampler</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_CONFIG__SAMPLER = eINSTANCE.getPortConfig_Sampler();
+
+		/**
+		 * The meta object literal for the '{@link net.sf.smbt.firmata.ubiquino.impl.PortSamplerImpl <em>Port Sampler</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see net.sf.smbt.firmata.ubiquino.impl.PortSamplerImpl
+		 * @see net.sf.smbt.firmata.ubiquino.impl.UbiquinoPackageImpl#getPortSampler()
+		 * @generated
+		 */
+		EClass PORT_SAMPLER = eINSTANCE.getPortSampler();
+
+		/**
+		 * The meta object literal for the '<em><b>Samples</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_SAMPLER__SAMPLES = eINSTANCE.getPortSampler_Samples();
+
+		/**
+		 * The meta object literal for the '<em><b>Sample Rate</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_SAMPLER__SAMPLE_RATE = eINSTANCE.getPortSampler_SampleRate();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_SAMPLER__SIZE = eINSTANCE.getPortSampler_Size();
 
 		/**
 		 * The meta object literal for the '{@link net.sf.smbt.firmata.ubiquino.PortConfigKind <em>Port Config Kind</em>}' enum.

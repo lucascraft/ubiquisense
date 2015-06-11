@@ -8,6 +8,7 @@ package net.sf.smbt.firmata.ubiquino.impl;
 
 import net.sf.smbt.firmata.ubiquino.PortConfig;
 import net.sf.smbt.firmata.ubiquino.PortConfigKind;
+import net.sf.smbt.firmata.ubiquino.PortSampler;
 import net.sf.smbt.firmata.ubiquino.UbiquinoPackage;
 import net.sf.smbt.mdl.arduino.PIN_MODE;
 import net.sf.smbt.mdl.arduino.PWM_MODE;
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link net.sf.smbt.firmata.ubiquino.impl.PortConfigImpl#getMode <em>Mode</em>}</li>
  *   <li>{@link net.sf.smbt.firmata.ubiquino.impl.PortConfigImpl#getPwm <em>Pwm</em>}</li>
  *   <li>{@link net.sf.smbt.firmata.ubiquino.impl.PortConfigImpl#getChannel <em>Channel</em>}</li>
+ *   <li>{@link net.sf.smbt.firmata.ubiquino.impl.PortConfigImpl#getSampler <em>Sampler</em>}</li>
  * </ul>
  * </p>
  *
@@ -148,6 +150,16 @@ public class PortConfigImpl extends MinimalEObjectImpl.Container implements Port
 	 * @ordered
 	 */
 	protected int channel = CHANNEL_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSampler() <em>Sampler</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSampler()
+	 * @generated
+	 * @ordered
+	 */
+	protected PortSampler sampler;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -316,6 +328,44 @@ public class PortConfigImpl extends MinimalEObjectImpl.Container implements Port
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PortSampler getSampler() {
+		if (sampler != null && sampler.eIsProxy()) {
+			InternalEObject oldSampler = (InternalEObject)sampler;
+			sampler = (PortSampler)eResolveProxy(oldSampler);
+			if (sampler != oldSampler) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UbiquinoPackage.PORT_CONFIG__SAMPLER, oldSampler, sampler));
+			}
+		}
+		return sampler;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortSampler basicGetSampler() {
+		return sampler;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSampler(PortSampler newSampler) {
+		PortSampler oldSampler = sampler;
+		sampler = newSampler;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UbiquinoPackage.PORT_CONFIG__SAMPLER, oldSampler, sampler));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -332,6 +382,9 @@ public class PortConfigImpl extends MinimalEObjectImpl.Container implements Port
 				return getPwm();
 			case UbiquinoPackage.PORT_CONFIG__CHANNEL:
 				return getChannel();
+			case UbiquinoPackage.PORT_CONFIG__SAMPLER:
+				if (resolve) return getSampler();
+				return basicGetSampler();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -361,6 +414,9 @@ public class PortConfigImpl extends MinimalEObjectImpl.Container implements Port
 				return;
 			case UbiquinoPackage.PORT_CONFIG__CHANNEL:
 				setChannel((Integer)newValue);
+				return;
+			case UbiquinoPackage.PORT_CONFIG__SAMPLER:
+				setSampler((PortSampler)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -392,6 +448,9 @@ public class PortConfigImpl extends MinimalEObjectImpl.Container implements Port
 			case UbiquinoPackage.PORT_CONFIG__CHANNEL:
 				setChannel(CHANNEL_EDEFAULT);
 				return;
+			case UbiquinoPackage.PORT_CONFIG__SAMPLER:
+				setSampler((PortSampler)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -416,6 +475,8 @@ public class PortConfigImpl extends MinimalEObjectImpl.Container implements Port
 				return pwm != PWM_EDEFAULT;
 			case UbiquinoPackage.PORT_CONFIG__CHANNEL:
 				return channel != CHANNEL_EDEFAULT;
+			case UbiquinoPackage.PORT_CONFIG__SAMPLER:
+				return sampler != null;
 		}
 		return super.eIsSet(featureID);
 	}

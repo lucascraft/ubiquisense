@@ -93,6 +93,12 @@ public class UbiquinoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case UbiquinoPackage.PORT_SAMPLER: {
+				PortSampler portSampler = (PortSampler)theEObject;
+				T result = casePortSampler(portSampler);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -139,6 +145,21 @@ public class UbiquinoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePortConfig(PortConfig object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Port Sampler</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Port Sampler</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePortSampler(PortSampler object) {
 		return null;
 	}
 

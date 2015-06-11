@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link net.sf.smbt.firmata.ubiquino.PortConfig#getMode <em>Mode</em>}</li>
  *   <li>{@link net.sf.smbt.firmata.ubiquino.PortConfig#getPwm <em>Pwm</em>}</li>
  *   <li>{@link net.sf.smbt.firmata.ubiquino.PortConfig#getChannel <em>Channel</em>}</li>
+ *   <li>{@link net.sf.smbt.firmata.ubiquino.PortConfig#getSampler <em>Sampler</em>}</li>
  * </ul>
  * </p>
  *
@@ -198,5 +199,31 @@ public interface PortConfig extends EObject {
 	 * @generated
 	 */
 	void setChannel(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Sampler</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sampler</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sampler</em>' reference.
+	 * @see #setSampler(PortSampler)
+	 * @see net.sf.smbt.firmata.ubiquino.UbiquinoPackage#getPortConfig_Sampler()
+	 * @model
+	 * @generated
+	 */
+	PortSampler getSampler();
+
+	/**
+	 * Sets the value of the '{@link net.sf.smbt.firmata.ubiquino.PortConfig#getSampler <em>Sampler</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sampler</em>' reference.
+	 * @see #getSampler()
+	 * @generated
+	 */
+	void setSampler(PortSampler value);
 
 } // PortConfig
