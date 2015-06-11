@@ -58,7 +58,7 @@ public class UdpInputPortJob extends AbstractInputJob {
 	protected IStatus run(IProgressMonitor monitor) {
 		synchronized(channel) {
 			if (channel.connected()) {
-				channel.receive(new byte[65535]);
+				channel.receive(new byte[15360]);
 				for (Rx rx : rxList) {
 					synchronized (rx.getEngine().getInputInterpreter()) {
 						IXFrameInterpreter frameInterpreter = rx.getEngine().getInputInterpreter();
