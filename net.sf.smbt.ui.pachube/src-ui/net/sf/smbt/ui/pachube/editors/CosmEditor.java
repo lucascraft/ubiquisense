@@ -108,6 +108,7 @@ import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.GridData;
@@ -119,6 +120,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
+import org.eclipse.swt.widgets.Slider;
 import org.eclipse.swt.widgets.Spinner;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
@@ -164,8 +166,8 @@ public class CosmEditor extends EditorPart implements ISelectionProvider, ITabbe
 	}
 
 	private FilteredTree filteredTree1, filteredTree2;
-	private UbiButton filterDatastreamsButton; 
-	private UbiSlider radiusSlider;
+	private Button filterDatastreamsButton; 
+	private Slider radiusSlider;
 	
 	private EnvironmentType environmentType;
 	
@@ -590,30 +592,32 @@ public class CosmEditor extends EditorPart implements ISelectionProvider, ITabbe
 	    makeActions();
 
 	    Composite bag = GUIToolkit.INSTANCE.createComposite(sashBrowse);
-	    bag.setLayout(GridLayoutFactory.fillDefaults().numColumns(2).equalWidth(false).extendedMargins(0, 0, 0, 0).margins(0, 0).create());
+	    bag.setLayout(GridLayoutFactory.fillDefaults().numColumns(1).equalWidth(false).extendedMargins(0, 0, 0, 0).margins(0, 0).create());
 	    bag.setLayoutData(GridDataFactory.fillDefaults().grab(true, true).create());
 	    
-	    filterDatastreamsButton = new UbiButton(bag);
+	    filterDatastreamsButton = new Button(bag, SWT.TOGGLE);
 	    filterDatastreamsButton.setImage(filterDatastreamsAction.getImageDescriptor().createImage());
+	    filterDatastreamsButton.setText("Live feeds");
 	    filterDatastreamsButton.addSelectionListener(
-	    	new UbiSelectionListener() {
+	    	new SelectionListener() {	
 				@Override
-				public void handle() {
-					filterDatastreamsAction.run();
-				}
+				public void widgetSelected(SelectionEvent e) {
+					filterDatastreamsAction.run();					
+				}	
+				@Override
+				public void widgetDefaultSelected(SelectionEvent e) {
+					filterDatastreamsAction.run();					
+				}	    		
 	    	}
 	    );
 	    
-	    radiusSlider = new UbiSlider(bag, SWT.HORIZONTAL, false, UbiSlider.UBI_SLIDER_RICH_LOOK);
-	    radiusSlider.setLayout(GridLayoutFactory.fillDefaults().create());
+	    radiusSlider = new Slider(bag, SWT.HORIZONTAL);
 	    radiusSlider.setLayoutData(GridDataFactory.fillDefaults().grab(true, false).minSize(120, 20).hint(120, 20).create());
-	    radiusSlider.setMax(100f);
-	    radiusSlider.setValue(0f);
 	    radiusSlider.addSelectionListener(
-	    	new UbiSelectionListener() {
+	    	new SelectionListener() {
 				@Override
-				public void handle() {
-					Float d		= 25f + radiusSlider.getValue() * 2f;
+				public void widgetSelected(SelectionEvent e) {
+					Float d		= 25f + radiusSlider.getSelection() * 2f;
 					radius		= d.intValue();
 			        LatLng ll	= gmap.getCenter();
 			        gmap.setCenter(ll);
@@ -622,7 +626,11 @@ public class CosmEditor extends EditorPart implements ISelectionProvider, ITabbe
 			        	""+ll.longitude, 
 			        	"" + (radius * 1000) 
 			        );
-				}
+				}	
+				@Override
+				public void widgetDefaultSelected(SelectionEvent e) {
+					widgetSelected(e);
+				}	    		
 			}
 	    );
 	    
