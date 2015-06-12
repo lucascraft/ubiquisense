@@ -515,6 +515,7 @@ public class QuanticMojo implements /*ServiceListener,*/ IWarpManager, IPipeBuil
 	}
 	
 	private String getRawCommTag(String protocol) {
+		if ("usb://".equals(protocol)) 	return "USB";
 		if ("udp://".equals(protocol)) 	return "UDP";
 		if ("tcp://".equals(protocol)) 	return "TCP";
 		if ("xbee://".equals(protocol)) return "XBEE";
