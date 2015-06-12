@@ -1,0 +1,13 @@
+orchestror o1 {
+	engine e1; 
+	engine e2; 
+	engine e3;
+	
+	client c1 { e1 e2 e3 };
+	
+	timeline t1 : e1;
+	timeline t2 : e2;
+	timeline t3 : e3;
+	
+	application a1 { c1 };
+}

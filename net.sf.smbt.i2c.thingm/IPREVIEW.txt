@@ -1,0 +1,7 @@
+(c) 2007-8, Tod E. Kurt, ThingM, http://thingm.com/
+
+no native binding (on OSX, others?), src attached, no mods : not EPL compatible
+
+solution rewrite one
+
+ 

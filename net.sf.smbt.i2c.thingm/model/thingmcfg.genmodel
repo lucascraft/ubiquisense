@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.i2c.thingm/src-model"
+    editDirectory="" editorDirectory="" modelPluginID="net.sf.smbt.i2c.thingm" modelName="Thingmcfg"
+    testsDirectory="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>thingmcfg.ecore</foreignModel>
+  <genPackages prefix="Thingmcfg" basePackage="net.sf.smbt" disposableProviderFactory="true"
+      ecorePackage="thingmcfg.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="thingmcfg.ecore#//ThingMDevice">
+      <genEnumLiterals ecoreEnumLiteral="thingmcfg.ecore#//ThingMDevice/BLINK_M"/>
+      <genEnumLiterals ecoreEnumLiteral="thingmcfg.ecore#//ThingMDevice/MAX_M"/>
+      <genEnumLiterals ecoreEnumLiteral="thingmcfg.ecore#//ThingMDevice/MINI_M"/>
+      <genEnumLiterals ecoreEnumLiteral="thingmcfg.ecore#//ThingMDevice/CONTROL_M"/>
+      <genEnumLiterals ecoreEnumLiteral="thingmcfg.ecore#//ThingMDevice/REMOTE_M"/>
+    </genEnums>
+    <genClasses ecoreClass="thingmcfg.ecore#//ThingMCfg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute thingmcfg.ecore#//ThingMCfg/portAddr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute thingmcfg.ecore#//ThingMCfg/speed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute thingmcfg.ecore#//ThingMCfg/device"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

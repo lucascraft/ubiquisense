@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_Dx4A4cjnEeCEhu0RUz3riQ" type="EcoreTools" name="thingmcfg" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_FaCRgMjnEeCEhu0RUz3riQ" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_FaF74MjnEeCEhu0RUz3riQ" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_FaIYIMjnEeCEhu0RUz3riQ" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_XdU30MjnEeCEhu0RUz3riQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="thingmcfg.ecore#//ThingMCfg/device"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_XdU30cjnEeCEhu0RUz3riQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_KxJgIMjnEeCEhu0RUz3riQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="thingmcfg.ecore#//ThingMCfg/speed"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_KxJgIcjnEeCEhu0RUz3riQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_G56I0MjnEeCEhu0RUz3riQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="thingmcfg.ecore#//ThingMCfg/portAddr"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_G56I0cjnEeCEhu0RUz3riQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_FaIYIcjnEeCEhu0RUz3riQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_FaIYIsjnEeCEhu0RUz3riQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_FaIYI8jnEeCEhu0RUz3riQ"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_FaI_MMjnEeCEhu0RUz3riQ" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_FaI_McjnEeCEhu0RUz3riQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_FaI_MsjnEeCEhu0RUz3riQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_FaI_M8jnEeCEhu0RUz3riQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_FaCRgcjnEeCEhu0RUz3riQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="thingmcfg.ecore#//ThingMCfg"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FaCRgsjnEeCEhu0RUz3riQ" x="275" y="74"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_NRof4MjnEeCEhu0RUz3riQ" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_NRpuAMjnEeCEhu0RUz3riQ" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_NRqVEMjnEeCEhu0RUz3riQ" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_OmAR0MjnEeCEhu0RUz3riQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="thingmcfg.ecore#//ThingMDevice/BLINK_M"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_OmAR0cjnEeCEhu0RUz3riQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_QxLI4MjnEeCEhu0RUz3riQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="thingmcfg.ecore#//ThingMDevice/MAX_M"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_QxLI4cjnEeCEhu0RUz3riQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_RzC1kMjnEeCEhu0RUz3riQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="thingmcfg.ecore#//ThingMDevice/MINI_M"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_RzC1kcjnEeCEhu0RUz3riQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_SplcAMjnEeCEhu0RUz3riQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="thingmcfg.ecore#//ThingMDevice/CONTROL_M"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_SplcAcjnEeCEhu0RUz3riQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_WZRZ0MjnEeCEhu0RUz3riQ" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="thingmcfg.ecore#//ThingMDevice/REMOTE_M"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WZRZ0cjnEeCEhu0RUz3riQ"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_NRqVEcjnEeCEhu0RUz3riQ"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_NRqVEsjnEeCEhu0RUz3riQ"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_NRqVE8jnEeCEhu0RUz3riQ"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_NRof4cjnEeCEhu0RUz3riQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="thingmcfg.ecore#//ThingMDevice"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NRof4sjnEeCEhu0RUz3riQ" x="104" y="136"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_vpQa4MjoEeCEhu0RUz3riQ" type="1004">
+    <children xmi:type="notation:Node" xmi:id="_vpRpAMjoEeCEhu0RUz3riQ" type="4008"/>
+    <children xmi:type="notation:Node" xmi:id="_vpRpAcjoEeCEhu0RUz3riQ" type="4009"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_vpQa4cjoEeCEhu0RUz3riQ" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EDataType" href="thingmcfg.ecore#//CommPortIdentifier"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vpQa4sjoEeCEhu0RUz3riQ" x="420" y="224"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Dx4A4sjnEeCEhu0RUz3riQ"/>
+  <element xmi:type="ecore:EPackage" href="thingmcfg.ecore#/"/>
+</notation:Diagram>

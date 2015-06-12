@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ubiquisense - Firmata Communication (over Midi)
+Bundle-SymbolicName: net.sf.smbt.i2c.thingm.firmata
+Bundle-Version: 0.5.0.qualifier
+Bundle-Activator: net.sf.smbt.i2c.thingm.firmata.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ net.sf.smbt.firmata;bundle-version="0.5.0";visibility:=reexport,
+ net.sf.smbt.i2c.thingm;bundle-version="0.5.0";visibility:=reexport,
+ net.sf.xqz.engine;bundle-version="0.5.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.sf.smbt.i2c.thingm.firmata,
+ net.sf.smbt.i2c.thingm.firmata.utils
+Bundle-Vendor: ubiquisense.com
