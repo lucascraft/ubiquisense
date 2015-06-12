@@ -79,13 +79,13 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.ui.progress.UIJob;
 
 public class UbiquinoUtils {
 	
@@ -602,9 +602,24 @@ public class UbiquinoUtils {
 	
 				FirmataPinStateResponse response = FirmataCmdUtils.INSTANCE.createPinStateResponse(bytes);
 				
-				if (Platform.inDebugMode()) {
-					System.out.println("------> RCV : Port " + response.getPin() + ", channel : " + response.getChannel() + ", mode : " + response.getModel() + ", value : " + (int)response.getValue() + " ==> " + CmdUtil.INSTANCE.getFrameHexInfo(response.getMessage()));
-				}
+				//if (Platform.inDebugMode()) {
+					System.out.println("------> RCV : Port " + response.getPin() + ", channel : " + response.getChannel() + ", value : " + (int)response.getValue() + " ==> " + CmdUtil.INSTANCE.getFrameHexInfo(response.getMessage()));
+					
+					int mode = response.getModel();					
+					if ((mode & PIN_MODE.INPUT_VALUE)!=0) {
+						System.out.println(PIN_MODE.INPUT.getName() + " mode supported");
+					} else if ((mode & PIN_MODE.OUTPUT_VALUE)!=0) {
+						System.out.println(PIN_MODE.OUTPUT.getName() + " mode supported");
+					} else 	if ((mode & PIN_MODE.ANALOG_VALUE)!=0) {
+						System.out.println(PIN_MODE.ANALOG.getName() + " mode supported");
+					} else 	if ((mode & PIN_MODE.PWM_VALUE)!=0) {
+						System.out.println(PIN_MODE.PWM.getName() + " mode supported");
+					} else 	if ((mode & PIN_MODE.I2C_VALUE)!=0) {
+						System.out.println(PIN_MODE.I2C.getName() + " mode supported");
+					} else 	if ((mode & PIN_MODE.SERVO_VALUE)!=0) {
+						System.out.println(PIN_MODE.SERVO.getName() + " mode supported");
+					} 
+				//}
 				
 				updateBoard(ubiquino, response);
 				
@@ -676,16 +691,14 @@ public class UbiquinoUtils {
 						
 				ubiquino.setBoard(newUbiquino.getBoard());
 				
-				new UIJob("Firmata capabilities query job") {
+				new Job("Firmata capabilities query job") {
 					@Override
-					public IStatus runInUIThread(IProgressMonitor monitor) {
+					public IStatus run(IProgressMonitor monitor) {
 						System.out.println("Query board for Firmata capabilities");
 						arduinoPipe.send(FirmataCmdUtils.INSTANCE.createCapabiltiesQuery());					
 						return Status.OK_STATUS;
 					}
 				}.schedule(50L);
-			} else {
-				
 			}
 		}
 	}

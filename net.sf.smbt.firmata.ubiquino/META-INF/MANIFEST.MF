@@ -13,14 +13,16 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.editors;bundle-version="3.7.0",
  org.eclipse.ui;bundle-version="3.7.0",
  org.eclipse.core.resources;bundle-version="3.7.100",
- org.eclipse.ui.ide;bundle-version="3.7.0",
  net.sf.smbt.xcp;bundle-version="0.5.0";visibility:=reexport,
- net.sf.xqz.engine;visibility:=reexport
+ net.sf.xqz.engine;visibility:=reexport,
+ org.eclipse.ui.ide,
+ net.sf.smbt.quantic;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.sf.smbt.firmata.ubiquino,
  net.sf.smbt.firmata.ubiquino.core,
  net.sf.smbt.firmata.ubiquino.impl,
+ net.sf.smbt.firmata.ubiquino.test,
  net.sf.smbt.firmata.ubiquino.util
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin

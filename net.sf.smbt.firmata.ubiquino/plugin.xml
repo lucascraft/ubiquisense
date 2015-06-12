@@ -8,5 +8,18 @@
             class="net.sf.smbt.firmata.ubiquino.UbiquinoPackage"
             genModel="model/ubiquino.genmodel"/>
    </extension>
+   <extension
+         id="firmataConnectionTest"
+         name="Ubiquino Firmata Test"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="net.sf.smbt.firmata.ubiquino.test.TestFirmataConnectionEquinoxApplication">
+         </run>
+      </application>
+   </extension>
 
 </plugin>
