@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.osc.tuio/src-model"
+    editorDirectory="" modelPluginID="net.sf.smbt.osc.tuio" modelName="EztuioX2" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" testsDirectory="" importerID="org.eclipse.emf.importer.cdo"
+    featureDelegation="Reflective" complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../net.sf.smbt.osc/model/osccmd.genmodel#//osccmd ../../net.sf.xqz.engine/model/temporal.genmodel#//cmd">
+  <foreignModel>eztuio2.ecore</foreignModel>
+  <genPackages prefix="Eztuio2" basePackage="net.sf.smbt.osc" disposableProviderFactory="true"
+      ecorePackage="eztuio2.ecore#/">
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2Tok">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Tok/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Tok/tu_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Tok/c_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Tok/x_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Tok/y_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Tok/x_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Tok/y_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Tok/m_acc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Tok/r_acc"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2Ptr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Ptr/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Ptr/tu_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Ptr/c_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Ptr/x_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Ptr/y_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Ptr/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Ptr/press"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Ptr/x_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Ptr/y_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Ptr/m_acc"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2Sym">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Sym/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Sym/tu_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Sym/c_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Sym/group"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2Sym/s"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2T3D">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/tu_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/c_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/x_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/y_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/z_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/yaw"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/pitch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/roll"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/x_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/y_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/z_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/a_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/b_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/c_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/m_acc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2T3D/r_acc"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2P3D"/>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2B3D">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/x_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/y_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/z_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/yaw"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/pitch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/roll"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/depth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/vol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/x_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/y_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/z_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/a_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/b_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/c_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/m_acc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2B3D/r_acc"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2CHG">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2CHG/s_id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eztuio2.ecore#//Tuio2CHG/pts"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2OCG">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2OCG/s_id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eztuio2.ecore#//Tuio2OCG/pts"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2SKG">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2SKG/s_id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eztuio2.ecore#//Tuio2SKG/nodes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2SKG/radiuses"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2SVG">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2SVG/s_id"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2ARG">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2ARG/s_id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eztuio2.ecore#//Tuio2ARG/args"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2RAW">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2RAW/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2RAW/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2RAW/data"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2CTL">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2CTL/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2CTL/ctrl"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2DAT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2DAT/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2DAT/mime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2DAT/data"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2SIG">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2SIG/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2SIG/c_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2SIG/ids"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2ALA">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2ALA/ids"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2COA">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2COA/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2COA/slot"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2COA/ids"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2LIA">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eztuio2.ecore#//Tuio2LIA/links"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2LLA">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2LLA/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2LLA/bool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eztuio2.ecore#//Tuio2LLA/links"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2LTA">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2LTA/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2LTA/bool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eztuio2.ecore#//Tuio2LTA/links"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2FRM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2FRM/f_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2FRM/time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2FRM/app"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2FRM/addr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2FRM/dim"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2ALV">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2ALV/s_ids"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2BND">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/x_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/y_pos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/angle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/area"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/x_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/y_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/a_vel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/m_acc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2BND/r_acc"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//TuioPoint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//TuioPoint/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//TuioPoint/y"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Tuio2ICG">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2ICG/s_id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eztuio2.ecore#//Tuio2ICG/pts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eztuio2.ecore#//Tuio2ICG/additional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Tuio2ICG/shapeNeeded"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//TreeElem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eztuio2.ecore#//TreeElem/pt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//TreeElem/lastNode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//TreeElem/id"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//SpansArea">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//SpansArea/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//SpansArea/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//SpansArea/w"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Link/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//Link/lnk"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio2.ecore#//LinkTreeElem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//LinkTreeElem/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio2.ecore#//LinkTreeElem/lastNode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eztuio2.ecore#//LinkTreeElem/link"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

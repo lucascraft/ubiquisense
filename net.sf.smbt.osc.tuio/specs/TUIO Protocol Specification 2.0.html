@@ -1,0 +1,1274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" type="text/css" 
+href="TUIO%20Protocol%20Specification%202.0_fichiers/default.css" 
+media="screen">
+	<title>TUIO Protocol Specification 2.0</title>
+
+</head><body>
+<div id="container">
+<div id="header">
+	<a href="http://www.tuio.org/?logo">
+	<img style="margin: 4px;" 
+src="TUIO%20Protocol%20Specification%202.0_fichiers/logo.png" 
+align="left" border="0" height="48" width="48"></a>
+	<h1><a href="http://www.tuio.org/">TUIO.org</a></h1>
+	<div id="menu"><a href="http://www.tuio.org/?specification">Specification</a><a
+ href="http://www.tuio.org/?roadmap">Roadmap</a><a 
+href="http://www.tuio.org/?software">Software</a><a 
+href="http://www.tuio.org/?developer">Developer</a><a 
+href="http://www.tuio.org/?showcase">Showcase</a><a 
+href="http://www.tuio.org/?forum">Forum</a><a 
+href="http://www.tuio.org/?members">Members</a></div>
+</div>
+<div id="main">
+	<h2>TUIO 2.0 Protocol Specification</h2>
+<p><a href="http://modin.yuri.at/">Martin Kaltenbrunner</a>, January 
+18th, 2010<br>
+Read a brief summary of the new TUIO 2.0 features on the <a 
+href="http://modin.yuri.at/blog/?p=204">Tangible Interaction Frameworks</a>
+ blog.</p>
+
+<h2>Introduction</h2>
+<p>This document defines the next generation TUIO 2.0 protocol, which 
+shall meet the requirements for the comprehensive description of 
+state-of-the-art tangible interfaces and multi-touch surfaces. For that 
+purpose we define an extensive protocol that allows the encoding and 
+transmission of a tangible interface component abstraction, such as 
+tokens, pointers and geometries as well as additional symbols and 
+controls in the context of an interactive surface. This document often 
+refers to original TUIO specification, therefore the reader should be 
+familiar with the general idea and structure of the previous <a 
+href="http://www.tuio.org/?tuio11">TUIO 1.1</a> protocol generation. As 
+in its predecessor, the TUIO 2.0 messages are encoded using the <a 
+href="http://opensoundcontrol.org/spec-1_0">Open Sound Control</a> (OSC)
+ format. </p>
+
+<p>This new protocol version introduces many additional features 
+compared to TUIO 1.1. This includes timing information, several 
+additional component attributes such as finger pressure, and code 
+descriptors for symbol types such as data matrix labels or RFID tags. 
+TUIO 2.0 also defines the precise object geometry with general bounds, 
+contour and skeleton descriptors which can be used to describe untagged 
+tangible objects or retrieve additional geometry information for tokens 
+or pointers. Many syntactic changes have become necessary in order to 
+define more OSC compliant messages and bundles, which together with the 
+additional features should justify the version jump at the cost of 
+backwards-compatibility at the protocol level. Future TUIO2 client 
+implementations can provide additional backwards compatibility by 
+implementing both TUIO 1.* and TUIO 2.0 protocol generations though.</p>
+
+<h2>Message Structure</h2>
+<p>TUIO 2.0 defines a unified profile for all previously covered 
+tangible object types, such as tokens (tagged objects), pointers and 
+geometries (for untagged generic objects). The idea of ALIVE and FSEQ 
+messages of the original TUIO specification was generally maintained, 
+while the SET messages of the previous 2Dobj, 2Dcur and 2Dblb profiles, 
+were mapped to individual messages within the same /tuio2/* name space. 
+Therefore the OSC name space was reduced to an abbreviated, but 
+hopefully still human-readable structure and was also adapted to a more 
+OSC compliant message and bundle style.</p>
+
+<p>The distribution of SET messages over different profiles such as 
+2Dobj, 2Dcur and 2Dblb, has been reduced to dedicated TOK, PTR and BND 
+messages that transmit the status updates for tokens (objects), pointers
+ (cursors) and bounds (blobs). The component geometry can be described 
+in greater detail with additional geometry messages such as OCG 
+(contour) and SKG (skeleton). The new SYM messages allow the 
+transmission of symbol content, and CTL messages allow the association 
+of additional control dimensions to existing components. A set of 
+associative messages allow the encoding of container relationships (COA)
+ as well as mechanical or logical links (LIA) between physical objects. 
+Custom messages that meet the requirements of yet undefined trackers now
+ also can be realized within the same name space. This allows the usage 
+of the same session ID across the same surface profile for alternative 
+token, pointer or geometry references to the same tangible object. The 
+specification primarily defines a profile for two-dimensional surfaces, 
+which is partially extended to the 3rd dimension by complementary 3D 
+component messages for tokens, pointers and bounds. Therefore TUIO was 
+designed as a semantic description of tangible interfaces components 
+within the confines of an interactive surface environment and the space 
+expanding above that surface.</p>
+
+<p><b>Please note:</b> The following textual representation illustrates 
+the syntax of the individual TUIO messages. An actual OSC implementation
+ encodes these messages using binary data types, as specified in the <a 
+href="#attributes">attribute type</a> table further below. You can also 
+refer to the <a href="http://opensoundcontrol.org/spec-1_0">OSC</a> 
+specification for detailed information regarding the basic data types 
+and overall message encoding.</p>
+
+<h3>Global Messages</h3>
+
+<p><b>FRM</b> (frame message)<br>
+<font style="font: 12px Courier;">
+/tuio2/frm f_id time [app addr dim]
+</font></p>
+<p>The FRM message is a unique identifier for an individual frame, and 
+therefore has to be included at the beginning of each TUIO bundle. Each 
+frame is identified by a 32bit unsigned integer value that represents an
+ incrementing frame ID. This allows dropping messages that arrive late 
+with an eventually lower frame ID, the frame ID 0 is reserved as a 
+default value for out of order execution.
+The following time stamp is represented as an OSC 64bit time tag. 
+Although the key component messages may include redundant speed and 
+acceleration attributes that compensate for possibly lost packages, the 
+availability of dedicated timing information is essential for many 
+gesture-based interfaces.<br>
+The three following optional attributes provide additional information 
+about the origin of the TUIO message bundle. The app attribute specifies
+ the name of the TUIO source in OSC string format. Since OSC does not 
+directly define the transport and has no direct mechanism for retrieving
+ the origin of a bundle or packet, the addr attribute is a 32bit integer
+ value encoding the IP or MAC address of the TUIO source, which in 
+combination with the application name allows the unique identification 
+of the bundle's origin. The final dim attribute encodes the sensor 
+dimension with two 16bit unsigned integer values embedded into a 32bit 
+integer value. The first two bytes represent the sensor width, while the
+ final two bytes represent the sensor height. This allows to encode a 
+sensor dimension up to 65535x65535 and implicitly also describes the 
+surface ratio as well as its relative resolution.
+</p>
+
+<p><b>ALV</b> (alive message)<br>
+<font style="font: 12px Courier;">
+/tuio2/alv s_id0 ... s_idN
+</font></p>
+<p>The end of each bundle is marked with the ALV message containing a 
+list of all active session IDs, which allows the robust reconstruction 
+of added or removed TUIO components. This is more robust than the 
+possible usage of dedicated ADD or DEL messages, which can cause 
+inconsistencies when lost on a transport channel such as UDP. Added 
+objects can also be derived from their first appearance in a TOK, PTR or
+ BND message. The session ID attribute is encoded using a 32bit unsigned
+ integer value allowing a possible value range between 0 ... 
+4.294.967.295 until overflow, which should not cause any negative 
+effects in a typical session. Since OSC only defines a default 32bit 
+signed integer field, a TUIO implementation needs to cast the s_ID 
+attribute to uint32 during the encoding/decoding step.</p>
+
+<h3>Component Messages</h3>
+<p><b>TOK</b> (token message)<br>
+<font style="font: 12px Courier;">
+/tuio2/tok s_id tu_id c_id x_pos y_pos angle [x_vel y_vel a_vel m_acc 
+r_acc]
+</font></p>
+
+<p>The TOK message is the equivalent to the 2Dobj SET message of the 
+TUIO 1.* specification, which encodes the common attributes of tagged 
+physical objects. The Session ID (s_id) and Component ID (c_id) as well 
+as the general X &amp; Y position and angle attributes remain unchanged,
+ while a combined Type/User ID (tu_id) allows the multiplexing of 
+various symbol types within the same session as well as the association 
+of an additional user ID. The first two bytes of the type/user attribute
+ are therefore encoding the User ID, while the second half of the 
+attribute encode the actual Type ID resulting in two 16bit unsigned 
+integer values. This allows a possible range of 65535 Type and User IDs.
+ The User ID can be used to determine if a token is currently being held
+ by a user, therefore the ID 0 is reserved for the "no user" state. A 
+TUIO implementation has to consider this special usage of the int32 
+tu_id attribute with an according encoding/decoding step. Speed and 
+acceleration parameters are optional and the client implementation has 
+to consider the two possible message lengths.</p>
+
+<p><b>PTR</b> (pointer message)<br>
+<font style="font: 12px Courier;">
+/tuio2/ptr s_id tu_id c_id x_pos y_pos width press [x_vel y_vel m_acc]
+</font></p>
+
+<p>The PTR (pointer) message the equivalent to the 2Dcur SET message of 
+the TUIO 1.* specification, which encodes the common attributes of 
+pointing gestures. The message syntax changed significantly compared to 
+the original profile, in addition to the Session ID and its X &amp; Y 
+position, it defines a Component ID that allows the distinction of 
+individual pointer components during a whole session. An additional 
+pressure value in the range from 0..1 was added for the encoding of 
+discrete or continuous surface pressure. Additionally a negative 
+pressure value can be used to indicate a pointer that is not in touch 
+with the surface, and therefore in a hovering state.
+The width attribute indicates a pointer's "region of influence" by 
+specifying its diameter and implicitly its action radius. Speed and 
+acceleration attributes are optional and the client implementation has 
+to consider the two possible message lengths.<br>
+The Type ID attribute allows the distinction of different pointer input 
+devices and is also used to encode the associated User ID. The first two
+ bytes of the type attribute are therefore reserved for the User ID, 
+while the second half of the attribute encode the actual Type ID 
+resulting in two 16bit unsigned integer values. This allows a possible 
+range of 65535 user IDs and type IDs. A TUIO implementation has to 
+consider this special usage of the int32 tu_id attribute with an 
+according encoding/decoding step.
+TUIO2 defines a list of default Type IDs, where the ID 0 stands for an 
+undefined or unknown pointer type. The IDs 1-5 define fingers of the 
+right hand starting with the index finger (index, middle, ring, little, 
+thumb) followed by same sequence from ID 6-10 for the left hand. The 
+default ID for an unknown finger is the right index finger ID 1. The 
+range from 11-15 defines a small selection of common pointer devices (11
+ stylus, 12 laser, 13 mouse, 14 trackball, 15 joystick). Any Type ID 
+starting from 16 and above can be freely associated by the tracker 
+implementation.</p>
+
+<p><b>BND</b> (bounds message)<br>
+<font style="font: 12px Courier;">
+/tuio2/bnd s_id x_pos y_pos angle width height area [x_vel y_vel a_vel 
+m_acc r_acc]
+</font></p>
+
+<p>The BND message is the equivalent to the 2Dblb SET message of the 
+TUIO 1.1 specification, which encodes the basic geometry information of 
+untagged generic objects (blobs). The message format describes the inner
+ ellipse of an oriented bounding box, with its center point, the angle 
+of the major axis, the dimensions of the major and minor axis as well as
+ the region area. Therefore this compact format carries information 
+about the approximate elliptical region enclosure, but also allows the 
+reconstruction of the oriented bounding box. The region area is 
+normalized in pixels/width*height, providing quick access to the overall
+ region size.</p>
+
+<p>The BND message usually identifies the boundaries of any generic 
+untagged physical object, and can be also used to transmit the basic 
+geometry information such as the angle and dimensions of finger blobs or
+ physical tokens that have been already identified by a previous PTR or 
+TOK message. The session ID has to be equal in both messages in order to
+ match the component with the corresponding bounds.<br>
+<img 
+src="TUIO%20Protocol%20Specification%202.0_fichiers/blob_message.png"></p>
+
+<p><b>SYM</b> (symbol message)<br>
+<font style="font: 12px Courier;">
+/tuio2/sym s_id tu_id c_id group data
+</font></p>
+
+<p>The SYM message allows the transmission of the type and data contents
+ of a marker symbol. Since this information can be redundant, and does 
+not necessarily apply to all symbol types, it is represented by a 
+dedicated message, which can be omitted or sent at a lower rate if 
+desired. The Session ID, Type/User ID and Component ID are identical to 
+the values used in the corresponding TOK message. Therefore the actual 
+symbol code and the meta-information about the marker type and symbol 
+description only needs to be received once by the client. The group 
+attribute is a string describing the symbol type, such as fiducial 
+markers, barcodes, or RFID tags. The code attribute is alternatively an 
+OSC string or an OSC blob data field that transmits the symbol code or 
+contents: such as the fidtrack left heavy depth sequence, an EAN barcode
+ number, or an RFID UID. Since the possibly symbol space may often 
+exceed the range of component IDs, a TUIO implementation needs to 
+maintain its internal mapping of Symbols to Component IDs. In case a 
+TUIO tracker such as an RFID reader, is not capable to determine the 
+symbol position or orientation, the SYM message can be sent individually
+ without any association to a previous TOK component.</p>
+
+<p></p><table border="1">
+<tbody><tr><td>
+<p style="font: 12px Courier;">
+/tuio2/sym 112 0 2 fidtrk/18 0122212221221221111<br>
+/tuio2/sym 110 1 8 fidtrk/12 0122121211111<br>
+/tuio2/sym 111 2 0 mifare/ul 0x04c5aa51962280<br>
+/tuio2/sym 113 3 1 mifare/1k 0x0af55f2a<br>
+/tuio2/sym 116 4 0 qr/url http://www.tuio.org/<br>
+/tuio2/sym 115 5 4 ean/13 5901234123457<br>
+/tuio2/sym 117 6 18 ms/byte 0x12<br>
+/tuio2/sym 118 7 82 ms/id 0x50E1F82DC0F9D78940DB27993C9E09A3<br>
+/tuio2/sym 119 8 255 color/rgb 0x0000FF<br>
+</p></td><td width="40%">
+<p style="font: 12px Courier;"><b>
+libfidtrack 18-node amoeba fiducial<br>
+libfidtrack 12-node amoeba fiducial<br>
+touchatag mifare ultralight RFID tag<br>
+touchatag mifare classic 1K RFID tag<br>
+QR code containing URL<br>
+EAN product bar code<br>
+MS surface byte tag<br>
+MS surface identity tag (2x8 bytes)<br>
+RGB color tag (blue)<br>
+</b></p></td></tr>
+</tbody></table>
+
+<p> </p>
+
+<p><b>T3D</b> (token 3D message)<br>
+<font style="font: 12px Courier;">
+ /tuio2/t3d s_id tu_id c_id x_pos y_pos z_pos yaw pitch roll [x_vel 
+y_vel z_vel a_vel b_vel c_vel m_acc r_acc]
+</font></p>
+
+<p>The T3D message encodes an alternative 3D representation for tokens 
+that are used within the space that extends above the surface. The 
+message includes an additional Z coordinate as well as the full 3D 
+orientation angles yaw, pitch and roll. The optional velocity attributes
+ also include these additional dimensions.</p>
+
+<p><b>P3D</b> (pointer 3D message)<br>
+<font style="font: 12px Courier;">
+/tuio2/p3d s_id tu_id c_id x_pos y_pos z_pos width press [x_vel y_vel 
+z_vel m_acc]
+</font></p>
+
+<p>The P3D message encodes an alternative 3D representation for pointers
+ that are used within the space that extends above the surface. The 
+message includes an additional Z coordinate and the optional velocity 
+attributes also include the additional dimension.</p>
+
+<p><b>B3D</b> (bounds 3D message)<br>
+<font style="font: 12px Courier;">
+/tuio2/b3d s_id x_pos y_pos z_pos yaw pitch roll width height depth vol 
+[x_vel y_vel z_vel a_vel b_vel c_vel m_acc r_acc]</font></p>
+<font style="font: 12px Courier;"></font>
+
+<p>The B3D message encodes an alternative 3D representation for untagged
+ components that are used within the space that extends above the 
+surface. The message includes an additional Z coordinate and the 
+according depth attribute as well as the full 3D orientation angles yaw,
+ pitch and roll. The optional velocity attributes also include these 
+additional dimensions.</p>
+
+<h3>Geometry Messages</h3>
+
+<p>The following list of CHG, OCG, ICG, SKG, SVG and ARG messages are 
+optional descriptors of the component geometry, which can be 
+incrementally describe the contour, skeleton and full area of the 
+referenced component in various levels of detail. The RAW message allows
+ in conjunction with an ARG message the full reconstruction of a bitmap 
+that corresponds to the raw sensor data.</p>
+
+<p><b>CHG</b> (convex hull geometry)<br>
+<font style="font: 12px Courier;">
+/tuio2/chg s_id x_p0 y_p0 ... x_pN y_pN
+</font></p>
+
+<p>The CHG message is a list of points that define the simplified convex
+ hull of the blob. This means that the number of points has to be 
+reduced to a reasonable amount, which represents the original hull with a
+ minimum error. The client implementations have to take the variable 
+length of this message into account.</p>
+
+<p><b>OCG</b> (outer contour geometry)<br>
+<font style="font: 12px Courier;">
+/tuio2/ocg s_id x_p0 y_p0 ... x_pN y_pN
+</font></p>
+
+<p>The OCG message is a list of points that define the simplified outer 
+contour of the blob. This means that the number of points has to be 
+reduced to a reasonable amount, which represents the original contour 
+with a minimum error. The client implementations have to take the 
+variable length of this message into account.</p>
+
+<p><b>ICG</b> (inner contour geometry)<br>
+<font style="font: 12px Courier;">
+/tuio2/icg s_id x_p0 y_p0 &#8230; x_pN y_pN true x_p0 x_p0 &#8230; x_pN y_pN
+</font></p>
+
+<p>The ICG message additionally defines the points of interior contour 
+lines. According to the OCG message, a ring is only described as a disk,
+ while the ICG message encodes the additional inner contour needed to 
+reconstruct its full shape. The inner contour is a list of points that 
+uses the Boolean value TRUE to indicate the beginning of a separate 
+contour. A graphical representation of the number eight therefore would 
+contain two inner contour sequences for example.</p>
+
+<p><b>SKG</b> (skeleton geometry)<br>
+<font style="font: 12px Courier;">
+/tuio2/skg s_id x_p0 y_p0 x_p1 y_p1 node ... x_pN y_pN
+</font></p>
+
+<p>The SKG message represents the skeleton structure of a blob. In 
+contrary to the list of contour points this needs to be represented as a
+ tree structure. After the session ID the message begins with an 
+arbitrary leaf of that tree structure and continues the point list until
+ it reaches the next leaf point. The integer node number directs the 
+tree back to the last node point.</p>
+
+<p><b>SVG</b> (skeleton volume geometry)<br>
+<font style="font: 12px Courier;">
+/tuio2/svg s_id r0 ... rN
+</font></p>
+
+<p>The SVG message adds the radius to each skeleton point as defined by 
+the SKG message. This allows an approximate reconstruction of the blob 
+volume based on the skeleton, without the need of the more detailed 
+contour description. This message is based on information from the SKG 
+message and can therefore only be used meaningfully after decoding a 
+previous SKG message.</p>
+
+<p><b>ARG</b> (area geometry)<br>
+<font style="font: 12px Courier;">
+/tuio2/arg s_id x0 y0 w0 ... xN yN wN
+</font></p>
+
+<p>The ARG message is the most detailed shape description message and 
+describes the full blob area as a list of spans. This is basically a 
+run-length encoding with an initial span point and the following span 
+length. The span list allows the complete reconstruction of the region 
+area and its exact contour information.</p>
+
+<p><b>RAW</b> (raw message)<br>
+<font style="font: 12px Courier;">
+/tuio2/raw s_id width data
+</font></p>
+
+<p>This final RAW region descriptor provides additional 8bits of data 
+resolution for each point of the region as referenced by a previous ARG 
+(area) message. The data attribute is an OSC blob field with a length 
+according to the amount of region points, where the individual samples 
+are represented by an 8bit unsigned integer value. The actual decoding 
+of this message has to follow the order of the previous span list, which
+ therefore only covers the discrete region point samples. The previous 
+width attribute specifies the relative distance between two points in 
+order to correctly reconstruct the amount of samples between the initial
+ and final span points. Although this value can be also retrieved from 
+the surface dimension attribute of the preceding FRM message, it is 
+included here for the convenience of rapid access. The RAW message 
+allows for example the transmission of gray-scale image data from a 
+computer vision sensor or pressure maps that have been retrieved from an
+ according pressure sensitive device such as the touchco panels for 
+example.</p>
+
+<h3>Content Messages</h3>
+
+<p><b>CTL</b> (control message)<br>
+<font style="font: 12px Courier;">
+/tuio2/ctl s_id c0 &#8230; cN
+</font></p>
+
+<p>The CTL message can be used to transmit additional control dimensions
+ that can be associated to an existing component instance, such as a 
+token with an incorporated pressure sensor or for example. The variable 
+length list of floating-point values, encodes each individual control 
+dimension in the normalized range from -1.0f ... 1.0f. An embedded 
+three-axis accelerometer for example can be encoded using a CTL message 
+with three control dimensions, providing three floating-point attributes
+ after the associated session ID.<br>
+An array of 12 controls can for example encode the keys of a full octave
+ in a small piano keyboard including key velocity. The association of 
+the according CTL message to a previous TKN consequently allows the 
+identification and localization of that physical keyboard component.
+</p>
+
+<p><b>DAT</b> (data message)<br>
+<font style="font: 12px Courier;">
+/tuio2/dat s_id mime data
+</font></p>
+
+<p>The DAT message allows the association of arbitrary data content to 
+any present TUIO component. Apart from the common session ID, this 
+message only contains an initial OSC string that defines the MIME type 
+of the following data attribute, which can be either transmitted using 
+an OSC string or OSC blob data type. Therefore this message is capable 
+of encoding and transmitting textural or binary data such as business 
+cards, XML data, images or sounds etc. The DAT message can be for 
+example also used to transmit the actual data content of an RFID tag 
+that has been referenced within a previous SYM message. Due to the 
+likely limited bandwidth resources of the used OSC channel, this 
+infrastructure is not suitable for the transmission of larger data sets.
+ In this case the use of alternative transport methods is recommended.
+
+</p><p></p><table border="1">
+<tbody><tr><td>
+<p style="font: 12px Courier;">
+/tuio2/dat 113 text/x-vcard {OSC string w/ ASCII vcard}<br>
+/tuio2/dat 116 text/html {OSC string w/ HTML code}<br>
+/tuio2/dat 116 image/x-icon {OSC blob w/ icon data}<br>
+</p></td><td width="40%">
+<p style="font: 12px Courier;"><b>
+business card in VCARD format<br>
+HTML formatted text<br>
+windows icon image<br>
+</b></p></td></tr>
+</tbody></table>
+
+<p>&nbsp;</p>
+
+<p><b>SIG</b> (signal message)<br>
+<font style="font: 12px Courier;">
+/tuio2/sig s_id c_id s_id0 ... s_idN
+</font></p>
+
+<p>The SIG message allows the transmission of a trigger signal from a 
+reference component to one or more TUIO components which are specified 
+in the following list of session IDs. The Component ID specifies the 
+type of signal allowing a possible range of 4.294.967.295 signal 
+variations.</p>
+
+<h3>Association Messages</h3>
+<p>The following association messages reflect the established links 
+within constructive assemblies as well as container associations within 
+the physical domain. We provide a description of the resulting component
+ relationships, which can be employed to describe mechanical or logical 
+connections as well as the placement of a token within the confines of 
+another physical object. </p>
+
+<p><b>ALA</b> (alive associations)<br>
+<font style="font: 12px Courier;">
+/tuio2/ala s_id0 &#8230; s_idN
+</font></p>
+
+<p>The initial ALA message lists all active components that are 
+currently in an associated state. This is providing a mechanism in 
+analogy to the ALV message structure, and allows the robust 
+reconstruction of connection and disconnection events.</p>
+
+<p><b>COA</b> (container association)<br>
+<font style="font: 12px Courier;">
+/tuio2/coa s_id slot s_id0 &#8230; s_idN
+</font></p>
+
+<p>The COA message allows associating one or more components such as 
+several tokens to be contained within another physical component such as
+ an object described by its geometry. Container associations are 
+established by providing lists of one or more associated objects, which 
+also allow the reconstruction of individual association events. The 
+first session ID specifies the container object with a following 
+variable length list of the associated object session IDs. We also allow
+ nested container relationships, which can be encoded using various 
+subsequent container messages. The provided slot attribute determines 
+the entry point of the associated components within the container.</p>
+
+<p><b>LIA</b> (link association)<br>
+<font style="font: 12px Courier;">
+/tuio2/lia s_id bool s_id0 l_id0 &#8230; s_idN l_idN
+</font></p>
+
+<p>The LIA  message is used for describing the topologies of 
+constructive assemblies comprised of physical objects that allow the 
+establishment of direct mechanical connections between them. The 
+explicit declaration of physical object connections can for example be 
+employed for environments, which are not capable of reporting spatial 
+object relations. Additionally these connector associations can be used 
+to encode collisions of physical objects, without the need for the 
+additional transmission of the detailed object geometries for later 
+collision detection.The initial session ID specifies the reference 
+object with a following variable length list of a ID tupel that lists 
+all component session IDs that are connected to the reference component 
+as well as a coupled Link ID which identifies the input and output 
+ports. This link attribute is comprised of two 16bit unsigned integer 
+values embedded into a single 32bit integer value, which specify the 
+output port within the initial two bytes and the input port of the 
+connected component within the last two bytes. Alternatively the link 
+association can also be used to establish logical connections between 
+individual components, the provided boolean value determines if the 
+association is physical (true) or logical (false).</p>
+
+<p><b>LLA</b> (linked list association)<br>
+<font style="font: 12px Courier;">
+/tuio2/lla s_id bool s_id0 l_id0 &#8230; s_idN l_idN
+</font><br>
+</p><p><b>LTA</b> (linked tree association)<br>
+<font style="font: 12px Courier;">
+/tuio2/lta s_id bool s_id0 l_id0 s_id1 l_id1 node &#8230; s_idN l_idN
+</font></p>
+
+<p>These two additional messages allow the encoding of connections 
+between several interface components using linked lists, tree structures
+ or individual connection lists for the encoding of more complex 
+topologies. The LLA (linked list association) message encodes 
+consecutive chains of connected objects, while the LTA (linked tree 
+association) message encodes tree structures in a format similar to the 
+SKG (skeleton geometry) described above. The initial boolean value 
+determines if the association is physical (true) or logical (false). The
+ Session ID and Link ID tupels are structured as defined in the LIA 
+(link association) message specified above.</p>
+
+<h3>Custom Messages</h3>
+<p style="font: 12px Courier;">/tuio2/_[attr] s_id [list of attributes]</p>
+<p style="font: 12px Courier;">/tuio2/_sxyPP s_id x_pos y_pos int float</p>
+<p>The custom profile allows the transmission of custom shaped messages 
+that can change the position, omit or add attributes as desired. The 
+message name is composed out of an initial underscore character that 
+indicates a custom message. The following characters can be freely 
+chosen from the list of know attributes as shown in the table below. 
+Additional undefined parameters can be added using wildcard P character 
+in the profile name. The actual parameter type is defined by the OSC 
+message itself. The purpose of the custom message within the TUIO 
+specification is to allow the TUIO clients at least a partial decoding 
+of custom messages. Since TUIO is based on OSC a TUIO source 
+implementation also can choose to add undocumented freely named and 
+formatted messages, which then of course cannot be decoded by any 
+standard TUIO client. Therefore the custom message should be chosen if 
+any known attributes are transmitted, be it only the common session ID. 
+This at least allows the client to associate the unknown message to a 
+known symbol.</p>
+
+<p style="font: 12px Courier;">/tuiox/[ext] s_id [list of attributes]</p>
+<p>It is important that all implementations within the dedicated <font 
+style="font: 12px Courier;"><b>/tuio2/</b></font> name space follow the 
+exact message syntax and attribute format as defined in this 
+specification. Any modification of the existing message syntax could 
+lead to a fragmentation of the protocol specification and will also 
+cause unstable results with standard client implementations. Although 
+TUIO 2.0 intends to provide a versatile mechanism for the encoding of a 
+large variety of tangible interaction platforms, it is also probable 
+that some individual application scenarios or hardware platforms might 
+requite an extension to the protocol. In case the custom message 
+structure described above might not meet the semantic needs of such an 
+extension, we suggest the usage of a separate  <font style="font: 12px 
+Courier;"><b>/tuiox/</b></font> name space for the definition of message
+ extensions that are following the general TUIO paradigm. This most 
+importantly includes the shared reference to a common Session ID. Custom
+ client implementations can therefore be configured to listen to one or 
+more custom message extensions, while standard client implementations 
+remain unharmed.</p> <p>Message extensions could for example encode the 
+attributes of dedicated controller devices such as the Wiimote (e.g. <font
+ style="font: 12px Courier;">/tuiox/wii</font>) or the complementary 
+description of the user's hand (e.g. <font style="font: 12px Courier;">/tuiox/hnd</font>).
+ TUIO 2.0 does not define the three-dimensional geometry of interface 
+components, which also could be implemented within several /tuiox/ 
+messages if required. This extension space can also serve as a staging 
+platform for the future inclusion into subsequent versions of the  
+standard protocol specification. For all other custom messages that are 
+not following the general structure of the TUIO protocol, we suggest the
+ usage of a completely separate OSC name space though.</p>
+
+<h2>Timing Model</h2>
+<p>The TUIO 1.* specification originally did not contain any explicit 
+timing information. On the contrary TUIO 2.0 transmits a time code for 
+each bundle at a resolution smaller than microseconds by including a 
+dedicated OSC time tag attribute with each FRM (frame) message. This 
+level of time resolution provides enough information for time based 
+gesture analysis on the client side.</p>
+<p>Because of the possible packet loss, the key component messages TOK, 
+PTR and BND still define the optional speed and acceleration attributes.
+ In analogy to the normalized coordinate system, TUIO2 defines a 
+velocity vector and a simple method how to calculate the resulting 
+velocity and acceleration values correctly. The movement velocity unit 
+is defined by the displacement over the full length of the axis (also 
+normalized to 0-1) per second. As an example, moving a finger 
+horizontally across the surface within one second, results in a movement
+ velocity of (1.0 0.0) The rotation velocity is defined as one full 
+rotation per second. Therefore as an example, performing one object 
+rotation within one second, results in a rotation velocity of 1.0. The 
+acceleration values then simple are calculated as a function of speed 
+changes over time (in seconds).</p>
+
+<h2><a name="attributes">Attribute Types</a></h2>
+<p>This table describes all the attributes that have been used with in 
+the messages listed above and defines their OSC data format and expected
+ range. The single letter representation in this table is also used in 
+the identification string of the custom message format.</p>
+<p><br></p>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+
+    <tr>
+      <th valign="top">
+        <p>Parameter description</p>
+      </th>
+      <th valign="top">
+        <p>Short message format</p>
+      </th>
+      <th valign="top">
+        <p>Custom message code</p>
+      </th>
+      <th valign="top">
+        <p>OSC data type</p>
+      </th>
+       <th valign="top">
+        <p>value range</p>
+      </th>   
+    </tr>
+
+     <tr>
+      <td valign="top">
+        <p>Session ID</p>
+      </td>
+      <td valign="top">
+        <p>s_id</p>
+      </td>
+      <td valign="top">
+        <p>S</p>
+      </td>
+       <td valign="top">
+        <p>32bit integer</p>
+      </td>
+     <td valign="top">
+        <p>uint32 0 ... 4.294.967.295</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Component ID</p>
+      </td>
+      <td valign="top">
+        <p>c_id</p>
+      </td>
+      <td valign="top">
+        <p>I</p>
+      </td>
+       <td valign="top">
+        <p>32bit integer</p>
+      </td>
+      <td valign="top">
+         <p>uint32 0 ... 4.294.967.295</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Type/User ID</p>
+      </td>
+      <td valign="top">
+        <p>tu_id</p>
+      </td>
+      <td valign="top">
+        <p>T</p>
+      </td>
+       <td valign="top">
+        <p>32bit integer</p>
+      </td>
+      <td valign="top">
+        <p>uint16 0 ... 65535 (x2)</p>
+      </td>
+    </tr>
+
+   <tr>
+      <td valign="top">
+        <p>Frame ID</p>
+      </td>
+      <td valign="top">
+        <p>f_id</p>
+      </td>
+      <td valign="top">
+        <p>F</p>
+      </td>
+        <td valign="top">
+        <p>32bit integer</p>
+      </td>
+     <td valign="top">
+        <p>uint32 0 ... 4.294.967.295</p>
+       </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Frame Time</p>
+      </td>
+      <td valign="top">
+        <p>time</p>
+      </td>
+      <td valign="top">
+        <p>t</p>
+      </td>
+      <td valign="top">
+        <p>64bit OSC time tag</p>
+      </td>
+         <td valign="top">
+        <p>sec/nsec</p>
+      </td>
+   </tr>
+
+   <tr>
+      <td valign="top">
+        <p>Point Coordinate</p>
+      </td>
+      <td valign="top">
+        <p>x_pos, y_pos, z_pos</p>
+      </td>
+      <td valign="top">
+        <p>x y z</p>
+      </td>
+      <td valign="top">
+        <p>32bit float</p>
+      </td>
+      <td valign="top">
+        <p>0.0f ... 1.0f</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Angle</p>
+      </td>
+      <td valign="top">
+        <p>angle (yaw, pitch, roll)</p>
+      </td>
+      <td valign="top">
+        <p>a b c</p>
+      </td>
+      <td valign="top">
+        <p>32bit float</p>
+      </td>
+     <td valign="top">
+        <p>0.0f ... 2Pi</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Pressure/Hover</p>
+      </td>
+      <td valign="top">
+        <p>press</p>
+      </td>
+      <td valign="top">
+        <p>p</p>
+      </td>
+     <td valign="top">
+        <p>32bit float</p>
+      </td>
+      <td valign="top">
+        <p>-1.0f ...1.0f</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Motion Velocity</p>
+      </td>
+      <td valign="top">
+        <p>x_vel, y_vel, z_vel</p>
+      </td>
+      <td valign="top">
+        <p>X Y Z</p>
+      </td>
+       <td valign="top">
+        <p>32bit float</p>
+      </td>
+     <td valign="top">
+        <p>-n ... n</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Acceleration</p>
+      </td>
+      <td valign="top">
+        <p>m_acc</p>
+      </td>
+      <td valign="top">
+        <p>m</p>
+      </td>
+       <td valign="top">
+        <p>32bit float</p>
+      </td>
+     <td valign="top">
+        <p>-n ... n</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Rotation Velocity</p>
+      </td>
+      <td valign="top">
+        <p>a_vel, b_vel, c_vel</p>
+      </td>
+      <td valign="top">
+        <p>A B C</p>
+      </td>
+       <td valign="top">
+        <p>32bit float</p>
+      </td>
+     <td valign="top">
+        <p>-n ... n</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">
+        <p>Rotation Accel</p>
+      </td>
+      <td valign="top">
+        <p>r_acc</p>
+      </td>
+      <td valign="top">
+        <p>r</p>
+      </td>
+       <td valign="top">
+        <p>32bit float</p>
+      </td>
+     <td valign="top">
+        <p>-n ... n</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Width</p>
+      </td>
+      <td valign="top">
+        <p>width</p>
+      </td>
+      <td valign="top">
+        <p>w</p>
+      </td>
+       <td valign="top">
+        <p>32bit float</p>
+      </td>
+     <td valign="top">
+        <p>0.0f ... 1.0f</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+
+        <p>Height</p>
+      </td>
+      <td valign="top">
+        <p>height</p>
+      </td>
+      <td valign="top">
+        <p>h</p>
+      </td>
+       <td valign="top">
+        <p>32bit float</p>
+      </td>
+     <td valign="top">
+        <p>0.0f ... 1.0f</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+
+        <p>Depth</p>
+      </td>
+      <td valign="top">
+        <p>depth</p>
+      </td>
+      <td valign="top">
+        <p>d</p>
+      </td>
+       <td valign="top">
+        <p>32bit float</p>
+      </td>
+     <td valign="top">
+        <p>0.0f ... 1.0f</p>
+      </td>
+  </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Area/Volume</p>
+      </td>
+      <td valign="top">
+        <p>area/vol</p>
+      </td>
+      <td valign="top">
+        <p>f/v</p>
+      </td>
+       <td valign="top">
+        <p>32bit float</p>
+      </td>
+     <td valign="top">
+        <p>0.0f ... 1.0f</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Link ID</p>
+      </td>
+      <td valign="top">
+        <p>l_id</p>
+      </td>
+      <td valign="top">
+        <p>L</p>
+      </td>
+       <td valign="top">
+        <p>32bit integer</p>
+      </td>
+      <td valign="top">
+        <p>uint16 0 ... 65535 (x2)</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>App Name</p>
+      </td>
+      <td valign="top">
+        <p>app</p>
+      </td>
+      <td valign="top">
+        <p>N</p>
+      </td>
+      <td valign="top">
+        <p>OSC String</p>
+      </td>
+       <td valign="top">
+        <p>nx4 bytes</p>
+      </td>
+   </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Symbol Data</p>
+      </td>
+      <td valign="top">
+        <p>data</p>
+      </td>
+      <td valign="top">
+        <p>D</p>
+      </td>
+      <td valign="top">
+        <p>OSC String/Blob</p>
+      </td>
+        <td valign="top">
+        <p>nx4 bytes</p>
+      </td>
+   </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Data MIME Type</p>
+      </td>
+      <td valign="top">
+        <p>mime</p>
+      </td>
+      <td valign="top">
+        <p>M</p>
+      </td>
+      <td valign="top">
+        <p>OSC String</p>
+      </td>
+        <td valign="top">
+        <p>nx4 bytes</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Symbol Group</p>
+      </td>
+      <td valign="top">
+        <p>group</p>
+      </td>
+      <td valign="top">
+        <p>G</p>
+      </td>
+      <td valign="top">
+        <p>OSC String</p>
+      </td>
+         <td valign="top">
+        <p>nx4 bytes</p>
+      </td>
+   </tr>
+      
+    
+
+    <tr>
+      <td valign="top">
+        <p>Node Jump</p>
+      </td>
+      <td valign="top">
+        <p>node</p>
+      </td>
+      <td valign="top">
+        <p>n</p>
+      </td>
+      <td valign="top">
+        <p>32bit integer</p>
+      </td>
+      <td valign="top">
+        <p>uint32 0 ... 4.294.967.295</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td valign="top">
+        <p>Custom Parameter</p>
+      </td>
+      <td valign="top">
+        <p>int, float, string ...</p>
+      </td>
+      <td valign="top">
+        <p>P</p>
+      </td>
+      <td valign="top">
+        <p>any OSC type</p>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h2>Compact Message List</h2>
+
+<h3>Global Messages</h3>
+<p style="font: 12px Courier;">/tuio2/frm f_id time [app addr dim]</p>
+<p style="font: 12px Courier;">/tuio2/alv s_id0 ... s_idN</p>
+
+<h3>Component Messages</h3>
+<p style="font: 12px Courier;">/tuio2/tok s_id tu_id c_id x_pos y_pos 
+angle [x_vel y_vel m_acc a_vel r_acc]</p>
+<p style="font: 12px Courier;">/tuio2/ptr s_id tu_id c_id x_pos y_pos 
+width press [x_vel y_vel m_acc]</p>
+<p style="font: 12px Courier;">/tuio2/bnd s_id x_pos y_pos angle width 
+height area [x_vel y_vel a_vel m_acc r_acc]</p>
+<p style="font: 12px Courier;">/tuio2/sym s_id tu_id c_id t_des data</p>
+<p></p>
+<p style="font: 12px Courier;">/tuio2/p3d s_id tu_id c_id x_pos y_pos 
+z_pos width press [x_vel y_vel z_vel m_acc]</p>
+<p style="font: 12px Courier;">/tuio2/t3d s_id tu_id c_id x_pos y_pos 
+z_pos yaw pitch roll [x_vel y_vel z_vel a_vel b_vel c_vel m_acc r_acc]</p>
+<p style="font: 12px Courier;">/tuio2/b3d s_id x_pos y_pos z_pos yaw 
+pitch roll width height depth vol [x_vel y_vel z_vel a_vel b_vel c_vel 
+m_acc r_acc]</p>
+
+<h3>Geometry Messages</h3>
+<p style="font: 12px Courier;">/tuio2/ocg s_id x_p0 y_p0 ... x_pN y_pN</p>
+<p style="font: 12px Courier;">/tuio2/icg s_id x_p0 y_p0 &#8230; x_pN y_pN 
+true x_p0 x_p0 &#8230; x_pN y_pN</p>
+<p style="font: 12px Courier;">/tuio2/skg s_id x_p0 y_p0 x_p1 y_p1 node 
+... x_pN y_pN</p>
+<p style="font: 12px Courier;">/tuio2/svg s_id r0 ... rN</p>
+<p style="font: 12px Courier;">/tuio2/arg s_id x0 y0 w0 ... xN yN wN</p>
+<p style="font: 12px Courier;">/tuio2/raw s_id width data</p>
+
+<h3>Content Messages</h3>
+<p style="font: 12px Courier;">/tuio2/ctl s_id c0 &#8230; cN</p>
+<p style="font: 12px Courier;">/tuio2/dat s_id mime data</p>
+<p style="font: 12px Courier;">/tuio2/sig s_id c_id s_id0 &#8230; s_idN</p>
+
+<h3>Association Messages</h3>
+<p style="font: 12px Courier;">/tuio2/ala s_id0 &#8230; s_idN</p>
+<p style="font: 12px Courier;">/tuio2/coa s_id slot s_id0 &#8230; s_idN</p>
+<p style="font: 12px Courier;">/tuio2/lia s_id bool s_id0 l_id0 &#8230; s_idN 
+l_idN</p>
+<p style="font: 12px Courier;">/tuio2/lla s_id bool s_id0 l_id0 &#8230; s_idN 
+l_idN</p>
+<p style="font: 12px Courier;">/tuio2/lta s_id bool s_id0 l_id0 
+s_id1l_id1 node &#8230; s_idN l_idN</p>
+
+<h3>Custom Messages</h3>
+<p style="font: 12px Courier;">/tuio2/_[attr] s_id [list of attributes]</p>
+<p style="font: 12px Courier;">/tuiox/[ext] s_id [list of attributes]</p>
+
+<h2>Bundle Structure</h2>
+<p>While the bundle structure in the original TUIO definition was mostly
+ used to take most advantage of the usually used UDP packet size, TUIO2 
+proposes a more structured use of OSC bundles in order to allow more 
+TUIO2 client implementations on generic OSC platforms.</p>
+<p>The current TUIO message structure used a single name space for all 
+messages within a bundle, which eventually caused problems with some OSC
+ implementations. TUIO2 already takes this into account with its newly 
+defined message structure, and it also defines some simple rules for the
+ internal order of each OSC bundle.</p>
+<p>Each bundle needs to contain at least a FRM and a ALV message, where 
+the FRM message is the first message in a bundle, while the ALV message 
+concludes the bundle. As proposed in the original TUIO 1.0 
+specification, an implementation should take advantage of the full UDP 
+packet size by creating message bundles that fit into the available 
+packet space. Eventually free packet space can be filled with redundant 
+object messages that can be periodically resent. It is up to the client 
+implementation to identify and filter redundant messages.</p>
+<p>In the following we are illustrating an example bundle encoding three
+ active interface components including a tangible token with an 
+associated symbol, a finger pointer with an associated basic geometry as
+ well as an untagged tangible object specified by its basic geometry and
+ outer contour. The full bundle is embedded within an initial frame 
+message and the concluding alive message. Please note that the alive 
+message is also containing an additional reference to an active 
+component that has not been updated within this frame.</p>
+<p style="font: 12px Courier;">
+<b>initial frame message</b><br>
+ /tuio2/frm 1236 {OSC time tag} rtv {192.168.0.2} {640x480}<br>
+<b>tagged physical token</b><br>
+ /tuio2/tok 10 0 4 0.460938 0.3375 0.0 -0.0735294 -0.0980392 0 -0.450548
+ 0.0<br>
+ /tuio2/sym 10 0 4 fidtrk/18 0122222212221211111<br>
+<b>touch pointer</b><br>
+ /tuio2/ptr 12 1 0 0.525 0.3 0.05 1.0 -0.0781268 -0.104167 2.60428<br>
+ /tuio2/bnd 12<br>
+<b>untagged object geometry</b><br>
+ /tuio2/bnd 11<br>
+ /tuio2/ocg 11<br>
+ <b>concluding alive message</b><br>
+ /tuio2/alv 10 12 11 14<br>
+</p>
+
+<h2>Server &amp; Client implementations</h2>
+<p>A TUIO server (sometimes also referred as TUIO tracker or TUIO 
+source) is a device or application that encodes and <b>sends</b> TUIO 
+messages based on the OSC format, while a TUIO client is an application 
+or library that <b>receives</b> and decodes these messages, providing 
+the basic infrastructure for an actual interactive application. This is 
+actually the exact opposite of the OSC naming convention, where an OSC 
+client is sending its messages to an OSC server, which usually means 
+that a controller device (client) is attached to a synthesizer (server).
+ Although this difference might cause some confusion, we think that our 
+definition of TUIO servers and clients is more adequate for describing 
+the direction of the data flow from the tangible interaction hardware to
+ the application layer.</p>
+<p>For speed and simplicity reasons, the TUIO protocol is generally 
+unidirectional, which means that there is currently no dedicated 
+communication channel from the client to the server necessary. Using the
+ UDP transport for example, a TUIO server usually sends its messages to a
+ single TUIO client, which can be running on the same platform as the 
+server (localhost) as well as on a local IP network (LAN) or even at a 
+distant location via the Internet (WAN). Nevertheless the present TUIO 
+protocol could be equally implemented in a bi-directional configuration,
+ where the application layer is sending standard TUIO messages to a 
+tracker platform that is equipped with actuated components. In such a 
+configuration TOK messages could be used for example to move physical 
+objects or to drive actuated elements such as motors or lights with a 
+sequence of according CTL messages.</p>
+<p>A TUIO Server will usually encode and send messages for TUIO 
+components that correspond to its general capabilities, therefore a 
+server implementation can also choose to support only a subset of the 
+possible TUIO components. Apart from the compulsory FRM and ALV 
+messages, which comprise the basic body of a TUIO bundle, it depends on 
+the server capabilities or configuration, which types of component 
+messages are actually chosen to be sent. On the other hand a typical 
+TUIO client implementation, especially if designed as a library 
+component, should be ideally capable of decoding the full set of 
+interface component messages as defined in this specification. We will 
+provide TUIO server and client reference implementations for the most 
+common programming languages, such as C++, Java and C#. These examples 
+can be directly used as a library for the realization of TUIO enabled 
+applications as well as a reference for the implementation for further 
+programming environments. And since TUIO is based upon the OSC 
+specification any platform that already provides an OSC infrastructure, 
+is consequentially also able to send and receive TUIO messages.</p>
+
+<h2>Transport method</h2>
+<p>The default transport method for the TUIO protocol is the 
+encapsulation of the binary OSC bundle data within UDP packets sent to 
+the default port 3333. This default transport method is usually referred
+ as TUIO/UDP, and most implementations are based on this method due to 
+its simplicity and speed when sent over a network. Since OSC is not 
+directty bound to a dedicated transport method, alternative transport 
+channels such as TCP can be employed to transmit the OSC encoded TUIO 
+data. As introduced with the TUIO 1.1 implementations, there are already
+ several alternative transport methods available, such as TUIO/TCP and 
+TUIO/FLC (flash local connection via shared memory) to interface with 
+Adobe Flash applications for example. Due to the OSC encoding, TUIO 
+messages can be basically transmitted through any channel that is 
+supported by an actual OSC implementation.</p>
+
+<p>A UDP packet can carry a maximum of 64kb and a minimum of 576 bytes, 
+which usually provides enough capacity to transmit a typical TUIO bundle
+ within a single UDP packet. When sent over a local or wide area network
+ it is also advisable to limit the UDP packet size to the MTU size 
+(usually about 1500 bytes) in order to avoid packet fragmentation. 
+Therefore a TUIO server implementation has to consider that bundles 
+containing larger component sets can eventually exceed the UDP packet 
+capacity, and consequently need to distribute the component messages 
+over several OSC bundles containing the same FRM and ALV message.</p>
+
+<h2></h2>
+
+<div id="footer">Copyright © 2010 by Martin Kaltenbrunner. This 
+specification draft is pending formal publication. All rights reserved.</div>
+</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="TUIO%20Protocol%20Specification%202.0_fichiers/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-579390-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body></html>

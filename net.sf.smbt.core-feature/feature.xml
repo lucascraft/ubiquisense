@@ -60,10 +60,6 @@
          version="0.0.0"/>
 
    <includes
-         id="net.sf.xqz.ui"
-         version="0.0.0"/>
-
-   <includes
          id="org.rxtx"
          version="0.0.0"/>
 
@@ -94,7 +90,6 @@
       <import plugin="org.eclipse.swt" version="3.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.xqz.script" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.smbt.i2c.thingm" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.comm.http" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.8.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.8.0" match="greaterOrEqual"/>
@@ -104,15 +99,13 @@
       <import plugin="net.sf.smbt.firmata" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.editors" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.quantic" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.i2c.thingm.firmata" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.i2c.thingm" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.dmx" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.firmata.ubiquino" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.smbt.i2c.thingm.firmata" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.motion" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.osc.exchange" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.osc.tuio" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.swt" version="3.6.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.draw2d" version="3.6.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui" version="3.6.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="net.sf.xqz.engine.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
@@ -120,6 +113,7 @@
       <import plugin="net.sf.smbt.xcp.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.dmx.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.ui" version="3.6.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -172,27 +166,6 @@
          unpack="false"/>
 
    <plugin
-         id="net.sf.smbt.midi.ableton"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.sf.smbt.osc.arduino"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.sf.smbt.osc.tuio"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="net.sf.smbt.pachube"
          download-size="0"
          install-size="0"
@@ -235,13 +208,6 @@
          unpack="false"/>
 
    <plugin
-         id="net.sf.smbt.osc.ableton"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="net.sf.jbox2d"
          download-size="0"
          install-size="0"
@@ -257,13 +223,6 @@
 
    <plugin
          id="net.sf.smbt.osc.ezmojo"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.sf.smbt.touchosc"
          download-size="0"
          install-size="0"
          version="0.0.0"

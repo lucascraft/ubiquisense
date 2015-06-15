@@ -419,99 +419,6 @@ public class FirmataCmdUtils {
 	//
 	//
 	
-	/* 
-	 * I2C read/write request
-	 * -------------------------------
-	 * 0  START_SYSEX (0xF0) (MIDI System Exclusive)
-	 * 1  I2C_REQUEST (0x76)
-	 * 2  slave address (LSB)
-	 * 3  slave address (MSB) + read/write and address mode bits
-	      {7: always 0} + {6: reserved} + {5: address mode, 1 means 10-bit mode} +
-	      {4-3: read/write, 00 => write, 01 => read once, 10 => read continuously, 11 => stop reading} +
-	      {2-0: slave address MSB in 10-bit mode, not used in 7-bit mode}
-	 * 4  data 0 (LSB)
-	 * 5  data 0 (MSB)
-	 * 6  data 1 (LSB)
-	 * 7  data 1 (MSB)
-	 * ...
-	 * n  END_SYSEX (0xF7)
-	 */
-	public Cmd createSETTING_FIRMATA_I2C_CMD(byte lsbSlaveAddr, FIRMATA_I2C_ADDR_MODE addrMode, FIRMATA_I2C_RW_MODE rwMode, byte i2c10bitsMsbSlaveAddr, int[] data) {
-		if (data == null || data.length<=0) {
-			throw new UnsupportedOperationException(
-				"An I2C firmata command should embbed a non null byte[] message to be valid"
-			);
-		}
-		FirmataSysexMessage qCmd = EzfirmataFactory.eINSTANCE.createFirmataSysexMessage();
-		qCmd.setAddr(Integer.decode("0xf0").byteValue());
-		qCmd.setCmd(Integer.decode("0x76"));
-		
-		//
-		// byte1 (lsb)
-		//
-		qCmd.setByte1(lsbSlaveAddr);
-		
-		//
-		// byte2 (msb)
-		// 
-		int b2Val = 0;
-		
-		// bit 7 : always 0
-		// bit 6 : reserved
-		
-		// bit 5 : address mode, 1 means 10-bit mode
-		switch (addrMode) {
-			case I2C_ADDR_MODE_7BITS:
-				// 0 means 7 bits addr mod : +0
-				break;
-			case I2C_ADDR_MODE_10_BITS:
-				b2Val = b2Val | 16 ;
-				// 1 means 10 bits addr mode : +16
-				break;
-		}
-		
-		// bits 4-3 : RW mode
-		switch(rwMode) {
-			case READ_CONTINUOUSLY: // 10 (+8)
-				b2Val = b2Val | 8 ;
-				break;
-			case READ_ONCE: // 01 (+4)
-				b2Val = b2Val | 4 ;
-				break;
-			case STOP_READING: // 11 (+12)
-				b2Val = b2Val | 12 ;
-				break;
-			case WRITE: // 00
-				b2Val = b2Val | 0 ;
-				break;
-		}
-		
-		// bits 2-0 : 10 bits byte addr MSB (2nd part)
-		switch (addrMode) {
-			case I2C_ADDR_MODE_7BITS:
-				// 0 means 7 bits addr mod : +0
-				break;
-			case I2C_ADDR_MODE_10_BITS:
-				// FIXME : Dig in ! 
-				b2Val = (b2Val | (i2c10bitsMsbSlaveAddr & 196));  //0x11000000 ? or 0x00001100 ???
-				break;
-		}
-
-		qCmd.setByte2((byte)b2Val);
-		
-		int msgSize = data.length * 2;
-		byte msg[] = new byte[msgSize];
-		int idx = 0;
-		for (int twoBytes : data) {
-			msg[idx] = (byte)(twoBytes>>8); // FIXME : dig dig dig ...
-			msg[idx+1] = new Integer(twoBytes).byteValue();
-			idx+=2;
-		}
-		qCmd.setMessage(msg);
-		qCmd.setMsgSize(msgSize);
-		
-		return qCmd;
-	}
 	
 	//
 	//
@@ -618,18 +525,99 @@ public class FirmataCmdUtils {
 	// Generic Firmata I2C cmd dump
 	//
 	//
-	public Cmd createI2C_7BITS_FIRMATA_CMD(String addr, byte cmd, int[] args, FIRMATA_I2C_RW_MODE mode) {
-		int[] data = new int[args.length + 1];
-		data[0] = Byte.valueOf(cmd).intValue();
-		for (int i=1; i<args.length+1;i++) {
-			data[i] = args[i-1];
+	/* 
+	 * I2C read/write request
+	 * -------------------------------
+	 * 0  START_SYSEX (0xF0) (MIDI System Exclusive)
+	 * 1  I2C_REQUEST (0x76)
+	 * 2  slave address (LSB)
+	 * 3  slave address (MSB) + read/write and address mode bits
+	      {7: always 0} + {6: reserved} + {5: address mode, 1 means 10-bit mode} +
+	      {4-3: read/write, 00 => write, 01 => read once, 10 => read continuously, 11 => stop reading} +
+	      {2-0: slave address MSB in 10-bit mode, not used in 7-bit mode}
+	 * 4  data 0 (LSB)
+	 * 5  data 0 (MSB)
+	 * 6  data 1 (LSB)
+	 * 7  data 1 (MSB)
+	 * ...
+	 * n  END_SYSEX (0xF7)
+	 */
+	public Cmd createSETTING_FIRMATA_I2C_CMD(byte lsbSlaveAddr, FIRMATA_I2C_ADDR_MODE addrMode, FIRMATA_I2C_RW_MODE rwMode, byte i2c10bitsMsbSlaveAddr, byte[] data) {
+		if (data == null || data.length<=0) {
+			throw new UnsupportedOperationException(
+				"An I2C firmata command should embbed a non zero length byte[] message to be valid"
+			);
 		}
+		FirmataSysexMessage qCmd = EzfirmataFactory.eINSTANCE.createFirmataSysexMessage();
+		qCmd.setAddr(Integer.decode("0xf0").byteValue());
+		qCmd.setCmd(Integer.decode("0x76"));
+		
+		//
+		// byte1 (lsb)
+		//
+		qCmd.setByte1(lsbSlaveAddr);
+		
+		//
+		// byte2 (msb)
+		// 
+		int b2Val = 0;
+		
+		// bit 7 : always 0
+		// bit 6 : reserved
+		
+		// bit 5 : address mode, 1 means 10-bit mode
+		switch (addrMode) {
+			case I2C_ADDR_MODE_7BITS:
+				// 0 means 7 bits addr mod : +0
+				break;
+			case I2C_ADDR_MODE_10_BITS:
+				b2Val = b2Val | 16 ;
+				// 1 means 10 bits addr mode : +16
+				break;
+		}
+		
+		// bits 4-3 : RW mode
+		switch(rwMode) {
+			case READ_CONTINUOUSLY: // 10 (+8)
+				b2Val = b2Val | 8 ;
+				break;
+			case READ_ONCE: // 01 (+4)
+				b2Val = b2Val | 4 ;
+				break;
+			case STOP_READING: // 11 (+12)
+				b2Val = b2Val | 12 ;
+				break;
+			case WRITE: // 00
+				b2Val = b2Val | 0 ;
+				break;
+		}
+		
+		// bits 2-0 : 10 bits byte addr MSB (2nd part)
+		switch (addrMode) {
+			case I2C_ADDR_MODE_7BITS:
+				// 0 means 7 bits addr mod : +0
+				break;
+			case I2C_ADDR_MODE_10_BITS:
+				// FIXME : Dig in ! 
+				b2Val = (b2Val | (i2c10bitsMsbSlaveAddr & 196));  //0x11000000 ? or 0x00001100 ???
+				break;
+		}
+
+		qCmd.setByte2((byte)b2Val);		
+		qCmd.setMessage(data);
+		qCmd.setMsgSize(data.length);
+		
+		return qCmd;
+	}
+
+	
+	public Cmd createI2C_7BITS_FIRMATA_CMD(byte addr, byte[] args, FIRMATA_I2C_RW_MODE mode) {
 		return FirmataCmdUtils.INSTANCE.createSETTING_FIRMATA_I2C_CMD( 
-				Byte.decode(addr), 
+				addr, 
 				FIRMATA_I2C_ADDR_MODE.I2C_ADDR_MODE_7BITS, 
 				mode, 
 				Byte.decode("0x00"),
-				data
+				args
 		);	
 	}
 }

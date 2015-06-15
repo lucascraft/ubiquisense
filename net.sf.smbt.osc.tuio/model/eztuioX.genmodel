@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.sf.smbt.osc.tuio/src-model"
+    editorDirectory="" modelPluginID="net.sf.smbt.osc.tuio" modelName="EztuioX" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    reflectiveDelegation="true" testsDirectory="" importerID="org.eclipse.emf.importer.cdo"
+    featureDelegation="Reflective" complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../net.sf.smbt.osc/model/osccmd.genmodel#//osccmd ../../net.sf.xqz.engine/model/temporal.genmodel#//cmd">
+  <foreignModel>eztuio.ecore</foreignModel>
+  <genPackages prefix="Eztuio" basePackage="net.sf.smbt.osc" disposableProviderFactory="true"
+      ecorePackage="eztuio.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="eztuio.ecore#//STATE">
+      <genEnumLiterals ecoreEnumLiteral="eztuio.ecore#//STATE/TUIO_ADDED"/>
+      <genEnumLiterals ecoreEnumLiteral="eztuio.ecore#//STATE/TUIO_ACCELERATING"/>
+      <genEnumLiterals ecoreEnumLiteral="eztuio.ecore#//STATE/TUIO_DECELERATING"/>
+      <genEnumLiterals ecoreEnumLiteral="eztuio.ecore#//STATE/TUIO_STOPPED"/>
+      <genEnumLiterals ecoreEnumLiteral="eztuio.ecore#//STATE/TUIO_REMOVED"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="eztuio.ecore#//TuioCursor"/>
+    <genDataTypes ecoreDataType="eztuio.ecore#//TuioObject"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio2DObj">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/f_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/xpos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/ypos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/angle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/xspeed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/yspeed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/rspeed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/maccel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/raccel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/tuioObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/updateTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DObj/state"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio2DCur">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DCur/s_id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DCur/xpos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DCur/ypos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DCur/xspeed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DCur/yspeed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DCur/maccel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DCur/tuioCursor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DCur/updateTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//Tuio2DCur/state"/>
+    </genClasses>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio3DObj"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio3DCur"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio25Obj"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio25Cur"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio2DBlob"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio3DBlob"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio25Blob"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio2DObjAdd"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio2DObjUpdate"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio2DObjRemove"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio2DCurAdd"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio2DCurUpdate"/>
+    <genClasses ecoreClass="eztuio.ecore#//Tuio2DCurRemove"/>
+    <genClasses ecoreClass="eztuio.ecore#//TuioBundle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eztuio.ecore#//TuioBundle/time"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

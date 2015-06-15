@@ -261,36 +261,40 @@ class EzMojoAgent implements EzAgent{
 	}	
 
 	public void init() {
-		if (ezMojo.getDefault() == null) {
-			final CmdPipe pipe = QuanticMojo.INSTANCE.openUdpPipe(
-				"ezmojo",
-				addr,
-				port
-			);
-			pipe.setLocked(true);
-			pipe.addQxEventHandler(
-				new AbstractQxEventHandlerImpl() {
-					@Override
-					public void handleQxEvent(Event event) {
-						//if (event.getKind().equals(EVENT_KIND.RX_DONE)) {
-							if (event.getCmd() instanceof EZMojoCmd) {
-								handleInputCmd(event.getCmd(), pipe);
-							} else if (event.getCmd() instanceof OscCmd) {
-								handleInputCmd(
-									EzMojoCmdUtils.INSTANCE.createEZMojoCmd(
-										getEzMojo().getSelected(), 
-										EZMojoKind.LEGACY_SET, 
-										((OscCmd) event.getCmd()).getMsg()
-									), 
-									pipe
-								);
-							} 
-						//}
+		try {
+			if (ezMojo.getDefault() == null) {
+				final CmdPipe pipe = QuanticMojo.INSTANCE.openUdpPipe(
+					"ezmojo",
+					addr,
+					port
+				);
+				pipe.setLocked(true);
+				pipe.addQxEventHandler(
+					new AbstractQxEventHandlerImpl() {
+						@Override
+						public void handleQxEvent(Event event) {
+							//if (event.getKind().equals(EVENT_KIND.RX_DONE)) {
+								if (event.getCmd() instanceof EZMojoCmd) {
+									handleInputCmd(event.getCmd(), pipe);
+								} else if (event.getCmd() instanceof OscCmd) {
+									handleInputCmd(
+										EzMojoCmdUtils.INSTANCE.createEZMojoCmd(
+											getEzMojo().getSelected(), 
+											EZMojoKind.LEGACY_SET, 
+											((OscCmd) event.getCmd()).getMsg()
+										), 
+										pipe
+									);
+								} 
+							//}
+						}
 					}
-				}
-			);
-			ezMojo.getEngines().add(pipe);
-			ezMojo.setDefault(pipe);
+				);
+				ezMojo.getEngines().add(pipe);
+				ezMojo.setDefault(pipe);
+			}
+		} catch (Throwable t) {
+			//
 		}
 	}
 	

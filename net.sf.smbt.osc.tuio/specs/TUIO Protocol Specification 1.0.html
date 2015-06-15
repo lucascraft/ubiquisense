@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" type="text/css" 
+href="TUIO%20Protocol%20Specification%201.0_fichiers/default.css" 
+media="screen">
+	<title>TUIO Protocol Specification 1.0</title>
+
+</head><body>
+<div id="container">
+<div id="header">
+	<a href="http://www.tuio.org/?logo">
+	<img style="margin: 4px;" 
+src="TUIO%20Protocol%20Specification%201.0_fichiers/logo.png" 
+align="left" border="0" height="48" width="48"></a>
+	<h1><a href="http://www.tuio.org/">TUIO.org</a></h1>
+	<div id="menu"><a href="http://www.tuio.org/?specification">Specification</a><a
+ href="http://www.tuio.org/?roadmap">Roadmap</a><a 
+href="http://www.tuio.org/?software">Software</a><a 
+href="http://www.tuio.org/?developer">Developer</a><a 
+href="http://www.tuio.org/?showcase">Showcase</a><a 
+href="http://www.tuio.org/?forum">Forum</a><a 
+href="http://www.tuio.org/?members">Members</a></div>
+</div>
+<div id="main">
+	<h2>TUIO 1.0 Protocol Specification</h2>
+<h3>Introduction</h3>
+<p>
+Since the publication of the T<small>UIO</small> [<a href="#tuio">1</a>]
+ protocol specification to the public domain, in addition to its initial
+ implementation within reacTIVision [<a href="#reactivision">2</a>], it 
+has been adopted by several other projects related to tangible and 
+multi-touch interaction, such as the projects by the <a 
+href="http://www.nuigroup.org/">NUI group</a> community and several 
+other tangible interaction platforms. This document provides an online 
+resource for the public protocol specification, correcting a few errors 
+from the original document. Due to its widespread adoption it seems that
+ this protocol is considered a useful tool and it has proved to be 
+versatile and stable enough for its main purpose, the transmission of 
+object and finger parameters for interactive surfaces.
+</p>
+
+<h3>General Observations</h3>
+
+<p>
+This protocol definition is an attempt to provide a general and 
+versatile communication interface between tangible table-top controller 
+interfaces and underlying application layers. 
+It was designed to meet the needs of table-top interactive multi-touch 
+surfaces, where the user is able to manipulate a set of objects and draw
+ gestures onto the table surface with the finger tips. The objects are 
+tracked by a sensor system and can be identified and located in position
+ and orientation on the table surface. An additional cursor object, 
+representing for example finger touches, doesn't 
+have an unique ID and doesn't provide rotation information.
+</p><h3>Implementation Details</h3>
+
+<p>
+The T<small>UIO</small> protocol defines two main classes of messages: 
+set messages and alive messages. Set messages are used to communicate 
+information about an object's state such as position, orientation, and 
+other recognized states. Alive messages indicate the current set of 
+objects present on the surface using a list of unique session IDs. 
+</p>
+
+<p>
+To avoid possible errors evolving out of packet loss, no explicit add or
+ remove messages are included in the T<small>UIO</small>-protocol. The 
+receiver deduces object lifetimes by examining the difference between 
+sequential ALIVE messages.
+</p>
+
+<p>
+In addition to SET and ALIVE messages, FSEQ messages are defined to 
+uniquely tag each update step with a unique frame sequence ID. To 
+summarize:
+</p>
+
+<ul>
+<li>all object attributes are sent after state change using a SET 
+message</li>
+<li>the client deduces object addition and removal from SET and ALIVE 
+messages</li>
+<li>on object removal an ALIVE message is sent</li>
+<li>FSEQ messages associate a unique Frame ID with a bundle of SET and 
+ALIVE messages</li>
+</ul>
+
+<h3>Efficiency &amp; Reliability</h3>
+
+<p>
+In order to provide low latency communication our implementation of the T<small>UIO</small>
+ protocol uses UDP transport. When using UDP the possibility exists that
+ some packets will be lost. Therefore, our implementation of the T<small>UIO</small>
+ protocol includes redundant information to correct possible lost 
+packets, while maintaining an efficient usage of the channel. An 
+alternative TCP connection would assure the secure transport but at the 
+cost of higher latency.
+</p>
+
+<p>
+For efficiency reasons set messages are packed into a bundle to 
+completely use the space provided by a UDP packet. Each bundle also 
+includes a redundant alive message to allow for the possibility of 
+packet loss. For larger object sets a series of packets, each including 
+an alive message are transmitted. When the surface is quiescent, alive 
+messages are sent at a fixed rate dependent on the channel quality, for 
+example once every second, to ensure that the receiver eventually 
+acquires a consistent view of the set of alive objects.
+</p>
+
+<p>
+The state of each alive but unchanged object is periodically resent with
+ additional set messages. This redundant information is resent at a 
+lower rate, and includes only a subset of the unchanged objects at each 
+update. The subset is continuously cycled so that each object is 
+periodically addressed. 
+</p>
+
+<p>
+Finally, each packet is marked with a frame sequence ID (fseq) message: 
+an increasing number which is the same for all packets containing data 
+acquired at the same time. This allows the client to maintain 
+consistency by identifying and dropping out-of-order packets.
+To summarize:
+</p>
+
+<ul>
+<li>set messages are bundled to fully utilize UDP packets</li>
+<li>each bundle of set messages includes an alive message containing the
+ session IDs of all currently alive tangible objects</li>
+<li>when the surface is quiescent the alive message is resent 
+periodically</li>
+<li>the state of a cycling subset of alive but unchanged objects is 
+continuously resent via redundant set messages</li>
+<li>each bundle contains a frame sequence (fseq) message</li>
+</ul>
+
+<h3>Message Format</h3>
+
+<p>
+Since T<small>UIO</small> is implemented using Open Sound Control (OSC) [<a
+ href="#osc">4</a>] it follows its general syntax. An implementation 
+therefore has to use an appropriate OSC library such as <a 
+href="http://www.audiomulch.com/%7Erossb/code/oscpack/">oscpack</a>, and
+ has to listen to the following message types: 
+
+</p><pre>/tuio/[profileName] alive [list of active sessionIDs]
+
+/tuio/[profileName] set [sessionID parameterList]
+
+/tuio/[profileName] fseq [int32]
+</pre>
+
+<h3>Parameters</h3>
+
+<p>
+The parameters defined in this section reflect the object properties we 
+considered important for an interactive surface interface. Some of these
+ parameters (id, position and angle) are retrieved directly by
+the sensor. Others (speed, acceleration) are derived from these primary 
+parameters using timing information. Computing these parameters on the 
+low level side of an tangible user interface system allows a more 
+efficient computation, since the necessary timing information does not 
+need to be transferred to clients.
+</p>
+
+<p></p>
+<div align="CENTER"><table>
+<caption><strong>Table 1:</strong>
+semantic types of set messages</caption>
+<tbody><tr><td><table border="1" cellpadding="3">
+<tbody><tr><td align="LEFT"><code>s</code></td>
+<td align="LEFT">sessionID, temporary object ID, int32</td>
+</tr>
+<tr><td align="LEFT"><code>i</code></td>
+<td align="LEFT">classID (e.g. marker ID), int32</td>
+</tr>
+<tr><td align="LEFT"><code>x, y, z </code></td>
+<td align="LEFT">position, float32, range 0...1</td>
+
+</tr>
+<tr><td align="LEFT"><code>a, b, c </code></td>
+<td align="LEFT">angle, float32, range 0..2PI</td>
+</tr>
+<tr><td align="LEFT"><code>X, Y ,Z </code></td>
+<td align="LEFT">movement vector (motion speed &amp; direction), float32</td>
+</tr>
+<tr><td align="LEFT"><code>A, B, C </code></td>
+<td align="LEFT">rotation vector (rotation speed &amp; direction), 
+float32</td>
+
+</tr>
+<tr><td align="LEFT"><code>m</code></td>
+<td align="LEFT">motion acceleration, float32</td>
+</tr>
+<tr><td align="LEFT"><code>r</code></td>
+<td align="LEFT">rotation acceleration, float32</td>
+</tr>
+<tr><td align="LEFT"><code>P</code></td>
+<td align="LEFT">free parameter, type defined by OSC packet header</td>
+</tr>
+</tbody></table>
+<a name="tab:semTypes"></a>
+
+<p></p>
+
+<p>
+A session ID number is assigned to each object. This is necessary to 
+uniquely identify untagged objects across successive frames, and in the 
+case where multiple objects tagged with the same classID are
+simultaneously present on the surface. The semantic types allowed in a 
+set message are shown in Tab.<a href="#tab:semTypes">1</a>.
+</p>
+
+<h3>Parameter Computation</h3>
+
+<p>
+The T<small>UIO</small> coordinate system is normalized for each axis 
+and is represented by floating point numbers in the range from 0.0f to 
+1.0f. In order to compute the X and Y coordinates for the 2D profiles, a
+ TUIO tracker  implementation needs to divide these values by the actual
+ sensor dimension, while a TUIO client implementation consequently can 
+scale these values back  to the actual screen dimension.
+</p>
+
+<pre>x = sensor_x / sensor_width
+y = sensor_y / sensor_height 
+</pre>
+
+<p>
+The movement velocity unit is defined as a movement over the full length
+ of an axis within one second. As an example, moving a finger 
+horizontally from left to right across the full surface within one 
+second represents a movement velocity vector of (1.0 0.0). The motion 
+speed values are computed from the normalized distance between two 
+positions divided by the time between the two samples in seconds. The 
+acceleration value is the speed change divided by the time between the 
+two samples in seconds.
+</p>
+
+<pre>X = (sensor_dx / sensor_width) / dt
+Y = (sensor_dy / sensor_height) / dt
+m = (speed - last_speed) / dt
+</pre>
+
+<p>
+The rotation velocity unit is defined as one full rotation per second. 
+Therefore performing one full object rotation within one second 
+represents a rotation velocity value of 1.0. The rotation velocity 
+values are computed from the normalized angle change divided by the time
+ between the two samples in seconds. The according rotation acceleration
+ value is therefore calculated from the rotation speed change divided by
+ the time between the two frames in seconds.
+</p>
+
+<pre>A = ((a - last_a) / 2*PI) / dt
+r = (A - last_A) / dt
+</pre>
+
+<h3>Profiles</h3>
+<p>
+We define a set of profiles, which apply to most table-style tangible 
+user interfaces. This allows the tracking of objects and cursors on two 
+dimensional surfaces and in special cases also in the 3D space above the
+ table surface. If one of these predefined profiles doesn't meet a 
+system's requirements one can also implement free form custom profiles, 
+which allow a user defined set of parameters to be transmitted.
+</p>
+
+<dl>
+<dt><strong>2D Interactive Surface</strong></dt>
+<dd><pre>/tuio/2Dobj set s i x y a X Y A m r
+/tuio/2Dcur set s x y X Y m
+</pre>
+</dd>
+<dt><strong>2.5D Interactive Surface</strong></dt>
+<dd><pre>/tuio/25Dobj set s i x y z a X Y Z A m r
+/tuio/25Dcur set s x y z X Y Z m
+</pre>
+</dd>
+<dt><strong>3D Interactive Surfaces</strong></dt>
+<dd><pre>/tuio/3Dobj set s i x y z a b c X Y Z A B C m r
+/tuio/3Dcur set s x y z X Y Z m
+</pre>
+</dd>
+<dt><strong>custom profile</strong></dt>
+<dd><pre>/tuio/_[formatString]
+/tuio/_sixyP set s i x y 0.57
+</pre>
+</dd>
+</dl>
+
+<p>
+For the last profile, the parameters of the set message are can be a 
+user defined format. The custom profile carries the message format 
+within its name, similar to the OSC header.
+</p>
+ 
+<h3>References</h3>
+<p><a name="tuio">1</a>
+ Kaltenbrunner, M., Bovermann, T., Bencina, R., Costanza, E.: 
+ "TUIO - A Protocol for Table Based Tangible User Interfaces". 
+ Proceedings of the 6th International Workshop on Gesture in 
+Human-Computer Interaction and Simulation (GW 2005), Vannes, France, 
+2005
+</p>
+<p><a name="reactivision">2</a>
+Kaltenbrunner, M., Bencina, R.: 
+"reacTIVision: A Computer-Vision Framework for Table-Based Tangible 
+Interaction". 
+Proceedings of the first international conference on "Tangible and 
+Embedded Interaction" (TEI07). Baton Rouge, Louisiana, 2007
+</p>
+<p><a name="reactable">3</a>
+ Jorda, S., Geiger, G., Alonso, A., Kaltenbrunner, M.:
+ "The reacTable: Exploring the Synergy between Live Music Performance 
+and Tabletop Tangible Interfaces".
+ Proceedings of the first international conference on "Tangible and 
+Embedded Interaction" (TEI07). Baton Rouge, Louisiana, 2007
+</p>
+<p><a name="osc">4</a>
+Wright, M., Freed, A., Momeni A.: 
+"OpenSound Control: State of the Art 2003". 
+Proceedings of the 3rd Conference on New Instruments for Musical 
+Expression (NIME 03), Montreal, Canada, 2003.
+</p>
+
+<div id="footer">This work has been partially supported by the European 
+Commission Cost-287 <a href="http://www.cost287.org/">ConGAS </a> action</div>
+
+
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="TUIO%20Protocol%20Specification%201.0_fichiers/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-579390-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</td></tr></tbody></table></div></div></div></body></html>

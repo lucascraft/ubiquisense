@@ -77,10 +77,6 @@ More complicated apps could then leverage these device inputs and transparently 
          version="0.0.0"/>
 
    <includes
-         id="net.sf.xqz.ui"
-         version="0.0.0"/>
-
-   <includes
          id="org.rxtx"
          version="0.0.0"/>
 
@@ -390,13 +386,6 @@ More complicated apps could then leverage these device inputs and transparently 
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.emf.mwe2.launch"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.help.ui"
          download-size="0"
          install-size="0"
@@ -598,13 +587,6 @@ More complicated apps could then leverage these device inputs and transparently 
 
    <plugin
          id="org.eclipse.compare.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.emf.compare.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

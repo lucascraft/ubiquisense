@@ -53,26 +53,25 @@ public class ThingM4FirmataCmdUtils {
     //
     //
    
-	public Cmd createThingM4FimataStopScriptCmd(String addr) {
-		StopScriptCmd blinkmCmd = BlinkMUtil.INSTANCE.createStopScriptCmd(addr);
-		return FirmataCmdUtils.INSTANCE.createI2C_7BITS_FIRMATA_CMD (
-			addr, 
-			blinkmCmd.getCmdByte(), 
-			new int[]{}, 
-			FIRMATA_I2C_RW_MODE.WRITE
-		);
-	}
+//	public Cmd createThingM4FimataStopScriptCmd(byte addr) {
+//		StopScriptCmd blinkmCmd = BlinkMUtil.INSTANCE.createStopScriptCmd(Byte.toString(addr));
+//		return FirmataCmdUtils.INSTANCE.createI2C_7BITS_FIRMATA_CMD (
+//			addr, 
+//			blinkmCmd.getCmdByte(), 
+//			new int[]{}, 
+//			FIRMATA_I2C_RW_MODE.WRITE
+//		);
+//	}
 	
 	public Cmd createThingM4FimataFadeToRGBCmd(String addr, int r, int g, int b) {
 		FadeToRGBColorCmd blinkmCmd = BlinkMUtil.INSTANCE.createFadeToRGBColorCmd(addr, r, g, b);
 		return  FirmataCmdUtils.INSTANCE.createI2C_7BITS_FIRMATA_CMD (
-			addr, 
-			blinkmCmd.getCmdByte(), 
-			new int[] {
-				Byte.valueOf(blinkmCmd.getCmdByte()).intValue(),
-				r,
-				g,
-				b
+			blinkmCmd.getAddr(), 
+			new byte[] {
+				blinkmCmd.getCmdByte(),
+				(byte) r,
+				(byte) g,
+				(byte) b
 			},
 			FIRMATA_I2C_RW_MODE.WRITE
 		);

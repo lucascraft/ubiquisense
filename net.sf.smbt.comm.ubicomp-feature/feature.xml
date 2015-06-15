@@ -94,8 +94,8 @@ and transparently interact with each others.
       <import plugin="net.sf.xqz.script" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.comm.topology" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="net.sf.xqz.script.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.xcp.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.xqz.script.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.at" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.xqz.engine.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.at.edit" version="0.5.0" match="greaterOrEqual"/>
@@ -105,8 +105,6 @@ and transparently interact with each others.
       <import plugin="net.sf.smbt.mapping" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.7.100" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.6.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.smbt.quantic" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.swt" version="3.7.1" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.dmx" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.firmata" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.firmata.ubiquino" version="0.5.0" match="greaterOrEqual"/>
@@ -119,12 +117,18 @@ and transparently interact with each others.
       <import plugin="org.eclipse.ui.editors" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.quantic" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.ui" version="3.8.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.8.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.8.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.osc.ezmojo" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.hamcrest.core" version="1.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.query" version="1.2.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.log4j"/>
    </requires>
 
    <plugin
@@ -286,13 +290,6 @@ and transparently interact with each others.
          unpack="false"/>
 
    <plugin
-         id="net.sf.smbt.osc.ableton"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="net.sf.smbt.osc.exchange"
          download-size="0"
          install-size="0"
@@ -329,13 +326,6 @@ and transparently interact with each others.
 
    <plugin
          id="net.sf.smbt.dmx"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.sf.smbt.osc.tuio"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -383,5 +373,12 @@ and transparently interact with each others.
          install-size="0"
          version="0.0.0"
          fragment="true"/>
+
+   <plugin
+         id="net.sf.xqz.script"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

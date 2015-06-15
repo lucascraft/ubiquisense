@@ -12,10 +12,10 @@ Export-Package: net.sf.smbt.comm.ezxtopology.provider
 Require-Bundle: org.eclipse.core.runtime,
  net.sf.smbt.comm.topology;bundle-version="0.5.0";visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
- net.sf.xqz.script;bundle-version="0.5.0";visibility:=reexport,
- net.sf.xqz.script.edit;bundle-version="0.5.0";visibility:=reexport,
  net.sf.smbt.xcp;bundle-version="0.5.0";visibility:=reexport,
  net.sf.smbt.xcp.edit;bundle-version="0.5.0";visibility:=reexport,
  net.sf.smbt.comm;bundle-version="0.5.0",
- net.sf.smbt.comm.xbee;bundle-version="0.5.0"
+ net.sf.smbt.comm.xbee;bundle-version="0.5.0",
+ net.sf.xqz.script;bundle-version="0.5.0",
+ net.sf.xqz.script.edit;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy

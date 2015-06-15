@@ -20,5 +20,7 @@ Require-Bundle: org.eclipse.core.runtime,
  net.sf.xqz.engine.edit;visibility:=reexport,
  net.sf.smbt.motion.edit;bundle-version="0.5.0",
  net.sf.smbt.osc.tuio.edit;bundle-version="0.5.0",
- net.sf.smbt.comm.topology.edit;bundle-version="0.5.0"
+ net.sf.smbt.comm.topology.edit;bundle-version="0.5.0",
+ net.sf.xqz.script;bundle-version="0.5.0",
+ net.sf.xqz.script.edit;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy

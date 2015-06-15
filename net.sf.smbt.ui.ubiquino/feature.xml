@@ -69,13 +69,13 @@
       <import plugin="net.sf.smbt.comm" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.comm.topology" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.firmata" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.smbt.midi.edit" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.smbt.arduino.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.editors" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.7.100" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.xcp" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.quantic" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.i2c.thingm.firmata" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.navigator"/>
       <import plugin="org.eclipse.ui.navigator.resources"/>
       <import plugin="net.sf.smbt.dmx" version="0.5.0" match="greaterOrEqual"/>
@@ -92,7 +92,6 @@
       <import plugin="net.sf.smbt.motion.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.motion.ui" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.ui.motion" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.smbt.quantic" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.rxtx" version="2.1.72" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.ui.logging" version="0.5.0" match="greaterOrEqual"/>
@@ -101,29 +100,26 @@
       <import plugin="net.sf.smbt.osc.exchange" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.ui.widgets" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.draw2d" version="3.6.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.smbt.osc.tuio" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.xmi" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.query" version="1.2.100" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="net.sf.xqz.script" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
-      <import plugin="net.sf.smbt.osc.tuio.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.xqz.script.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.console" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.logging" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.xqz.engine.edit" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.xqz.script.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.xcp.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.comm.xbee" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.smbt.osc.ableton" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.smbt.osc.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.dmx.edit" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.swt" version="3.7.1" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.osc.edit" version="0.5.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.smbt.midi.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.ui" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.intro.universal"/>
+      <import plugin="net.sf.smbt.arduino.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.arduino.editor" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.firmata.ubiquino" version="0.5.0" match="greaterOrEqual"/>
-      <import plugin="net.sf.smbt.firmata.edit" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.forms" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.comm.bluetooth" version="0.5.0" match="greaterOrEqual"/>
       <import plugin="net.sf.smbt.ui.arduino" version="0.5.0" match="greaterOrEqual"/>
@@ -157,13 +153,6 @@
 
    <plugin
          id="net.sf.smbt.firmata"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.sf.smbt.firmata.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -247,13 +236,6 @@
          unpack="false"/>
 
    <plugin
-         id="net.sf.smbt.osc.ableton.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="net.sf.smbt.osc.edit"
          download-size="0"
          install-size="0"
@@ -262,13 +244,6 @@
 
    <plugin
          id="net.sf.smbt.osc.exchange.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.sf.smbt.osc.tuio.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -317,28 +292,7 @@
          unpack="false"/>
 
    <plugin
-         id="net.sf.smbt.firmata.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="net.sf.smbt.arduino.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.sf.smbt.osc.ableton"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.sf.smbt.osc.tuio"
          download-size="0"
          install-size="0"
          version="0.0.0"

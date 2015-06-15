@@ -62,8 +62,6 @@ public class CreateCosmFeedFromOSCAction extends Action implements IWorkbenchWin
 
 	@Override
 	public void run() {
-		System.out.println("badabo 2");
-
 		EnvironmentType env = PachubeUtils.INSTANCE.createEemlFromOSC(node);
 		
 		CosmFeedFromOSCWizardDialog dlg = new CosmFeedFromOSCWizardDialog(Display.getDefault().getActiveShell(), env);
@@ -72,13 +70,10 @@ public class CreateCosmFeedFromOSCAction extends Action implements IWorkbenchWin
 	
 	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
-		System.out.println("wizz");
 		if (selection instanceof StructuredSelection) {
 			StructuredSelection ssel = (StructuredSelection) selection;
 			Object obj = ssel.getFirstElement();
-			System.out.println("yuki");
 			if (obj instanceof EZMojoNode) {
-				System.out.println("kodai");
 				node = (EZMojoNode) obj;
 			}
 		}
@@ -92,9 +87,7 @@ public class CreateCosmFeedFromOSCAction extends Action implements IWorkbenchWin
 	}
 
 	@Override
-	public void run(IAction action) {
-		System.out.println("badabo 1");
-		
+	public void run(IAction action) {		
 		EnvironmentType env = PachubeUtils.INSTANCE.createEemlFromOSC(node);
 		
 		CosmFeedFromOSCWizardDialog dlg = new CosmFeedFromOSCWizardDialog(Display.getDefault().getActiveShell(), env);

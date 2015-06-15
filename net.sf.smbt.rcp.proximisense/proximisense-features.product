@@ -373,7 +373,6 @@ Released under dual head licensing A) EPL 1.0 B) LGPL 3.0
       <feature id="org.eclipse.emf.transaction"/>
       <feature id="net.sf.smbt.ui"/>
       <feature id="org.eclipse.gmf.runtime.notation"/>
-      <feature id="net.sf.xqz.ui"/>
       <feature id="org.eclipse.emf"/>
       <feature id="org.eclipse.emf.edit"/>
       <feature id="net.sf.smbt.core"/>
