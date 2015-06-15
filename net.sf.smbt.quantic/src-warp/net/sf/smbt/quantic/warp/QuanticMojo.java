@@ -1,7 +1,7 @@
 /***********************************************************************************
  * Ubiquisense - A smart ambient utilities framework 
  * 
- * Copyright (c) 2008 - 2012, Lucas Bigeardel
+ * Copyright (c) 2008 - 2015, Lucas Bigeardel
  * 
  * The library is released under:
  * 
