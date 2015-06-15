@@ -41,6 +41,7 @@ import net.sf.smbt.firmata.ubiquino.Ubiquino;
 import net.sf.smbt.firmata.ubiquino.UbiquinoFactory;
 import net.sf.smbt.firmata.ubiquino.core.UbiquinoUtils;
 import net.sf.smbt.firmata.ubiquino.provider.UbiquinoItemProviderAdapterFactory;
+import net.sf.smbt.firmata.ubiquino.ui.Activator;
 import net.sf.smbt.mdl.arduino.provider.ArduinoItemProviderAdapterFactory;
 import net.sf.smbt.midi.ezmidi.DSLMidiMessage;
 import net.sf.smbt.midi.ezmidi.NoteON;
@@ -65,6 +66,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
+import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -77,9 +79,11 @@ import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.PartInitException;
@@ -94,7 +98,8 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 	private static Ubiquino		ubiquino;
 	private ScrolledComposite scrollComposite;
 	private Composite parentContainer;
-
+	private Label introLabel;
+	
 	private CmdPipe ubiquinoPipe;
 
 	private ConcurrentLinkedQueue<ISelectionChangedListener> listeners;
@@ -183,6 +188,14 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 	public void createPartControl(final Composite parent) {
 		parent.setBackground(GUIToolkit.BG);
 		parentContainer = parent;
+	    introLabel = new Label(parent, SWT.NONE);
+	    introLabel.setLayoutData(GridDataFactory.swtDefaults().indent(30, 30));
+	    Image img = Activator.getImageDescriptor("icons/arduino-add.png").createImage();
+	    introLabel.setImage(img);
+	    introLabel.setBackground(GUIToolkit.BG);
+	    introLabel.setForeground(GUIToolkit.FG);
+	    introLabel.setText("Open Arduino Firmata USB Connection From Top Toolbar Action Button");
+	    
 		setSelection(new StructuredSelection(ubiquino));
 	}
 	public Ubiquino getUbiquino() {
@@ -245,6 +258,10 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 	}
     
 	public void createUbiquinoUI() {
+		introLabel.dispose();
+		
+		parentContainer.layout();
+		
 		parentContainer.setBackground(GUIToolkit.BG);
 
 		scrollComposite = new ScrolledComposite(parentContainer, SWT.V_SCROLL | SWT.BORDER);
@@ -297,6 +314,7 @@ public class UbiquinoEditor extends EditorPart implements ISelectionProvider, IT
 
 	    scrollComposite.layout(true);
 	    scrollComposite.pack(true);
+	    
 	    
 	}
 	

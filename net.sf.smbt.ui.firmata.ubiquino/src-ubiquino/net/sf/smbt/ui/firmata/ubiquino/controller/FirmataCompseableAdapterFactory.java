@@ -37,7 +37,6 @@ package net.sf.smbt.ui.firmata.ubiquino.controller;
 
 import net.sf.smbt.firmata.ubiquino.provider.UbiquinoItemProviderAdapterFactory;
 import net.sf.smbt.mdl.arduino.provider.ArduinoItemProviderAdapterFactory;
-import net.sf.smbt.protocol.ezfirmata.provider.EzfirmataItemProviderAdapterFactory;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -51,7 +50,7 @@ public class FirmataCompseableAdapterFactory extends ComposedAdapterFactory {
 			new AdapterFactory[] {
 				new ArduinoItemProviderAdapterFactory(),
 				new UbiquinoItemProviderAdapterFactory(),
-				new EzfirmataItemProviderAdapterFactory(),
+//				new EzfirmataItemProviderAdapterFactory(),
 				new ReflectiveItemProviderAdapterFactory()
 			}
 		);
