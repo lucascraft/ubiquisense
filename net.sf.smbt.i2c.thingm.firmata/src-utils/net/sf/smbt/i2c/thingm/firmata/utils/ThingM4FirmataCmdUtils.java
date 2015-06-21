@@ -64,14 +64,13 @@ public class ThingM4FirmataCmdUtils {
 //	}
 	
 	public Cmd createThingM4FimataFadeToRGBCmd(String addr, int r, int g, int b) {
-		FadeToRGBColorCmd blinkmCmd = BlinkMUtil.INSTANCE.createFadeToRGBColorCmd(addr, r, g, b);
 		return  FirmataCmdUtils.INSTANCE.createI2C_7BITS_FIRMATA_CMD (
-			blinkmCmd.getAddr(), 
-			new byte[] {
-				blinkmCmd.getCmdByte(),
-				(byte) r,
-				(byte) g,
-				(byte) b
+			Byte.decode(addr), // Firmata I2C slave address
+			new int[] {
+				Byte.decode("0x63"),
+				r,
+				g,
+				b,
 			},
 			FIRMATA_I2C_RW_MODE.WRITE
 		);
