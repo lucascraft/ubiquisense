@@ -151,6 +151,7 @@ public class QuanticMojo implements /*ServiceListener,*/ IWarpManager, IPipeBuil
 		supervisor = new Supervisor(topology);
 		
 		//openUdpPipe("osc", "localhost:4444");
+		@SuppressWarnings("unused")
 		DnsSdUtil dsnSD = DnsSdUtil.INSTANCE;
 		//qHub.setAgent(dnsAgent);
 		//qHub.setSupervisor(supervisor);
