@@ -55,7 +55,29 @@ public class FirmataCmdInterpreter extends AbstractCmdInterpreterImpl {
 		}
 		if (cmd instanceof SysexMessage) {
 			SysexMessage msg = (SysexMessage) cmd;
-			return FirmataCmdUtils.INSTANCE.dumpSysexMessage(msg);
+			
+/*			if (Integer.decode("0x76") == msg.getCmd()) {
+				// I2C Command
+				System.out.println("SND : Firmata I2C over sysex " + CmdUtil.INSTANCE.getFrameHexInfo(msg.getMessage()));
+				byte[] i2cSysex = new byte[13];
+				int idx = 0;
+				i2cSysex[idx++] = (byte)0xf0; // Sysex start
+				i2cSysex[idx++] = (byte)0x76; // I2C mode
+				i2cSysex[idx++] = (byte)0x00; // lsb
+				i2cSysex[idx++] = (byte)0x00; // msb
+				i2cSysex[idx++] = (byte)0x63; // cmd lsb
+				i2cSysex[idx++] = (byte)0x00; // cmd msb
+				i2cSysex[idx++] = (byte)0xFF; // R1 lsb
+				i2cSysex[idx++] = (byte)0x00; // R2 msb
+				i2cSysex[idx++] = (byte)0x00; // G1 lsb
+				i2cSysex[idx++] = (byte)0x00; // G2 msb
+				i2cSysex[idx++] = (byte)0x00; // B1 lsb
+				i2cSysex[idx++] = (byte)0x00; // B2 msb
+				i2cSysex[idx++] = (byte)0xf7; // Sysex end
+				
+				return i2cSysex;
+			}
+*/			return FirmataCmdUtils.INSTANCE.dumpSysexMessage(msg);
 		} else if (cmd instanceof FirmataCmd || cmd instanceof AbstractMidiCmd) {
 			byte[] bytes = FirmataCmdUtils.INSTANCE.dumpFirmataCustomMidiMessage((AbstractMidiCmd)cmd);
 			if (Platform.inDebugMode() && bytes != null) {
