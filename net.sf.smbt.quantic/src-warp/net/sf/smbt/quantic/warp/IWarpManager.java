@@ -39,7 +39,6 @@ import java.util.List;
 import java.util.Map;
 
 import net.sf.smbt.comm.ezxtopology.TopologyCache;
-import net.sf.smbt.quantic.agent.DnsSdUtil;
 import net.sf.smbt.quantic.supervision.Supervisor;
 import net.sf.xqz.model.engine.CmdPipe;
 import net.sf.xqz.model.engine.EngineApplication;
