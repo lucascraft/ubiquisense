@@ -542,7 +542,7 @@ public class FirmataCmdUtils {
 	 * ...
 	 * n  END_SYSEX (0xF7)
 	 */
-	public Cmd createSETTING_FIRMATA_I2C_CMD(byte lsbSlaveAddr, FIRMATA_I2C_ADDR_MODE addrMode, FIRMATA_I2C_RW_MODE rwMode, byte i2c10bitsMsbSlaveAddr, byte[] data) {
+	public Cmd createSETTING_FIRMATA_I2C_CMD(byte lsbSlaveAddr, FIRMATA_I2C_ADDR_MODE addrMode, FIRMATA_I2C_RW_MODE rwMode, byte i2c10bitsMsbSlaveAddr, int[] data) {
 		if (data == null || data.length<=0) {
 			throw new UnsupportedOperationException(
 				"An I2C firmata command should embbed a non zero length byte[] message to be valid"
@@ -552,10 +552,6 @@ public class FirmataCmdUtils {
 		qCmd.setAddr(Integer.decode("0xf0").byteValue());
 		qCmd.setCmd(Integer.decode("0x76"));
 		
-		//
-		// byte1 (lsb)
-		//
-		qCmd.setByte1(lsbSlaveAddr);
 		
 		//
 		// byte2 (msb)
@@ -578,14 +574,14 @@ public class FirmataCmdUtils {
 		
 		// bits 4-3 : RW mode
 		switch(rwMode) {
-			case READ_CONTINUOUSLY: // 10 (+8)
+			case READ_CONTINUOUSLY: // 10 (+16)
 				b2Val = b2Val | 8 ;
 				break;
-			case READ_ONCE: // 01 (+4)
+			case READ_ONCE: // 01 (+8)
 				b2Val = b2Val | 4 ;
 				break;
-			case STOP_READING: // 11 (+12)
-				b2Val = b2Val | 12 ;
+			case STOP_READING: // 11 (+24)
+				b2Val = b2Val | 24 ;
 				break;
 			case WRITE: // 00
 				b2Val = b2Val | 0 ;
@@ -603,21 +599,36 @@ public class FirmataCmdUtils {
 				break;
 		}
 
+		//
+		// byte1 (lsb)
+		//
+		qCmd.setByte1(lsbSlaveAddr);
+		//
+		// byte2 (msb)
+		//
 		qCmd.setByte2((byte)b2Val);		
-		qCmd.setMessage(data);
-		qCmd.setMsgSize(data.length);
+		
+		byte[] bytes = new byte[data.length*2];
+		
+		for (int i=0; i<data.length; i++) {
+			bytes[(2*i)] = (byte)(data[i] & 0xff); // lsb
+			bytes[(2*i)+1] = (byte)((data[i] & 0x00) >> 8); // msb
+		}
+		
+		qCmd.setMessage(bytes);
+		qCmd.setMsgSize(bytes.length);
 		
 		return qCmd;
 	}
 
 	
-	public Cmd createI2C_7BITS_FIRMATA_CMD(byte addr, byte[] args, FIRMATA_I2C_RW_MODE mode) {
+	public Cmd createI2C_7BITS_FIRMATA_CMD(byte addr, int[] data, FIRMATA_I2C_RW_MODE mode) {
 		return FirmataCmdUtils.INSTANCE.createSETTING_FIRMATA_I2C_CMD( 
 				addr, 
 				FIRMATA_I2C_ADDR_MODE.I2C_ADDR_MODE_7BITS, 
 				mode, 
 				Byte.decode("0x00"),
-				args
+				data
 		);	
 	}
 }
