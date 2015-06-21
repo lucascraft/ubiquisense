@@ -81,13 +81,17 @@ import com.illposed.osc.utility.OSCByteArrayToJavaConverter;
 public class DnsSdUtil implements ServiceListener, ServiceTypeListener{
 
 	private JmDNSImpl dnsSdRegistry;
-    private final static String serviceKey = "srvname"; // Max 9 chars
-    private ServiceInfo service;
-    private MulticastSocket multicastSocket;
+    @SuppressWarnings("unused")
+	private final static String serviceKey = "srvname"; // Max 9 chars
+    @SuppressWarnings("unused")
+	private ServiceInfo service;
+    @SuppressWarnings("unused")
+	private MulticastSocket multicastSocket;
     
     private List<IXCPDeviceLifecycleListener> deviceListeners;
     private Map<String, ISmartDnsServiceManager> dnsServicesMap;
-    private OSCByteArrayToJavaConverter converter;
+    @SuppressWarnings("unused")
+	private OSCByteArrayToJavaConverter converter;
     
     public final static DnsSdUtil INSTANCE = new DnsSdUtil();
 
@@ -305,9 +309,11 @@ public void serviceTypeAdded(ServiceEvent event)
 
     System.out.println("TYPE: " + aType);
     
-    ServiceInfo service = null;
+    @SuppressWarnings("unused")
+	ServiceInfo service = null;
     if (aType.startsWith("_osc._udp.")) {
     	// connect and retrieve Service API contracts
+		@SuppressWarnings("unused")
 		String name = event.getName();
 //		 if (name == null) {
 //		    System.out.println("");
@@ -396,6 +402,7 @@ public void subTypeForServiceTypeAdded(ServiceEvent event)
 //}
 
 
+@SuppressWarnings("unused")
 private void dislayInfo(ServiceInfo service)
 {
     System.out.println("INFO: " + service);
