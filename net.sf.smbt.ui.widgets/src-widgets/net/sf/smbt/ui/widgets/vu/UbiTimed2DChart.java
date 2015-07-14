@@ -66,6 +66,7 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+import org.mozilla.javascript.tools.debugger.GuiCallback;
 
 public class UbiTimed2DChart extends UbiWidget {
 	private float 	min;
@@ -196,22 +197,22 @@ public class UbiTimed2DChart extends UbiWidget {
 		return insideColor;
 	}
 	public Color getTooltipFG() {
-		return tooltipFG;
+		return tooltipFG == null ? ColorsUtil.FG : tooltipBG;
 	}
 	public Color getTooltipBG() {
-		return tooltipBG;
+		return tooltipBG == null ? ColorsUtil.BG : tooltipBG;
 	}
 	public Color getMinColor() {
-		return minColor;
+		return minColor == null ? ColorsUtil.orange : minColor;
 	}
 	public Color getMaxColor() {
-		return maxColor;
+		return maxColor == null ? ColorsUtil.orange : maxColor;
 	}
 	public Color getMinUnitColor() {
-		return minUnitColor;
+		return minUnitColor == null ? ColorsUtil.orange : minUnitColor;
 	}
 	public Color getMaxUnitColor() {
-		return maxUnitColor;
+		return maxUnitColor == null ? ColorsUtil.orange : maxUnitColor;
 	}
 	public Color gethAxisColor() {
 		return hAxisColor;

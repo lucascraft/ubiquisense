@@ -37,6 +37,9 @@ package net.sf.smbt.ui.widgets.showcase;
 
 import java.awt.BasicStroke;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -49,8 +52,11 @@ import net.sf.smbt.ui.widgets.common.ColorsUtil;
 import net.sf.smbt.ui.widgets.common.FontUtils;
 import net.sf.smbt.ui.widgets.common.GeoUtils;
 import net.sf.smbt.ui.widgets.common.ImageUtils;
+import net.sf.smbt.ui.widgets.common.TimedDataUtils;
 import net.sf.smbt.ui.widgets.dialogs.UbiColorPickerDialog;
 import net.sf.smbt.ui.widgets.leds.DotMatrixUtils;
+import net.sf.smbt.ui.widgets.utils.SelfTimedRange;
+import net.sf.smbt.ui.widgets.utils.TimedValue;
 import net.sf.smbt.ui.widgets.vu.DotMatrixCharDisplay;
 import net.sf.smbt.ui.widgets.vu.DotMatrixDisplay;
 import net.sf.smbt.ui.widgets.vu.SevenSegmentsDisplay;
@@ -63,6 +69,7 @@ import net.sf.smbt.ui.widgets.vu.UbiKnobGrid;
 import net.sf.smbt.ui.widgets.vu.UbiOscilloscope;
 import net.sf.smbt.ui.widgets.vu.UbiSelectionListener;
 import net.sf.smbt.ui.widgets.vu.UbiSlider;
+import net.sf.smbt.ui.widgets.vu.UbiTimed2DChart;
 import net.sf.smbt.ui.widgets.vu.UbiVuMeter;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -82,7 +89,6 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
-import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -97,7 +103,6 @@ import org.eclipse.swt.widgets.TabItem;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.progress.UIJob;
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
@@ -106,7 +111,6 @@ import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 import org.jfree.date.DateUtilities;
 import org.jfree.experimental.chart.swt.ChartComposite;
-import org.jfree.ui.RefineryUtilities;
 
 
 public class TabFactory {
@@ -117,6 +121,7 @@ public class TabFactory {
 	private UbiSlider hslider1, hslider2, hslider3, vslider1, vslider2, vslider3;
 	private UbiVuMeter vuH1, vuV1;
 	private UbiOscilloscope oscH1;
+	private UbiTimed2DChart t2dChart;
 	private SevenSegmentsDisplay disp7Segments1;
 	private SixteenSegmentsDisplay disp16Segments1, disp16Segments2;
 	private DotMatrixCharDisplay dotMatrixDisplay;
@@ -620,6 +625,46 @@ public class TabFactory {
 		
 		item.setControl(container);
 	}
+	
+	
+	//
+	public void addTimed2DChart(TabFolder folder, TabItem item) {
+		Composite container = new Composite(folder, SWT.NONE);
+		container.setLayout(GridLayoutFactory.fillDefaults().create());
+		container.setLayoutData(GridDataFactory.fillDefaults().minSize(SWT.DEFAULT, 300).grab(true, true).create());
+
+		SelfTimedRange<TimedValue> str = TimedDataUtils .INSTANCE .genRandomTimeValues();
+		
+		Date d1 = new Date();
+		Date d2 = new Date();
+		
+		ArrayList<TimedValue> timedValues = new ArrayList<TimedValue>(str.getTimeValues());
+		if (!timedValues.isEmpty()) {
+			TimedValue v2 = timedValues.get(timedValues.size()-1);
+			if (v2.getD() != null) {
+				d2 = v2.getD();
+			}
+			if (timedValues.size() > 1) {
+				d1 = timedValues.get(0).getD();
+			}
+		}
+
+		t2dChart = new UbiTimed2DChart(
+			container, 
+			UbiTimed2DChart.STYLE_LINES, 
+			str.getMinValueOverall(), 
+			str.getMaxValueOverall(), 
+			"X", "Chart", 
+			d2, d1, 
+			str.getTimeValues().toArray(new TimedValue[0])
+		);
+		
+		t2dChart.setLayout(GridLayoutFactory.fillDefaults().create());
+		t2dChart.setLayoutData(GridDataFactory.fillDefaults().grab(true, true).create());
+		
+		item.setControl(container);
+	}
+	
 	
 	public void addOscilloscope(TabFolder folder, TabItem item) {
 		Composite container = new Composite(folder, SWT.NONE);

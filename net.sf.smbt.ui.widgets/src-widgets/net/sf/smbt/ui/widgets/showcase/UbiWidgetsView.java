@@ -172,6 +172,16 @@ public class UbiWidgetsView extends ViewPart{
 		TabFactory.INSTANCE.addOscilloscope(folder, oscilloscopesItem);
 		
 		//
+		// LCD Char Dot Matrix Display
+		//
+
+		TabItem timed2DChartItem = new TabItem(folder, SWT.BOTTOM);
+		timed2DChartItem.setText("Timed Chart");
+		TabFactory.INSTANCE.addTimed2DChart(folder, timed2DChartItem);
+		
+		
+		
+		//
 		// Dot Matrix Display
 		//
 
